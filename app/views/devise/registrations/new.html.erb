@@ -18,7 +18,7 @@
   <div>
   	<% for role in Role.all %>
   		<%= check_box_tag "user[role_ids][]", role.id %>
-  		<%= role.name %>
+  		<%= role.name %><br>
   	<% end %>
   </div>
 
