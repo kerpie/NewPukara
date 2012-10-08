@@ -2,7 +2,7 @@ Final::Application.routes.draw do
   
   root :to => 'document_type#index'
   
-  devise_for :users #, :controllers => { :registrations => "users/registrations" }
+  devise_for :users, :controllers => { :registrations => "users/registrations" }
   
   #DocumentType
   match "document_type/index" => "document_type#index", :as => :document_type_index
