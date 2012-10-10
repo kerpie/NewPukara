@@ -7,8 +7,17 @@ en:
     models:
       document_type: "Tipo de Documento"
       price_type: "Tipo de Precio"
+      model_type: "Tipo de Modelo"
+      product_type: "Tipo de Producto"
+      client_type: "Tipo de Cliente"
     attributes:
       document_type:
         name: "Nombre"
       price_type:
+        name: "Nombre"
+      model_type:
+        name: "Nombre"
+      product_type:
+        name: "Nombre"
+      client_type:
         name: "Nombre"

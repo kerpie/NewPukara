@@ -28,6 +28,12 @@ Final::Application.routes.draw do
   match "product_type/update" => "product_type#destroy", :as => :product_type_destroy
   match "product_type/destroy" => "product_type#update", :as => :product_type_update
 
+  #ClientType
+  match "client_type/index" => "client_type#index", :as => :client_type_index
+  match "client_type/create" => "client_type#create", :as => :client_type_create
+  match "client_type/update" => "client_type#destroy", :as => :client_type_destroy
+  match "client_type/destroy" => "client_type#update", :as => :client_type_update
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

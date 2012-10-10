@@ -1,0 +1,3 @@
+<% toRender = render "layouts/error", :data => @new_ct %>
+
+alert("<%= escape_javascript(toRender)%>");

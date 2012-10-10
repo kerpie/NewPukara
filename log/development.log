@@ -12830,3 +12830,736 @@ Served asset /product_type.js - 200 OK (7ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 08:21:00 -0500
 Served asset /application.js - 304 Not Modified (39ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDocumentTypes (20121008153655)
+Migrating to DeviseCreateUsers (20121008173818)
+Migrating to UsersHaveAndBelongsToManyRoles (20121008180515)
+Migrating to CreateRoles (20121008215600)
+Migrating to CreatePriceTypes (20121010121039)
+Migrating to CreateModelTypes (20121010123126)
+Migrating to CreateProductTypes (20121010130951)
+Migrating to CreateClientTypes (20121010132257)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "client_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121010132257')[0m
+  [1m[35m (127.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("client_types")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("document_types")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("model_types")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("price_types")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("product_types")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("roles")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("roles_users")[0m
+  [1m[35m (1.0ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+
+
+Started GET "/client_type/index" for 127.0.0.1 at 2012-10-10 08:33:39 -0500
+Processing by ClientTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mClientType Load (1.0ms)[0m  SELECT "client_types".* FROM "client_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered client_type/index.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 161ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <section id="client_type_index">
+    2: 	<h1>Tipos de Cliente</h1>
+    3: 	<% @dt.each do |dt| %>
+    4: 		<div id=<%= "client_type_" + dt.id.to_s %> class="client_type_item">
+    5: 			<span><%= dt.name %></span>
+    6: 			<div class="client_type_row_options">
+  app/views/client_type/index.html.erb:3:in `_app_views_client_type_index_html_erb___199420434_38897856'
+  app/controllers/client_type_controller.rb:6:in `index'
+
+
+  Rendered C:/Programas/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (9.0ms)
+  Rendered C:/Programas/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered C:/Programas/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (78.0ms)
+
+
+Started GET "/client_type/index" for 127.0.0.1 at 2012-10-10 08:33:58 -0500
+Processing by ClientTypeController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mClientType Load (0.0ms)[0m  [1mSELECT "client_types".* FROM "client_types" [0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1
+  Rendered client_type/index.html.erb within layouts/application (12.0ms)
+Compiled client_type.css  (20ms)  (pid 2408)
+Compiled application.css  (109ms)  (pid 2408)
+Compiled client_type.js  (404ms)  (pid 2408)
+Compiled application.js  (445ms)  (pid 2408)
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1[0m
+Completed 200 OK in 780ms (Views: 772.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 08:33:59 -0500
+Served asset /application.css - 304 Not Modified (26ms)
+
+
+Started GET "/assets/client_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:33:59 -0500
+Served asset /client_type.css - 200 OK (8ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:33:59 -0500
+Served asset /document_type.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/model_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:33:59 -0500
+Served asset /model_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:33:59 -0500
+Served asset /price_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:33:59 -0500
+Served asset /product_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 08:33:59 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 08:33:59 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/client_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:33:59 -0500
+Served asset /client_type.js - 200 OK (9ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:33:59 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:33:59 -0500
+Served asset /model_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:33:59 -0500
+Served asset /price_type.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/product_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:33:59 -0500
+Served asset /product_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 08:33:59 -0500
+Served asset /application.js - 304 Not Modified (38ms)
+
+
+Started POST "/client_type/create" for 127.0.0.1 at 2012-10-10 08:34:07 -0500
+
+ActionController::RoutingError (No route matches [POST] "/client_type/create"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run_machine'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered C:/Programas/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/client_type/create" for 127.0.0.1 at 2012-10-10 08:34:09 -0500
+
+ActionController::RoutingError (No route matches [POST] "/client_type/create"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run_machine'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered C:/Programas/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/client_type/index" for 127.0.0.1 at 2012-10-10 08:35:19 -0500
+Processing by ClientTypeController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mClientType Load (0.0ms)[0m  [1mSELECT "client_types".* FROM "client_types" [0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1
+  Rendered client_type/index.html.erb within layouts/application (11.0ms)
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1[0m
+Completed 200 OK in 162ms (Views: 41.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:20 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/client_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:20 -0500
+Served asset /client_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:20 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:20 -0500
+Served asset /model_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:20 -0500
+Served asset /price_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:20 -0500
+Served asset /product_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:20 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:20 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/client_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:20 -0500
+Served asset /client_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:20 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:20 -0500
+Served asset /model_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:20 -0500
+Served asset /price_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:20 -0500
+Served asset /product_type.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:20 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/client_type/create" for 127.0.0.1 at 2012-10-10 08:35:22 -0500
+Processing by ClientTypeController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8qto1VcWalEWKCSoeMRA+S4OIsbOO6tpOpLAp6QACfM=", "name"=>"Individual", "commit"=>"Enviar"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "client_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 10 Oct 2012 13:35:22 UTC +00:00], ["name", "Individual"], ["updated_at", Wed, 10 Oct 2012 13:35:22 UTC +00:00]]
+  [1m[35m (261.0ms)[0m  commit transaction
+  Rendered client_type/create.js.erb (1.0ms)
+Completed 200 OK in 290ms (Views: 19.0ms | ActiveRecord: 263.0ms)
+
+
+Started GET "/client_type/index" for 127.0.0.1 at 2012-10-10 08:35:24 -0500
+Processing by ClientTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mClientType Load (0.0ms)[0m  SELECT "client_types".* FROM "client_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered client_type/index.html.erb within layouts/application (6.0ms)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 43ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:24 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/client_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:24 -0500
+Served asset /client_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:24 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:24 -0500
+Served asset /model_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:24 -0500
+Served asset /price_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:25 -0500
+Served asset /product_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:25 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:25 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/client_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:25 -0500
+Served asset /client_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:25 -0500
+Served asset /document_type.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/model_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:25 -0500
+Served asset /model_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:25 -0500
+Served asset /price_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:25 -0500
+Served asset /product_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:25 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/client_type/update" for 127.0.0.1 at 2012-10-10 08:35:28 -0500
+Processing by ClientTypeController#destroy as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8qto1VcWalEWKCSoeMRA+S4OIsbOO6tpOpLAp6QACfM=", "ct_id"=>"1", "commit"=>"eliminar"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mClientType Load (1.0ms)[0m  SELECT "client_types".* FROM "client_types" WHERE "client_types"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  DELETE FROM "client_types" WHERE "client_types"."id" = ?  [["id", 1]]
+  [1m[36m (109.0ms)[0m  [1mcommit transaction[0m
+  Rendered client_type/destroy.js.erb (0.0ms)
+Completed 200 OK in 140ms (Views: 22.0ms | ActiveRecord: 112.0ms)
+
+
+Started GET "/client_type/index" for 127.0.0.1 at 2012-10-10 08:35:30 -0500
+Processing by ClientTypeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mClientType Load (0.0ms)[0m  [1mSELECT "client_types".* FROM "client_types" [0m
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1
+  Rendered client_type/index.html.erb within layouts/application (2.0ms)
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1[0m
+Completed 200 OK in 42ms (Views: 34.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:30 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/client_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:30 -0500
+Served asset /client_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:30 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:30 -0500
+Served asset /model_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:30 -0500
+Served asset /price_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:30 -0500
+Served asset /product_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:30 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:30 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/client_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:30 -0500
+Served asset /client_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:30 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:31 -0500
+Served asset /model_type.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:31 -0500
+Served asset /price_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:31 -0500
+Served asset /product_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:31 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/client_type/create" for 127.0.0.1 at 2012-10-10 08:35:32 -0500
+Processing by ClientTypeController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8qto1VcWalEWKCSoeMRA+S4OIsbOO6tpOpLAp6QACfM=", "name"=>"Individual", "commit"=>"Enviar"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "client_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 10 Oct 2012 13:35:32 UTC +00:00], ["name", "Individual"], ["updated_at", Wed, 10 Oct 2012 13:35:32 UTC +00:00]]
+  [1m[35m (235.0ms)[0m  commit transaction
+  Rendered client_type/create.js.erb (0.0ms)
+Completed 200 OK in 262ms (Views: 20.0ms | ActiveRecord: 239.0ms)
+
+
+Started GET "/client_type/index" for 127.0.0.1 at 2012-10-10 08:35:34 -0500
+Processing by ClientTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mClientType Load (0.0ms)[0m  SELECT "client_types".* FROM "client_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered client_type/index.html.erb within layouts/application (6.0ms)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 41ms (Views: 32.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:34 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/client_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:34 -0500
+Served asset /client_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:34 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:34 -0500
+Served asset /model_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:34 -0500
+Served asset /price_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:34 -0500
+Served asset /product_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:34 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:34 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/client_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:34 -0500
+Served asset /client_type.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:34 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:34 -0500
+Served asset /model_type.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:34 -0500
+Served asset /price_type.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/product_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:34 -0500
+Served asset /product_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:34 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/client_type/destroy" for 127.0.0.1 at 2012-10-10 08:35:40 -0500
+Processing by ClientTypeController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8qto1VcWalEWKCSoeMRA+S4OIsbOO6tpOpLAp6QACfM=", "ct_id"=>"2", "new_value"=>"individual", "commit"=>"Actualizar"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mClientType Load (0.0ms)[0m  SELECT "client_types".* FROM "client_types" WHERE "client_types"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mUPDATE "client_types" SET "name" = 'individual', "updated_at" = '2012-10-10 13:35:40.753490' WHERE "client_types"."id" = 2[0m
+  [1m[35m (401.0ms)[0m  commit transaction
+  Rendered client_type/update.js.erb (1.0ms)
+Completed 200 OK in 432ms (Views: 21.0ms | ActiveRecord: 403.0ms)
+
+
+Started GET "/client_type/index" for 127.0.0.1 at 2012-10-10 08:35:42 -0500
+Processing by ClientTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mClientType Load (1.0ms)[0m  SELECT "client_types".* FROM "client_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered client_type/index.html.erb within layouts/application (5.0ms)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 85ms (Views: 78.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:42 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/client_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:42 -0500
+Served asset /client_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:42 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:43 -0500
+Served asset /model_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:43 -0500
+Served asset /price_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:43 -0500
+Served asset /product_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:43 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:43 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/client_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:43 -0500
+Served asset /client_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:43 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:43 -0500
+Served asset /model_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:43 -0500
+Served asset /price_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:43 -0500
+Served asset /product_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:43 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/client_type/update" for 127.0.0.1 at 2012-10-10 08:35:46 -0500
+Processing by ClientTypeController#destroy as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8qto1VcWalEWKCSoeMRA+S4OIsbOO6tpOpLAp6QACfM=", "ct_id"=>"2", "commit"=>"eliminar"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mClientType Load (1.0ms)[0m  SELECT "client_types".* FROM "client_types" WHERE "client_types"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "client_types" WHERE "client_types"."id" = ?  [["id", 2]]
+  [1m[36m (110.0ms)[0m  [1mcommit transaction[0m
+  Rendered client_type/destroy.js.erb (1.0ms)
+Completed 200 OK in 144ms (Views: 24.0ms | ActiveRecord: 113.0ms)
+
+
+Started GET "/client_type/index" for 127.0.0.1 at 2012-10-10 08:35:49 -0500
+Processing by ClientTypeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mClientType Load (0.0ms)[0m  [1mSELECT "client_types".* FROM "client_types" [0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1
+  Rendered client_type/index.html.erb within layouts/application (1.0ms)
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1[0m
+Completed 200 OK in 79ms (Views: 73.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:49 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/client_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:49 -0500
+Served asset /client_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:49 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:49 -0500
+Served asset /model_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:49 -0500
+Served asset /price_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:49 -0500
+Served asset /product_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:49 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:49 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/client_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:49 -0500
+Served asset /client_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:49 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:49 -0500
+Served asset /model_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:49 -0500
+Served asset /price_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:49 -0500
+Served asset /product_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:49 -0500
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started POST "/client_type/create" for 127.0.0.1 at 2012-10-10 08:35:50 -0500
+Processing by ClientTypeController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8qto1VcWalEWKCSoeMRA+S4OIsbOO6tpOpLAp6QACfM=", "name"=>"Individual", "commit"=>"Enviar"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "client_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 10 Oct 2012 13:35:50 UTC +00:00], ["name", "Individual"], ["updated_at", Wed, 10 Oct 2012 13:35:50 UTC +00:00]]
+  [1m[35m (294.0ms)[0m  commit transaction
+  Rendered client_type/create.js.erb (0.0ms)
+Completed 200 OK in 322ms (Views: 20.0ms | ActiveRecord: 296.0ms)
+
+
+Started GET "/client_type/index" for 127.0.0.1 at 2012-10-10 08:35:53 -0500
+Processing by ClientTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mClientType Load (0.0ms)[0m  SELECT "client_types".* FROM "client_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered client_type/index.html.erb within layouts/application (8.0ms)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 48ms (Views: 41.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:53 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/client_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:53 -0500
+Served asset /client_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:53 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:53 -0500
+Served asset /model_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:53 -0500
+Served asset /price_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.css?body=1" for 127.0.0.1 at 2012-10-10 08:35:53 -0500
+Served asset /product_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:53 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:53 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/client_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:53 -0500
+Served asset /client_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:53 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:53 -0500
+Served asset /model_type.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:53 -0500
+Served asset /price_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:53 -0500
+Served asset /product_type.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 08:35:53 -0500
+Served asset /application.js - 304 Not Modified (1ms)
