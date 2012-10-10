@@ -16,6 +16,18 @@ Final::Application.routes.draw do
   match "price_type/destroy" => "price_type#destroy", :as => :price_type_destroy
   match "price_type/update" => "price_type#update", :as => :price_type_update
 
+  #ModelType
+  match "model_type/index" => "model_type#index", :as => :model_type_index
+  match "model_type/create" => "model_type#create", :as => :model_type_create
+  match "model_type/destroy" => "model_type#destroy", :as => :model_type_destroy
+  match "model_type/update" => "model_type#update", :as => :model_type_update
+
+  #ProductType
+  match "product_type/index" => "product_type#index", :as => :product_type_index
+  match "product_type/create" => "product_type#create", :as => :product_type_create
+  match "product_type/update" => "product_type#destroy", :as => :product_type_destroy
+  match "product_type/destroy" => "product_type#update", :as => :product_type_update
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
