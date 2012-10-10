@@ -11,3 +11,153 @@
  *= require_self
  *= require_tree .
 */
+
+/* --- RESET --- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: 'Source Sans Pro', sans-serif;    
+}
+
+h1, h2{
+    font-family: 'Source Sans Pro', sans-serif;    
+}
+
+h3, h4, h5, h6{
+    font-family: 'Dosis', sans-serif;
+}
+
+p{
+    font-family: 'Source Sans Pro', sans-serif;    
+    /*font-family: 'Actor', sans-serif;    */
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Common Layout */
+
+body{
+	background:#4186D3;
+}
+
+#main_section{
+	width: 1000px;
+	margin: 10px auto;
+}
+
+/* Sign In */
+
+#signing{
+	background: white;
+	border: 1px solid black;
+	width: 400px;
+	margin: 40px auto;
+	padding: 10px;
+}
+
+#signing h2{
+	margin: 0 auto;
+	width: 134px;	
+	padding: 7px;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+#signing form .sign_field{
+	margin: 0 auto;
+	width: 208px;
+	padding: 6px;
+}
+#signing form .sign_field label{
+	font-size: 14px;
+}
+
+#signing form .sign_field input#submit{
+	width: 100px;
+	display: block;
+	margin: 0 auto;
+	padding: 1px;
+}
+
+/* General Layout */
+
+#user_data{
+	width: 900px;
+	background: white;
+	margin: 0 auto 10px;
+	border: 1px solid black;
+	overflow: hidden;
+	padding: 10px;
+}
+
+#user_data #current_user_data{
+	float: left;
+}
+
+#user_data #current_user_data p{
+	padding: 3px;
+}
+
+#user_data #user_session_options{
+	float: right;
+	margin-top: 13px;
+}
+
+#user_data #user_session_options ul{
+	overflow: hidden;
+}
+
+#user_data #user_session_options ul li{
+	float: left;
+	margin-right: 4px;
+	padding-right: 20px;
+}
+
+#user_data #user_session_options ul li:last-child{
+	margin-right: 0px;
+	padding-right: 0px;
+}

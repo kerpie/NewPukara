@@ -1,3 +1,41 @@
-// Place all the styles related to the DocumentType controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#document_type_index{
+	background: white;
+	width: 1000px;
+	margin: 0 auto;
+	padding: 10px;
+	border: 1px solid black;
+	.document_type_item{
+		overflow: hidden;
+		padding: 10px;
+		margin: 5px;
+		span{
+			float: left;
+		}
+		.document_type_row_options{
+			float: right;
+			overflow: hidden;
+			.link_to_destroy_document_type, .destroy_document_type{
+				float: left;
+				margin-right: 10px;
+			}
+			.link_to_update_document_type, .update_document_type{
+				float: right;
+			}
+		}
+	}
+	#create_document_type{
+		width: 279px;
+		margin: 0 auto;
+		padding: 5px 10px 10px 10px;
+		h1{
+			width: 180px;
+			padding: 5px;
+			margin: 5px auto;
+		}
+		form{
+			#document_type_create_input_submit_button{
+
+			}
+		}
+	}
+}

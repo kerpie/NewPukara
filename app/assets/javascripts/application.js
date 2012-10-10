@@ -13,3 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+function update_form(parent, element){
+	$(parent).hide();
+	$("#"+element).show();
+}
+
+function destroy_form(parent, element){
+	$(parent).hide();
+	$("#"+element).show();	
+}
