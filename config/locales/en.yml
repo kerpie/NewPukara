@@ -6,6 +6,9 @@ en:
   activerecord:
     models:
       document_type: "Tipo de Documento"
+      price_type: "Tipo de Precio"
     attributes:
       document_type:
+        name: "Nombre"
+      price_type:
         name: "Nombre"

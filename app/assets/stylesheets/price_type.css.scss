@@ -1,4 +1,4 @@
-#document_type_index{
+#price_type_index{
 	h1{
 		width: 196px;
 		margin: 0 auto;
@@ -11,26 +11,26 @@
 	margin: 0 auto;
 	padding: 10px;
 	border: 1px solid black;
-	.document_type_item{
+	.price_type_item{
 		overflow: hidden;
 		padding: 10px;
 		margin: 5px;
 		span{
 			float: left;
 		}
-		.document_type_row_options{
+		.price_type_row_options{
 			float: right;
 			overflow: hidden;
-			.link_to_destroy_document_type, .destroy_document_type{
+			.link_to_destroy_price_type, .destroy_price_type{
 				float: left;
 				margin-right: 10px;
 			}
-			.link_to_update_document_type, .update_document_type{
+			.link_to_update_price_type, .update_price_type{
 				float: right;
 			}
 		}
 	}
-	#create_document_type{
+	#create_price_type{
 		width: 279px;
 		margin: 0 auto;
 		padding: 5px 10px 10px 10px;

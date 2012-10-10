@@ -1,7 +1,7 @@
-class DocumentTypeController < ApplicationController
-  
+class PriceTypeController < ApplicationController
+	
   def index
-    @dt = DocumentType.all 
+  	@pt = PriceType.all 
     authorize! :read, @dt
     respond_to do |f|
       f.html
@@ -9,11 +9,11 @@ class DocumentTypeController < ApplicationController
   end
 
   def create
-    @new_dt = DocumentType.new
-    @new_dt.name = params[:name]
-    authorize! :create, @new_dt
+  	@new_pt = PriceType.new
+    @new_pt.name = params[:name]
+    authorize! :create, @new_pt
     respond_to do |f|
-      if @new_dt.save
+      if @new_pt.save
         f.js
       else
         f.js {render 'fail_create.js.erb'}
@@ -22,8 +22,8 @@ class DocumentTypeController < ApplicationController
   end
 
   def destroy
-    @del_dt = DocumentType.find(params[:dt_id])
-    @del_dt.destroy
+  	@del_pt = PriceType.find(params[:pt_id])
+    @del_pt.destroy
 
     respond_to do |f|
       f.js
@@ -31,11 +31,11 @@ class DocumentTypeController < ApplicationController
   end
 
   def update
-    @up_dt = DocumentType.find(params[:dt_id])
-    @up_dt.name = params[:new_value]
-    authorize! :update, @up_dt
+  	@up_pt = PriceType.find(params[:pt_id])
+    @up_pt.name = params[:new_value]
+    authorize! :update, @up_pt
     respond_to do |f|
-      if @up_dt.save
+      if @up_pt.save
         f.js
       else
         f.js {render 'fail_update.js.erb'}

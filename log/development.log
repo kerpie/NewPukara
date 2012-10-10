@@ -10615,3 +10615,1581 @@ Served asset /document_type.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-09 23:41:56 -0500
 Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/document_type/destroy" for 127.0.0.1 at 2012-10-09 23:52:14 -0500
+Processing by DocumentTypeController#destroy as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8qto1VcWalEWKCSoeMRA+S4OIsbOO6tpOpLAp6QACfM=", "dt_id"=>"8", "commit"=>"eliminar"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mDocumentType Load (0.0ms)[0m  [1mSELECT "document_types".* FROM "document_types" WHERE "document_types"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "document_types" WHERE "document_types"."id" = ?[0m  [["id", 8]]
+  [1m[35m (110.0ms)[0m  commit transaction
+  Rendered document_type/destroy.js.erb (1.0ms)
+Completed 200 OK in 133ms (Views: 15.0ms | ActiveRecord: 111.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-09 23:52:16 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (11.0ms)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 37ms (Views: 30.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-09 23:52:16 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-09 23:52:16 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-09 23:52:17 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-09 23:52:17 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-09 23:52:17 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-09 23:52:17 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:07:42 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (45.0ms)
+Compiled document_type.css  (17ms)  (pid 2408)
+Compiled application.css  (1ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 147ms (Views: 140.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:07:42 -0500
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:07:42 -0500
+Served asset /document_type.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:07:42 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:07:42 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:07:42 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:07:42 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:07:51 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (50.0ms)
+Compiled document_type.css  (18ms)  (pid 2408)
+Compiled application.css  (1ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 139ms (Views: 132.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:07:51 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:07:51 -0500
+Served asset /document_type.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:07:51 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:07:51 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:07:51 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:07:51 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:08:11 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (10.0ms)
+Compiled document_type.css  (55ms)  (pid 2408)
+Compiled application.css  (2ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 134ms (Views: 128.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:11 -0500
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:11 -0500
+Served asset /document_type.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:11 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:11 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:11 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:11 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:08:16 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (10.0ms)
+Compiled document_type.css  (20ms)  (pid 2408)
+Compiled application.css  (1ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 167ms (Views: 155.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:16 -0500
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:16 -0500
+Served asset /document_type.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:17 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:17 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:17 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:17 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:08:20 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (9.0ms)
+Compiled document_type.css  (17ms)  (pid 2408)
+Compiled application.css  (1ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 125ms (Views: 119.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:20 -0500
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:21 -0500
+Served asset /document_type.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:21 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:21 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:21 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:21 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:08:24 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (9.0ms)
+Compiled document_type.css  (18ms)  (pid 2408)
+Compiled application.css  (0ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 93ms (Views: 85.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:24 -0500
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:24 -0500
+Served asset /document_type.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:24 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:24 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:24 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:24 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:08:29 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (1.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (9.0ms)
+Compiled document_type.css  (16ms)  (pid 2408)
+Compiled application.css  (2ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 93ms (Views: 86.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:29 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:29 -0500
+Served asset /document_type.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:29 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:29 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:29 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:29 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:08:38 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (10.0ms)
+Compiled document_type.css  (17ms)  (pid 2408)
+Compiled application.css  (0ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 95ms (Views: 89.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:38 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:38 -0500
+Served asset /document_type.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:38 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:38 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:38 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:38 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:08:41 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (9.0ms)
+Compiled document_type.css  (16ms)  (pid 2408)
+Compiled application.css  (2ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 92ms (Views: 84.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:41 -0500
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:41 -0500
+Served asset /document_type.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:41 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:41 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:41 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:41 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:08:51 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (1.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (10.0ms)
+Compiled document_type.css  (16ms)  (pid 2408)
+Compiled application.css  (1ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 96ms (Views: 89.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:51 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:08:51 -0500
+Served asset /document_type.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:51 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:51 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:52 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:08:52 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:09:06 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (9.0ms)
+Compiled document_type.css  (17ms)  (pid 2408)
+Compiled application.css  (2ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 92ms (Views: 87.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:06 -0500
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:06 -0500
+Served asset /document_type.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:06 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:06 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:06 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:06 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:09:16 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (1.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (63.0ms)
+Compiled document_type.css  (18ms)  (pid 2408)
+Compiled application.css  (1ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 158ms (Views: 148.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:16 -0500
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:16 -0500
+Served asset /document_type.css - 200 OK (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:16 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:16 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:16 -0500
+Served asset /document_type.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:16 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:09:21 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (1.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (47.0ms)
+Compiled document_type.css  (17ms)  (pid 2408)
+Compiled application.css  (1ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 133ms (Views: 125.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:21 -0500
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:21 -0500
+Served asset /document_type.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:21 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:21 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:21 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:21 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:09:24 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (56.0ms)
+Compiled document_type.css  (17ms)  (pid 2408)
+Compiled application.css  (0ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 145ms (Views: 138.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:25 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:25 -0500
+Served asset /document_type.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:25 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:25 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:25 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:25 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:09:28 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (1.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (10.0ms)
+Compiled document_type.css  (18ms)  (pid 2408)
+Compiled application.css  (3ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 135ms (Views: 129.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:28 -0500
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:28 -0500
+Served asset /document_type.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:28 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:28 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:28 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:28 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:09:32 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (1.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (10.0ms)
+Compiled document_type.css  (18ms)  (pid 2408)
+Compiled application.css  (1ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 138ms (Views: 129.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:32 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:32 -0500
+Served asset /document_type.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:32 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:32 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:32 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:32 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:09:35 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (1.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (10.0ms)
+Compiled document_type.css  (18ms)  (pid 2408)
+Compiled application.css  (0ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 94ms (Views: 87.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:35 -0500
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:35 -0500
+Served asset /document_type.css - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:35 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:35 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:35 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:35 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:09:42 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (1.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (10.0ms)
+Compiled document_type.css  (18ms)  (pid 2408)
+Compiled application.css  (1ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 95ms (Views: 89.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:42 -0500
+Served asset /application.css - 304 Not Modified (47ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:42 -0500
+Served asset /document_type.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:42 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:42 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:42 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:42 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:09:45 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (9.0ms)
+Compiled document_type.css  (18ms)  (pid 2408)
+Compiled application.css  (2ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 92ms (Views: 86.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:45 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:45 -0500
+Served asset /document_type.css - 200 OK (43ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:45 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:46 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:46 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:46 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:09:49 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (10.0ms)
+Compiled document_type.css  (18ms)  (pid 2408)
+Compiled application.css  (0ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 94ms (Views: 85.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:49 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:49 -0500
+Served asset /document_type.css - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:49 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:49 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:49 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:49 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:09:52 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (10.0ms)
+Compiled document_type.css  (17ms)  (pid 2408)
+Compiled application.css  (1ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 95ms (Views: 87.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:52 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:52 -0500
+Served asset /document_type.css - 200 OK (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:52 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:52 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:52 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:52 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:09:55 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (12.0ms)
+Compiled document_type.css  (17ms)  (pid 2408)
+Compiled application.css  (0ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 101ms (Views: 93.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:55 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:55 -0500
+Served asset /document_type.css - 200 OK (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:55 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:55 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:55 -0500
+Served asset /document_type.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:55 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:09:58 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (9.0ms)
+Compiled document_type.css  (18ms)  (pid 2408)
+Compiled application.css  (2ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 95ms (Views: 87.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:59 -0500
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:09:59 -0500
+Served asset /document_type.css - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:59 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:59 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:59 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:09:59 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:10:08 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (10.0ms)
+Compiled document_type.css  (18ms)  (pid 2408)
+Compiled application.css  (2ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 92ms (Views: 87.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:08 -0500
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:08 -0500
+Served asset /document_type.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:08 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:08 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:08 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:08 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:10:13 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (1.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (49.0ms)
+Compiled document_type.css  (17ms)  (pid 2408)
+Compiled application.css  (2ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 135ms (Views: 128.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:13 -0500
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:13 -0500
+Served asset /document_type.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:13 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:14 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:14 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:14 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:10:18 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (1.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (55.0ms)
+Compiled document_type.css  (19ms)  (pid 2408)
+Compiled application.css  (2ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 156ms (Views: 149.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:19 -0500
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:19 -0500
+Served asset /document_type.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:19 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:19 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:19 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:19 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:10:24 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (10.0ms)
+Compiled document_type.css  (18ms)  (pid 2408)
+Compiled application.css  (0ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 140ms (Views: 132.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:24 -0500
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:24 -0500
+Served asset /document_type.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:24 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:24 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:24 -0500
+Served asset /document_type.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:24 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:10:27 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (1.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (9.0ms)
+Compiled document_type.css  (17ms)  (pid 2408)
+Compiled application.css  (2ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 142ms (Views: 134.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:27 -0500
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:27 -0500
+Served asset /document_type.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:27 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:27 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:27 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:27 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:10:42 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (1.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (11.0ms)
+Compiled document_type.css  (18ms)  (pid 2408)
+Compiled application.css  (2ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 138ms (Views: 132.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:42 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:42 -0500
+Served asset /document_type.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:42 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:42 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:42 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:42 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:10:54 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (10.0ms)
+Compiled document_type.css  (17ms)  (pid 2408)
+Compiled application.css  (1ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 96ms (Views: 89.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:54 -0500
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:54 -0500
+Served asset /document_type.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:54 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:54 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:54 -0500
+Served asset /document_type.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:54 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:10:59 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (9.0ms)
+Compiled document_type.css  (18ms)  (pid 2408)
+Compiled application.css  (1ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 96ms (Views: 89.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:59 -0500
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:10:59 -0500
+Served asset /document_type.css - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:59 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:59 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:59 -0500
+Served asset /document_type.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:10:59 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:11:07 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (9.0ms)
+Compiled document_type.css  (18ms)  (pid 2408)
+Compiled application.css  (1ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 96ms (Views: 90.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:11:07 -0500
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:11:07 -0500
+Served asset /document_type.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:11:07 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:11:07 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:11:07 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:11:07 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-10 00:11:20 -0500
+Processing by DocumentTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mDocumentType Load (0.0ms)[0m  SELECT "document_types".* FROM "document_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered document_type/index.html.erb within layouts/application (13.0ms)
+Compiled document_type.css  (20ms)  (pid 2408)
+Compiled application.css  (2ms)  (pid 2408)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 102ms (Views: 92.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 00:11:20 -0500
+Served asset /application.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 00:11:20 -0500
+Served asset /document_type.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 00:11:20 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 00:11:20 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 00:11:20 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 00:11:20 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateDocumentTypes (20121008153655)
+Migrating to DeviseCreateUsers (20121008173818)
+Migrating to UsersHaveAndBelongsToManyRoles (20121008180515)
+Migrating to CreateRoles (20121008215600)
+Migrating to CreatePriceTypes (20121010121039)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "price_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121010121039')[0m
+  [1m[35m (135.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("document_types")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("price_types")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("roles")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("roles_users")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_reset_password_token')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+
+
+Started GET "/price_type/index" for 127.0.0.1 at 2012-10-10 07:26:41 -0500
+Processing by PriceTypeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mPriceType Load (1.0ms)[0m  SELECT "price_types".* FROM "price_types" 
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered price_type/index.html.erb within layouts/application (12.0ms)
+Compiled price_type.css  (21ms)  (pid 2408)
+Compiled application.css  (81ms)  (pid 2408)
+Compiled price_type.js  (508ms)  (pid 2408)
+Compiled application.js  (548ms)  (pid 2408)
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 1004ms (Views: 782.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 07:26:43 -0500
+Served asset /application.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 07:26:43 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2012-10-10 07:26:43 -0500
+Served asset /price_type.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 07:26:43 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 07:26:43 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 07:26:43 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2012-10-10 07:26:43 -0500
+Served asset /price_type.js - 200 OK (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 07:26:43 -0500
+Served asset /application.js - 304 Not Modified (20ms)
+
+
+Started POST "/price_type/create" for 127.0.0.1 at 2012-10-10 07:26:50 -0500
+Processing by PriceTypeController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8qto1VcWalEWKCSoeMRA+S4OIsbOO6tpOpLAp6QACfM=", "name"=>"Por Menor", "commit"=>"Enviar"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "price_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Wed, 10 Oct 2012 12:26:50 UTC +00:00], ["name", "Por Menor"], ["updated_at", Wed, 10 Oct 2012 12:26:50 UTC +00:00]]
+  [1m[36m (270.0ms)[0m  [1mcommit transaction[0m
+  Rendered price_type/create.js.erb (1.0ms)
+Completed 200 OK in 298ms (Views: 17.0ms | ActiveRecord: 272.0ms)
+
+
+Started GET "/price_type/index" for 127.0.0.1 at 2012-10-10 07:26:53 -0500
+Processing by PriceTypeController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mPriceType Load (1.0ms)[0m  [1mSELECT "price_types".* FROM "price_types" [0m
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1
+  Rendered price_type/index.html.erb within layouts/application (5.0ms)
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1[0m
+Completed 200 OK in 35ms (Views: 27.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 07:26:53 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 07:26:53 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2012-10-10 07:26:53 -0500
+Served asset /price_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 07:26:53 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 07:26:53 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 07:26:53 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2012-10-10 07:26:53 -0500
+Served asset /price_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 07:26:53 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/price_type/index" for 127.0.0.1 at 2012-10-10 07:27:23 -0500
+Processing by PriceTypeController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mPriceType Load (0.0ms)[0m  [1mSELECT "price_types".* FROM "price_types" [0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1
+  Rendered price_type/index.html.erb within layouts/application (6.0ms)
+Compiled price_type.js  (367ms)  (pid 2408)
+Compiled application.js  (7ms)  (pid 2408)
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1[0m
+Completed 200 OK in 495ms (Views: 488.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 07:27:23 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 07:27:23 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2012-10-10 07:27:23 -0500
+Served asset /price_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 07:27:23 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 07:27:23 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 07:27:23 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2012-10-10 07:27:23 -0500
+Served asset /price_type.js - 200 OK (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 07:27:23 -0500
+Served asset /application.js - 304 Not Modified (20ms)
+
+
+Started GET "/price_type/index" for 127.0.0.1 at 2012-10-10 07:27:40 -0500
+Processing by PriceTypeController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mPriceType Load (0.0ms)[0m  [1mSELECT "price_types".* FROM "price_types" [0m
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1
+  Rendered price_type/index.html.erb within layouts/application (6.0ms)
+Compiled price_type.js  (513ms)  (pid 2408)
+Compiled application.js  (52ms)  (pid 2408)
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1[0m
+Completed 200 OK in 681ms (Views: 671.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 07:27:41 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 07:27:41 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2012-10-10 07:27:41 -0500
+Served asset /price_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 07:27:41 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 07:27:42 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 07:27:42 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2012-10-10 07:27:42 -0500
+Served asset /price_type.js - 200 OK (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 07:27:42 -0500
+Served asset /application.js - 304 Not Modified (31ms)
+
+
+Started GET "/price_type/index" for 127.0.0.1 at 2012-10-10 07:27:50 -0500
+Processing by PriceTypeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mPriceType Load (0.0ms)[0m  [1mSELECT "price_types".* FROM "price_types" [0m
+  [1m[35mRole Load (2.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1
+  Rendered price_type/index.html.erb within layouts/application (6.0ms)
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1[0m
+Completed 200 OK in 45ms (Views: 36.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 07:27:50 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 07:27:50 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2012-10-10 07:27:50 -0500
+Served asset /price_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 07:27:50 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 07:27:50 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 07:27:50 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2012-10-10 07:27:50 -0500
+Served asset /price_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 07:27:50 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/price_type/create" for 127.0.0.1 at 2012-10-10 07:28:00 -0500
+Processing by PriceTypeController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8qto1VcWalEWKCSoeMRA+S4OIsbOO6tpOpLAp6QACfM=", "name"=>"Por Mayor", "commit"=>"Enviar"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mRole Load (1.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "price_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Wed, 10 Oct 2012 12:28:00 UTC +00:00], ["name", "Por Mayor"], ["updated_at", Wed, 10 Oct 2012 12:28:00 UTC +00:00]]
+  [1m[35m (231.0ms)[0m  commit transaction
+  Rendered price_type/create.js.erb (0.0ms)
+Completed 200 OK in 261ms (Views: 21.0ms | ActiveRecord: 233.0ms)
+
+
+Started GET "/price_type/index" for 127.0.0.1 at 2012-10-10 07:28:02 -0500
+Processing by PriceTypeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mPriceType Load (0.0ms)[0m  SELECT "price_types".* FROM "price_types" 
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered price_type/index.html.erb within layouts/application (7.0ms)
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1
+Completed 200 OK in 34ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-10 07:28:02 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2012-10-10 07:28:02 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2012-10-10 07:28:02 -0500
+Served asset /price_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-10 07:28:02 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-10 07:28:02 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2012-10-10 07:28:02 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2012-10-10 07:28:02 -0500
+Served asset /price_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-10 07:28:02 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/price_type/create" for 127.0.0.1 at 2012-10-10 07:28:17 -0500
+Processing by PriceTypeController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8qto1VcWalEWKCSoeMRA+S4OIsbOO6tpOpLAp6QACfM=", "name"=>"", "commit"=>"Enviar"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+DEPRECATION WARNING: Passing a template handler in the template name is deprecated. You can simply remove the handler name or pass render :handlers => [:erb] instead. (called from C:in `find_template':)
+  Rendered layouts/_error.html.erb (2.0ms)
+  Rendered price_type/fail_create.js.erb (9.0ms)
+Completed 200 OK in 35ms (Views: 24.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/price_type/create" for 127.0.0.1 at 2012-10-10 07:28:58 -0500
+Processing by PriceTypeController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8qto1VcWalEWKCSoeMRA+S4OIsbOO6tpOpLAp6QACfM=", "name"=>"", "commit"=>"Enviar"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mRole Load (1.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+DEPRECATION WARNING: Passing a template handler in the template name is deprecated. You can simply remove the handler name or pass render :handlers => [:erb] instead. (called from C:in `find_template':)
+  Rendered layouts/_error.html.erb (0.0ms)
+  Rendered price_type/fail_create.js.erb (6.0ms)
+Completed 200 OK in 299ms (Views: 26.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/price_type/update" for 127.0.0.1 at 2012-10-10 07:29:03 -0500
+Processing by PriceTypeController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8qto1VcWalEWKCSoeMRA+S4OIsbOO6tpOpLAp6QACfM=", "pt_id"=>"2", "new_value"=>"", "commit"=>"Actualizar"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mPriceType Load (0.0ms)[0m  SELECT "price_types".* FROM "price_types" WHERE "price_types"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+DEPRECATION WARNING: Passing a template handler in the template name is deprecated. You can simply remove the handler name or pass render :handlers => [:erb] instead. (called from C:in `find_template':)
+  Rendered layouts/_error.html.erb (0.0ms)
+  Rendered price_type/fail_update.js.erb (7.0ms)
+Completed 200 OK in 82ms (Views: 23.0ms | ActiveRecord: 0.0ms)

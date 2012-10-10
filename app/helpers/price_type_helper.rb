@@ -1,0 +1,2 @@
+module PriceTypeHelper
+end

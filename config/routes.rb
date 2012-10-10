@@ -1,5 +1,5 @@
 Final::Application.routes.draw do
-  
+
   root :to => 'document_type#index'
   
   devise_for :users, :controllers => { :registrations => "users/registrations" }
@@ -9,6 +9,12 @@ Final::Application.routes.draw do
   match "document_type/create" => "document_type#create", :as => :document_type_create
   match "document_type/destroy" => "document_type#destroy", :as => :document_type_destroy
   match "document_type/update" => "document_type#update", :as => :document_type_update
+
+  #PriceType
+  match "price_type/index" => "price_type#index", :as => :price_type_index
+  match "price_type/create" => "price_type#create", :as => :price_type_create
+  match "price_type/destroy" => "price_type#destroy", :as => :price_type_destroy
+  match "price_type/update" => "price_type#update", :as => :price_type_update
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
