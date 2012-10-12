@@ -2,7 +2,7 @@ class DocumentTypeController < ApplicationController
   
   def index
     @dt = DocumentType.all 
-    authorize! :read, @dt
+    authorize! :read, DocumentType.new
     respond_to do |f|
       f.html
     end
@@ -11,7 +11,7 @@ class DocumentTypeController < ApplicationController
   def create
     @new_dt = DocumentType.new
     @new_dt.name = params[:name]
-    authorize! :create, @new_dt
+    authorize! :create, DocumentType.new
     respond_to do |f|
       if @new_dt.save
         f.js
@@ -24,7 +24,7 @@ class DocumentTypeController < ApplicationController
   def destroy
     @del_dt = DocumentType.find(params[:dt_id])
     @del_dt.destroy
-
+    authorize! :destroy, DocumentType.new
     respond_to do |f|
       f.js
     end
@@ -33,7 +33,7 @@ class DocumentTypeController < ApplicationController
   def update
     @up_dt = DocumentType.find(params[:dt_id])
     @up_dt.name = params[:new_value]
-    authorize! :update, @up_dt
+    authorize! :update, DocumentType.new
     respond_to do |f|
       if @up_dt.save
         f.js

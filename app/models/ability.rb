@@ -6,7 +6,7 @@ class Ability
     if user.role? :SuperAdmin
         can :manage, :all 
     elsif user.role? :Vendedor
-        can :create, DocumentType
+        can :read, DocumentType
     else
         #permisos para el usuario invitado
     end

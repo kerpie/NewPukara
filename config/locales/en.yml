@@ -10,14 +10,22 @@ en:
       model_type: "Tipo de Modelo"
       product_type: "Tipo de Producto"
       client_type: "Tipo de Cliente"
+      store: "Local"
+      supplier: "Proveedor"
+      brand: "Marca"
     attributes:
       document_type:
-        name: "Nombre"
+        name: "Nombre del Tipo de documento"
       price_type:
-        name: "Nombre"
+        name: "Nombre del tipo de precio"
       model_type:
-        name: "Nombre"
+        name: "Nombre del tipo de modelo"
       product_type:
-        name: "Nombre"
+        name: "Nombre del tipo de producto"
       client_type:
-        name: "Nombre"
+        name: "Nombre del tipo de cliente"
+      store:
+        name: "Nombre del Local"
+        address: "Direccion del Local"
+      brand:
+        name: "Nombre de la marca"

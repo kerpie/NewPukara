@@ -1,5 +1,9 @@
 Final::Application.routes.draw do
 
+  resources :suppliers
+
+  resources :stores
+
   root :to => 'document_type#index'
   
   devise_for :users, :controllers => { :registrations => "users/registrations" }
@@ -33,6 +37,15 @@ Final::Application.routes.draw do
   match "client_type/create" => "client_type#create", :as => :client_type_create
   match "client_type/update" => "client_type#destroy", :as => :client_type_destroy
   match "client_type/destroy" => "client_type#update", :as => :client_type_update
+
+  #Brand
+  match "brand/index" => "brand#index", :as => :brand_index
+  match "brand/create" => "brand#create", :as => :brand_create
+  match "brand/destroy" => "brand#destroy", :as => :brand_destroy
+  match "brand/update" => "brand#update", :as => :brand_update
+  match "brand/create_model" => "brand#create_model", :as => :model_create
+  match "brand/destroy_model" => "brand#destroy_model", :as => :model_destroy
+  match "brand/update_model" => "brand#update_model", :as => :model_update
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

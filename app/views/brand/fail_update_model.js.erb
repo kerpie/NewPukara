@@ -1,0 +1,3 @@
+<% toRender = render "layouts/error", :data => @up_model %>
+
+alert("<%= escape_javascript(toRender)%>");

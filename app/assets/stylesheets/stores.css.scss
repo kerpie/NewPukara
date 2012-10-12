@@ -1,0 +1,166 @@
+#stores_index{
+	width: 900px;
+	margin: 0 auto;
+	border: 1px solid black;
+	padding: 10px;
+	background: white;
+	h1{
+		margin: 3px auto 0px;
+		width: 300px;
+		text-align: center;
+		font-size: 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+		padding: 3px;
+	}
+	table{
+		margin: 10px auto;
+		width: 500px;
+		text-align: center;
+		tbody{
+			tr{
+				th,td{
+					padding: 3px;
+					border: 1px solid black;
+				}
+			}
+		}
+	}
+	#stores_new_options{
+		width: 300px;
+		margin: 10px auto 0px;
+		text-align: center;
+		padding: 10px;
+	}
+}
+
+#stores_new, #stores_edit{
+	width: 900px;
+	margin: 0 auto;
+	border: 1px solid black;
+	padding: 10px;
+	background: white;
+	h1{
+		margin: 3px auto 0px;
+		width: 300px;
+		text-align: center;
+		font-size: 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	form{
+		width: 500px;
+		margin: 0 auto;
+		padding: 10px;
+		.field{
+			display: block;
+			margin: 5px auto;
+			width: 209px;
+			padding: 3px;
+		}
+		.actions{
+			width: 300px;
+			margin: 0 auto;
+			text-align: center;
+			input{
+				display: inline-block;
+			}
+		}
+	}
+	#stores_new_options{
+		width: 300px;
+		padding: 3px;
+		margin: 6px auto 3px;
+		text-align: center;
+	}
+	#stores_edit_options{
+		width: 300px;
+		margin: 15px auto 0px;
+		text-align: center;
+		ul{
+			display: inline-block;
+			text-align: center;
+			overflow: hidden;
+			li{
+				display: inline-block;
+				padding: 5px;
+				float: left;
+			}
+		}	
+	}
+}
+
+#stores_edit{
+  	width: 900px;
+	margin: 0 auto;
+	border: 1px solid black;
+	padding: 10px;
+	background: white;
+	h1{
+		margin: 3px auto 0px;
+		width: 300px;
+		text-align: center;
+		font-size: 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	form{
+		width: 500px;
+		margin: 0 auto;
+		padding: 10px;
+		.field{
+			display: block;
+			margin: 5px auto;
+			width: 209px;
+			padding: 3px;
+		}
+		.actions{
+			width: 300px;
+			margin: 0 auto;
+			text-align: center;
+			input{
+				display: inline-block;
+			}
+		}
+	}
+}
+
+#stores_show{
+	width: 900px;
+	margin: 0 auto;
+	border: 1px solid black;
+	padding: 10px;
+	background: white;
+	h1{
+		margin: 3px auto 15px;
+		width: 300px;
+		text-align: center;
+		font-size: 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	p{
+		width: 250px;
+		display: block;
+		margin: 3px auto;
+		b{
+			font-weight: bold;
+		}
+	}
+	#stores_show_options{
+		width: 300px;
+		margin: 15px auto 0px;
+		text-align: center;
+		ul{
+			display: inline-block;
+			text-align: center;
+			overflow: hidden;
+			li{
+				display: inline-block;
+				padding: 5px;
+				float: left;
+			}
+		}
+	}
+}
+

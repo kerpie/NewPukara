@@ -2,7 +2,7 @@ class ProductTypeController < ApplicationController
 
   def index
   	@pt = ProductType.all 
-    authorize! :read, @pt
+    authorize! :read, ProductType.new
     respond_to do |f|
       f.html
     end
@@ -24,7 +24,6 @@ class ProductTypeController < ApplicationController
   def destroy
   	@del_pt = ProductType.find(params[:pt_id])
     @del_pt.destroy
-
     respond_to do |f|
       f.js
     end

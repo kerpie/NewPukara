@@ -1,0 +1,47 @@
+<section id="suppliers_show">
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+
+  <h1><%= @supplier.name %></h1>
+
+  <p>
+    <b>Nombre:</b>
+    <%= @supplier.name %>
+  </p>
+
+  <p>
+    <b>Direccion:</b>
+    <%= @supplier.address %>
+  </p>
+
+  <p>
+    <b>Persona de Contacto:</b>
+    <%= @supplier.contact_person %>
+  </p>
+
+  <p>
+    <b>Telefono:</b>
+    <%= @supplier.phone %>
+  </p>
+
+  <p>
+    <b>Pais:</b>
+    <%= @supplier.country %>
+  </p>
+
+  <p>
+    <b>Ciudad:</b>
+    <%= @supplier.city %>
+  </p>
+
+  <div id="suppliers_show_options">
+    <ul>
+      <li><%= link_to 'Editar', edit_supplier_path(@supplier) %></li>
+      <li><%= link_to 'Volver', suppliers_path %></li>
+      <li><%= link_to 'Eliminar', @supplier, confirm: 'Esta seguro?', method: :delete %></li>
+    </ul>
+  
+    
+  </div>
+</section>

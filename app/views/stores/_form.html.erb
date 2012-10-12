@@ -1,0 +1,25 @@
+<%= form_for(@store) do |f| %>
+  <% if @store.errors.any? %>
+    <div id="error_explanation">
+      <h2>Por favor revise los siguientes puntos y vuelva a intentarlo:</h2>
+
+      <ul>
+      <% @store.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Nombre" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :address, "Direccion" %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Crear Local" %>
+  </div>
+<% end %>

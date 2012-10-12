@@ -1,0 +1,25 @@
+<section id="stores_show">
+	<% if notice %>
+		<p id="notice"><%= notice %></p>
+	<% end %>
+
+	<h1><%= @store.name %></h1>
+
+	<p>
+	  <b>Nombre:</b>
+	  <%= @store.name %>
+	</p>
+
+	<p>
+	  <b>Dirección:</b>
+	  <%= @store.address %>
+	</p>
+
+	<div id="stores_show_options">
+		<ul>
+			<li><%= link_to 'Editar', edit_store_path(@store) %></li>
+			<li><%= link_to 'Volver', stores_path %></li>
+			<li><%= link_to 'Eliminar', @store, confirm: 'Esta seguro?', method: :delete %></li>
+		</ul>		
+	</div>
+</section>

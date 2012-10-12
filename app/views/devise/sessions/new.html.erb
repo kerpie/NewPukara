@@ -1,8 +1,11 @@
 <h2>Iniciar Sesión</h2>
 
+<%= flash[:alert] %>
+<%= flash[:notice] %>
+
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div class="sign_field"><%= f.label :email, "Correo" %><br />
-  <%= f.email_field :email %></div>
+  <div class="sign_field"><%= f.label :username, "Usuario" %><br />
+  <%= f.text_field :username %></div>
 
   <div class="sign_field"><%= f.label :password, "Contraseña: " %><br />
   <%= f.password_field :password %></div>
