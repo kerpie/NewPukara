@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   
   has_and_belongs_to_many :roles
   has_many :entry_folders
+  has_many :output_folders
   belongs_to :store
 
   def role?(role)

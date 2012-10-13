@@ -1,0 +1,28 @@
+<section id="output_folders_index">
+  <h1>Registros de Salida</h1>
+
+  <table>
+    <tr>
+      <th>Cliente</th>
+      <th>Estado del Registro</th>
+      <th>Fecha</th>
+      <th>Registrado por</th>
+      <th>Opciones</th>
+
+    </tr>
+
+  <% @output_folders.each do |output_folder| %>
+    <tr>
+      <td><%= output_folder.client_id %></td>
+      <td><%= output_folder.folder_state.name %></td>
+      <td><%= output_folder.date %></td>
+      <td><%= output_folder.user.username %></td>
+      <td><%= link_to 'Show', output_folder %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <section id="output_folders_new_options">
+    <%= link_to 'Registrar Nueva Salida', new_output_folder_path %>
+  </section>
+</section>

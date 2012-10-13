@@ -1,0 +1,37 @@
+<section id="clients_show">
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+
+  <h1><%= @client.name %></h1>
+
+  <p>
+    <b>RUC:</b>
+    <%= @client.RUC %>
+  </p>
+
+  <p>
+    <b>DNI:</b>
+    <%= @client.DNI %>
+  </p>
+
+  <p>
+    <b>Direccion:</b>
+    <%= @client.address %>
+  </p>
+
+  <p>
+    <b>Tipo de Cliente:</b>
+    <%= @client.client_type.name %>
+  </p>
+
+  <div id="clients_show_options">
+    <ul>
+      <li><%= link_to 'Editar', edit_client_path(@client) %></li>
+      <li><%= link_to 'Volver', clients_path %></li>
+      <li><%= link_to 'Eliminar', @client, confirm: 'Esta seguro?', method: :delete %></li>
+    </ul>
+    
+    
+  </div>
+</section>

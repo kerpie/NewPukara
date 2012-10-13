@@ -1,0 +1,18 @@
+<div class="doc_detail_row">
+  <div class="nested_doc_detail_field">
+    <%= data.label :product_id, "Producto:" %><br/>
+    <%= data.collection_select :product_id, Product.all, :id, :full_name %>
+  </div>
+  <div class="nested_doc_detail_field">
+    <%= data.label :sell_price, "Precio de Venta: " %>
+    <%= data.text_field :sell_price, :size =>  10 %>
+  </div>
+  <div class="nested_doc_detail_field">
+    <%= data.label :quantity, "Cantidad: " %>
+    <%= data.text_field :quantity, :size => 10 %>
+  </div>
+  <div class="nested_doc_detail_field">
+    <%= data.check_box :_destroy %>
+    <%= data.label :_destroy, "Eliminar" %>
+  </div>
+</div>

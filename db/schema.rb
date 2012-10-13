@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013084248) do
+ActiveRecord::Schema.define(:version => 20121013142152) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(:version => 20121013084248) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "clients", :force => true do |t|
+    t.string   "name"
+    t.string   "RUC"
+    t.string   "DNI"
+    t.string   "address"
+    t.integer  "client_type_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "document_types", :force => true do |t|
@@ -83,6 +93,39 @@ ActiveRecord::Schema.define(:version => 20121013084248) do
     t.integer  "model_type_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "output_codes", :force => true do |t|
+    t.integer  "output_document_detail_id"
+    t.integer  "registered_code"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  create_table "output_document_details", :force => true do |t|
+    t.integer  "product_id"
+    t.float    "sell_price"
+    t.integer  "quantity"
+    t.integer  "output_folder_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "output_documents", :force => true do |t|
+    t.string   "numeration"
+    t.integer  "document_type_id"
+    t.integer  "output_folder_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "output_folders", :force => true do |t|
+    t.integer  "client_id"
+    t.integer  "folder_state_id"
+    t.integer  "user_id"
+    t.date     "date"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "price_types", :force => true do |t|

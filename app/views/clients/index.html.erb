@@ -1,0 +1,18 @@
+<section id="clients_index">
+    <h1>Clientes</h1>
+
+    <table>
+      <tr>
+        <th>Name</th>
+      </tr>
+
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= link_to client.name, client  %></td>
+      </tr>
+    <% end %>
+    </table>
+    <div id="clients_new_options">
+        <%= link_to 'Nuevo Cliente', new_client_path %>
+    </div>
+</section>

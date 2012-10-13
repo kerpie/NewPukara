@@ -1,5 +1,9 @@
 Final::Application.routes.draw do
 
+  resources :output_folders
+
+  resources :clients
+
   resources :entry_folders
 
   root :to => 'document_type#index'
@@ -55,6 +59,13 @@ Final::Application.routes.draw do
   match "entry_code/register" => "entry_code#register", :as => :code_entry_register
   match "entry_code/show" => "entry_code#show", :as => :code_entry_show
   match "entry_code/save_codes" => "entry_code#save_codes", :as => :entry_code_save_codes
+
+  #OutputCode
+  match "output_code/search" => "output_code#search", :as => :code_output_search
+  match "output_code/register" => "output_code#register", :as => :code_output_register
+  match "output_code/result" => "output_code#result", :as => :code_output_result
+  match "output_code/save_codes" => "output_code#save_codes", :as => :code_output_save_codes
+  match "output_code/show" => "output_code#show", :as => :code_output_show
 
   #SellPrice
   match "sell_price/search" => "sell_price#search", :as => :sell_price_search

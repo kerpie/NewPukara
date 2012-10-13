@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  <%= f.hidden_field :user_id, :value => current_user.id%>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="field">
     <%= f.label :supplier_id, "Proveedor: " %><br />
     <%= f.collection_select :supplier_id, Supplier.all, :id, :name %>

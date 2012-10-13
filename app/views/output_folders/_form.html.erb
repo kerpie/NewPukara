@@ -1,0 +1,50 @@
+<%= form_for(@output_folder) do |f| %>
+  <% if @output_folder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@output_folder.errors.count, "error") %> prohibited this output_folder from being saved:</h2>
+
+      <ul>
+      <% @output_folder.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <div class="field">
+    <%= f.label :client_id, "Cliente" %><br />
+    <%= f.collection_select :client_id, Client.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :folder_state_id, "Estado del Registro:" %><br />
+    <%= f.collection_select :folder_state_id, FolderState.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :date, "Fecha: " %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <p>Registrado por: <%= current_user.username %></p>
+  </div>
+
+  <div id="document_part">
+    <%= f.fields_for :output_documents do |ed| %>
+      <%= render 'output_documents_field', :data => ed %>
+    <% end %>
+    <div id="add_doc">
+      <%= link_to_add_field("Agregar Documento", f, :output_documents)%>
+    </div>
+  </div>
+  <div id="doc_detail_part">
+      <%= f.fields_for :output_document_details do |edd| %>
+        <%= render 'output_document_details_field', :data => edd %>
+      <% end %>
+      <div id="add_doc_detail">
+        <%= link_to_add_field("Agregar Detalle de documento", f, :output_document_details) %>
+      </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Insertar" %>
+  </div>
+<% end %>

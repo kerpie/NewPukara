@@ -1,0 +1,26 @@
+<section id="code_output_register">
+	<h1>Codigos Registrados</h1>
+	<% @folder.output_document_details.each do |dd| %>
+		<%= hidden_field_tag "folder_id", @folder.id %>
+		<div class="document_detail_form">
+			<div class="data">
+				<span>Producto: </span>
+				<%= dd.product.full_name %><br/>
+				<span>Cantidad: </span>
+				<%= dd.quantity %><br/>
+			</div>
+			<div class="dd_data">
+				<table>
+					<tr>
+						<th>Codigo Registrado</th>
+					</tr>
+					<% dd.output_codes.each do |code| %>
+						<tr>
+							<td><%= code.registered_code %></td>
+						</tr>
+					<% end %>
+				</table>
+			</div>
+		</div>
+	<% end %>
+</section>

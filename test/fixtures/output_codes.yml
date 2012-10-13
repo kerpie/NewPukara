@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  output_document_detail_id: 1
+  registered_code: 1
+
+two:
+  output_document_detail_id: 1
+  registered_code: 1

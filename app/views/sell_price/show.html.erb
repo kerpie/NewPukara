@@ -9,14 +9,13 @@
 					<th>Valor</th>
 				</tr>
 				
-					<% edd.sell_prices.each do |sp| %>
+				<% edd.sell_prices.each do |sp| %>
 					<tr>
 						<td><%= edd.product.full_name %></td>
 						<td><%= sp.price_type.name %></td>
 						<td><%= sp.sell_price %></td>
 					</tr>
-					<% end %>
-				
+				<% end %>
 			</table>
 		<% end %>
 	</div>

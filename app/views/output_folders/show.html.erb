@@ -1,0 +1,60 @@
+<section id="output_folders_show">
+
+	<% if notice %>
+		<p id="notice"><%= notice %></p>
+	<% end %>
+
+	<h1>Registro de Salida</h1>
+
+	<p>
+	  <b>Cliente:</b>
+	  <%= @output_folder.client.name %>
+	</p>
+
+	<p>
+	  <b>Estado del Registro:</b>
+	  <%= @output_folder.folder_state.name %>
+	</p>
+
+	<p>
+	  <b>Registrado por:</b>
+	  <%= @output_folder.user.username %>
+	</p>
+
+	<p>
+	  <b>Fecha:</b>
+	  <%= @output_folder.date %>
+	</p>
+
+	<div id="document_part">
+		<% @output_folder.output_documents.each do |doc| %>
+			<div class="doc_row">
+				<span>Tipo de Documento:</span>
+				<%= doc.document_type.name %><br/>
+				<span>Numeracion: </span>
+				<%= doc.numeration %><br/>
+			</div>
+		<% end %>
+	</div>
+
+	<div id="document_detail_part">
+		<% @output_folder.output_document_details.each do |dd| %>
+			<div class="detail_row">
+				<span>Producto: </span>
+				<%= dd.product.full_name %><br/>
+				<span>Precio de Venta</span>
+				<%= dd.sell_price %><br/>
+				<span>Cantidad:</span>
+				<%= dd.quantity %><br/>
+			</div>
+		<% end %>
+	</div>
+
+	<div id="output_folders_show_options">
+		<ul>
+			<li><%= link_to 'Edit', edit_output_folder_path(@output_folder) %></li>
+			<li><%= link_to 'Back', output_folders_path %></li>
+			<li><%= link_to 'Eliminar', @output_folder, confirm: 'Esta seguro?', method: :delete %></li>
+		</ul>
+	</div>
+</section>

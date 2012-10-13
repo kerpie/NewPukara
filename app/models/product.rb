@@ -11,6 +11,8 @@ class Product < ActiveRecord::Base
   belongs_to :product_type
 
   has_many :entry_document_details
+  has_many :output_document_details
+  
   def full_name
   	product_type.name + " " + model.model_type.name + " " + model.brand.name + " " + model.name
   end

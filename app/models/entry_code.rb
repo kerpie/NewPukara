@@ -1,5 +1,7 @@
 class EntryCode < ActiveRecord::Base
-  attr_accessible :entry_document_detail_id, :generated_code, :original_code
+  attr_accessible   :entry_document_detail_id, 
+                    :generated_code, 
+                    :original_code
 
   belongs_to :entry_document_detail
 

@@ -1,0 +1,14 @@
+<div class="doc_row">
+  <div class="nested_doc_field">
+    <%= data.label :document_type_id, "Tipo de Documento" %><br />
+    <%= data.collection_select :document_type_id, DocumentType.all, :id, :name %>
+  </div>
+  <div class="nested_doc_field">
+    <%= data.label :numeration, "Numeracion" %><br />
+    <%= data.text_field :numeration, :size => 15 %>
+  </div>
+  <div class="nested_doc_field">
+    <%= data.check_box :_destroy %>
+    <%= data.label :_destroy, "Eliminar" %>
+  </div>
+</div>
