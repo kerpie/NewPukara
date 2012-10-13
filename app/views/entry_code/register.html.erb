@@ -1,0 +1,39 @@
+<section id="code_entry_register">
+	<h1>Formulario de Registro</h1>
+	<%= form_tag entry_code_save_codes_path, :remote => true do %>
+		<% @folder.entry_document_details.each do |dd| %>
+			<%= hidden_field_tag "folder_id", @folder.id %>
+			<div class="document_detail_form">
+				<div class="data">
+					<span>Producto: </span>
+					<%= dd.product.full_name %><br/>
+					<span>Cantidad: </span>
+					<%= dd.quantity %><br/>
+				</div>
+				<div class="dd_data">
+					<table>
+						<tr>
+							<th>Codigo Generado</th>
+							<th>Codigo Original</th>
+						</tr>
+						<% dd.entry_codes.each do |code| %>
+							<tr>
+								<td><%= code.generated_code %></td>
+								<td><%= text_field_with_value "code_"+code.id.to_s,code %></td>
+							</tr>
+						<% end %>
+					</table>
+				</div>
+			</div>
+		<% end %>
+		<div id="submit_input">
+			<%= submit_tag "Registrar Codigos"%>
+		</div>
+	<% end %>
+	<div id="alert">
+		<%= form_tag code_entry_show_path do %>
+			<%= hidden_field_tag "folder_id", @folder.id %>
+			<%= submit_tag "Ver Codigos Registrados" %>
+		<% end %>
+	</div>
+</section>

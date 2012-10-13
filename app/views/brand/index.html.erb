@@ -62,8 +62,7 @@
 				<div class="create_model">
 					<h1>Crear Modelo</h1>
 					<%= form_tag model_create_path, :remote => true do %>
-						<%= label_tag "brand_id", "Marca: " %>
-						<%= select_tag "brand_id", options_from_collection_for_select(Brand.all, :id, :name) %>
+						<%= hidden_field_tag "brand_id", brand.id %>
 						<%= label_tag "model_type_id", "Tipo de Modelo: " %>
 						<%= select_tag "model_type_id", options_from_collection_for_select(ModelType.all, :id, :name)%>
 						<%= label_tag "name","Nombre:" %>

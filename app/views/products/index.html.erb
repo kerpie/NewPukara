@@ -1,0 +1,17 @@
+<section id="product_index">
+    <h1>Productos</h1>
+    <table>
+      <tr>
+        <th>Nombre</th>
+      </tr>
+
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.full_name.upcase, product %></td>
+      </tr>
+    <% end %>
+    </table>
+    <div id="products_new_options">
+      <%= link_to 'Nuevo Producto', new_product_path %>
+    </div>
+</section>

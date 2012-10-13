@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  numeration: MyString
+  document_type_id: 1
+  entry_folder_id: 1
+
+two:
+  numeration: MyString
+  document_type_id: 1
+  entry_folder_id: 1

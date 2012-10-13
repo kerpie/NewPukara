@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121011131054) do
+ActiveRecord::Schema.define(:version => 20121013084248) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,46 @@ ActiveRecord::Schema.define(:version => 20121011131054) do
   end
 
   create_table "document_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "entry_codes", :force => true do |t|
+    t.integer  "entry_document_detail_id"
+    t.string   "original_code"
+    t.string   "generated_code"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  create_table "entry_document_details", :force => true do |t|
+    t.integer  "entry_folder_id"
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.float    "purchase_price"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "entry_documents", :force => true do |t|
+    t.string   "numeration"
+    t.integer  "document_type_id"
+    t.integer  "entry_folder_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "entry_folders", :force => true do |t|
+    t.integer  "supplier_id"
+    t.integer  "user_id"
+    t.integer  "folder_state_id"
+    t.date     "date"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "folder_states", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -57,6 +97,16 @@ ActiveRecord::Schema.define(:version => 20121011131054) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "products", :force => true do |t|
+    t.integer  "model_id"
+    t.integer  "product_type_id"
+    t.text     "description"
+    t.integer  "monthly_quantity"
+    t.float    "monthly_price"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -67,6 +117,14 @@ ActiveRecord::Schema.define(:version => 20121011131054) do
   create_table "roles_users", :id => false, :force => true do |t|
     t.integer "role_id"
     t.integer "user_id"
+  end
+
+  create_table "sell_prices", :force => true do |t|
+    t.float    "sell_price"
+    t.integer  "entry_document_detail_id"
+    t.integer  "price_type_id"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   create_table "stores", :force => true do |t|

@@ -1,0 +1,50 @@
+<section id="products_show">
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+
+  <h1>Producto</h1>
+
+  <p>
+    <b>Tipo de Producto:</b>
+    <%= @product.product_type.name %>
+  </p>
+
+  <p>
+    <b>Tipo:</b>
+    <%= @product.model.model_type.name %>
+  </p>
+
+  <p>
+    <b>Marca:</b>
+    <%= @product.model.brand.name %>
+  </p>
+
+  <p>
+    <b>Modelo:</b>
+    <%= @product.model.name %>
+  </p>
+
+  <p>
+    <b>Descripcion:</b>
+    <%= @product.description %>
+  </p>
+
+  <p>
+    <b>Stock del Mes anterior:</b>
+    <%= @product.monthly_quantity %>
+  </p>
+
+  <p>
+    <b>Precio del Stock anterior:</b>
+    <%= @product.monthly_price %>
+  </p>
+
+  <div id="products_show_options">
+    <ul>
+      <li><%= link_to 'Editar', edit_product_path(@product) %></li>
+      <li><%= link_to 'Volver', products_path %></li>
+      <li><%= link_to 'Eliminar', @product, confirm: 'Esta seguro?', method: :delete %></li>
+    </ul>
+  </div>  
+</section>

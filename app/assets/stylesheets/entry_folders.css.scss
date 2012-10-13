@@ -1,0 +1,197 @@
+#entry_folders_index{
+	width: 900px;
+	margin: 0 auto;
+	border: 1px solid black;
+	padding: 10px;
+	background: white;
+	h1{
+		margin: 3px auto 0px;
+		width: 500px;
+		text-align: center;
+		font-size: 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+		padding: 3px;
+	}
+	table{
+		margin: 10px auto;
+		width: 500px;
+		text-align: center;
+		tbody{
+			tr{
+				th,td{
+					padding: 3px;
+					border: 1px solid black;
+				}
+			}
+		}
+	}
+	#entry_folders_new_options{
+		width: 300px;
+		margin: 10px auto 0px;
+		text-align: center;
+		padding: 10px;
+	}
+}
+
+#entry_folders_new, #entry_folders_edit{
+	width: 900px;
+	margin: 0 auto;
+	border: 1px solid black;
+	padding: 10px;
+	background: white;
+	h1{
+		margin: 3px auto 0px;
+		width: 300px;
+		text-align: center;
+		font-size: 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	form{
+		width: 700px;
+		margin: 0 auto;
+		padding: 10px;
+		.field{
+			display: block;
+			margin: 5px auto;
+			width: 209px;
+			padding: 3px;
+		}
+		.actions{
+			width: 300px;
+			margin: 0 auto;
+			text-align: center;
+			input{
+				display: inline-block;
+			}
+		}
+		#document_part{
+			text-align: center;
+			width: 600px;
+			margin: 10px auto;
+			padding: 10px;
+			overflow: hidden;
+			text-align: center;
+			.doc_row{
+				width: 200px;
+				background:darkgray;
+				padding: 5px;
+				display: inline-block;
+				margin: 5px;
+			}
+			#add_doc{
+				width: 600px;
+				text-align: center;
+				margin: 10px auto 10px;
+				a{
+					margin: 0 auto;
+					width:200px;
+					text-align: center;
+				}
+			}
+		}
+		#doc_detail_part{
+			width: 600px;
+			margin: 0 auto;
+			.doc_detail_row{
+				background: lightgray;
+				width: 400px;
+				margin: 5px auto;
+				padding: 10px;
+			}
+			#add_doc_detail{
+				width: 600px;
+				text-align: center;
+				margin: 10px auto 30px;
+				a{
+					margin: 0 auto;
+					width:200px;
+					text-align: center;
+				}
+			}
+		}
+	}
+	#entry_folders_new_options{
+		width: 300px;
+		padding: 3px;
+		margin: 6px auto 3px;
+		text-align: center;
+	}
+	#entry_folders_edit_options{
+		width: 300px;
+		margin: 15px auto 0px;
+		text-align: center;
+		ul{
+			display: inline-block;
+			text-align: center;
+			overflow: hidden;
+			li{
+				display: inline-block;
+				padding: 5px;
+				float: left;
+			}
+		}	
+	}
+}
+
+#entry_folders_show{
+	width: 900px;
+	margin: 0 auto;
+	border: 1px solid black;
+	padding: 10px;
+	background: white;
+	h1{
+		margin: 3px auto 15px;
+		width: 300px;
+		text-align: center;
+		font-size: 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	p{
+		width: 250px;
+		display: block;
+		margin: 3px auto;
+		b{
+			font-weight: bold;
+		}
+	}
+	#document_part{
+		width:600px;
+		margin: 0 auto;
+		text-align: center;
+		.doc_row{
+			display: inline-block;
+			border: 1px solid black;
+			padding: 10px;
+			margin: 5px;
+		}
+	}
+	#document_detail_part{
+		width: 600px;
+		margin: 0 auto;
+		text-align: center;
+		.detail_row{
+			display: inline-block;
+			border: 1px solid black;
+			padding: 10px;
+			margin: 5px;
+		}
+	}
+	#entry_folders_show_options{
+		width: 300px;
+		margin: 15px auto 0px;
+		text-align: center;
+		ul{
+			display: inline-block;
+			text-align: center;
+			overflow: hidden;
+			li{
+				display: inline-block;
+				padding: 5px;
+				float: left;
+			}
+		}
+	}
+}

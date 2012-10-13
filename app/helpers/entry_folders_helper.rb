@@ -1,0 +1,2 @@
+module EntryFoldersHelper
+end

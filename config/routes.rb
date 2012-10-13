@@ -1,8 +1,6 @@
 Final::Application.routes.draw do
 
-  resources :suppliers
-
-  resources :stores
+  resources :entry_folders
 
   root :to => 'document_type#index'
   
@@ -47,6 +45,29 @@ Final::Application.routes.draw do
   match "brand/destroy_model" => "brand#destroy_model", :as => :model_destroy
   match "brand/update_model" => "brand#update_model", :as => :model_update
 
+  #Product
+  match "products/model_changer" => "products#model_changer", :as => :model_changer
+  resources :products
+
+  #CodeEntry
+  match "entry_code/search" => "entry_code#search", :as => :code_entry_search
+  match "entry_code/result" => "entry_code#result", :as => :code_entry_result
+  match "entry_code/register" => "entry_code#register", :as => :code_entry_register
+  match "entry_code/show" => "entry_code#show", :as => :code_entry_show
+  match "entry_code/save_codes" => "entry_code#save_codes", :as => :entry_code_save_codes
+
+  #SellPrice
+  match "sell_price/search" => "sell_price#search", :as => :sell_price_search
+  match "sell_price/result" => "sell_price#result", :as => :sell_price_result
+  match "sell_price/register" => "sell_price#register", :as => :sell_price_register
+  match "sell_price/save_price" => "sell_price#save_price", :as => :sell_price_save_price
+  match "sell_price/show" => "sell_price#show", :as => :sell_price_show
+
+  #Supplier
+  resources :suppliers
+
+  #Stores
+  resources :stores
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

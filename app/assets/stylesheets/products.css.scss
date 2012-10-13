@@ -1,0 +1,150 @@
+#product_index{
+	width: 900px;
+	border: 1px solid black;
+	background: white;
+	margin: 0 auto;
+	padding: 15px;
+	h1{
+		width: 200px;
+		text-align: center;
+		margin: 0 auto;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 16px;
+	}
+	table{
+		width: 500px;
+		margin: 20px auto;
+		text-align: center;
+		tr{
+			th, td{
+				padding: 5px;
+			}
+			th{
+				border: 1px solid black;
+			}
+			td{
+				border-bottom: 1px solid black;
+			}
+		}
+	}
+	#products_new_options{
+		a{
+			width: 100px;
+			display: block;
+			text-align: center;
+			margin: 0 auto;
+			padding: 5px;
+			&:hover{
+				background: #FF3455;
+			}
+		}
+	}
+}
+
+#product_new, #products_edit{
+	width: 900px;
+	border: 1px solid black;
+	background: white;
+	margin: 0 auto;
+	padding: 15px;
+	h1{
+		width: 200px;
+		text-align: center;
+		margin: 0 auto;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 16px;
+	}
+	#model_changer_form{
+		text-align: center;
+		padding:5px;
+		.model_changer_field{
+			display: inline-block;
+			width: 500px;
+			padding: 5px;
+			margin: 5px auto;
+			text-align: center;
+		}
+	}
+	form{
+		width: 600px;
+		margin: 0 auto;
+		padding: 10px;
+		.field{
+			display: block;
+			margin: 5px auto;
+			width: 400px;
+			padding: 3px;
+			text-align: center;
+		}
+		.actions{
+			width: 300px;
+			margin: 0 auto;
+			text-align: center;
+			input{
+				display: inline-block;
+			}
+		}
+	}
+	#products_new_options{
+		width: 300px;
+		padding: 3px;
+		margin: 6px auto 3px;
+		text-align: center;
+	}
+	#products_edit_options{
+		width: 300px;
+		margin: 15px auto 0px;
+		text-align: center;
+		ul{
+			display: inline-block;
+			text-align: center;
+			overflow: hidden;
+			li{
+				display: inline-block;
+				padding: 5px;
+				float: left;
+			}
+		}	
+	}
+}
+
+#products_show{
+	width: 900px;
+	margin: 0 auto;
+	border: 1px solid black;
+	padding: 10px;
+	background: white;
+	h1{
+		margin: 3px auto 15px;
+		width: 300px;
+		text-align: center;
+		font-size: 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	p{
+		width: 250px;
+		display: block;
+		margin: 3px auto;
+		b{
+			font-weight: bold;
+		}
+	}
+	#products_show_options{
+		width: 300px;
+		margin: 15px auto 0px;
+		text-align: center;
+		ul{
+			display: inline-block;
+			text-align: center;
+			overflow: hidden;
+			li{
+				display: inline-block;
+				padding: 5px;
+				float: left;
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+<% if @result.count > 0 %>
+	$('#toHide').hide();
+	$('#toChange select').html("<%= escape_javascript( render 'model', :model => @result) %>");
+	$('#toChange').show();
+<% else %>
+	$('#toChange').hide();
+	$('#toHide').show();
+<% end %>

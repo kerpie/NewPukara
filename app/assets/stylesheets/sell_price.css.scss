@@ -1,0 +1,115 @@
+#sell_price_search{
+	width: 900px;
+	margin: 0 auto;
+	border: 1px solid black;
+	padding: 10px;
+	background: white;
+	h1{
+		margin: 3px auto 0px;
+		width: 300px;
+		text-align: center;
+		font-size: 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+		padding: 3px;
+	}
+	form{
+		width: 500px;
+		margin: 0 auto;
+		padding: 10px;
+		text-align: center;
+		.search_part{
+			padding: 10px;
+		}
+	}	
+	#error_message{
+		background: red;
+		color:white;
+		width: 400px;
+		margin: 0 auto;
+		text-align: center;
+		padding: 10px;
+	}
+	#success_message{
+		text-align: center;
+		padding: 10px;
+		margin: 0 auto;
+		width: 400px;
+		background: lightgray;
+		form{
+			width: 200px;
+		}
+	}
+}
+
+#sell_price_register{
+	width: 900px;
+	margin: 0 auto;
+	border: 1px solid black;
+	padding: 10px;
+	background: white;
+	h1{
+		margin: 3px auto 0px;
+		width: 300px;
+		text-align: center;
+		font-size: 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+		padding: 3px;
+	}
+	#show_price{
+		width: 500px;
+		text-align: center;
+		margin: 0 auto;
+		table{
+			display: inline-block;
+
+			tr{
+				th,td{
+					border: 1px solid black;
+					padding: 10px;
+				}
+				th{
+					background: lightgray;
+				}
+			}
+		}
+	}
+	#register_form{
+		width: 600px;
+		margin: 10px auto;
+		form{
+			width: 300px;
+			margin: 10px auto;
+			table{
+				width: 300px;
+				tr{
+					th{
+						background: lightgray;	
+					}
+					th,td{
+						border: 1px solid black;
+						padding: 5px;
+					}
+				}
+			}
+			#submit_input{
+				width: 300px;
+				margin: 0 auto;
+				text-align: center;
+				input{
+					display: inline-block;
+				}
+			}
+		}
+	}
+	#alert{
+		width: 400px;
+		margin: 0 auto;
+		text-align: center;
+		form{
+			width: 300px;
+			margin: 0px auto;
+		}
+	}
+}

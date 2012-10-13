@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sell_price: 1.5
+  entry_document_detail_id: 1
+  price_type_id: 1
+
+two:
+  sell_price: 1.5
+  entry_document_detail_id: 1
+  price_type_id: 1

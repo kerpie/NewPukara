@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   validates :username, :presence => true
   
   has_and_belongs_to_many :roles
+  has_many :entry_folders
   belongs_to :store
 
   def role?(role)

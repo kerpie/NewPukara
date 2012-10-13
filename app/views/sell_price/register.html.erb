@@ -1,0 +1,40 @@
+<section id="sell_price_register">
+	<h1>Registro de Precios para venta</h1>
+	<div id="register_form">
+		<%= form_tag sell_price_save_price_path, :remote => true do %>
+			<%= hidden_field_tag "folder", @folder.id %>
+			<% @folder.entry_document_details.each do |edd| %>
+				<table>
+					<tr>
+						<th>Producto</th>
+						<th>Tipo de Precio</th>
+						<th>Valor</th>
+					</tr>
+					<tr>
+						<td rowspan=<%= PriceType.count %>><%= edd.product.full_name %></td>
+						<% PriceType.all.each do |pt| %>
+							<% if pt == PriceType.first %>
+								<td><%= pt.name %></td>
+								<td><%= text_field_with_value edd.id.to_s+"-"+pt.id.to_s, edd, pt %></td>
+							<% else %>
+								<tr>
+									<td><%= pt.name %></td>
+									<td><%= text_field_with_value edd.id.to_s+"-"+pt.id.to_s, edd, pt %></td>
+								</tr>
+							<% end %>
+						<% end %>
+					</tr>
+				</table>
+			<% end %>
+			<div id="submit_input">
+				<%= submit_tag "Registrar Precios"%>
+			</div>
+		<% end %>
+	</div>
+	<div id="alert">
+		<%= form_tag sell_price_show_path do %>
+			<%= hidden_field_tag "folder_id", @folder.id %>
+			<%= submit_tag "Ver Precios Registrados" %>
+		<% end %>
+	</div>
+</section>

@@ -1,0 +1,28 @@
+<section id="code_entry_register">
+	<h1>Codigos Registrados</h1>
+	<% @folder.entry_document_details.each do |dd| %>
+		<%= hidden_field_tag "folder_id", @folder.id %>
+		<div class="document_detail_form">
+			<div class="data">
+				<span>Producto: </span>
+				<%= dd.product.full_name %><br/>
+				<span>Cantidad: </span>
+				<%= dd.quantity %><br/>
+			</div>
+			<div class="dd_data">
+				<table>
+					<tr>
+						<th>Codigo Generado</th>
+						<th>Codigo Original</th>
+					</tr>
+					<% dd.entry_codes.each do |code| %>
+						<tr>
+							<td><%= code.generated_code %></td>
+							<td><%= code.original_code %></td>
+						</tr>
+					<% end %>
+				</table>
+			</div>
+		</div>
+	<% end %>
+</section>

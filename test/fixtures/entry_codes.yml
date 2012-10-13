@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  entry_document_detail_id: 1
+  original_code: MyString
+  generated_code: MyString
+
+two:
+  entry_document_detail_id: 1
+  original_code: MyString
+  generated_code: MyString

@@ -19,6 +19,7 @@
 		margin: 5px;
 		span{
 			float: left;
+			font-weight: bold;
 		}
 		.brand_row_options{
 			float: right;
@@ -32,6 +33,55 @@
 			}
 		}
 	}
+	.model_part{
+		width: 700px;
+		margin: 0 auto;
+		padding: 10px;
+		overflow: hidden;
+		.model_item{
+			clear:both;
+			span{
+				float: left;
+			}
+			.model_row_options{
+				float: right;
+				overflow: hidden;
+				.model_item_destroy{
+					float: left;
+					overflow: hidden;
+					a{
+						float: left;
+						margin-right: 15px;
+					}
+					.destroy_model{
+						float: right;
+					}
+				}
+				.model_item_update{
+					float: right;
+					overflow: hidden;
+					a{
+						float: left;
+					}
+					.update_model{
+						float: right;
+					}
+				}
+			}
+		}
+		.create_model{
+			clear: both;
+			width: 700px;
+			text-align: center;
+			h1{
+				text-transform:capitalize;
+				font-weight: normal;
+			}
+			form{
+				display: inline-block;
+			}
+		}
+	}
 	#create_brand{
 		width: 279px;
 		margin: 0 auto;
@@ -42,52 +92,6 @@
 			margin: 5px auto;
 			font-weight: normal;
 			text-transform: none;
-		}
-	}
-}
-
-.model_part{
-	width: 700px;
-	margin: 0 auto;
-	padding: 10px;
-	overflow: hidden;
-	.model_item{
-		clear:both;
-		span{
-			float: left;
-		}
-		.model_row_options{
-			float: right;
-			overflow: hidden;
-			.model_item_destroy{
-				float: left;
-				overflow: hidden;
-				a{
-					float: left;
-					margin-right: 15px;
-				}
-				.destroy_model{
-					float: right;
-				}
-			}
-			.model_item_update{
-				float: right;
-				overflow: hidden;
-				a{
-					float: left;
-				}
-				.update_model{
-					float: right;
-				}
-			}
-		}
-	}
-	.create_model{
-		clear: both;
-		width: 700px;
-		text-align: center;
-		form{
-			display: inline-block;
 		}
 	}
 }

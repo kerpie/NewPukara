@@ -7,4 +7,5 @@ class Model < ActiveRecord::Base
 
   belongs_to :brand
   belongs_to :model_type
+  has_one :product
 end

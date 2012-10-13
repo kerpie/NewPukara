@@ -1,0 +1,60 @@
+<section id="entry_folders_show">
+	<% if notice %>
+		<p id="notice"><%= notice %></p>
+	<% end %>
+
+	<h1>Documento Registrado</h1>
+
+	<p>
+	  <b>Proveedor:</b>
+	  <%= @entry_folder.supplier.name %>
+	</p>
+
+	<p>
+	  <b>Registrado por:</b>
+	  <%= @entry_folder.user.username %>
+	</p>
+
+	<p>
+	  <b>Estado del registro:</b>
+	  <%= @entry_folder.folder_state.name %>
+	</p>
+
+	<p>
+	  <b>Fecha:</b>
+	  <%= @entry_folder.date %>
+	</p>
+
+
+	<div id="document_part">
+		<% @entry_folder.entry_documents.each do |doc| %>
+			<div class="doc_row">
+				<span>Tipo de Documento:</span>
+				<%= doc.document_type.name %><br/>
+				<span>Numeracion: </span>
+				<%= doc.numeration %><br/>
+			</div>
+		<% end %>
+	</div>
+
+	<div id="document_detail_part">
+		<% @entry_folder.entry_document_details.each do |dd| %>
+			<div class="detail_row">
+				<span>Producto: </span>
+				<%= dd.product.full_name %><br/>
+				<span>Precio de Compra</span>
+				<%= dd.purchase_price %><br/>
+				<span>Cantidad:</span>
+				<%= dd.quantity %><br/>
+			</div>
+		<% end %>
+	</div>
+
+	<div id="entry_folders_show_options">
+		<ul>
+			<li><%= link_to 'Editar', edit_entry_folder_path(@entry_folder) %></li>
+			<li><%= link_to 'Volver', entry_folders_path %></li>
+			<li><%= link_to 'Eliminar', @entry_folder, confirm: 'Esta seguro?', method: :delete %></li>
+		</ul>	
+	</div>
+</section>
