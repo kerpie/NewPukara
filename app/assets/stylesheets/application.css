@@ -161,3 +161,21 @@ body{
 	margin-right: 0px;
 	padding-right: 0px;
 }
+
+#prev_nav_bar{
+	padding:10px;
+	background: white;
+	border: 1px solid black;
+	width: 1000px;
+	margin: 0 auto 10px;
+}
+
+#prev_nav_bar ul{
+	overflow: hidden;
+}
+
+#prev_nav_bar ul li{
+	float:left;
+	width: 100px;
+	margin: 10px 0px;
+}

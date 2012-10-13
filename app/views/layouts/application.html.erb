@@ -26,6 +26,24 @@
 						</ul>
 					</div>
 				</section>
+				<section id="prev_nav_bar">
+					<ul>
+						<li><%= link_to "Tipo de Documento", document_type_index_path %></li>
+						<li><%= link_to "Tipo de Precio", price_type_index_path %></li>
+						<li><%= link_to "Tipo de Modelo", model_type_index_path %></li>
+						<li><%= link_to "Tipo de Producto", product_type_index_path %></li>
+						<li><%= link_to "Tipo de Cliente", client_type_index_path %></li>
+						<li><%= link_to "Marcas", brand_index_path %></li>
+						<li><%= link_to "Productos", products_path %></li>
+						<li><%= link_to "Proveedor", suppliers_path %></li>
+						<li><%= link_to "Locales", stores_path %></li>
+						<li><%= link_to "Clientes", clients_path %></li>
+						<li><%= link_to "Registrar Ingresos", entry_folders_path %></li>
+						<li><%= link_to "Registrar Salidas", output_folders_path %></li>
+						<li><%= link_to "Registrar Codigos de Ingrso", code_entry_search_path %></li>
+						<li><%= link_to "Registrar Precios de Venta", code_entry_search_path %></li>
+					</ul>
+				</section>
 				<%= yield %>	
 			</section>
 		<% else %>
