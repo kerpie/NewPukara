@@ -37,11 +37,11 @@ time, mark, audio, video {
 }
 
 h1, h2{
-    font-family: 'Source Sans Pro', sans-serif;    
+	font-family: 'Dosis', sans-serif;    
 }
 
 h3, h4, h5, h6{
-    font-family: 'Dosis', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;    
 }
 
 p{
@@ -81,93 +81,200 @@ table {
 /* Common Layout */
 
 body{
-	background:#4186D3;
+	background:#dcdcdc;
 }
 
 #main_section{
 	width: 1000px;
 	margin: 10px auto;
+	padding-bottom: 55px;
 }
 
 /* Sign In */
 
 #signing{
-	background: white;
-	border: 1px solid black;
-	width: 400px;
-	margin: 40px auto;
+	background: #dcdcdc;
+	width: 800px;
+	margin: 80px auto;
 	padding: 10px;
 }
 
 #signing h2{
-	margin: 0 auto;
-	width: 134px;	
-	padding: 7px;
-	font-size: 18px;
+	margin: 0px auto 10px;
+	width: 600px;	
+	text-align: center;
+	padding: 10px;
+	font-size: 30px;
 	text-transform: uppercase;
+	color: gray;
+	font-family: 'Dosis', sans-serif;
+	letter-spacing: 3px;
 }
 
-#signing form .sign_field{
+#signing form{
+	padding: 5px;
+}
+
+#signing form .field{
 	margin: 0 auto;
-	width: 208px;
-	padding: 6px;
-}
-#signing form .sign_field label{
-	font-size: 14px;
+	width: 400px;
+	padding: 5px;
 }
 
-#signing form .sign_field input#submit{
+#signing form .field input{
+	display: inline-block;
+	padding: 10px;
+	font-size: 18px;
+}
+
+#signing form .field input#submit{
 	width: 100px;
 	display: block;
 	margin: 0 auto;
 	padding: 1px;
 }
 
+.remember{
+	display: none;
+}
+
+.sign_field{
+	width: 300px;
+	margin: 20px auto;
+	text-align: center;
+}
+
+.sign_field a.submit_link{
+	font-family: 'Dosis', sans-serif;  
+	display: block;
+	margin: 10px auto;
+	padding: 20px;
+	text-decoration: none;
+	background: #00a9da;
+	color: white;
+	font-size: 20px;
+	width: 260px;
+}
+
+.sign_field a:hover{
+	width: 258px;
+	padding: 19px 20px 19px 20px;
+	box-shadow: 0px 0px 3px #00b0e3;
+	background: #00a9da;
+	border: 1px solid #00bcf2;
+	color: white;
+}
+
+.sign_field input, .sign_field label{
+	display: inline-block;
+}
+
+#alert_zone{
+	width: 270px;
+	margin: 0 auto;
+	background: rgba(255, 0, 0, 50);
+	color: white;
+	text-align: center;
+	padding: 10px;
+	font-size: 18px;
+	font-family: 'Dosis', sans-serif;  
+}
+
+/* Presentation Bar */
+#presentation_bar{
+	background: #272727;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	overflow: hidden;
+}
+
+#presentation_bar h1{
+	font-size: 30px;
+	padding: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #787878;
+	float: left;
+}
+
+#presentation_bar h1:hover{
+	background: #333333;
+	padding: 20px;
+}
+
+#presentation_bar h2{
+	font-size: 15px;
+	color: #787878;
+	float: right;
+	padding: 20px;
+}
+
+#presentation_bar h2 a{
+	text-decoration: none;
+	color: #787878;
+}
+
 /* General Layout */
 
 #user_data{
-	width: 900px;
-	background: white;
-	margin: 0 auto 10px;
-	border: 1px solid black;
-	overflow: hidden;
-	padding: 10px;
+	background: #787878;
+	border: 1px solid #191919;
+	padding: 15px;
+	text-align: center;
+	z-index: 5;
+	color: white;
+	position: fixed;
+	font-family: 'Dosis', sans-serif;  
+	margin: 20px 10px;
+	bottom: 80px ;
 }
 
-#user_data #current_user_data{
-	float: left;
+#user_data p{
+	margin: 4px;
 }
 
-#user_data #current_user_data p{
-	padding: 3px;
+#user_data ul li{
+	margin: 3px 3px;
+	padding: 3px 0px;
 }
 
-#user_data #user_session_options{
-	float: right;
-	margin-top: 13px;
+#user_data ul li a{
+	width: 70px;
+	height: 20px;
+	color: white;
+	text-decoration: none;
+	padding: 4px 8px;
 }
 
-#user_data #user_session_options ul{
-	overflow: hidden;
+#user_data ul li a:hover{
+	background: #00b0e3;
 }
 
-#user_data #user_session_options ul li{
-	float: left;
-	margin-right: 4px;
-	padding-right: 20px;
-}
-
-#user_data #user_session_options ul li:last-child{
-	margin-right: 0px;
-	padding-right: 0px;
-}
 
 #prev_nav_bar{
-	padding:10px;
-	background: white;
-	border: 1px solid black;
-	width: 1000px;
-	margin: 0 auto 10px;
+	background: #272727;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	overflow: hidden;
+	z-index: 5;
+}
+
+#prev_nav_bar h1{
+	font-size: 30px;
+	padding: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #787878;
+	float: left;
+}
+
+#prev_nav_bar h1:hover, #prev_nav_bar ul .selected_link{
+	background: #333333;
+	color: white;
 }
 
 #prev_nav_bar ul{
@@ -175,7 +282,271 @@ body{
 }
 
 #prev_nav_bar ul li{
-	float:left;
+	text-align: center;
+	float: left;
+}
+
+#prev_nav_bar ul li a{
+	text-decoration: none;
+	display: block;
+	text-align: center;
+	padding: 20px;
+	color: #787878;
+	font-size: 15px;
+	font-family: 'Dosis', sans-serif;    
+}
+
+#prev_nav_bar ul li a:hover{
+	text-decoration: none;
+	background: #333333;
+	color: white;
+	text-align: center;
+	padding: 20px;
+	text-shadow: 0px 0px 1px rgba(255,255,255,0.5);
+}
+
+.first_level li:hover .second_level{
+	display: block;
+	position: fixed;
+	bottom: 58px;
+}
+
+.second_level{
+	display: none;
+	width: 150px;
+}
+
+.second_level li{
+	width: 150px;
+	background: #333333;
+}
+
+
+
+
+#change_vendor{
+	float: right;
+}
+
+#change_vendor h1{
+	font-size: 20px;
+	text-transform: none;
+	font-weight: normal;
+	color: #787878;
+	float: left;
+}
+
+#change_vendor h1:hover{
+	font-size: 20px;
+	background: #787878;
+	text-transform: none;
+	font-weight: normal;
+	color: white;
+}
+
+#change_vendor a{
+	text-decoration: none;
+	font-family: 'Dosis', sans-serif;
+	padding: 20px;
+	font-size: 20px;
+	display: block;
+	color: white;
+}
+
+#change_vendor a:hover, .selected_change_vendor{
+	background: #787878;
+	text-transform: none;
+	font-weight: normal;
+	color: white;	
+}
+
+#vendor_list{
+	position: fixed;
+	background: white;
+	color: black;
+	z-index: 10;
+	bottom: 58px;
+	right: 0px;
+	display: none;
+}
+
+#vendor_list ul li{
+	//padding: 5px 10px;
+}
+
+#vendor_list ul li p{
+	padding: 20px 40px;
+	background: #aaa;
+	color: #FFF;
+}
+
+#vendor_list ul li p:hover{
+	background: #00b0e3;
+	color: white;
+}
+
+.floating_part{
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	bottom: 58px;
+	width: 350px;
+	background: #00a9da;
+	z-index: 20;
+}
+
+.floating_part h1{
+	text-align: center;
+	width: 260px;
+	margin: 20px auto;
+	color: white;
+	text-transform: uppercase;
+	font-size: 28px;
+}
+
+form{
+	width: 300px;
+	margin: 0 auto;
+}
+
+.form_div{
+	margin: 0px auto;
+	width: 220px;
+	padding: 15px;
+	text-align: center;
+}
+
+.form_div label{
+	font-family: 'Dosis', sans-serif;
+	font-style: normal;
+	color: white;
+}
+
+.form_div input{
+	padding: 5px;
+}
+
+.form_div select{
+	padding: 5px;
+	width: 180px;
+}
+
+.form_div #last_submit_link{
+	text-decoration: none;
 	width: 100px;
-	margin: 10px 0px;
+	margin: 10px auto;
+	text-align: center;
+	color: #00a9da;
+	background: white;
+	padding: 10px;
+	font-family: 'Dosis', sans-serif;
+	display: block;
+}
+
+.form_div #last_submit_link:hover{
+	box-shadow: 0px 0px 3px white;
+	padding: 10px;
+}
+
+
+
+.submit_link{
+	display: block;
+	width: 100px;
+	margin: 0 auto;
+	padding: 10px;
+	text-decoration: none;
+	font-family: 'Dosis', sans-serif;
+	background: white;
+	color: #272727;
+	text-align: center;
+}
+
+.submit_part{
+	text-align: center;
+	margin: 5px auto;
+	width: 200px;
+	display: none;
+}
+
+.submit_link:hover{
+	background: #787878;
+	color: #FFF;
+}
+
+.floating_body .title, .floating_body .new_body, .floating_body .options{
+	width: 350px;
+	position: absolute;
+}
+
+.floating_body .title{
+	line-height: 1.05;
+}
+
+.floating_body .title .second_title a{
+	width: 10px;
+	padding: 20px;
+	color: rgba(255,255,255,0.4);
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-decoration: none;
+	font-style: normal;
+	font-size: 20px;
+}
+
+.floating_body .title .second_title a:hover{
+	background: red;
+	color: white;
+}
+
+.floating_body .new_body{
+	overflow: auto;
+	top: 100px;
+	bottom: 70px;
+}
+
+.floating_body .options{
+	bottom: 0px;
+}
+
+#check_stock_result .floating_body .options h1 a{
+	color: #787878;
+	text-decoration: none;
+	background: white;
+	padding: 15px;
+	width: 250px;
+	text-align: center;
+	font-size: 13px;
+	margin-bottom: 150px;
+}
+
+.floating_body .new_body a{
+	width: 200px;
+	background: white;
+	color: #00a9da;
+	text-decoration: none;
+	margin: 0 auto;
+	padding: 15px;
+	text-align: center;
+	display: block;
+}
+
+.floating_body .new_body a:hover{
+	box-shadow: 0px 0px 3px #FFF;
+}
+
+.floating_body .new_body #radio_part{
+	display: block;
+	margin: 30px auto 10px;
+	width: 300px;
+	text-align: center;
+}
+
+#check_stock, 
+#check_stock_result, 
+#client_search, 
+#client_register,
+#client_search_result{
+	display: none;
 }

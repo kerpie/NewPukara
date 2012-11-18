@@ -3,6 +3,7 @@
 	<head>
 	  	<title>Final</title>
 	  	<%= stylesheet_link_tag    "application", :media => "all" %>
+	  	<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Dosis:400,200" %>
 	  	<%= javascript_include_tag "application" %>
 	 	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" %>
 		<%= csrf_meta_tags %>
@@ -10,45 +11,149 @@
 	<body>
 		<% if user_signed_in? %>
 			<section id="main_section">
-				<section id="user_data">
-					<div id="current_user_data">
-						<p>Sesion iniciada como: <%= current_user.username %></p>
-						<p>Roles Asignados: 
-							<% current_user.roles.each do |role| %>
-								<%= role.name %>
-							<% end %>
-						</p>
-					</div>
-					<div id="user_session_options">
-						<ul>
-							<li><%= link_to "editar perfil", edit_user_registration_path %></li>
-							<li><%= link_to "cerrar sesion", destroy_user_session_path, :method => :delete %></li>
-						</ul>
-					</div>
-				</section>
-				<section id="prev_nav_bar">
-					<ul>
-						<li><%= link_to "Tipo de Documento", document_type_index_path %></li>
-						<li><%= link_to "Tipo de Precio", price_type_index_path %></li>
-						<li><%= link_to "Tipo de Modelo", model_type_index_path %></li>
-						<li><%= link_to "Tipo de Producto", product_type_index_path %></li>
-						<li><%= link_to "Tipo de Cliente", client_type_index_path %></li>
-						<li><%= link_to "Marcas", brand_index_path %></li>
-						<li><%= link_to "Productos", products_path %></li>
-						<li><%= link_to "Proveedor", suppliers_path %></li>
-						<li><%= link_to "Locales", stores_path %></li>
-						<li><%= link_to "Clientes", clients_path %></li>
-						<li><%= link_to "Registrar Ingresos", entry_folders_path %></li>
-						<li><%= link_to "Registrar Salidas", output_folders_path %></li>
-						<li><%= link_to "Registrar Codigos de Ingrso", code_entry_search_path %></li>
-						<li><%= link_to "Registrar Precios de Venta", code_entry_search_path %></li>
-					</ul>
-				</section>
 				<%= yield %>	
 			</section>
-		<% else %>
-			<section id="signing">
-				<%= yield %>	
+			<% if current_user.role? "Vendedor" %>
+					<section id="check_stock" class="floating_part">
+						<h1>Revisar Stock</h1>
+						<div>
+							<%= form_tag product_search_path, :remote => true, :id=>"product_search_form" do %>
+								<div class="form_div">
+									<%= label_tag "product_search_type", "Tipo" %><br/>
+									<%= select_tag "product_search_type", options_from_collection_for_select(ProductType.all, :id, :name), :prompt => "Seleccione Tipo" %>
+								</div>
+								<div class="form_div">
+									<%= label_tag "product_search_parent_model", "Marca" %><br/>
+									<%= select_tag "product_search_parent_model", options_from_collection_for_select(ParentModel.all, :id, :name), :prompt => "Seleccione Clasificacion" %>
+								</div>
+								<div class="submit_part">
+									<%= submit_tag "consultar", :id => "submit_button" %>
+								</div>
+							<% end %>
+						</div>
+						<div id="first_result">
+						</div>
+						<div id="second_result">
+						</div>
+					</section>
+					<section id="check_stock_result" class="floating_part">
+						<div class="floating_body">
+							<div class="title">
+								<h1>Resultado de la Busqueda</h1>
+							</div>
+							<div class="new_body">
+							</div>
+							<div class="options">
+								<h1><%= link_to_function "Consultar otro producto" ,"check_stock_again()" %></h1>
+							</div>
+						</div>
+					</section>
+					<section id="client_search" class="floating_part">
+						<div class="floating_body">
+							<div class="title">
+								<h1>Buscar Cliente</h1>
+							</div>
+							<div class="new_body">
+								<%= link_to_function "Buscar Cliente", "showClientSearch()" %><br/>
+								<%= link_to_function "Registrar Cliente", "showRegisterClient()" %>
+							</div>
+						</div>
+					</section>
+					<section id="client_register" class="floating_part">
+						<div class="floating_body">
+							<div class="title">
+								<h1>Registrar Cliente</h1>
+							</div>
+							<div class="new_body">
+							</div>
+						</div>
+					</section>
+					<section id="client_search_result" class="floating_part">
+						<div class="floating_body">
+							<div class="title">
+								<h1>Resultado de la Busqueda</h1>
+							</div>
+							<div class="new_body">
+								<%= form_tag client_search_path, :remote => true do %>
+									<div id="radio_part" class="form_div">
+										<% ClientType.all.each do |ct| %>
+											<%= radio_button_tag "client_type",ct.id, false %>
+											<%= label_tag "client_type", ct.name %>
+										<% end %>
+									</div>
+									<div class="form_div">
+										<%= label_tag "number", "DNI/RUC: " %><br/>
+										<%= text_field_tag "number" %>
+									</div>
+									<div class="form_div">
+										<%= link_to_function "Consultar", "searchClient()" %>
+									</div>
+									<div class="submit_part">
+										<%= submit_tag "Buscar", :id => "client_seach_submit_button" %>
+									</div>
+								<% end %>
+								<div id="client_search_show">
+								</div>
+							</div>
+						</div>
+					</section>
+				<% end %>
+			<section id="user_data">
+				<p><%= current_user.username %></p>
+				<ul>
+					<li><%= link_to "editar perfil", edit_user_registration_path %></li>
+					<li><%= link_to "cerrar sesion", destroy_user_session_path, :method => :delete %></li>
+				</ul>
+			</section>
+			
+
+
+			<section id="prev_nav_bar">
+				<h1>Huguito</h1>
+				<ul class="first_level">
+					<li><a href="#">Documentos</a>
+						<ul class="second_level">
+							<li><a href="#">Insertar</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Codigos</a>
+						<ul class="second_level">
+							<li><a href="#">Insertar</a></li>
+							<li><a href="#">Hey Mundo, estoy haciendo algo muy xvr! =)</a></li>
+						</ul>
+					</li>
+					<li><%= link_to "Marcas y Modelos", brand_index_path %>
+						<ul class="second_level">
+							<li><%= link_to_function "Registrar nuevo valor", "showBrandMenu(this)" %></li>
+						</ul>
+					</li>
+					<li><a href="#">Productos</a></li>
+					<li><a href="#">Clientes</a></li>
+					<li><a href="#">Precios de Venta</a></li>
+					<li><a href="#">Proveedores</a></li>
+					<li><a href="#">Locales</a></li>
+				</ul>
+			</section>
+
+
+			<div id="vendor_list">
+				<ul>
+					<% User.all.each do |tmp|%>
+						<% if tmp.role? "Vendedor" %>
+							<% if tmp.username.empty? %>
+								<li><p>Hostia!</p></li>
+							<% else %>
+								<li><p>Midory Castillo Peralta</p></li>
+							<% end %>
+						<% end %>
+					<% end %>
+				</ul>
+			</div>
+		<% else %>		
+			<%= yield %>	
+			<section id="presentation_bar">
+				<h1>Huguito</h1>
+				<h2>Desarrollado por <%= link_to "@kerpie", "http://www.twitter.com/kerpie" %></h2>
 			</section>
 		<% end %>
 	</body>

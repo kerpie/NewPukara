@@ -1,1 +1,1 @@
-alert("<%= @del_brand.name %> fue eliminado, Presione F5!");
+$("<%= '#'+@del_brand.name+'_'+@del_brand.id.to_s %>").parents('.model_part').hide();

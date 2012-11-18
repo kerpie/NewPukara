@@ -1,0 +1,3 @@
+<% toRender = render "first_part", :data => @model_types %>
+
+$(".new_body #second_part").html("<%= escape_javascript(toRender) %>");

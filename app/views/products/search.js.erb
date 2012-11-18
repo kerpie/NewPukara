@@ -1,0 +1,3 @@
+<% toRender = render "first_result", :data => @model_type, :second_data => @type %>
+
+$("#first_result").html("<%= escape_javascript(toRender) %>");

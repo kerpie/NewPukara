@@ -1,87 +1,139 @@
-<section id="brand_index">
-	<h1>Marca</h1>
-	<% @brands.each do |brand| %>
-		<div id=<%= "brand_" + brand.id.to_s %> class="brand_item">
-			<span><%= brand.name %></span>
-			<div class="brand_row_options">
-				<%= link_to_function 'Eliminar marca',"destroy_form(this, 'destroy_form_"+brand.id.to_s+"')", :class => "link_to_destroy_brand" %>
-				<% if can? :destroy, Brand.new %>
-					<div class="destroy_brand" id=<%="destroy_form_"+brand.id.to_s%>>
-						<%= form_tag brand_destroy_path, :remote => true do %>
-							<%= hidden_field_tag "brand_id", brand.id %>
-							<%= submit_tag 'eliminar' %>
-						<% end %>
-					</div>
-				<% end %>
-				<% if can? :edit, Brand.new %>
-					<%= link_to_function 'Actualizar', "update_form(this,'update_form_"+brand.id.to_s+"')", :class => "link_to_update_brand" %>
-					<div class="update_brand" id=<%="update_form_"+brand.id.to_s%>>
-						<%= form_tag brand_update_path, :remote => true do %>
-							<%= hidden_field_tag 'brand_id', brand.id %>
-							<%= label_tag 'new_value', 'Nuevo Valor' %>
-							<%= text_field_tag 'new_value' %>
-							<%= submit_tag 'Actualizar' %>
-						<% end %>
-					</div>
-				<% end %>
-			</div>
-		</div>
-		<div class="model_part">
-			<% brand.models.each do |m| %>
-				<div class="model_item">
-					<span title=<%= m.model_type.name %>><%= m.name %></span>
-					<div class="model_row_options">
-						<% if can? :destroy, Model.new %>
-							<div class="model_item_destroy">
-							<%= link_to_function 'Eliminar modelo',"destroy_form(this, 'destroy_form_"+m.id.to_s+"')", :class => "link_to_destroy_model" %>
-								<div class="destroy_model" id=<%="destroy_form_"+m.id.to_s%>>
-									<%= form_tag model_destroy_path, :remote => true do %>
-										<%= hidden_field_tag "model_id", m.id %>
-										<%= submit_tag 'Eliminar' %>
-									<% end %>
-								</div>
-							</div>
-						<% end %>
-						<% if can? :edit, Model.new %>
-							<div class="model_item_update">
-								<%= link_to_function 'Actualizar', "update_form(this,'update_form_"+m.id.to_s+"')", :class => "link_to_update_model" %>
-								<div class="update_model" id=<%="update_form_"+m.id.to_s%>>
-									<%= form_tag model_update_path, :remote => true do %>
-										<%= hidden_field_tag 'model_id', m.id %>
-										<%= label_tag 'new_value', 'Nuevo Valor' %>
-										<%= text_field_tag 'new_value' %>
-										<%= submit_tag 'Actualizar' %>
-									<% end %>
-								</div>
-							</div>
-						<% end %>
-					</div>
-				</div>
-			<% end %>
-			<% if can? :create, Model.new %>
-				<div class="create_model">
-					<h1>Crear Modelo</h1>
-					<%= form_tag model_create_path, :remote => true do %>
+<section id="br_index">
+	<hgroup id="br_title">
+		<h1>Marcas y Modelos</h1>
+	</hgroup>
+	<section id="brs">
+		<% @third_hash.each do |brand, hash| %>
+			<div class="model_part">
+				<div class="br_name">
+					<h1 <%= "id="+brand.name + "_"+brand.id.to_s%>><%= brand.name %></h1>	
+					<%= form_tag brand_destroy_path, :remote => true do %>		
 						<%= hidden_field_tag "brand_id", brand.id %>
-						<%= label_tag "model_type_id", "Tipo de Modelo: " %>
-						<%= select_tag "model_type_id", options_from_collection_for_select(ModelType.all, :id, :name)%>
-						<%= label_tag "name","Nombre:" %>
-						<%= text_field_tag "name" %>
-						<%= submit_tag "Enviar", :class => "model_create_input_submit_button"%>
+						<%= image_submit_tag "delete2.png", :confirm => "Confirme la operacion para proceder", :width => 10, :height => 10 %>
 					<% end %>
 				</div>
-			<% end %>
-		</div>
-	<% end %>
+				<div <%= "id="+brand.name %> class="mds">
+					<% hash.each do |parent_model, hash| %>
+						<%= render "model_type_partial",:brand => brand, :parent_model => parent_model, :hash => hash %>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+	</section>
+</section>
 
-	<% if can? :create, Brand.new %>
-		<div id="create_brand">
-			<h1>Crear Marca</h1>
+<section id="brand_menu" class="floating_part">
+	<div class="floating_body">
+		<div class="title">
+			<h1>Registrar nuevo dato</h1>
+			<div class="second_title">
+				<%= link_to_function "X", "hideBrandsMenu(this)" %>
+			</div>
+		</div>
+		<div class="new_body">
+			<%= link_to_function "Registrar nueva marca", "registerBrandForm(this)" %><br/>
+			<%= link_to_function "Registrar nueva clasificacion", "registerClassForm(this)" %><br/>
+			<%= link_to_function "Registrar nueva sub-clasificacion", "registerModelTypeForm(this)" %><br/>
+			<%= link_to_function "Registrar nuevo modelo", "registerModelForm(this)" %>
+		</div>
+	</div>
+</section>
+<section id="new_brand_form" class="floating_part">
+	<div class="floating_body">
+		<div class="title">
+			<h1>Registrar nueva marca</h1>
+			<div class="second_title">
+				<%= link_to_function "X", "hideBrandsMenu(this)" %>
+			</div>
+		</div>
+		<div class="new_body">
 			<%= form_tag brand_create_path, :remote => true do %>
-				<%= label_tag "name","Nombre:" %>
-				<%= text_field_tag "name" %>
-				<%= submit_tag "Enviar", :id => "brand_create_input_submit_button"%>
+				<div class="form_div">
+					<%= label_tag "name", "Marca:" %><br/>
+					<%= text_field_tag "name" %>
+				</div>
+				<div class="form_div">
+					<%= link_to_function "Guardar", "submitRegularForm(this)" %>
+				</div>
+				<div class="submit_part">
+					<%= submit_tag "enviar" %>
+				</div>
 			<% end %>
 		</div>
-	<% end %>
+	</div>
+</section>
+<section id="new_class_form" class="floating_part">
+	<div class="floating_body">
+		<div class="title">
+			<h1>Registrar nueva clasificacion</h1>
+			<div class="second_title">
+				<%= link_to_function "X", "hideBrandsMenu(this)" %>
+			</div>
+		</div>
+		<div class="new_body">
+			<%= form_tag class_create_path, :remote => true do %>
+				<div class="form_div">
+					<%= label_tag "name", "Clasificacion:" %><br/>
+					<%= text_field_tag "name" %>
+				</div>
+				<div class="form_div">
+					<%= link_to_function "Guardar", "submitRegularForm(this)" %>
+				</div>
+				<div class="submit_part">
+					<%= submit_tag "enviar" %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</section>
+<section id="new_model_type_form" class="floating_part">
+	<div class="floating_body">
+		<div class="title">
+			<h1>Registrar nueva sub-clasificacion</h1>
+			<div class="second_title">
+				<%= link_to_function "X", "hideBrandsMenu(this)" %>
+			</div>
+		</div>
+		<div class="new_body">
+			<%= form_tag create_model_type_path, :remote => true do %>
+				<div class="form_div">
+					<%= label_tag "parent", "Clasificacion" %>
+					<%= select_tag "parent", options_from_collection_for_select(ParentModel.all, :id, :name), :prompt => "Elija una clasificacion" %>
+				</div>
+				<div class="form_div">
+					<%= label_tag "name", "Sub-Clasificacion:" %><br/>
+					<%= text_field_tag "name" %>
+				</div>
+				<div class="form_div">
+					<%= link_to_function "Guardar", "submitRegularForm(this)" %>
+				</div>
+				<div class="submit_part">
+					<%= submit_tag "enviar" %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</section>
+<section id="new_model_form" class="floating_part">
+	<div class="floating_body">
+		<div class="title">
+			<h1>Registrar nuevo modelo</h1>
+			<div class="second_title">
+				<%= link_to_function "X", "hideBrandsMenu(this)" %>
+			</div>
+		</div>
+		<div class="new_body">
+			<%= form_tag model_create_one_path, :remote => true do %>
+				<div class="form_div">
+					<%= label_tag "parent", "Clasificacion:" %><br/>
+					<%= select_tag "parent", options_from_collection_for_select(ParentModel.all, :id, :name), :prompt => "Elija una clasificacion", :id => "select_parent_model" %>
+				</div>
+				<div class="submit_part">
+					<%= submit_tag "enviar", :id => "submit_first_part" %>
+				</div>
+			<% end %>
+			<div id="second_part">
+			</div>
+		</div>
+	</div>
 </section>

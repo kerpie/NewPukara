@@ -1,12 +1,13 @@
 Final::Application.routes.draw do
 
+  root :to => 'output_folders#index'
+
   resources :output_folders
 
+  match "clients/search" => "clients#search", :as => :client_search
   resources :clients
 
   resources :entry_folders
-
-  root :to => 'document_type#index'
   
   devise_for :users, :controllers => { :registrations => "users/registrations" }
   
@@ -45,12 +46,18 @@ Final::Application.routes.draw do
   match "brand/create" => "brand#create", :as => :brand_create
   match "brand/destroy" => "brand#destroy", :as => :brand_destroy
   match "brand/update" => "brand#update", :as => :brand_update
-  match "brand/create_model" => "brand#create_model", :as => :model_create
   match "brand/destroy_model" => "brand#destroy_model", :as => :model_destroy
   match "brand/update_model" => "brand#update_model", :as => :model_update
+  match "brand/create_class" => "brand#create_class", :as => :class_create
+  match "brand/create_model_type" => "brand#create_model_type", :as => :create_model_type
+  match "brand/create_model" => "brand#create_model", :as => :model_create
+  match "brand/create_model_one" => "brand#create_model_one", :as => :model_create_one
 
   #Product
   match "products/model_changer" => "products#model_changer", :as => :model_changer
+  match "products/search" => "products#search", :as => :product_search
+  match "products/second_search" => "products#second_search", :as => :second_search
+  match "products/last_search" => "products#last_search", :as => :last_search
   resources :products
 
   #CodeEntry

@@ -1,18 +1,32 @@
-<h2>Iniciar Sesión</h2>
+<section id="signing">
+	<h2>Bienvenidos a Pukara</h2>
+	
+	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	  <div class="field">
+	  	<%= f.text_field :username %>
+	  </div>
 
-<%= flash[:alert] %>
-<%= flash[:notice] %>
+	  <div class="field">
+	  	<%= f.password_field :password %>
+	  </div>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div class="sign_field"><%= f.label :username, "Usuario" %><br />
-  <%= f.text_field :username %></div>
+	  <% if devise_mapping.rememberable? -%>
+	    <div class="remember">
+	    	<%= f.check_box :remember_me %> 
+	    	<%= f.label :remember_me, "Recordar usuario" %>
+	    </div>
+	  <% end -%>
 
-  <div class="sign_field"><%= f.label :password, "Contraseña: " %><br />
-  <%= f.password_field :password %></div>
+	  	<div class="sign_field">
+	  		<%= link_to_function "INICIAR SESION", "submitForm(this)", :class => "submit_link" %>
+		</div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="sign_field"><%= f.check_box :remember_me %> <%= f.label :remember_me, "Recordar usuario" %></div>
-  <% end -%>
+	<% end %>
 
-  <div class="sign_field"><%= f.submit "Iniciar Sesión", :id => "submit"%></div>
-<% end %>
+	<% unless flash.empty? %>
+		<div id="alert_zone">
+			<%= flash[:alert] %>
+			<%= flash[:notice] %>
+		</div>
+	<% end %>
+</section>

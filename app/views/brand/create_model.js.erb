@@ -1,1 +1,14 @@
-alert('Creado! presiona F5');
+<% brand = @new_model.brand %>
+<% model_type = @new_model.model_type %>
+
+var v = $(document).find("<%= escape_javascript('#'+model_type.name+'_'+brand.name) %>");
+
+if($(v).length > 0){
+	<% toRender = render "model_part", :m => @new_model %>
+	$('<%= escape_javascript("#"+model_type.name + "_"+brand.name+" ul")%>').append("<%= escape_javascript(toRender)%>");
+}else{
+	<% hash = Hash.new %>
+	<% hash[model_type] = [@new_model] %>
+	<% toRender = render "model_type_partial", :hash => hash, :brand => brand, :parent_model => model_type.parent_model %>
+	$('<%= escape_javascript("#"+brand.name) %>').append("<%= escape_javascript(toRender) %>");
+}

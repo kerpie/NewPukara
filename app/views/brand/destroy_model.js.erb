@@ -1,1 +1,9 @@
-alert("<%= @del_model.name %> fue eliminado, Presione F5!");
+
+
+var count = $("<%= '#'+@del_model.id.to_s %>").parent().children().length;
+
+if(count > 1){
+	$("<%= '#'+@del_model.id.to_s %>").hide();
+}else{
+	$("<%= '#'+@del_model.id.to_s %>").parents(".until_here").hide();
+}

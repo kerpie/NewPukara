@@ -14,6 +14,6 @@ class Product < ActiveRecord::Base
   has_many :output_document_details
   
   def full_name
-  	product_type.name + " " + model.model_type.name + " " + model.brand.name + " " + model.name
+  	product_type.name + " " + model.model_type.parent_model.name + " " + model.model_type.name + " " + model.brand.name + " " + model.name
   end
 end

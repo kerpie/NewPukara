@@ -1,0 +1,15 @@
+<section class="until_here">
+	<% hash.each do |model_type, values| %>
+		<% if values.count > 0 %>
+			<h1 <%= "id=" + parent_model.name + "_" + brand.name %> class="pt_md_name"><%= parent_model.name %></h1>
+			<div <%= "id=" + model_type.name + "_" + brand.name %> class="models">
+				<h1><%= model_type.name %></h1>
+				<ul>			
+					<% values.each do |m| %>
+						<%= render "model_part", :m => m %>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>	
+	<% end %>	
+</section>

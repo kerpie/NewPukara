@@ -80,4 +80,20 @@ class ClientsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def search
+
+    ct = ClientType.find(params[:client_type])
+    number = params[:number]
+
+    if ct == ClientType.first 
+      @client = Client.where(:client_type_id => ct,:DNI => number).first
+    else
+      @client = Client.where(:client_type_id => ct,:RUC => number).first
+    end
+    
+    respond_to do |format|
+      format.js
+    end
+  end
 end

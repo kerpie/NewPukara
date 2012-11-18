@@ -29,3 +29,143 @@ function add_fields(link, association, content){
 	var regexp = new RegExp("new_"+association,"g");
 	$(link).parent().before(content.replace(regexp, new_id));
 }
+
+function submitForm(link){
+	$(link).parents("form").submit();
+}
+
+function showVendors(link){
+	var tmp = $(link).parent().hasClass('selected_change_vendor');
+	if(tmp){
+		$("#vendor_list").hide();
+		$("#change_vendor").removeClass('selected_change_vendor');	
+	}
+	else{
+		$("#vendor_list").show();
+		$("#change_vendor").addClass('selected_change_vendor');
+	}
+}
+
+function test(link){
+	alert("Hola Mundo!");
+}
+
+function checkStockFormShow(link){
+	var tmp = $(link).hasClass('selected_link');
+	$('#check_stock_result').hide();
+	if(tmp){
+		$('#check_stock').hide();
+		$(link).removeClass('selected_link');
+	}
+	else{
+		$('#client_search_link').removeClass('selected_link');
+		$('#client_search').hide();
+		$('#check_stock').show();
+		$(link).addClass('selected_link');
+	}
+}
+
+function check_stock_again(){
+	$('#check_stock_result').hide();
+	$('#check_stock').show();
+}
+
+function clientSearchFormShow(link){
+	var tmp = $(link).hasClass('selected_link');
+	$('#client_search_result').hide();
+	$('#client_register').hide();
+	if(tmp){
+		$('#client_search').hide();
+		$(link).removeClass('selected_link');
+	}
+	else{
+		$("#check_stock_link").removeClass('selected_link');
+		$('#check_stock').hide();
+		$('#client_search').show();
+		$(link).addClass('selected_link');
+	}
+}
+
+function submitLastForm(){
+	$('#last_submit_button').trigger('click');
+}
+
+$(function(){
+	$('#product_search_parent_model').change(function(){
+		$('#submit_button').trigger('click');
+	});
+	$('#product_search_type').change(function(){
+		$('#submit_button').trigger('click');
+	});
+	$('#product_search_brand').live('change',function(){
+		$('#second_submit_button').trigger('click');
+	});
+	$('#product_search_model_type').live('change',function(){
+		$('#second_submit_button').trigger('click');
+	});
+	$('#product_search_brand').live('change',function(){
+		$('#second_submit_button').trigger('click');
+	});
+
+	//Marcas
+	$("#select_parent_model").change(function(){
+		$("#submit_first_part").trigger('click');
+	});
+
+});
+
+function showClientSearch(){
+	$("#client_search").hide();
+	$("#client_search_result").show();
+}
+
+function showRegisterClient(){
+	$("#client_search").hide();
+	$("#client_register").show();
+}
+
+function searchClient(){
+	$("#client_seach_submit_button").trigger('click');
+}
+
+//Mostrar menu para registrar marcas y modelos
+function showBrandMenu(link){
+
+	$(link).parents('li').addClass('selected_link');
+	$(link).addClass('selected_link');
+
+	$("#new_brand_form").hide();
+	$("#new_parent_model_form").hide();
+	$("#new_model_type_form").hide();
+	$("#new_model_form").hide();
+	$("#brand_menu").show();
+}
+
+function registerBrandForm(link){
+	hideBrandsMenu(link);
+	$("#new_brand_form").show();
+}
+
+function registerClassForm(link){
+	hideBrandsMenu(link);
+	$("#new_class_form").show();
+}
+
+function registerModelTypeForm(link){
+	hideBrandsMenu(link);
+	$("#new_model_type_form").show();
+}
+
+function registerModelForm(link){
+	hideBrandsMenu(link);
+	$("#new_model_form").show();
+}
+
+function hideBrandsMenu(link){
+	$(link).parents(".floating_part").hide();
+}
+
+//Pulsar boton para enviar formulario
+function submitRegularForm(link){
+	$(link).parent().next('.submit_part').find('input').trigger('click');
+}

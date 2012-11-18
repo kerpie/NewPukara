@@ -1,0 +1,6 @@
+<% toRender = render "product_result", :product => @product %>
+
+$("#check_stock").hide();
+$("#check_stock_result").show();
+
+$("#check_stock_result .new_body").html("<%= escape_javascript(toRender) %>");

@@ -6,10 +6,12 @@ class Ability
     if user.role? :SuperAdmin
         can :manage, :all 
     elsif user.role? :Vendedor
-        can :read, DocumentType
+        can :check, [OutputFolder, Client, Product]
+        can :search, Product
     else
         #permisos para el usuario invitado
     end
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

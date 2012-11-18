@@ -1,0 +1,20 @@
+<%= form_tag model_create_path, :remote => true do %>
+	<div class="form_div">
+		<%= label_tag "model_type_id", "Tipo de Modelo" %><br/>
+		<%= select_tag "model_type_id", options_from_collection_for_select(data, :id, :name), :prompt => "Elija una sub-clasificacion" %>
+	</div>
+	<div class="form_div">
+		<%= label_tag "brand_id", "Marca:" %><br />
+		<%= select_tag "brand_id", options_from_collection_for_select(Brand.all, :id, :name), :prompt => "Elija una marca"  %>
+	</div>
+	<div class="form_div">
+		<%= label_tag "name", "Modelo:" %><br />
+		<%= text_field_tag "name" %>
+	</div>
+	<div class="form_div">
+		<%= link_to_function "Registrar", "submitRegularForm(this)" %>
+	</div>
+	<div class="submit_part">
+		<%= submit_tag "enviar", :id => "submit_first_part" %>
+	</div>
+<% end %>

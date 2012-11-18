@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  
   # GET /products
   # GET /products.json
   def index
@@ -86,6 +87,39 @@ class ProductsController < ApplicationController
     model_type = ModelType.find(params[:model_type_id])
 
     @result = Model.where(:brand_id => brand, :model_type_id => model_type)
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def search
+    @type = ProductType.find(params[:product_search_type])
+    parent_model = ParentModel.find(params[:product_search_parent_model])
+    @model_type = ModelType.where(:parent_model_id => parent_model)
+
+    authorize! :search, Product.new
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def second_search
+    @type = ProductType.find(params[:product_search_type])
+    model_type = ModelType.find(params[:product_search_model_type])
+    brand = Brand.find(params[:product_search_brand])
+
+    @model = Model.where(:model_type_id => model_type, :brand_id => brand).all
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def last_search
+    type = ProductType.find(params[:product_search_type])
+    model = Model.find(params[:product_search_model])
+
+    @product = Product.where(:model_id => model, :product_type_id => type).first
+
     respond_to do |format|
       format.js
     end
