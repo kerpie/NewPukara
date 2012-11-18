@@ -4,20 +4,7 @@
 	</hgroup>
 	<section id="brs">
 		<% @third_hash.each do |brand, hash| %>
-			<div class="model_part">
-				<div class="br_name">
-					<h1 <%= "id="+brand.name + "_"+brand.id.to_s%>><%= brand.name %></h1>	
-					<%= form_tag brand_destroy_path, :remote => true do %>		
-						<%= hidden_field_tag "brand_id", brand.id %>
-						<%= image_submit_tag "delete2.png", :confirm => "Confirme la operacion para proceder", :width => 10, :height => 10 %>
-					<% end %>
-				</div>
-				<div <%= "id="+brand.name %> class="mds">
-					<% hash.each do |parent_model, hash| %>
-						<%= render "model_type_partial",:brand => brand, :parent_model => parent_model, :hash => hash %>
-					<% end %>
-				</div>
-			</div>
+			<%= render "brand_part", :brand => brand, :hash => hash %>
 		<% end %>
 	</section>
 </section>

@@ -1,1 +1,7 @@
-alert('Creado! presiona F5');
+<% third_hash = Hash.new %>
+<% second_hash = Hash.new %>
+<% hash = Hash.new %>
+<% hash[@new_brand] = second_hash %>
+<% toRender = render "brand_part", :brand => @new_brand, :hash => hash %>
+
+$("#brs").append("<%= escape_javascript(toRender) %>");
