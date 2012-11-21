@@ -135,6 +135,7 @@ function showBrandMenu(link){
 	$(link).addClass('selected_link');
 
 	$("#new_brand_form").hide();
+	$("#new_class_form").hide();
 	$("#new_parent_model_form").hide();
 	$("#new_model_type_form").hide();
 	$("#new_model_form").hide();

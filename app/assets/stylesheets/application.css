@@ -322,9 +322,6 @@ body{
 	background: #333333;
 }
 
-
-
-
 #change_vendor{
 	float: right;
 }
@@ -449,8 +446,6 @@ form{
 	padding: 10px;
 }
 
-
-
 .submit_link{
 	display: block;
 	width: 100px;
@@ -509,9 +504,10 @@ form{
 
 .floating_body .options{
 	bottom: 0px;
+	background: red;
 }
 
-#check_stock_result .floating_body .options h1 a{
+.floating_body .options a{
 	color: #787878;
 	text-decoration: none;
 	background: white;
@@ -519,7 +515,7 @@ form{
 	width: 250px;
 	text-align: center;
 	font-size: 13px;
-	margin-bottom: 150px;
+	margin: 0px auto 150px;
 }
 
 .floating_body .new_body a{
