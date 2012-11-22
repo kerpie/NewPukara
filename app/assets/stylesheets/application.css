@@ -87,7 +87,7 @@ body{
 #main_section{
 	width: 1000px;
 	margin: 10px auto;
-	padding-bottom: 55px;
+	padding-top: 55px;
 }
 
 /* Sign In */
@@ -257,7 +257,7 @@ body{
 #prev_nav_bar{
 	background: #272727;
 	position: fixed;
-	bottom: 0px;
+	top: 0px;
 	right: 0px;
 	left: 0px;
 	overflow: hidden;
@@ -309,7 +309,7 @@ body{
 .first_level li:hover .second_level{
 	display: block;
 	position: fixed;
-	bottom: 58px;
+	top: 58px;
 }
 
 .second_level{
@@ -385,9 +385,9 @@ body{
 
 .floating_part{
 	position: fixed;
-	top: 0px;
+	top: 58px;
 	right: 0px;
-	bottom: 58px;
+	bottom: 0px;
 	width: 350px;
 	background: #00a9da;
 	z-index: 20;
@@ -499,12 +499,12 @@ form{
 .floating_body .new_body{
 	overflow: auto;
 	top: 100px;
-	bottom: 70px;
+	bottom: 100px;
 }
 
 .floating_body .options{
 	bottom: 0px;
-	background: red;
+	height: 100px;
 }
 
 .floating_body .options a{
@@ -516,6 +516,7 @@ form{
 	text-align: center;
 	font-size: 13px;
 	margin: 0px auto 150px;
+	display: block;
 }
 
 .floating_body .new_body a{

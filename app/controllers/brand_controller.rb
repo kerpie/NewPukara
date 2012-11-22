@@ -1,6 +1,6 @@
 class BrandController < ApplicationController
+   
    def index
-
     hash = Hash.new
     second_hash = Hash.new
     @third_hash = Hash.new
@@ -55,7 +55,6 @@ class BrandController < ApplicationController
   end
 
   def create_model_one
-
     @model_types = ModelType.where(:parent_model_id => params[:parent])
 
     respond_to do |f|
@@ -102,6 +101,14 @@ class BrandController < ApplicationController
       else
         f.js {render 'fail_create.js.erb'}
       end
+    end
+  end
+
+  def destroy_class
+    @del_class = ParentModel.find(params[:class_id])
+    @del_class.destroy
+    respond_to do |f|
+      f.js
     end
   end
 
