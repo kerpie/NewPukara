@@ -26,6 +26,22 @@ class BrandController < ApplicationController
     end
   end
 
+  #ParentModel index
+  def parent_model_index
+    @parent_model = ParentModel.all
+    respond_to do |f|
+      f.js
+    end
+  end
+
+  #ModelType index
+  def model_type_index
+    @model_type = ModelType.all
+    respond_to do |f|
+      f.js
+    end
+  end
+
   def create
     @new_brand = Brand.new
     @new_brand.name = unless params[:name].nil? 

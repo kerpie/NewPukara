@@ -98,6 +98,21 @@
 	}
 }
 
+#brand_menu{
+	.floating_body{
+		.new_body{
+			.not_common_form{
+				background: red;
+				.form_div{
+				}
+				.not_common_link{
+					background: yellow;
+				}
+			}
+		}
+	}
+}
+
 #brand_menu, 
 #new_brand_form, 
 #new_class_form, 

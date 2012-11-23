@@ -43,6 +43,8 @@ Final::Application.routes.draw do
 
   #Brand
   match "brand/index" => "brand#index", :as => :brand_index
+  match "brand/parent_model_index" => "brand#parent_model_index", :as => :parent_model_index
+  match "brand/model_type_index" => "brand#model_type_index", :as => :model_type_index
   match "brand/create" => "brand#create", :as => :brand_create
   match "brand/create_class" => "brand#create_class", :as => :class_create
   match "brand/create_model_type" => "brand#create_model_type", :as => :create_model_type

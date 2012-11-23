@@ -21,7 +21,23 @@
 			<%= link_to_function "Registrar nueva marca", "registerBrandForm(this)" %><br/>
 			<%= link_to_function "Registrar nueva clasificacion", "registerClassForm(this)" %><br/>
 			<%= link_to_function "Registrar nueva sub-clasificacion", "registerModelTypeForm(this)" %><br/>
-			<%= link_to_function "Registrar nuevo modelo", "registerModelForm(this)" %>
+			<%= link_to_function "Registrar nuevo modelo", "registerModelForm(this)" %><br/>
+			<%= form_tag parent_model_index_path, :remote => true, :class => "not_common_form" do %>
+				<div class="form_div">
+					<%= link_to_function "Mostrar Clases Registradas", "submitRegularForm(this)", :class => "not_common_link" %>
+				</div>
+				<div class="submit_part">
+					<%= submit_tag "enviar" %>
+				</div>
+			<% end %>
+			<%= form_tag parent_model_index_path, :remote => true, :class => "not_common_form" do %>
+				<div class="form_div">
+					<%= link_to_function "Mostrar Sub Clases Registradas", "submitRegularForm(this)", :class => "not_common_link" %>
+				</div>
+				<div class="submit_part">
+					<%= submit_tag "enviar" %>
+				</div>
+			<% end %><br/>
 		</div>
 	</div>
 </section>
@@ -133,6 +149,25 @@
 			<% end %>
 			<div id="second_part">
 			</div>
+		</div>
+		<div class="options">
+			<h2></h2>
+			<%= link_to_function "Volver al Menu", "showBrandMenu(this)" %>
+		</div>
+	</div>
+</section>
+<section id="parent_model_index" class="floating_part">
+	<div class="floating_body">
+		<div class="title">
+			<h1>Clases Registradas</h1>
+			<div class="second_title">
+				<%= link_to_function "X", "hideBrandsMenu(this)" %>
+			</div>
+		</div>
+		<div class="new_body">
+			<ul>
+				
+			</ul>
 		</div>
 		<div class="options">
 			<h2></h2>
