@@ -30,7 +30,7 @@
 					<%= submit_tag "enviar" %>
 				</div>
 			<% end %>
-			<%= form_tag parent_model_index_path, :remote => true, :class => "not_common_form" do %>
+			<%= form_tag model_type_index_path, :remote => true, :class => "not_common_form" do %>
 				<div class="form_div">
 					<%= link_to_function "Mostrar Sub Clases Registradas", "submitRegularForm(this)", :class => "not_common_link" %>
 				</div>
@@ -165,9 +165,51 @@
 			</div>
 		</div>
 		<div class="new_body">
-			<ul>
-				
-			</ul>
+		</div>
+		<div class="options">
+			<h2></h2>
+			<%= link_to_function "Volver al Menu", "showBrandMenu(this)" %>
+		</div>
+	</div>
+</section>
+<section id="model_type_index" class="floating_part">
+	<div class="floating_body">
+		<div class="title">
+			<h1>Sub Clases Registradas</h1>
+			<div class="second_title">
+				<%= link_to_function "X", "hideBrandsMenu(this)" %>
+			</div>
+		</div>
+		<div class="new_body">
+		</div>
+		<div class="options">
+			<h2></h2>
+			<%= link_to_function "Volver al Menu", "showBrandMenu(this)" %>
+		</div>
+	</div>
+</section>
+<section id="model_edit" class="floating_part">
+	<div class="floating_body">
+		<div class="title">
+			<h1>Editar Modelo</h1>
+			<div class="second_title">
+				<%= link_to_function "X", "hideBrandsMenu(this)" %>
+			</div>
+		</div>
+		<div class="new_body">
+			<%= form_tag model_update_path, :remote => true do %>
+				<%= hidden_field_tag "model_id", 3 %>
+				<div class="form_div">
+					<%= label_tag "new_value", "Nuevo valor:" %><br/>
+					<%= text_field_tag "new_value", 5 %>
+				</div>
+				<div class="form_div">
+					<%= link_to_function "Editar Modelo", "submitRegularForm(this)", :class => "not_common_link" %>
+				</div>
+				<div class="submit_part">
+					<%= submit_tag "enviar" %>
+				</div>		
+			<% end %>
 		</div>
 		<div class="options">
 			<h2></h2>

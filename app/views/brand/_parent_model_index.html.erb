@@ -1,0 +1,29 @@
+<ul>
+	<% data.each do |pm| %>
+		<li <%= "id=li_"+pm.id.to_s%> class="just_here">
+			<span><%= pm.name %></span>
+			<div class="parent_model_options">
+				<%= image_tag "edit.png", :width => 10, :height => 10, :class => "parent_model_edit_image" %>
+				<%= form_tag parent_model_destroy_path, :remote => true do %>
+					<%= hidden_field_tag "pm_id", pm.id %>
+					<%= image_submit_tag "delete2.png", :confirm => "Confirme la operacion para proceder", :width => 10, :height => 10 %>
+				<% end %>
+			</div>
+		</li>
+		<li <%= "id=pm_"+pm.id.to_s %> class="parent_model_edit">
+			<%= form_tag parent_model_update_path, :remote => true do %>
+				<%= hidden_field_tag "pm_id", pm.id %>
+				<div class="form_div">
+					<%= label_tag "new_name", "Clase:" %><br/>
+					<%= text_field_tag "new_name", pm.name %>
+				</div>
+				<div class="submit_edit_link">
+					<%= link_to_function "Actualizar datos", "submitRegularForm(this)" %>
+				</div>
+				<div class="submit_part">
+					<%= submit_tag "enviar" %>
+				</div>
+			<% end %>
+		</li>
+	<% end %>
+</ul>

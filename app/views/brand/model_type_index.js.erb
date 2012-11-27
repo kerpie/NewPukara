@@ -1,1 +1,6 @@
-alert('Hola Mundo!');
+$("#brand_menu").hide();
+$("#model_type_index").show();
+
+<% toRender = render "model_type_index", :data => @model_type %>
+
+$("#model_type_index .new_body").html("<%= escape_javascript(toRender) %>");

@@ -1,2 +1,3 @@
 jQuery -> 
 	$('#toHide').hide();
+	

@@ -78,10 +78,22 @@
 							p{
 								float: left;
 							}
-							form{
-								width: 10px;
-								height: 10px;
+							.model_edit_options{
 								float: right;
+								overflow: hidden;
+								width: 25px;
+								padding: 3px;
+								img{
+									float: left;
+								}
+								form{
+									width: 10px;
+									height: 10px;
+									float: right;
+									input{
+										display: block;
+									}
+								}
 							}
 							&:hover{
 								background: #00b0e3;
@@ -102,12 +114,119 @@
 	.floating_body{
 		.new_body{
 			.not_common_form{
-				background: red;
 				.form_div{
+					width: 240px;
+					padding: 10px;
 				}
-				.not_common_link{
-					background: yellow;
+			}
+		}
+	}
+}
+
+#parent_model_index .new_body ul{
+	li{
+		width: 300px;
+		margin: 0 auto;
+		overflow: hidden;
+		padding: 10px;
+		span{
+			color: white;
+			font-family: 'Dosis', sans-serif;
+			font-size: 14px;
+			float: left;
+		}
+		.parent_model_options{
+			float: right;
+			overflow: hidden;
+			padding: 3px;
+			.parent_model_edit_image{
+				float: left;
+				margin: 0px 5px;
+			}
+			form{
+				float: right;
+				width: 10px;
+				height: 10px;
+				margin: 0px 5px;
+				input{
+					display: block;
 				}
+			}
+		}
+	}
+	.parent_model_edit{
+		width: 300px;
+		clear: both;
+		display: none;
+		padding: 10px;
+		form{
+			.submit_edit_link{
+				width: 250px;
+				margin: 0 auto;
+				padding: 0px;
+				a{
+					width: 200px;
+					margin: 0 auto;
+					text-align: center;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+#model_type_index .new_body .midory{
+	width: 300px;
+	margin: 0 auto;
+	span{
+		color: white;
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+	ul{
+		li{
+			padding: 10px;
+			span{
+				color: white;
+				font-style: normal;
+				font-size: 13px;
+			}
+			.model_type_options{
+				float: right;
+				overflow: hidden;
+				padding: 3px;
+				.model_type_edit_image{
+					float: left;
+					margin: 0px 5px;
+				}
+				form{
+					float: right;
+					width: 10px;
+					height: 10px;
+					margin: 0px 5px;
+					input{
+						display: block;
+					}
+				}
+			}
+		}
+		.model_type_edit{
+			width: 300px;
+			clear: both;
+			display: none;
+			padding: 10px;
+			form{
+				.submit_edit_link{
+				width: 250px;
+				margin: 0 auto;
+				padding: 0px;
+				a{
+					width: 200px;
+					margin: 0 auto;
+					text-align: center;
+					text-decoration: none;
+				}
+			}
 			}
 		}
 	}
@@ -117,6 +236,9 @@
 #new_brand_form, 
 #new_class_form, 
 #new_model_type_form,
-#new_model_form{
+#new_model_form,
+#parent_model_index,
+#model_type_index,
+#model_edit{
 	display: none;
 }

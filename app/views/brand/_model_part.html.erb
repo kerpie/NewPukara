@@ -1,7 +1,10 @@
 <li <%= "id=" + m.id.to_s %>>
-	<p><%= m.name %></p>
-	<%= form_tag model_destroy_path, :remote => true do %>
-		<%= hidden_field_tag "model_id", m.id %>
-		<%= image_submit_tag "delete2.png", :confirm => "Confirme la operacion para proceder", :width => 10, :height => 10 %>
-	<% end %>
+	<p class="exact_model_name"><%= m.name %></p>
+	<div class="model_edit_options">
+		<%= image_tag "edit.png", :width => 11, :height => 11, :class => "model_edit_image" %>
+		<%= form_tag model_destroy_path, :remote => true do %>
+			<%= hidden_field_tag "model_id", m.id %>
+			<%= image_submit_tag "delete2.png", :confirm => "Confirme la operacion para proceder", :width => 11, :height => 11 %>
+		<% end %>
+	</div>
 </li>

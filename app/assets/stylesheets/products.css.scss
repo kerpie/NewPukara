@@ -1,97 +1,183 @@
-#product_index{
-	width: 900px;
-	border: 1px solid black;
-	background: white;
+#products_index{
+	width: 1000px;
 	margin: 0 auto;
-	padding: 15px;
-	h1{
-		width: 200px;
-		text-align: center;
-		margin: 0 auto;
-		text-transform: uppercase;
-		font-weight: bold;
-		font-size: 16px;
+	padding: 10px;
+	#products_title{
+		width: 1000px;
+		h1{
+			width: 500px;
+			font-size: 30px;
+			color: white;
+			background: #272727;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 20px;
+		}
 	}
-	table{
-		width: 500px;
-		margin: 20px auto;
-		text-align: center;
-		tr{
-			th, td{
+	#products{
+		margin: 10px auto;
+		ul{
+			overflow: hidden;
+			li{
+				width: 490px;
+				float: left;
 				padding: 5px;
-			}
-			th{
-				border: 1px solid black;
-			}
-			td{
-				border-bottom: 1px solid black;
+				.product_preview{
+					background: #d0d0d0;
+					overflow: hidden;
+					padding: 10px;
+					.image_preview{
+						float:left;
+						margin-right: 20px;
+					}
+					.explanation{
+						table{
+							tr{
+								td:first-child{
+									background: #aaa;
+									padding: 7px;
+									text-align: right;
+									color: white;
+								}
+								td{
+									padding: 7px;
+									color: #333;
+								}
+							}
+						}
+					}
+				}
+				&:hover{
+					background: #00b0e3;
+				}
 			}
 		}
 	}
 	#products_new_options{
 		a{
-			width: 100px;
+			width: 200px;
 			display: block;
 			text-align: center;
+			text-decoration: none;
+			color: white;
 			margin: 0 auto;
-			padding: 5px;
+			padding: 10px;
+			background: #272727;
 			&:hover{
-				background: #FF3455;
+				background: #00b0e3;
 			}
 		}
 	}
 }
 
 #product_new, #products_edit{
-	width: 900px;
-	border: 1px solid black;
-	background: white;
+	width: 1000px;
 	margin: 0 auto;
-	padding: 15px;
-	h1{
-		width: 200px;
-		text-align: center;
-		margin: 0 auto;
-		text-transform: uppercase;
-		font-weight: bold;
-		font-size: 16px;
+	padding: 10px;
+	#products_title{
+		width: 1000px;
+		h1{
+			width: 500px;
+			font-size: 30px;
+			color: white;
+			background: #272727;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 20px;
+		}
 	}
 	#model_changer_form{
 		text-align: center;
-		padding:5px;
-		.model_changer_field{
-			display: inline-block;
-			width: 500px;
-			padding: 5px;
-			margin: 5px auto;
+		background: #ccc;
+		padding:10px;
+		width: 300px;
+		margin: 10px auto;
+		.tmp_form_div{
+			padding-top: 10px;
+			display: block;
+			margin: 0 auto;
 			text-align: center;
+			label{
+				color: white;
+				font-family: 'Dosis', sans-serif;
+			}
+		}
+		#product_model_changer_link_submit{
+			a{
+				width: 200px;
+				margin: 10px auto 0px;
+				background: #272727;
+				color: white;
+				padding: 10px;
+				text-decoration: none;
+				display: block;
+				&:hover{
+					background: #00b0e3;
+				}
+			}
+		}
+		#model_changer_submit{
+			display: none;
+		}
+		&:hover{
+			background: #bbb;
 		}
 	}
 	form{
-		width: 600px;
-		margin: 0 auto;
+		width: 700px;
+		margin: 0 auto 10px;
 		padding: 10px;
+		background: #ccc;
 		.field{
 			display: block;
 			margin: 5px auto;
 			width: 400px;
 			padding: 3px;
 			text-align: center;
-		}
-		.actions{
-			width: 300px;
-			margin: 0 auto;
-			text-align: center;
-			input{
-				display: inline-block;
+			label{
+				color: white;
 			}
+			input{
+				padding: 10px;
+			}
+		}
+		#current_submit_link{
+			a{
+				width: 500px;
+				background: #272727;
+				margin: 10px auto;
+				text-decoration: none;
+				color: white;
+				text-align: center;
+				padding: 10px;
+				display: block;
+				&:hover{
+					background: #00b0e3;
+					
+				}
+			}
+		}
+		#actions{
+			display: none;
+		}
+		&:hover{
+			background: #bbb;
 		}
 	}
 	#products_new_options{
-		width: 300px;
-		padding: 3px;
-		margin: 6px auto 3px;
-		text-align: center;
+		a{
+			width: 200px;
+			display: block;
+			text-align: center;
+			text-decoration: none;
+			color: white;
+			margin: 0 auto;
+			padding: 10px;
+			background: #272727;
+			&:hover{
+				background: #00b0e3;
+			}
+		}
 	}
 	#products_edit_options{
 		width: 300px;

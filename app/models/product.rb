@@ -1,8 +1,11 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :model_id, :monthly_price, :monthly_quantity, :product_type_id
+  attr_accessible :description, :model_id, :monthly_price, :monthly_quantity, :product_type_id, :image
 
   validates :description, :presence => {:message => " no puede estar vacio"}
+  
   validates :model_id, :presence => {:message => " no puede estar vacio"}, :uniqueness => true
+  validates :model_id, :uniqueness => true
+
   validates :product_type_id, :presence => {:message => " no puede estar vacio"}
   validates :monthly_price, :presence => {:message => " no puede estar vacio"}
   validates :monthly_quantity, :presence => {:message => " no puede estar vacio"}
@@ -12,8 +15,15 @@ class Product < ActiveRecord::Base
 
   has_many :entry_document_details
   has_many :output_document_details
+
+  has_attached_file :image, :styles => {
+    :medium => "200x200>",
+    :large => "400x400>"
+  }, 
+  :path => ":rails_root/public/system/:class/:attachment/:id/:style/:filename",
+  :url => "/system/:class/:attachment/:id/:style/:filename"
   
   def full_name
-  	product_type.name + " " + model.model_type.parent_model.name + " " + model.model_type.name + " " + model.brand.name + " " + model.name
+  	product_type.name + " " + model.model_type.parent_model.name + " " + model.model_type.name + " " + model.name 
   end
 end

@@ -4,5 +4,5 @@ class Brand < ActiveRecord::Base
   validates :name, :presence => {:message => " no puede estar vacio"}
   validates :name, :uniqueness => true
 
-  has_many :models
+  has_many :model
 end

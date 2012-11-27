@@ -43,18 +43,28 @@ Final::Application.routes.draw do
 
   #Brand
   match "brand/index" => "brand#index", :as => :brand_index
-  match "brand/parent_model_index" => "brand#parent_model_index", :as => :parent_model_index
-  match "brand/model_type_index" => "brand#model_type_index", :as => :model_type_index
-  match "brand/create" => "brand#create", :as => :brand_create
-  match "brand/create_class" => "brand#create_class", :as => :class_create
-  match "brand/create_model_type" => "brand#create_model_type", :as => :create_model_type
-  match "brand/create_model" => "brand#create_model", :as => :model_create
-  match "brand/create_model_one" => "brand#create_model_one", :as => :model_create_one
-  match "brand/update" => "brand#update", :as => :brand_update
-  match "brand/update_model" => "brand#update_model", :as => :model_update
   match "brand/destroy" => "brand#destroy", :as => :brand_destroy
-  match "brand/destroy_model" => "brand#destroy_model", :as => :model_destroy
+  match "brand/update" => "brand#update", :as => :brand_update
+  match "brand/create" => "brand#create", :as => :brand_create
+
+  match "brand/parent_model_index" => "brand#parent_model_index", :as => :parent_model_index
+  match "brand/parent_model_destroy" => "brand#parent_model_destroy", :as => :parent_model_destroy
+  match "brand/parent_model_update" => "brand#parent_model_update", :as => :parent_model_update
+  match "brand/create_class" => "brand#create_class", :as => :class_create
   match "brand/destroy_class" => "brand#destroy_class", :as => :destroy_class
+
+  match "brand/model_type_index" => "brand#model_type_index", :as => :model_type_index
+  match "brand/create_model_type" => "brand#create_model_type", :as => :create_model_type
+  match "brand/model_type_destroy" => "brand#model_type_destroy", :as => :model_type_destroy
+  match "brand/model_type_update" => "brand#model_type_update", :as => :model_type_update
+
+  match "brand/create_model" => "brand#create_model", :as => :model_create
+  match "brand/update_model" => "brand#update_model", :as => :model_update
+  match "brand/destroy_model" => "brand#destroy_model", :as => :model_destroy
+
+  match "brand/create_model_one" => "brand#create_model_one", :as => :model_create_one
+  
+  
 
   #Product
   match "products/model_changer" => "products#model_changer", :as => :model_changer

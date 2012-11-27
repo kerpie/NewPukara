@@ -1,18 +1,21 @@
 <%= form_tag model_changer_path, :id => "model_changer_form",:remote => true do %>
-  <div class="model_changer_field">
-    <%= label_tag "brand_id", "Marca:" %>
+  <div class="tmp_form_div">
+    <%= label_tag "brand_id", "Marca:" %><br/>
     <%= select_tag "brand_id", options_from_collection_for_select(Brand.all, :id, :name) %>
   </div>
-  <div class="model_changer_field">
-    <%= label_tag "model_type_id", "Tipo:"%>
+  <div class="tmp_form_div">
+    <%= label_tag "model_type_id", "Tipo:"%><br/>
     <%= select_tag "model_type_id", options_from_collection_for_select(ModelType.all, :id, :name) %>
+  </div>
+  <div id="product_model_changer_link_submit">
+    <%= link_to_function "Consultar", "submitModelChanger(this)" %>
   </div>
   <div id="model_changer_submit">
     <%= submit_tag "consultar modelo" %>
   </div>
 <% end %>
 
-<%= form_for(@product) do |f| %>
+<%= form_for(@product, :html => {:multipart => true}) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -40,13 +43,20 @@
   </div>
   <div class="field">
     <%= f.label :description, "Descripcion: " %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :rows => 10 %>
   </div>
   <div class="field">
     <%= f.hidden_field :monthly_quantity, :value => 0 %>
     <%= f.hidden_field :monthly_price, :value => 0  %>
   </div>
-  <div class="actions">
+  <div class="field">
+    <%= f.label :image, "Imagen:" %><br />
+    <%= f.file_field :image %>
+  </div>
+  <div id="current_submit_link">
+    <%= link_to_function "Registrar", "submitProduct(this)" %>
+  </div>
+  <div id="actions">
     <%= f.submit "Crear Producto" %>
   </div>
 <% end %>

@@ -26,6 +26,21 @@ class BrandController < ApplicationController
     end
   end
 
+    def create
+    @create = Brand.new
+    @create.name = unless params[:name].nil? 
+                        params[:name].upcase
+                      end
+    authorize! :create, Brand.new 
+    respond_to do |f|
+      if @create.save
+        f.js
+      else
+        f.js {render 'fail_create.js.erb'}
+      end
+    end
+  end
+
   #ParentModel index
   def parent_model_index
     @parent_model = ParentModel.all
@@ -34,26 +49,65 @@ class BrandController < ApplicationController
     end
   end
 
-  #ModelType index
-  def model_type_index
-    @model_type = ModelType.all
+  def create_class
+    @create = ParentModel.new
+    @create.name = unless params[:name].nil? 
+                        params[:name].upcase
+                      end
+    respond_to do |f|
+      if @create.save
+        f.js
+      else
+        f.js {render 'fail_create.js.erb'}
+      end
+    end
+  end
+
+  def parent_model_destroy
+    @parent_model = ParentModel.find(params[:pm_id])
+    @parent_model.destroy
     respond_to do |f|
       f.js
     end
   end
 
-  def create
-    @new_brand = Brand.new
-    @new_brand.name = unless params[:name].nil? 
-                        params[:name].upcase
-                      end
-    authorize! :create, Brand.new 
+  def parent_model_update
+    @parent_model = ParentModel.find(params[:pm_id])
+    @parent_model.name = params[:new_name].upcase
+    
     respond_to do |f|
-      if @new_brand.save
+      if @parent_model.save
         f.js
       else
         f.js {render 'fail_create.js.erb'}
       end
+    end
+  end
+
+  #ModelType index
+  def model_type_index
+    @model_type = ParentModel.all
+    respond_to do |f|
+      f.js
+    end
+  end
+
+  def model_type_destroy
+    @model_type = ModelType.find(params[:pm_id])
+    @model_type.destroy
+    respond_to do |f|
+      f.js
+    end
+  end
+
+  def model_type_update
+    @model_type = ModelType.find(params[:mt_id])
+    @model_type.name =  unless params[:new_name].nil? 
+                          params[:new_name].upcase
+                        end
+    @model_type.save
+    respond_to do |f|
+      f.js
     end
   end
 
@@ -72,20 +126,19 @@ class BrandController < ApplicationController
 
   def create_model_one
     @model_types = ModelType.where(:parent_model_id => params[:parent])
-
     respond_to do |f|
       f.js
     end
   end
 
   def create_model
-    @new_model = Model.new
-    @new_model.brand_id = params[:brand_id]
-    @new_model.model_type_id = params[:model_type_id]
-    @new_model.name = params[:name].upcase
+    @create = Model.new
+    @create.brand_id = params[:brand_id]
+    @create.model_type_id = params[:model_type_id]
+    @create.name = params[:name].upcase
     authorize! :create, Model.new 
     respond_to do |f|
-      if @new_model.save
+      if @create.save
         f.js
       else
         f.js {render 'fail_create_model.js.erb'}
@@ -96,26 +149,13 @@ class BrandController < ApplicationController
   def update_model
     @up_model = Model.find(params[:model_id])
     @up_model.name = params[:new_value].upcase
+    
     authorize! :update, Model.new
     respond_to do |f|
       if @up_model.save
         f.js
       else
         f.js {render 'fail_update_model.js.erb'}
-      end
-    end
-  end
-
-  def create_class
-    @new_class = ParentModel.new
-    @new_class.name = unless params[:name].nil? 
-                        params[:name].upcase
-                      end
-    respond_to do |f|
-      if @new_class.save
-        f.js
-      else
-        f.js {render 'fail_create.js.erb'}
       end
     end
   end
@@ -129,15 +169,11 @@ class BrandController < ApplicationController
   end
 
   def create_model_type
-    @new_model_type = ModelType.new
-    @new_model_type.parent_model_id = unless params[:parent].nil?
-                                        params[:parent].upcase
-                                      end
-    @new_model_type.name = unless params[:name].nil? 
-                        params[:name].upcase
-                      end
+    @create = ModelType.new
+    @create.parent_model_id = params[:parent].upcase
+    @create.name = params[:name].upcase
     respond_to do |f|
-      if @new_model_type.save
+      if @create.save
         f.js
       else
         f.js {render 'fail_create.js.erb'}

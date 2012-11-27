@@ -139,6 +139,9 @@ function showBrandMenu(link){
 	$("#new_parent_model_form").hide();
 	$("#new_model_type_form").hide();
 	$("#new_model_form").hide();
+	$("#model_type_index").hide();
+	$("#parent_model_index").hide();
+
 	$("#brand_menu").show();
 }
 
@@ -169,4 +172,18 @@ function hideBrandsMenu(link){
 //Pulsar boton para enviar formulario
 function submitRegularForm(link){
 	$(link).parent().next('.submit_part').find('input').trigger('click');
+
+	value = $(link).parents(".parent_model_edit");
+	if(value){
+		$(value).hide();
+	}
+}
+
+//Products
+function submitModelChanger(link){
+	$(link).parent().next("#model_changer_submit").find("input").trigger('click');
+}
+
+function submitProduct(link){
+	$(link).parent().next("#actions").find("input").trigger('click');
 }
