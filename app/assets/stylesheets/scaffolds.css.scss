@@ -37,10 +37,11 @@ div {
 #notice {
   color: white;
   background: green;
-  width: 300px;
+  width: 600px;
   text-align: center;
   padding: 15px;
-  margin: 0 auto 10px;
+  margin: 10px auto;
+  text-transform: uppercase;
 }
 
 #error_explanation {
