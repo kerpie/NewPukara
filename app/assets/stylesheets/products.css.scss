@@ -91,36 +91,22 @@
 		}
 	}
 	#model_changer_form{
-		text-align: center;
 		background: #ccc;
-		padding:10px;
-		width: 300px;
+		padding:10px 25px;
+		width: 980px;
 		margin: 10px auto;
-		.tmp_form_div{
-			padding-top: 10px;
+		overflow: hidden;
+		.model_changer_form_div{
+			margin: 0px 25px;
 			display: block;
-			margin: 0 auto;
-			text-align: center;
-			label{
-				color: white;
-				font-family: 'Dosis', sans-serif;
-			}
+			float: left;
+			width: 300px;
 		}
-		#product_model_changer_link_submit{
-			a{
-				width: 200px;
-				margin: 10px auto 0px;
-				background: #272727;
-				color: white;
-				padding: 10px;
-				text-decoration: none;
-				display: block;
-				&:hover{
-					background: #00b0e3;
-				}
-			}
+		.model_changer_form_div:first-child{
+			float: none;
+			background: red;
 		}
-		#model_changer_submit{
+		#submiting{
 			display: none;
 		}
 		&:hover{
