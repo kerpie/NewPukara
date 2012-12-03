@@ -1,6 +1,6 @@
 <% if @product.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+    <h2>No se pudieron registrar los datos debido a los siguientes errores:</h2>
 
     <ul>
     <% @product.errors.full_messages.each do |msg| %>

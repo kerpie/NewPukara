@@ -3,10 +3,11 @@ class Product < ActiveRecord::Base
 
   validates :description, :presence => {:message => " no puede estar vacio"}
   
-  validates :model_id, :presence => {:message => " no puede estar vacio"}, :uniqueness => true
-  validates :model_id, :uniqueness => true
+  validates :model_id, :presence => {:message => " no puede estar vacio"}
+  validates :model_id, :uniqueness => {:message => " ya ha sido tomado"}
 
   validates :product_type_id, :presence => {:message => " no puede estar vacio"}
+  
   validates :monthly_price, :presence => {:message => " no puede estar vacio"}
   validates :monthly_quantity, :presence => {:message => " no puede estar vacio"}
 
