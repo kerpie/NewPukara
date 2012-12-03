@@ -180,10 +180,6 @@ function submitRegularForm(link){
 }
 
 //Products
-function submitModelChanger(link){
-	$(link).parent().next("#model_changer_submit").find("input").trigger('click');
-}
-
 function submitProduct(link){
-	$(link).parent().next("#actions").find("input").trigger('click');
+	$(link).parent().next("#new_product_submit_button").find("input").trigger('click');
 }

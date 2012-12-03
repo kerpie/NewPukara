@@ -74,7 +74,7 @@
 	}
 }
 
-#product_new, #products_edit{
+#product_new, #product_edit{
 	width: 1000px;
 	margin: 0 auto;
 	padding: 10px;
@@ -92,19 +92,31 @@
 	}
 	#model_changer_form{
 		background: #ccc;
-		padding:10px 25px;
+		padding:0px 20px;
 		width: 980px;
 		margin: 10px auto;
 		overflow: hidden;
+		//text-align: center;
 		.model_changer_form_div{
-			margin: 0px 25px;
-			display: block;
+			margin: 10px;
+			display: inline-block;
 			float: left;
-			width: 300px;
-		}
-		.model_changer_form_div:first-child{
-			float: none;
-			background: red;
+			width: 280px;
+			padding: 10px;
+			label{
+				background: #272727;
+				width: 80px;
+				text-align: right;
+				margin: 5px;
+				color: white;
+				padding: 5px;
+				float: left;
+				font-weight: bold;
+			}
+			input, select{
+				margin: 5px;
+				padding: 5px;
+			}
 		}
 		#submiting{
 			display: none;
@@ -113,25 +125,56 @@
 			background: #bbb;
 		}
 	}
-	form{
-		width: 700px;
-		margin: 0 auto 10px;
-		padding: 10px;
+	#new_product, .edit_product{
+		width: 980px;
+		padding: 20px 20px 10px;
 		background: #ccc;
-		.field{
-			display: block;
-			margin: 5px auto;
-			width: 400px;
-			padding: 3px;
-			text-align: center;
+		overflow: hidden;
+		#new_product_left_segment{
+			float: left;
+		}
+		#new_product_right_segment{
+			width: 510px;
+			float: right;
+			overflow: hidden;
+			padding: 0px 10px 10px 10px;
+			margin-bottom: 15px;
 			label{
-				color: white;
+				float: left;
 			}
-			input{
-				padding: 10px;
+			textarea{
+				margin-top: -13px;
+				float: right;
 			}
 		}
-		#current_submit_link{
+		.new_product_form_field{
+			padding: 10px;
+			overflow: hidden;
+			label{
+				background: #272727;
+				width: 120px;
+				text-align: right;
+				margin: 5px;
+				color: white;
+				padding: 5px;
+				float: left;
+				font-weight: bold;
+			}
+			input, select{
+				padding: 5px;
+				margin: 5px;
+			}
+			#toHide{
+				float: right;
+				padding: 5px;
+				p{
+					width: 270px;
+				}
+			}
+		}
+		#new_product_submit_link{
+			clear: both;
+			display: block;
 			a{
 				width: 500px;
 				background: #272727;
@@ -147,7 +190,7 @@
 				}
 			}
 		}
-		#actions{
+		#new_product_submit_button{
 			display: none;
 		}
 		&:hover{
@@ -161,7 +204,7 @@
 			text-align: center;
 			text-decoration: none;
 			color: white;
-			margin: 0 auto;
+			margin: 20px auto;
 			padding: 10px;
 			background: #272727;
 			&:hover{
@@ -170,7 +213,7 @@
 		}
 	}
 	#products_edit_options{
-		width: 300px;
+		width: 340px;
 		margin: 15px auto 0px;
 		text-align: center;
 		ul{
@@ -178,9 +221,19 @@
 			text-align: center;
 			overflow: hidden;
 			li{
-				display: inline-block;
-				padding: 5px;
 				float: left;
+				a{
+					display: inline-block;
+					background: #272727;
+					padding: 5px;
+					width: 140px;
+					margin: 10px;
+					text-decoration: none;
+					color: white;
+					&:hover{
+						background: #00b0e3;
+					}
+				}
 			}
 		}	
 	}
@@ -190,34 +243,88 @@
 	width: 1000px;
 	margin: 0 auto;
 	padding: 10px;
-	h1{
-		margin: 3px auto 15px;
-		width: 300px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
+	#products_title{
+		width: 1000px;
+		overflow: hidden;
+		h1{
+			width: 400px;
+			font-size: 30px;
+			color: white;
+			background: #272727;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 20px;
+			float: left;
+		}
+		#notice {
+		  color: white;
+		  background: green;
+		  width: 300px;
+		  text-align: center;
+		  padding: 10px;
+		  text-transform: uppercase;
+		  font-weight: bold;
+		  float: right;
+		}
 	}
-	// p{
-	// 	width: 250px;
-	// 	display: block;
-	// 	margin: 3px auto;
-	// 	b{
-	// 		font-weight: bold;
-	// 	}
-	// }
+	#product_description{
+		overflow: hidden;
+		width: 900px;
+		padding: 20px;
+		background: #ccc;
+		margin: 10px auto;
+		#product_description_left_part{
+			float: left;
+		}
+		#product_description_right_part{
+			float: right;
+			width: 450px;
+			.product_description_group{
+				overflow: hidden;
+				width: 450px;
+				padding: 5px;
+				.product_description_title{
+					float: left;
+					width: 150px;
+					padding: 10px;
+					color: #FFF;
+					background: #272727;
+					text-align: right;
+				}
+				.product_description_value{
+					float: right;
+					width: 260px;
+					padding: 10px;
+				}
+			}
+		}
+		&:hover{
+			background: #bbb;
+		}
+	}
 	#products_show_options{
-		width: 300px;
+		width: 530px;
 		margin: 15px auto 0px;
 		text-align: center;
 		ul{
+			width: 530px;
 			display: inline-block;
 			text-align: center;
 			overflow: hidden;
 			li{
-				display: inline-block;
-				padding: 5px;
-				float: left;
+				a{
+					display: inline-block;
+					background: #272727;
+					padding: 5px;
+					float: left;
+					width: 140px;
+					margin: 10px;
+					text-decoration: none;
+					color: white;
+					&:hover{
+						background: #00b0e3;
+					}
+				}
 			}
 		}
 	}

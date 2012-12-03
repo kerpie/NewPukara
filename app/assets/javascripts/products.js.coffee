@@ -1,5 +1,5 @@
 typingTimer = null
-doneTypingInterval = 3000
+doneTypingInterval = 1000
 
 jQuery -> 
 	$('#toHide').hide();
@@ -15,11 +15,17 @@ jQuery ->
 			$('#model_type_id').empty()
 
 doneTyping = () ->
-	alert $("#brand_id").val()
+	$("#submiting").find("input").trigger('click');
 
 jQuery ->
 	$("#brand_id").keyup ->
 		clearTimeout(typingTimer)
 		if($("#brand_id").val)
 			typingTimer = setTimeout(doneTyping, doneTypingInterval)
-		
+
+jQuery ->
+	$("#model_type_id").change -> 
+		$("#submiting").find("input").trigger('click');
+
+submitModelChanger = (link) ->
+	$(link).parent().next("#model_changer_submit").find("input").trigger('click');

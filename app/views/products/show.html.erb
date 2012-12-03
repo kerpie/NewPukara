@@ -1,47 +1,75 @@
 <section id="products_show">
-  <% if notice %>
-    <p id="notice"><%= notice %></p>
-  <% end %>
 
-  <h1>Producto</h1>
+  <hgroup id="products_title">
+    <h1>Productos</h1>
+    <% if notice %>
+      <p id="notice"><%= notice %></p>
+    <% end %>
+  </hgroup>
 
-  <p>
-    <b>Tipo de Producto:</b>
-    <%= @product.product_type.name %>
-  </p>
-
-  <p>
-    <b>Tipo:</b>
-    <%= @product.model.model_type.name %>
-  </p>
-
-  <p>
-    <b>Marca:</b>
-    <%= @product.model.brand.name %>  </p>
-
-  <p>
-    <b>Modelo:</b>
-    <%= @product.model.name %>
-  </p>
-
-  <p>
-    <b>Descripcion:</b>
-    <%= @product.description %>
-  </p>
-
-  <p>
-    <b>Stock del Mes anterior:</b>
-    <%= @product.monthly_quantity %>
-  </p>
-
-  <p>
-    <b>Precio del Stock anterior:</b>
-    <%= @product.monthly_price %>
-  </p>
-
-  <p>
-    <%= image_tag @product.image.url(:large) %>
-  </p>
+  <section id="product_description">
+    <div id="product_description_left_part">
+      <%= image_tag @product.image.url(:large) %>
+    </div>
+    <div id="product_description_right_part">
+      <div class="product_description_group">
+        <span class="product_description_title">
+          Tipo de Producto:
+        </span>
+        <span class="product_description_value">
+          <%= @product.product_type.name %>
+        </span>
+      </div>
+      <div class="product_description_group">
+        <span class="product_description_title">
+          Tipo:
+        </span>
+        <span class="product_description_value">
+          <%= @product.model.model_type.name %>
+        </span>
+      </div>
+      <div class="product_description_group">
+        <span class="product_description_title">
+          Marca:
+        </span>
+        <span class="product_description_value">
+          <%= @product.model.brand.name %>
+        </span>
+      </div>
+      <div class="product_description_group">
+        <span class="product_description_title">
+          Modelo:
+        </span>
+        <span class="product_description_value">
+          <%= @product.model.name %>
+        </span>
+      </div>
+      <div class="product_description_group">
+        <span class="product_description_title">
+          Stock del Mes anterior:
+        </span>
+        <span class="product_description_value">
+          <%= @product.monthly_quantity %>
+        </span>
+      </div>
+      <div class="product_description_group">
+        <span class="product_description_title">
+          Precio del Stock anterior:
+        </span>
+        <span class="product_description_value">
+          <%= @product.monthly_price %>
+        </span>
+      </div>
+      <div class="product_description_group">
+        <span class="product_description_title">
+          Descripcion:
+        </span>
+        <p class="product_description_value">
+          <%= @product.description %>
+        </p>
+      </div>
+    </div>
+  </section>
 
   <div id="products_show_options">
     <ul>
