@@ -1,62 +1,67 @@
-<%= form_tag model_changer_path, :id => "model_changer_form",:remote => true do %>
-  <div class="tmp_form_div">
-    <%= label_tag "brand_id", "Marca:" %><br/>
-    <%= select_tag "brand_id", options_from_collection_for_select(Brand.all, :id, :name) %>
-  </div>
-  <div class="tmp_form_div">
-    <%= label_tag "model_type_id", "Tipo:"%><br/>
-    <%= select_tag "model_type_id", options_from_collection_for_select(ModelType.all, :id, :name) %>
-  </div>
-  <div id="product_model_changer_link_submit">
-    <%= link_to_function "Consultar", "submitModelChanger(this)" %>
-  </div>
-  <div id="model_changer_submit">
-    <%= submit_tag "consultar modelo" %>
+<% if @product.errors.any? %>
+  <div id="error_explanation">
+    <h2>No se pudieron registrar los datos debido a los siguientes errores:</h2>
+
+    <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
   </div>
 <% end %>
 
-<%= form_for(@product, :html => {:multipart => true}) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<%= form_tag model_changer_path, :id => "model_changer_form", :remote => true do %>
+  <div class="model_changer_form_div">
+    <%= label_tag "brand_id", "Marca: " %>
+    <%= datalist_text_field_tag "brand_id", "midorys", Brand.all %>
+  </div>
+  <div class="model_changer_form_div">
+    <%= label_tag "myClass", "Clase: " %>
+    <%= select_tag "myClass", options_from_collection_for_select(ParentModel.all, :id, :name) %>
+  </div>
+  <div class="model_changer_form_div">
+    <%= label_tag "model_type_id", "Sub-Clase: " %>
+    <%= select_tag "model_type_id", option_groups_from_collection_for_select(ParentModel.all, :model_types, :name, :id, :name, 3) %>
+  </div>
+  <div id="submiting">
+    <%= submit_tag "consultar" %>
+  </div>
+<% end %>
 
-      <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for(@product,:html => {:multipart => true}) do |f| %>
+  <div id="new_product_left_segment">
+    <div class="new_product_form_field">
+      <%= f.label :product_type_id, "Tipo de Producto:" %>
+      <%= f.collection_select :product_type_id, ProductType.all, :id, :name %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :product_type_id, "Tipo de Producto:" %><br />
-    <%= f.collection_select :product_type_id, ProductType.all, :id, :name %>
-  </div>
-  <div class="field">
-    <%= f.label :model_id, "Modelo:" %><br />
-    <div id="toChange">
-      <%= f.collection_select :model_id, Model.all, :id, :name %>
+    <div class="new_product_form_field">
+      <%= f.label :model_id, "Modelo:" %>
+      <div id="toChange">
+        <%= f.collection_select :model_id, Model.all, :id, :name %>
+      </div>
+      <div id="toHide">
+        <p>No se han encontrado modelos con esas condiciones. Para agregarlo pulse <%= link_to 'aqui', brand_index_path %></p>
+      </div>
     </div>
-    <div id="toHide">
-      <p>No se han encontrado modelos con esas condiciones. Para agregarlo pulse <%= link_to 'aqui', brand_index_path %></p>
+    <div class="new_product_form_field">
+      <%= f.label :image, "Imagen:" %>
+      <%= f.file_field :image %>
     </div>
   </div>
-  <div class="field">
-    <%= f.label :description, "Descripcion: " %><br />
-    <%= f.text_area :description, :rows => 10 %>
+  <div id="new_product_right_segment">
+    <div class="new_product_form_field">
+      <%= f.label :description, "Descripcion: " %><br />
+      <%= f.text_area :description, :rows => 10 %>
+    </div>
   </div>
-  <div class="field">
+  <div class="new_product_form_field">
     <%= f.hidden_field :monthly_quantity, :value => 0 %>
     <%= f.hidden_field :monthly_price, :value => 0  %>
   </div>
-  <div class="field">
-    <%= f.label :image, "Imagen:" %><br />
-    <%= f.file_field :image %>
-  </div>
-  <div id="current_submit_link">
+  <div id="new_product_submit_link">
     <%= link_to_function "Registrar", "submitProduct(this)" %>
   </div>
-  <div id="actions">
+  <div id="new_product_submit_button">
     <%= f.submit "Crear Producto" %>
   </div>
 <% end %>
