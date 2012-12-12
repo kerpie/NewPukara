@@ -1,47 +1,49 @@
+<section id="suppliers_title_part">
+  <hgroup id="suppliers_title">
+    <h1><%= @supplier.name %></h1>
+    <% if notice %>
+      <p id="notice"><%= notice %></p>
+    <% end %>
+  </hgroup>
+</section>
+
 <section id="suppliers_show">
-  <% if notice %>
-    <p id="notice"><%= notice %></p>
-  <% end %>
 
-  <h1><%= @supplier.name %></h1>
+  <div class="supplier_show_part">
+    <span>Nombre:</span>
+    <p><%= @supplier.name %></p>
+  </div>
 
-  <p>
-    <b>Nombre:</b>
-    <%= @supplier.name %>
-  </p>
+  <div class="supplier_show_part">
+    <span>Direccion:</span>
+    <p><%= @supplier.address %></p>
+  </div>
 
-  <p>
-    <b>Direccion:</b>
-    <%= @supplier.address %>
-  </p>
+  <div class="supplier_show_part">
+    <span>Persona de Contacto:</span>
+    <p><%= @supplier.contact_person %></p>
+  </div>
 
-  <p>
-    <b>Persona de Contacto:</b>
-    <%= @supplier.contact_person %>
-  </p>
+  <div class="supplier_show_part">
+    <span>Telefono:</span>
+    <p><%= @supplier.phone %></p>
+  </div>
 
-  <p>
-    <b>Telefono:</b>
-    <%= @supplier.phone %>
-  </p>
+  <div class="supplier_show_part">
+    <span>Pais:</span>
+    <p><%= @supplier.country %></p>
+  </div>
 
-  <p>
-    <b>Pais:</b>
-    <%= @supplier.country %>
-  </p>
-
-  <p>
-    <b>Ciudad:</b>
-    <%= @supplier.city %>
-  </p>
-
-  <div id="suppliers_show_options">
-    <ul>
-      <li><%= link_to 'Editar', edit_supplier_path(@supplier) %></li>
-      <li><%= link_to 'Volver', suppliers_path %></li>
-      <li><%= link_to 'Eliminar', @supplier, confirm: 'Esta seguro?', method: :delete %></li>
-    </ul>
-  
-    
+  <div class="supplier_show_part">
+    <span>Ciudad:</span>
+    <p><%= @supplier.city %></p>
   </div>
 </section>
+
+<div id="suppliers_show_options">
+  <ul>
+    <li><%= link_to 'Editar', edit_supplier_path(@supplier) %></li>
+    <li><%= link_to 'Volver', suppliers_path %></li>
+    <li><%= link_to 'Eliminar', @supplier, confirm: 'Esta seguro?', method: :delete %></li>
+  </ul>
+</div>

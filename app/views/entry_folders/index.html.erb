@@ -1,14 +1,21 @@
 <section id="entry_folders_index">
-  <h1>Registros de Ingreso</h1>
+  <hgroup id="entry_folders_title">
+    <h1>Registros de Ingreso</h1>
+  </hgroup>
+  <section id="brs">
+    
+  </section>
+</section>
 
+<section id="entry_folders_main_index">
   <% @entry_folders.each do |entry_folder| %>
     <% entry_folder.each do |supplier,docs| %>
-      <div>
-        <div>
-          <h1><%= supplier.name %></h1>
+      <section class="entry_folders_box">
+        <section class="entry_folders_supplier_part">
+          <h1 class="entry_folders_supplier_name"><%= supplier.name %></h1>
           <!-- link_to todos los documentos de este proveedor -->
-        </div>
-        <div>
+        </section>
+        <section class="entry_folders_data_part">
           <table>
             <tr>
               <th>Tipo de Documento</th>
@@ -25,10 +32,11 @@
               <% end %>
             <% end %>
           </table>
-        </div>
-      </div>
+        </section>
+      </section>
     <% end %>
   <% end %>
+
   <section id="entry_folders_new_options">
     <%= link_to 'Registrar Nuevo Ingreso', new_entry_folder_path %>
   </section>

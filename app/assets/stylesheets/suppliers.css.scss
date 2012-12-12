@@ -1,166 +1,239 @@
-#suppliers_index{
-	width: 900px;
-	margin: 0 auto;
-	border: 1px solid black;
-	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 0px;
-		width: 300px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-		padding: 3px;
+#suppliers_title_part{
+	#suppliers_title{
+		width: 1000px;
+		overflow: hidden;
+		h1{
+			width: 400px;
+			font-size: 30px;
+			color: white;
+			background: #272727;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 20px;
+			margin: 0px 0px 10px 0px;
+			float: left;
+		}
+		#notice{
+			float: right;
+		}
 	}
+}
+
+#suppliers_index{
+	width: 700px;
+	margin: 0 auto;
+	padding: 10px;
 	table{
 		margin: 10px auto;
 		width: 500px;
 		text-align: center;
 		tbody{
 			tr{
-				th,td{
-					padding: 3px;
-					border: 1px solid black;
+				th{
+					padding: 10px;
+					color: white;
+					background: #272727;
+					border: 1px solid #272727;
+					font-family: 'Dosis', sans-serif;
+					font-size: 15px;
+					text-transform: uppercase;
+				}
+				td{
+					padding: 7px;
+					border: 1px solid #272727;
+					a{
+						text-decoration: none;
+						display: block;
+						padding: 5px 20px;
+						color: #272727;
+						&:hover{
+							background: #bbb;	
+							color: white;
+						}
+					}
+					&:hover{
+						background: #bbb;
+						a{
+							color: white;
+						}
+					}
 				}
 			}
 		}
 	}
 	#suppliers_new_options{
-		width: 300px;
+		width: 500px;
 		margin: 10px auto 0px;
 		text-align: center;
-		padding: 10px;
+		padding: 20px;
+		a{
+			text-align: center;
+			background: #272727;
+			padding: 10px;
+			font-size: 14px;
+			text-transform: uppercase;
+			color: white;
+			text-decoration: none;
+			font-family: 'Dosis', sans-serif;
+			&:hover{
+				background: #00b0e3;
+			}
+		}
 	}
 }
 
 #suppliers_new, #suppliers_edit{
-	width: 900px;
+	width: 540px;
 	margin: 0 auto;
-	border: 1px solid black;
 	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 0px;
-		width: 300px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
+	background: #ccc;
 	form{
 		width: 500px;
 		margin: 0 auto;
 		padding: 10px;
-		.field{
-			display: block;
+		.supplier_field{
 			margin: 5px auto;
-			width: 209px;
+			width: 410px;
 			padding: 3px;
+			overflow: hidden;
+			label{
+				float: left;
+				text-align: right;
+				padding: 10px;
+				background: #272727;
+				color: white;
+				width: 150px;
+			}
+			input{
+				float: right;
+				padding: 10px;
+			}
+		}
+		#supplier_submit_link{
+			margin: 20px auto 0px;
+			width: 500px;
+			text-align: center;
+			a{
+				display: inline-block;
+				width: 300px;
+				text-align: center;
+				color: white;
+				text-decoration: none;
+				background: #272727;
+				font-size: 13px;
+				padding: 10px;
+				&:hover{
+					background: #00b0e3;
+				}
+			}
 		}
 		.actions{
-			width: 300px;
-			margin: 0 auto;
-			text-align: center;
-			input{
-				display: inline-block;
-			}
+			display: none;
 		}
 	}
-	#suppliers_new_options{
-		width: 300px;
-		padding: 3px;
-		margin: 6px auto 3px;
-		text-align: center;
-	}
-	#suppliers_edit_options{
-		width: 300px;
-		margin: 15px auto 0px;
-		text-align: center;
-		ul{
-			display: inline-block;
-			text-align: center;
-			overflow: hidden;
-			li{
-				display: inline-block;
-				padding: 5px;
-				float: left;
-			}
-		}	
+	&:hover{
+		background: #bbb;
 	}
 }
 
-#suppliers_edit{
-  	width: 900px;
-	margin: 0 auto;
-	border: 1px solid black;
-	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 0px;
-		width: 300px;
+#suppliers_new_options{
+	width: 500px;
+	padding: 3px;
+	margin: 5px auto;
+	text-align: center;
+	a{
+		display: inline-block;
+		width: 200px;
 		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-	form{
-		width: 500px;
-		margin: 0 auto;
+		color: white;
+		text-decoration: none;
+		background: #272727;
+		font-size: 13px;
 		padding: 10px;
-		.field{
-			display: block;
-			margin: 5px auto;
-			width: 209px;
-			padding: 3px;
+		&:hover{
+			background: #00b0e3;
 		}
-		.actions{
-			width: 300px;
-			margin: 0 auto;
-			text-align: center;
-			input{
-				display: inline-block;
+	}
+}
+
+#suppliers_edit_options{
+	width: 300px;
+	margin: 15px auto 0px;
+	text-align: center;
+	ul{
+		display: inline-block;
+		text-align: center;
+		overflow: hidden;
+		li{
+			display: inline-block;
+			padding: 10px;
+			float: left;
+			width: 100px;
+			a{
+				text-decoration: none;
+				display: block;
+				padding: 10px;
+				color: white;				
+				background: #272727;
+				&:hover{
+					background: #00b0e3;
+				}
 			}
 		}
-	}
+	}	
 }
 
 #suppliers_show{
-	width: 900px;
+	width: 600px;
 	margin: 0 auto;
-	border: 1px solid black;
 	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 15px;
-		width: 300px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-	p{
-		width: 250px;
-		display: block;
-		margin: 3px auto;
-		b{
-			font-weight: bold;
+	background: #ccc;
+	clear: both;
+	.supplier_show_part{
+		overflow: hidden;
+		span{
+			width: 150px;
+			background: #272727;
+			color: white;
+			padding: 10px;
+			text-align: right;
+			float: left;
+			margin: 10px;
+		}
+		p{
+			text-align: left;
+			padding: 10px;
+			margin: 10px 0px;
 		}
 	}
-	#suppliers_show_options{
-		width: 300px;
-		margin: 15px auto 0px;
-		text-align: center;
-		ul{
-			display: inline-block;
-			text-align: center;
-			overflow: hidden;
-			li{
-				display: inline-block;
-				padding: 5px;
-				float: left;
-			}
-		}
+	&:hover{
+		background: #bbb;
 	}
 }
 
+#suppliers_show_options{
+	width: 500px;
+	margin: 15px auto 0px;
+	text-align: center;
+	ul{
+		display: inline-block;
+		text-align: center;
+		overflow: hidden;
+		li{
+			display: inline-block;
+			padding: 10px;
+			float: left;
+			width: 100px;
+			a{
+				text-decoration: none;
+				display: block;
+				padding: 10px;
+				color: white;				
+				background: #272727;
+				&:hover{
+					background: #00b0e3;
+				}
+			}
+		}
+	}	
+}

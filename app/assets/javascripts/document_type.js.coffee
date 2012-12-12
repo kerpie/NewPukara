@@ -1,3 +1,3 @@
 jQuery -> 
-	$(".update_document_type").hide()
-	$(".destroy_document_type").hide()
+ $(".document_type_edit_image").toggle -> $(this).parents(".document_type_item").next(".update_document_type").show(),
+ -> $(this).parents(".document_type_item").next(".update_document_type").hide()

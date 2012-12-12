@@ -1,9 +1,24 @@
+<section id="suppliers_title_part">
+  <hgroup id="suppliers_title">
+    <h1>Nuevo Proveedor</h1>
+  </hgroup>
+</section>
+
 <section id="suppliers_new">
-	<h1>Nuevo Proveedor</h1>
+	<% if @supplier.errors.any? %>
+	    <div id="error_explanation">
+	      	<h2>Por favor revise los siguientes puntos y vuelva a intentarlo:		</h2>
+	      	<ul>
+				<% @supplier.errors.full_messages.each do |msg| %>
+		   			<li><%= msg %></li>
+				<% end %>
+	      	</ul>
+		</div>
+  	<% end %>
 
 	<%= render 'form' %>
-
-	<div id="suppliers_new_options">
-		<%= link_to 'Volver', suppliers_path %>
-	</div>
 </section>
+
+<div id="suppliers_new_options">
+	<%= link_to 'Volver', suppliers_path %>
+</div>

@@ -113,7 +113,9 @@
 				<ul class="first_level">
 					<li><a href="#">Documentos</a>
 						<ul class="second_level">
-							<li><a href="#">Insertar</a></li>
+							<li><%= link_to "Documentos de Salida", :output_folders %></li>
+							<li><%= link_to "Documentos de Entrada", :entry_folders %></li>
+							<li><%= link_to "Tipos de Documentos", :document_type_index %></li>
 						</ul>
 					</li>
 					<li><a href="#">Codigos</a></li>
@@ -125,7 +127,11 @@
 					<li><%= link_to "Productos", products_path %></li>
 					<li><a href="#">Clientes</a></li>
 					<li><a href="#">Precios de Venta</a></li>
-					<li><a href="#">Proveedores</a></li>
+					<li><%= link_to "Proveedores", :suppliers %>
+						<ul class="second_level">
+							<li><%= link_to "Nuevo proveedor", new_supplier_path %></li>	
+						</ul>
+					</li>
 					<li><a href="#">Locales</a></li>
 				</ul>
 			</section>

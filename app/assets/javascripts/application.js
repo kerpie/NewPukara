@@ -183,3 +183,8 @@ function submitRegularForm(link){
 function submitProduct(link){
 	$(link).parent().next("#new_product_submit_button").find("input").trigger('click');
 }
+
+//Suppliers
+function submitNewSupplier(link){
+	$(link).parent().next(".actions").find("input").trigger('click');	
+}

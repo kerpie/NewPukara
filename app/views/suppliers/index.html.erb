@@ -1,20 +1,22 @@
-<section id="suppliers_index">
+<section id="suppliers_title_part">
+  <hgroup id="suppliers_title">
     <h1>Proveedores</h1>
-
+  </hgroup>
+</section>
+<section id="suppliers_index">
     <table>
       <tr>
         <th>Nombre</th>
       </tr>
-
-    <% @suppliers.each do |supplier| %>
-      <tr>
-        <td><%= link_to supplier.name, supplier %></td>
-      </tr>
-    <% end %>
+      <% @suppliers.each do |supplier| %>
+        <tr>
+          <td><%= link_to supplier.name, supplier %></td>
+        </tr>
+      <% end %>
     </table>
     <% if can? :create, Supplier.new %>
         <div id="suppliers_new_options">
-            <%= link_to 'Crear Nuevo Proveedor', new_supplier_path %>
+            <%= link_to 'Registrar nuevo proveedor', new_supplier_path %>
         </div>
     <% end %>
 </section>

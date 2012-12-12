@@ -1,196 +1,95 @@
 #entry_folders_index{
-	width: 900px;
-	margin: 0 auto;
-	border: 1px solid black;
-	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 0px;
-		width: 500px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-		padding: 3px;
+	#entry_folders_title{
+		width: 1000px;
+		h1{
+			width: 400px;
+			font-size: 30px;
+			color: white;
+			background: #272727;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 20px;
+		}
 	}
-	table{
+}
+#entry_folders_main_index{
+	.entry_folders_box{
+		width: 1000px;
 		margin: 10px auto;
-		width: 500px;
-		text-align: center;
-		tbody{
-			tr{
-				th,td{
-					padding: 3px;
-					border: 1px solid black;
-				}
-			}
-		}
-	}
-	#entry_folders_new_options{
-		width: 300px;
-		margin: 10px auto 0px;
-		text-align: center;
-		padding: 10px;
-	}
-}
-
-#entry_folders_new, #entry_folders_edit{
-	width: 900px;
-	margin: 0 auto;
-	border: 1px solid black;
-	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 0px;
-		width: 300px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-	form{
-		width: 700px;
-		margin: 0 auto;
-		padding: 10px;
-		.field{
-			display: block;
-			margin: 5px auto;
-			width: 209px;
-			padding: 3px;
-		}
-		.actions{
-			width: 300px;
-			margin: 0 auto;
-			text-align: center;
-			input{
-				display: inline-block;
-			}
-		}
-		#document_part{
-			text-align: center;
-			width: 600px;
-			margin: 10px auto;
-			padding: 10px;
-			overflow: hidden;
-			text-align: center;
-			.doc_row{
-				width: 200px;
-				background:darkgray;
-				padding: 5px;
-				display: inline-block;
-				margin: 5px;
-			}
-			#add_doc{
-				width: 600px;
+		.entry_folders_supplier_part{
+			.entry_folders_supplier_name{
 				text-align: center;
-				margin: 10px auto 10px;
-				a{
-					margin: 0 auto;
-					width:200px;
-					text-align: center;
-				}
-			}
-		}
-		#doc_detail_part{
-			width: 600px;
-			margin: 0 auto;
-			.doc_detail_row{
-				background: lightgray;
+				color: white;
+				font-family: 'Dosis', sans-serif;
 				width: 400px;
-				margin: 5px auto;
+				background: #272727;
 				padding: 10px;
+				font-size: 15px;
+				text-transform: uppercase;
+				font-weight: bold;
+				margin: 0px 0px 10px 0px;
 			}
-			#add_doc_detail{
-				width: 600px;
-				text-align: center;
-				margin: 10px auto 30px;
-				a{
-					margin: 0 auto;
-					width:200px;
-					text-align: center;
+		}
+		.entry_folders_data_part{
+			padding: 10px;
+			width: 800px;
+			margin: 0 auto;
+			table{
+				width: 800px;
+				tr{
+					th{
+						padding: 7px;
+						font-family: 'Dosis', sans-serif;
+						font-weight: bold;
+						background: #272727;
+						color: white;
+					}
+					td{
+						padding: 6px;
+						background: white;
+						text-align: center;
+						font-family: 'Dosis', sans-serif;
+						a{
+							text-decoration: none;
+							padding: 7px;
+							display: block;
+							&:hover{
+								background: #00b0e3;
+							}							
+						}
+					}
+					td:last-child{
+						&:hover{
+							background: #00b0e3;
+							a{
+								color: white;
+							}
+						}
+					}
 				}
+			}
+		}
+		&:hover{
+			.entry_folders_supplier_part .entry_folders_supplier_name{
+				background: #00b0e3;
 			}
 		}
 	}
 	#entry_folders_new_options{
-		width: 300px;
-		padding: 3px;
-		margin: 6px auto 3px;
-		text-align: center;
-	}
-	#entry_folders_edit_options{
-		width: 300px;
-		margin: 15px auto 0px;
-		text-align: center;
-		ul{
-			display: inline-block;
+		a{
+			width: 300px;
+			color: white;
+			background: #aaa;
 			text-align: center;
-			overflow: hidden;
-			li{
-				display: inline-block;
-				padding: 5px;
-				float: left;
-			}
-		}	
-	}
-}
-
-#entry_folders_show{
-	width: 900px;
-	margin: 0 auto;
-	border: 1px solid black;
-	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 15px;
-		width: 300px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-	p{
-		width: 250px;
-		display: block;
-		margin: 3px auto;
-		b{
-			font-weight: bold;
-		}
-	}
-	#document_part{
-		width:600px;
-		margin: 0 auto;
-		text-align: center;
-		.doc_row{
-			display: inline-block;
-			border: 1px solid black;
-			padding: 10px;
-			margin: 5px;
-		}
-	}
-	#document_detail_part{
-		width: 600px;
-		margin: 0 auto;
-		text-align: center;
-		.detail_row{
-			display: inline-block;
-			border: 1px solid black;
-			padding: 10px;
-			margin: 5px;
-		}
-	}
-	#entry_folders_show_options{
-		width: 300px;
-		margin: 15px auto 0px;
-		text-align: center;
-		ul{
-			display: inline-block;
-			text-align: center;
-			overflow: hidden;
-			li{
-				display: inline-block;
-				padding: 5px;
-				float: left;
+			margin: 10px auto;
+			display: block;
+			font-family: 'Dosis', sans-serif;
+			font-size: 16px;
+			text-decoration: none;
+			text-transform: uppercase;
+			padding: 13px 10px;
+			&:hover{
+				background: #00b0e3;
 			}
 		}
 	}

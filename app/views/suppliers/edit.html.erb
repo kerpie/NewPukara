@@ -1,12 +1,16 @@
-<section id="suppliers_edit">
-	<h1>Modificando Proveedor</h1>
-
-	<%= render 'form' %>
-
-	<div id="suppliers_edit_options">
-		<ul>
-			<li><%= link_to 'Mostrar', @supplier %></li>
-			<li><%= link_to 'Volver', suppliers_path %></li>
-		</ul>
-	</div>
+<section id="suppliers_title_part">
+  <hgroup id="suppliers_title">
+    <h1>Modificando Proveedor</h1>
+  </hgroup>
 </section>
+
+<section id="suppliers_edit">
+	<%= render 'form' %>
+</section>
+
+<div id="suppliers_edit_options">
+	<ul>
+		<li><%= link_to 'Mostrar', @supplier %></li>
+		<li><%= link_to 'Volver', suppliers_path %></li>
+	</ul>
+</div>
