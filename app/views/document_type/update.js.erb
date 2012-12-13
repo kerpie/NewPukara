@@ -1,1 +1,1 @@
-alert('Actualizado! presiona F5');
+$("<%= escape_javascript "#document_type_#{@up_dt.id} span" %>").html("<%= escape_javascript(@up_dt.name) %>");

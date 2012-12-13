@@ -1,39 +1,31 @@
 <%= form_for(@supplier) do |f| %> 
-  <% if @supplier.errors.any? %>
-    <div id="error_explanation">
-      <h2>Por favor revise los siguientes puntos y vuelva a intentarlo:</h2>
 
-      <ul>
-      <% @supplier.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name, "Nombre" %><br />
+  <div class="supplier_field">
+    <%= f.label :name, "Nombre:" %>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :address, "Direccion" %><br />
+  <div class="supplier_field">
+    <%= f.label :address, "Direccion:" %>
     <%= f.text_field :address %>
   </div>
-  <div class="field">
-    <%= f.label :contact_person, "Persona de Contacto" %><br />
+  <div class="supplier_field">
+    <%= f.label :contact_person, "Persona de Contacto:" %>
     <%= f.text_field :contact_person %>
   </div>
-  <div class="field">
-    <%= f.label :phone, "Telefono" %><br />
+  <div class="supplier_field">
+    <%= f.label :phone, "Telefono:" %>
     <%= f.text_field :phone %>
   </div>
-  <div class="field">
-    <%= f.label :country, "Pais" %><br />
+  <div class="supplier_field">
+    <%= f.label :country, "Pais:" %>
     <%= f.text_field :country %>
   </div>
-  <div class="field">
-    <%= f.label :city, "Ciudad" %><br />
+  <div class="supplier_field">
+    <%= f.label :city, "Ciudad:" %>
     <%= f.text_field :city %>
+  </div>
+  <div id="supplier_submit_link">
+    <%= link_to_function "Registrar proveedor", "submitNewSupplier(this)" %>
   </div>
   <div class="actions">
     <%= f.submit "Crear Proveedor" %>

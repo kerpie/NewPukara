@@ -183,3 +183,17 @@ function submitRegularForm(link){
 function submitProduct(link){
 	$(link).parent().next("#new_product_submit_button").find("input").trigger('click');
 }
+
+//Suppliers
+function submitNewSupplier(link){
+	$(link).parent().next(".actions").find("input").trigger('click');	
+}
+
+//DocumentType
+function submitUpdateForm(link){
+	$(link).parent().next(".dt_update_form_div_submit").find("input").trigger('click');
+}
+
+function submitCreateForm(link){
+	$(link).parent().next(".dt_create_form_div_submit").find("input").trigger('click');	
+}

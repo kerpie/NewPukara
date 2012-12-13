@@ -29,3 +29,8 @@ en:
         address: "Direccion del Local"
       brand:
         name: "Nombre de la marca"
+      supplier:
+        name: "Nombre del proveedor"
+        address: "Direccion del proveedor"
+        contact_person: "Persona de contacto"
+        phone: "Telefono"

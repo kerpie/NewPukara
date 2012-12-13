@@ -1,0 +1,27 @@
+<div id=<%= "document_type_" + "#{dt.id}" %> class="document_type_item">
+			<span><%= dt.name %></span>
+			<div class="document_type_row_options">
+				<div class="destroy_document_type" id=<%="destroy_form_"+dt.id.to_s%>>
+					<%= form_tag document_type_destroy_path, :remote => true do %>
+						<%= hidden_field_tag "dt_id", dt.id %>
+						<%= image_submit_tag "delete2.png", :confirm => "Confirme la operacion para proceder", :width => 14, :height => 14 %>
+					<% end %>
+				</div>
+				<%= image_tag "edit.png", :width => 14, :height => 14, :class => "document_type_edit_image" %>
+			</div>
+		</div>
+		<div class="update_document_type" id=<%="update_form_"+dt.id.to_s%>>
+			<%= form_tag document_type_update_path, :remote => true do %>
+				<div class="dt_update_form_div">
+					<%= hidden_field_tag 'dt_id', dt.id %>
+				</div>
+				<div class="dt_update_form_div">
+					<%= label_tag 'new_value', 'Nuevo Valor: ' %>
+					<%= text_field_tag 'new_value' %>
+					<%= link_to_function "Registrar", "submitUpdateForm(this)" %>
+				</div>
+				<div class="dt_update_form_div_submit">
+					<%= submit_tag 'Actualizar' %>
+				</div>
+			<% end %>
+		</div>
