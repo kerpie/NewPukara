@@ -188,3 +188,21 @@ function submitProduct(link){
 function submitNewSupplier(link){
 	$(link).parent().next(".actions").find("input").trigger('click');	
 }
+
+//DocumentType
+function submitUpdateForm(link){
+	$(link).parent().next(".dt_update_form_div_submit").find("input").trigger('click');
+}
+
+function submitCreateForm(link){
+	$(link).parent().next(".dt_create_form_div_submit").find("input").trigger('click');	
+}
+
+//PriceType
+function submitUpdateForm(link){
+	$(link).parent().next(".pt_update_form_div_submit").find("input").trigger('click');
+}
+
+function submitCreateForm(link){
+	$(link).parent().next(".pt_create_form_div_submit").find("input").trigger('click');	
+}

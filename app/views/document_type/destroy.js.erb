@@ -1,1 +1,2 @@
-alert("<%= @del_dt.name %> fue eliminado, Presione F5!");
+$("<%= escape_javascript "#document_type_" + "#{@del_dt.id}"%>").hide();
+$("<%= escape_javascript "#update_form_" + "#{@del_dt.id}"%>").hide();

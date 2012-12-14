@@ -50,6 +50,63 @@
 	}
 	.update_document_type{
 		display: none;
+		text-align: center;
+		form{
+			width: 450px;
+			margin: 0 auto;
+			background: #ccc;
+			padding: 10px;
+			.dt_update_form_div{
+				font-family: 'Dosis', sans-serif;
+				a{
+					background: #272727;
+					color: white;
+					text-decoration:none;
+					padding: 8px;
+					&:hover{
+						background: #00b0e3;
+					}
+				}
+			}
+			.dt_update_form_div_submit{
+				display: none;
+			}
+			&:hover{
+				background: #bbb;
+			};
+		}
 	}
 }
-	
+
+#create_document_type{
+	width: 600px;
+	margin: 0 auto;
+	background: #ccc;
+	text-align: center;
+	padding: 6px 10px 15px;
+	h1{
+		width: 400px;
+		margin: 5px auto;
+		text-align: center;
+		font-size: 13px;
+		color: white;
+	}
+	.dt_create_form_div{
+		font-family: 'Dosis', sans-serif;
+		a{
+			background: #272727;
+			color: white;
+			text-decoration:none;
+			padding: 8px;
+			&:hover{
+				background: #00b0e3;
+			}
+		}
+	}
+	.dt_create_form_div_submit{
+		display: none;
+	}
+	&:hover{
+		background: #aaa;
+	}
+}

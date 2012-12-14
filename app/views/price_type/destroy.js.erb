@@ -1,1 +1,2 @@
-alert("<%= @del_pt.name %> fue eliminado, Presione F5!");
+$("<%= escape_javascript "#price_type_" + "#{@del_pt.id}"%>").hide();
+$("<%= escape_javascript "#update_form_" + "#{@del_pt.id}"%>").hide();

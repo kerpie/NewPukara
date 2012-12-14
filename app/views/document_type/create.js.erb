@@ -1,1 +1,3 @@
-alert('Creado! presiona F5');
+<% toRender = render "document_type_item", :dt => @new_dt %>
+
+$("#document_type_index").append("<%= escape_javascript toRender %>");

@@ -6,34 +6,20 @@
 
 <section id="document_type_index">
 	<% @dt.each do |dt| %>
-		<div id=<%= "document_type_" + "#{dt.id}" %> class="document_type_item">
-			<span><%= dt.name %></span>
-			<div class="document_type_row_options">
-				<div class="destroy_document_type" id=<%="destroy_form_"+dt.id.to_s%>>
-					<%= form_tag document_type_destroy_path, :remote => true do %>
-						<%= hidden_field_tag "dt_id", dt.id %>
-						<%= image_submit_tag "delete2.png", :confirm => "Confirme la operacion para proceder", :width => 14, :height => 14 %>
-					<% end %>
-				</div>
-				<%= image_tag "edit.png", :width => 14, :height => 14, :class => "document_type_edit_image" %>
-			</div>
-		</div>
-		<div class="update_document_type" id=<%="update_form_"+dt.id.to_s%>>
-			<%= form_tag document_type_update_path, :remote => true do %>
-				<%= hidden_field_tag 'dt_id', dt.id %>
-				<%= label_tag 'new_value', 'Nuevo Valor' %>
-				<%= text_field_tag 'new_value' %>
-				<%= submit_tag 'Actualizar' %>
-			<% end %>
-		</div>
+		<%= render "document_type_item", :dt => dt %>
 	<% end %>
 </section>
 
 <div id="create_document_type">
 	<h1>Crear Tipo de Documento</h1>
 	<%= form_tag document_type_create_path, :remote => true do %>
-		<%= label_tag "name","Nombre:" %>
-		<%= text_field_tag "name" %>
-		<%= submit_tag "Enviar", :id => "document_type_create_input_submit_button"%>
+		<div class="dt_create_form_div">
+			<%= label_tag "name","Nombre:" %>
+			<%= text_field_tag "name" %>
+			<%= link_to_function "Registrar", "submitCreateForm(this)" %>
+		</div>
+		<div class="dt_create_form_div_submit">
+			<%= submit_tag "Enviar", :id => "document_type_create_input_submit_button"%>
+		</div>
 	<% end %>
 </div>
