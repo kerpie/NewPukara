@@ -196,6 +196,7 @@ function submitUpdateForm(link){
 
 function submitCreateForm(link){
 	$(link).parent().next(".dt_create_form_div_submit").find("input").trigger('click');	
+<<<<<<< HEAD
 }
 
 //PriceType
@@ -206,3 +207,6 @@ function submitUpdateForm(link){
 function submitCreateForm(link){
 	$(link).parent().next(".pt_create_form_div_submit").find("input").trigger('click');	
 }
+=======
+}
+>>>>>>> 440a50416ee199901b60c1afb133859e645bbb60
