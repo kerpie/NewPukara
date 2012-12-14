@@ -1,10 +1,11 @@
-<section id="entry_folders_show">
-	<% if notice %>
-		<p id="notice"><%= notice %></p>
-	<% end %>
-
+<hgroup id="entry_folders_title">
 	<h1>Documento Registrado</h1>
+	<% if notice %>
+	  <p id="notice"><%= notice %></p>
+	<% end %>
+</hgroup>
 
+<section id="entry_folders_show">
 	<p>
 	  <b>Proveedor:</b>
 	  <%= @entry_folder.supplier.name %>
@@ -25,12 +26,11 @@
 	  <%= @entry_folder.date %>
 	</p>
 
-
 	<div id="document_part">
 		<% @entry_folder.entry_documents.each do |doc| %>
 			<div class="doc_row">
 				<span>Tipo de Documento:</span>
-				<%= doc.document_type.name %><br/>
+				<%= doc.document_type.name %>
 				<span>Numeracion: </span>
 				<%= doc.numeration %><br/>
 			</div>

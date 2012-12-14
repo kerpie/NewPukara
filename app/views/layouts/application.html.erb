@@ -126,7 +126,11 @@
 					</li>
 					<li><%= link_to "Productos", products_path %></li>
 					<li><a href="#">Clientes</a></li>
-					<li><a href="#">Precios de Venta</a></li>
+					<li><%= link_to "Precios de Venta", :sell_price_search %>
+						<ul class="second_level">
+							<li><%= link_to "Tipo de Precio", :price_type_index %></li>
+						</ul>
+					</li>
 					<li><%= link_to "Proveedores", :suppliers %>
 						<ul class="second_level">
 							<li><%= link_to "Nuevo proveedor", new_supplier_path %></li>	
