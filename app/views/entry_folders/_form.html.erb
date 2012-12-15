@@ -10,27 +10,28 @@
       </ul>
     </div>
   <% end %>
+
   <%= f.hidden_field :user_id, :value => current_user.id %>
-  <div class="field">
-    <%= f.label :supplier_id, "Proveedor: " %><br />
-    <%= f.collection_select :supplier_id, Supplier.all, :id, :name %>
+
+  <div id="entry_folder_supplier_part">
+    <div class="et_supplier">
+      <%= f.label :supplier_id, "Proveedor: " %>
+      <%= f.collection_select :supplier_id, Supplier.all, :id, :name %>
+    </div>
+    <div class="et_supplier">
+      <%= f.label :folder_state_id, "Estado del Documento:" %>
+      <%= f.collection_select :folder_state_id, FolderState.all, :id, :name %>
+    </div>
+    <div class="et_supplier">
+      <%= f.label :date, "Fecha: " %>
+      <%= f.date_select :date %>
+    </div>    
+    <div class="et_supplier">
+      <p>Registrado por: <%= current_user.username %></p>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :folder_state_id, "Estado del Documento:" %><br />
-    <%= f.collection_select :folder_state_id, FolderState.all, :id, :name %>
-  </div>
-  <div class="field">
-    <%= f.label :date, "Fecha: " %><br />
-    <%= f.date_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :folder_state_id, "Estado del Documento: " %>
-    <%= f.collection_select :folder_state_id, FolderState.all, :id, :name %>
-  </div>
-  <div class="field">
-    <p>Registrado por: <%= current_user.username %></p>
-  </div>
-  <div id="document_part">
+  
+  <div id="entry_folder_documents_part">
     <%= f.fields_for :entry_documents do |ed| %>
       <%= render 'entry_documents_field', :data => ed %>
     <% end %>
@@ -38,6 +39,7 @@
       <%= link_to_add_field("Agregar Documento", f, :entry_documents)%>
     </div>
   </div>
+
   <div id="doc_detail_part">
       <%= f.fields_for :entry_document_details do |edd| %>
         <%= render 'entry_document_details_field', :data => edd %>

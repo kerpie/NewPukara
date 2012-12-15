@@ -1,5 +1,5 @@
-#entry_folders_index{
-	#entry_folders_title{
+.entry_folders_title_part{
+	.entry_folders_title{
 		width: 1000px;
 		h1{
 			width: 400px;
@@ -12,6 +12,7 @@
 		}
 	}
 }
+
 #entry_folders_main_index{
 	.entry_folders_box{
 		width: 1000px;
@@ -95,14 +96,82 @@
 	}
 }
 
-#entry_folders_title{
-	h1{
-		width: 400px;
-		font-size: 30px;
-		color: white;
-		background: #272727;
-		text-align: center;
-		text-transform: uppercase;
-		padding: 20px;
+#entry_folders_new{
+	width: 1000px;
+	margin: 0 auto;
+	form{
+		width:1000px;
+		margin: 0 auto;
+		#entry_folder_supplier_part{
+			width: 1000px;
+			margin: 10px auto;
+			padding: 10px;
+			background: #ccc;
+			.et_supplier{
+				width: 800px;
+				margin: 3px auto;
+				padding: 6px;
+				overflow: hidden;
+				label{
+					width: 150px;
+					background: #373737;
+					padding: 5px;
+					text-align: right;
+					color: white;
+					display: block;
+					float: left;
+					margin-right: 6px;
+				}
+				select{
+					padding: 5px;
+				}
+			}
+			&:hover{
+				background: #aaa;
+			}
+		}
+		#entry_folder_documents_part{
+			width: 1000px;
+			margin: 0 auto;
+			padding: 10px;
+			background: #ccc;
+			text-align: center;
+			.et_doc_item{
+				display: inline-block;
+				width: 260px;
+				padding: 10px;
+				margin: 0 10px;
+				background: red;
+				.nested_doc_field{
+					overflow: hidden;
+					padding: 5px;
+					text-align: left;
+					label{
+						width: 88px;
+						display: block;
+						padding: 6px;
+						text-align: right;
+						color: white;
+						background: #373737;
+						float: left;
+						margin-right: 6px;
+					}
+					input[type=text]{
+						width: 130px;
+					}
+					select,input[type=checkbox]{
+						margin-top: 8px;
+					}
+					select, input{
+						display: inline-block;
+						padding: 6px;
+
+					}
+				}
+			}
+			&:hover{
+				background: #aaa;
+			}
+		}
 	}
 }

@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require_self
 
 function update_form(parent, element){
 	$(parent).hide();
@@ -46,7 +47,7 @@ function showVendors(link){
 	}
 }
 
-function test(link){
+function test(){
 	alert("Hola Mundo!");
 }
 
