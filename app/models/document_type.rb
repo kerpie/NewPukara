@@ -3,6 +3,6 @@ class DocumentType < ActiveRecord::Base
 
   validates :name, :presence => {:message => " no puede estar vacio"}
 
-  has_many :entry_documents
+  has_many :entry_documents, :dependent => :destroy 
   has_many :output_documents
 end

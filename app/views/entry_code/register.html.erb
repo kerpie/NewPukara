@@ -19,7 +19,7 @@
 						<% dd.entry_codes.each do |code| %>
 							<tr>
 								<td><%= code.generated_code %></td>
-								<td><%= text_field_with_value "code_"+code.id.to_s,code %></td>
+								<td><%= entry_text_field_with_value "code_#{code.id}", code %></td>
 							</tr>
 						<% end %>
 					</table>

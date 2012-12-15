@@ -40,7 +40,7 @@
     </div>
   </div>
 
-  <div id="doc_detail_part">
+  <div id="entry_folder_detail_part">
       <%= f.fields_for :entry_document_details do |edd| %>
         <%= render 'entry_document_details_field', :data => edd %>
       <% end %>
@@ -48,7 +48,10 @@
         <%= link_to_add_field("Agregar Detalle de documento", f, :entry_document_details) %>
       </div>
   </div>
-  <div class="actions">
+  <div id="entry_folder_submit_link">
+    <%= link_to_function "Registrar", "submitCreateEntryFolderForm(this)" %>
+  </div>
+  <div id="entry_folder_submit_button">
     <%= f.submit "Insertar" %>
   </div>
 <% end %>

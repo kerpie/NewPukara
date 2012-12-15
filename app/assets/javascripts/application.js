@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-//= require_self
 
 function update_form(parent, element){
 	$(parent).hide();
@@ -191,13 +190,12 @@ function submitNewSupplier(link){
 }
 
 //DocumentType
-function submitUpdateForm(link){
+function submitUpdateDocTypeForm(link){
 	$(link).parent().next(".dt_update_form_div_submit").find("input").trigger('click');
 }
 
-function submitCreateForm(link){
+function submitCreateDocTypeForm(link){
 	$(link).parent().next(".dt_create_form_div_submit").find("input").trigger('click');	
-<<<<<<< HEAD
 }
 
 //PriceType
@@ -208,6 +206,8 @@ function submitUpdateForm(link){
 function submitCreateForm(link){
 	$(link).parent().next(".pt_create_form_div_submit").find("input").trigger('click');	
 }
-=======
+
+//EntryFolder
+function submitCreateEntryFolderForm(link){
+	$(link).parent().next("#entry_folder_submit_button").find("input").trigger('click');	
 }
->>>>>>> 440a50416ee199901b60c1afb133859e645bbb60

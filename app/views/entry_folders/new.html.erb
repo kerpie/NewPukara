@@ -5,10 +5,40 @@
 </section>
 
 <section id="entry_folders_new">
-
 	<%= render 'form' %>
+</section>
 
-	<div id="entry_folders_new_options">
-		<%= link_to 'Volver', entry_folders_path %>
+<section id="supplier_search" class="floating_part">
+	<div class="floating_body">
+		<div class="title">
+			<h1>Busqueda de Proveedor</h1>
+			<div class="second_title">
+				<%= link_to_function "X", "hideBrandsMenu(this)" %>
+			</div>
+		</div>
+		<div class="new_body">
+			<%= form_tag search_supplier_path, :remote => true do %>
+				<div class="form_div">
+					<%= label_tag "name", "Nombre"%><br/>
+					<%= text_field_tag "name" %>
+				</div>
+				<div class="form_div">
+					<%= link_to_function "Buscar", "submitRegularForm(this)" %>
+				</div>
+				<div class="submit_part">
+					<%= submit_tag "enviar" %>
+				</div>
+			<% end %>
+			<div id="sup_search_result">
+
+			</div>
+		</div>
+		<div class="options">
+			<h1><%= link_to_function "Buscar Proveedor" ,"#" %></h1>
+		</div>
 	</div>
+</section>
+
+<section id="entry_folders_new_options">
+	<%= link_to 'Volver', entry_folders_path %>
 </section>

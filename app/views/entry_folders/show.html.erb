@@ -1,60 +1,66 @@
-<hgroup id="entry_folders_title">
-	<h1>Documento Registrado</h1>
-	<% if notice %>
+<section class="entry_folders_title_part">
+  <hgroup class="entry_folders_title">
+    <h1>Documento Registrado</h1>
+    <% if notice %>
 	  <p id="notice"><%= notice %></p>
 	<% end %>
-</hgroup>
+  </hgroup>
+</section>
 
 <section id="entry_folders_show">
-	<p>
-	  <b>Proveedor:</b>
-	  <%= @entry_folder.supplier.name %>
-	</p>
+	<h2>Proveedor</h2>
+	<div id="ef_show_supplier_part">
+		<div class="ef_show_supplier_part">
+			<span class="ef_show_sup_title">Proveedor:</span>
+			<span class="ef_show_sup_value"><%= @entry_folder.supplier.name %></span>
+		</div>
+		<div class="ef_show_supplier_part">
+			<span class="ef_show_sup_title">Fecha:</span>
+			<span class="ef_show_sup_value"><%= @entry_folder.date %></span>
+		</div>
+		<div class="ef_show_supplier_part">
+			<span class="ef_show_sup_title">Estado del registro:</span>
+			<span class="ef_show_sup_value"><%= @entry_folder.folder_state.name %></span>
+		</div>
+		<div class="ef_show_supplier_part">
+			<span class="ef_show_sup_title">Registrado por:</span>
+			<span class="ef_show_sup_value"><%= @entry_folder.user.username %></span>
+		</div>
+	</div>
 
-	<p>
-	  <b>Registrado por:</b>
-	  <%= @entry_folder.user.username %>
-	</p>
-
-	<p>
-	  <b>Estado del registro:</b>
-	  <%= @entry_folder.folder_state.name %>
-	</p>
-
-	<p>
-	  <b>Fecha:</b>
-	  <%= @entry_folder.date %>
-	</p>
-
-	<div id="document_part">
+	<h2>Documentos</h2>
+	<div id="ef_show_document_part">
 		<% @entry_folder.entry_documents.each do |doc| %>
-			<div class="doc_row">
-				<span>Tipo de Documento:</span>
-				<%= doc.document_type.name %>
-				<span>Numeracion: </span>
-				<%= doc.numeration %><br/>
+			<div class="ef_show_doc_item">
+
+				<span class="ef_show_doc_title">Tipo de Documento:</span>
+				<span class="ef_show_doc_value"><%= doc.document_type.name %></span> <br/>
+				
+				<span class="ef_show_doc_title">Numeracion: </span>
+				<span class="ef_show_doc_value"><%= doc.numeration %></span>
 			</div>
 		<% end %>
 	</div>
 
-	<div id="document_detail_part">
+	<h2>Detalle del documento</h2>
+	<div id="ef_show_document_detail_part">
 		<% @entry_folder.entry_document_details.each do |dd| %>
-			<div class="detail_row">
-				<span>Producto: </span>
-				<%= dd.product.full_name %><br/>
-				<span>Precio de Compra</span>
-				<%= dd.purchase_price %><br/>
-				<span>Cantidad:</span>
-				<%= dd.quantity %><br/>
+			<div class="ef_show_doc_detail_item">
+				<span class="ef_show_doc_detail_title">Producto: </span>
+				<span class="ef_show_doc_detail_value"><%= dd.product.full_name %></span>
+				<span class="ef_show_doc_detail_title">Precio de Compra</span>
+				<span class="ef_show_doc_detail_value"><%= dd.purchase_price %></span>
+				<span class="ef_show_doc_detail_title">Cantidad:</span>
+				<span class="ef_show_doc_detail_value"><%= dd.quantity %></span>
 			</div>
 		<% end %>
 	</div>
+</section>
 
-	<div id="entry_folders_show_options">
-		<ul>
-			<li><%= link_to 'Editar', edit_entry_folder_path(@entry_folder) %></li>
-			<li><%= link_to 'Volver', entry_folders_path %></li>
-			<li><%= link_to 'Eliminar', @entry_folder, confirm: 'Esta seguro?', method: :delete %></li>
-		</ul>	
-	</div>
+<section id="entry_folders_show_options">
+	<ul>
+		<li><%= link_to 'Editar', edit_entry_folder_path(@entry_folder) %></li>
+		<li><%= link_to 'Volver', entry_folders_path %></li>
+		<li><%= link_to 'Eliminar', @entry_folder, confirm: 'Esta seguro?', method: :delete %></li>
+	</ul>	
 </section>

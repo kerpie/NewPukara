@@ -2,11 +2,10 @@
 <html>
 	<head>
 	  	<title>Final</title>
+	  	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" %>
 	  	<%= javascript_include_tag "application" %>
 	  	<%= stylesheet_link_tag    "application", :media => "all" %>
 	  	<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Dosis:400,200" %>
-	  	
-	 	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" %>
 		<%= csrf_meta_tags %>
 	</head>
 	<body>
@@ -119,7 +118,12 @@
 							<li><%= link_to "Tipos de Documentos", :document_type_index %></li>
 						</ul>
 					</li>
-					<li><a href="#">Codigos</a></li>
+					<li><a href="#">Codigos</a>
+						<ul class="second_level">
+							<li><%= link_to "Codigos de Salida", :code_output_search %></li>
+							<li><%= link_to "Codigos de Entrada", :code_entry_search %></li>
+						</ul>
+					</li>
 					<li><%= link_to "Marcas y Modelos", brand_index_path %>
 						<ul class="second_level">
 							<li><%= link_to_function "Registrar nuevo valor", "showBrandMenu(this)" %></li>

@@ -1,12 +1,16 @@
+<section class="entry_folders_title_part">
+  <hgroup class="entry_folders_title">
+    <h1>Editando Registro de Ingreso</h1>
+  </hgroup>
+</section>
+
 <section id="entry_folders_edit">
-	<h1>Editando Registro de Ingreso</h1>
-
 	<%= render 'form' %>
+</section>
 
-	<div id="entry_folders_edit_options">
-		<ul>
-			<li><%= link_to 'Mostrar', @entry_folder %></li>
-			<li><%= link_to 'Volver', entry_folders_path %></li>
-		</ul>
-	</div>
+<section id="entry_folders_edit_options">
+	<ul>
+		<li><%= link_to 'Mostrar', @entry_folder %></li>
+		<li><%= link_to 'Volver', entry_folders_path %></li>
+	</ul>
 </section>
