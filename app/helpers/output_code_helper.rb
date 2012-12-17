@@ -1,6 +1,5 @@
 module OutputCodeHelper
-
-	def text_field_with_value(name,code)
+	def ouput_text_field_with_value(name,code)
 		new_code = OutputCode.find(code.id)
 		if new_code.nil?
 			value = ""

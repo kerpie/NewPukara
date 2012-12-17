@@ -87,6 +87,10 @@ class EntryFoldersController < ApplicationController
   end
 
   def search_supplier
-    
+    name = params[:name]
+    @suppliers = Supplier.find(:all, :conditions => ["name like ?", "%" + name + "%"])
+    respond_to do |format|
+      format.js
+    end
   end
 end

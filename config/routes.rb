@@ -7,7 +7,7 @@ Final::Application.routes.draw do
   match "clients/search" => "clients#search", :as => :client_search
   resources :clients
 
-  match "entry_folder/search_supplier" => "entry_folder#search_supplier", :as => :search_supplier
+  match "entry_folders/search_supplier" => "entry_folders#search_supplier", :as => :search_supplier
   resources :entry_folders
   
   devise_for :users, :controllers => { :registrations => "users/registrations" }
@@ -65,8 +65,6 @@ Final::Application.routes.draw do
 
   match "brand/create_model_one" => "brand#create_model_one", :as => :model_create_one
   
-  
-
   #Product
   match "products/model_changer" => "products#model_changer", :as => :model_changer
   match "products/search" => "products#search", :as => :product_search

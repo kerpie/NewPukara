@@ -4,6 +4,6 @@ class ParentModel < ActiveRecord::Base
   validates :name, :presence => {:message => " no puede estar vacio"}
   validates :name, :uniqueness => true
   
-  has_many :model_types
+  has_many :model_types, :dependent => :destroy
   has_many :models, :through => :model_types
 end

@@ -14,15 +14,15 @@ class Product < ActiveRecord::Base
   belongs_to :model
   belongs_to :product_type
 
-  has_many :entry_document_details
-  has_many :output_document_details
+  has_many :entry_document_details, :dependent => :destroy
+  has_many :output_document_details, :dependent => :destroy
 
   has_attached_file :image, :styles => {
     :medium => "200x200>",
     :large => "400x400>"
   }, 
   :path => ":rails_root/public/system/:class/:attachment/:id/:style/:filename",
-  :url => "/system/:class/:attachment/:id/:style/:filename"
+  :url => "/system/:class/:attachment/:id/:style/:filename", :dependent => :destroy
   
   def full_name
   	product_type.name + " " + model.model_type.parent_model.name + " " + model.model_type.name + " " + model.name 
