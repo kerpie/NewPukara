@@ -15,8 +15,10 @@
 
   <div id="entry_folder_supplier_part">
     <div class="et_supplier">
-      <%= f.label :supplier_id, "Proveedor: " %>
-      <%= f.collection_select :supplier_id, Supplier.all, :id, :name %>
+      <%= f.hidden_field :supplier_id, :value => "0" %>
+      <%= f.label :sup_id, "Proveedor: " %>
+      <span id="sup_id"></span>
+      <%= link_to_function "Cambiar cliente", "showSupplierSearch()", :id => "change_supplier_link" %>
     </div>
     <div class="et_supplier">
       <%= f.label :folder_state_id, "Estado del Documento:" %>

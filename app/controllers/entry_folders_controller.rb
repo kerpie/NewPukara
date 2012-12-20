@@ -93,4 +93,16 @@ class EntryFoldersController < ApplicationController
       format.js
     end
   end
+
+  def search_product
+    model_name = params[:model]
+    model = Model.where(:name => model_name).all
+    @products = Hash.new
+    model.each do |m|
+      @products[m] = Product.where(:model_id => m).first
+    end
+    respond_to do |format|
+      format.js
+    end
+  end
 end

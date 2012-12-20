@@ -1,8 +1,10 @@
-<ul>
+<ul id="new_client_to_change">
 	<% data.each do |item| %>
 		<li>
-			<%= check_box_tag :new_id_for_supplier, item.id, false %>
-			<%= item.name %>
+			<%= radio_button_tag :new_id_for_supplier, item.id, false %>
+			<span><%= item.name %></span>
 		</li>
 	<% end %>
 </ul>
+
+<%= link_to_function "Confirmar proveedor", "useThisSupplier(this)" %>

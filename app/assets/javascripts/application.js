@@ -211,3 +211,15 @@ function submitCreateForm(link){
 function submitCreateEntryFolderForm(link){
 	$(link).parent().next("#entry_folder_submit_button").find("input").trigger('click');	
 }
+
+function useThisSupplier(link){
+	$(link).parents(".floating_part").hide();
+
+	$("#entry_folder_supplier_id").val($("#new_client_to_change li input:checked").val());
+	$("#sup_id").html($("#new_client_to_change li input:checked").next("span").html());
+	$("#sup_id").show();
+}
+
+function showSupplierSearch(){
+	$("#supplier_search").show();
+}

@@ -1,0 +1,7 @@
+$("#et_product_search_result").html("");
+<% @products.each do |key, value| %>
+	<% toRender = render "product_result_part", :data => value %>
+	$("#et_product_search_result").append("<%= escape_javascript toRender %>");
+<% end %>
+
+

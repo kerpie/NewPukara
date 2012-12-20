@@ -122,6 +122,27 @@
 					float: left;
 					margin-right: 6px;
 				}
+				span{
+					padding: 5px;
+					background: white;
+					display: block;
+					width: 180px;
+					float: left;
+					display: none;
+				}
+				a{
+					background: white;
+					padding: 5px;
+					display: block;
+					width: 100px;
+					text-align: center;
+					float: right;
+					text-decoration: none;
+					&:hover{
+						background: #00b0e3;
+						color: white;
+					}
+				}
 				select{
 					padding: 5px;
 				}
@@ -415,6 +436,47 @@
 				color: white;
 				&:hover{
 					background: #00b0e3;
+				}
+			}
+		}
+	}
+}
+
+#supplier_search{
+	display: none;
+	.floating_body{
+		.new_body{
+			#sup_search_result{
+				width: 300px;
+				margin: 10px auto;
+				#new_client_to_change{
+					li{
+						padding: 5px;
+						input{
+							padding: 6px 0px 6px 6px;
+						}
+						span{
+							padding: 6px 6px 6px 0px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#product_search_for_entry_folder{
+	.floating_body{
+		.new_body{
+			#et_product_search_result{
+				.product_search_item{
+					width: 200px;
+					padding: 10px;
+					margin: 0 auto;
+					display: block;
+					&:hover{
+						background: #FFF;
+					}
 				}
 			}
 		}
