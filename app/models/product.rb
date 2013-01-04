@@ -25,6 +25,6 @@ class Product < ActiveRecord::Base
   :url => "/system/:class/:attachment/:id/:style/:filename", :dependent => :destroy
   
   def full_name
-  	product_type.name + " " + model.model_type.parent_model.name + " " + model.model_type.name + " " + model.name 
+  	product_type.name.capitalize + " " + model.brand.name + " " + model.model_type.parent_model.name + " " + model.model_type.name + " " + model.name 
   end
 end

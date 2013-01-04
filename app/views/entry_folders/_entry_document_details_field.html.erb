@@ -1,7 +1,8 @@
 <div class="et_doc_detail_item">
   <div class="nested_doc_detail_field">
     <%= data.label :product_id, "Producto:" %>
-    <%= data.collection_select :product_id, Product.all, :id, :full_name %>
+    <%= data.text_field :product_id, :class => "ef_dd_product_name" %>
+    <!--    <%= data.collection_select :product_id, Product.all, :id, :full_name %> -->
   </div>
   <div class="nested_doc_detail_field">
     <%= data.label :purchase_price, "Precio de Compra: " %>

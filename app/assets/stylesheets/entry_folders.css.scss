@@ -469,13 +469,30 @@
 	.floating_body{
 		.new_body{
 			#et_product_search_result{
+				h2{
+					width: 250px;
+					background: red;
+					text-align: center;
+					color: white;
+					padding: 10px;
+					margin: 0 auto;
+				}
 				.product_search_item{
 					width: 200px;
 					padding: 10px;
 					margin: 0 auto;
 					display: block;
+					p{
+						text-transform: uppercase;
+						text-align: center;
+						color: white;
+					}
 					&:hover{
 						background: #FFF;
+						p{
+							color: #00b0e3;
+							font-weight: bold;
+						}
 					}
 				}
 			}

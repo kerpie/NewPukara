@@ -41,9 +41,13 @@
 </section>
 
 <section id="product_search_for_entry_folder" class="floating_part">
+	<%= hidden_field_tag "new_", 0, :class => "new_id" %>
 	<div class="floating_body">
 		<div class="title">
 			<h1>Busqueda de Productos</h1>
+			<div class="second_title">
+				<%= link_to_function "X", "hideBrandsMenu(this)" %>
+			</div>
 		</div>
 		<div class="new_body">
 			<%= form_tag search_product_path, :remote => true do %>
@@ -52,15 +56,14 @@
 				<%= datalist_text_field_tag "model", "model_list", Model.all %>
 			</div>
 			<div class="form_div">
-
+				<%= link_to_function "Buscar producto","submitRegularForm(this)" %>
 			</div>
-			<%= submit_tag "consultar" %>
+			<div class="submit_part">
+				<%= submit_tag "consultar" %>
+			</div>
 			<% end %>
 			<div id="et_product_search_result">
 			</div>
-		</div>
-		<div class="options">
-			<h1><%= link_to_function "Busqueda Avanzada" ,"" %></h1>
 		</div>
 	</div>
 </section>

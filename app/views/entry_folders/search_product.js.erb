@@ -1,7 +1,9 @@
-$("#et_product_search_result").html("");
-<% @products.each do |key, value| %>
-	<% toRender = render "product_result_part", :data => value %>
-	$("#et_product_search_result").append("<%= escape_javascript toRender %>");
+<% if @products.empty? %>
+	$("#et_product_search_result").html("<h2>No hay productos registrados con esos datos</h2>");
+<% else %>
+	$("#et_product_search_result").html("");
+	<% @products.each do |key, value| %>
+		<% toRender = render "product_result_part", :data => value %>
+		$("#et_product_search_result").append("<%= escape_javascript toRender %>");
+	<% end %>
 <% end %>
-
-
