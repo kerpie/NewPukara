@@ -1,4 +1,5 @@
 <div class="product_search_item">
 	<%= image_tag data.image.url(:medium), :width => 200, :height => 170 %>
 	<p><%= data.full_name %></p>
+	<%= hidden_field_tag "", data.id, :class => "hidden_data" %>
 </div>

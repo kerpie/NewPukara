@@ -26,9 +26,6 @@ class EntryFoldersController < ApplicationController
   def new
     @entry_folder = EntryFolder.new
     @entry_folder.entry_documents.build
-    2.times do 
-      @entry_folder.entry_document_details.build
-    end
 
     respond_to do |format|
       format.html # new.html.erb

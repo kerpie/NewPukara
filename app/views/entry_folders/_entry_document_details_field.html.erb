@@ -1,8 +1,11 @@
 <div class="et_doc_detail_item">
   <div class="nested_doc_detail_field">
     <%= data.label :product_id, "Producto:" %>
-    <%= data.text_field :product_id, :class => "ef_dd_product_name" %>
-    <!--    <%= data.collection_select :product_id, Product.all, :id, :full_name %> -->
+    <%= data.hidden_field :product_id, :value => 0 %>   
+    <div class="k_part">
+      <%= text_field_tag "kid_", "",:class => "ef_dd_product_name" %>
+      <span class="clickable_space">Cambiar</span>
+    </div>
   </div>
   <div class="nested_doc_detail_field">
     <%= data.label :purchase_price, "Precio de Compra: " %>
@@ -11,6 +14,10 @@
   <div class="nested_doc_detail_field">
     <%= data.label :quantity, "Cantidad: " %>
     <%= data.text_field :quantity, :size => 10 %>
+  </div>
+  <div class="nested_doc_detail_field">
+    <%= data.label :unit_id, "Unidad" %>
+    <%= data.collection_select :unit_id, Unit.all, :id, :name %>
   </div>
   <div class="nested_doc_detail_field">
     <%= data.check_box :_destroy %>

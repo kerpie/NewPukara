@@ -249,6 +249,24 @@
 					input[type=checkbox]{
 						margin-top: 10px;
 					}
+					.k_part{
+						width: 295px;
+						position: relative;
+						left: -8px;
+						float: right;
+						span{
+							padding: 5px;
+							display: block;
+							background: white;
+							text-align: center;
+							margin: 5px 0px;
+							cursor: pointer;
+							&:hover{
+								background: #00b0e3;
+								color: white;
+							}
+						}
+					}
 				}
 			}
 			#add_doc_detail{
@@ -320,6 +338,7 @@
 #entry_folders_show{
 	width: 980px;
 	padding: 10px;
+	clear: both;
 	h2{
 		width: 300px;
 		color: white;
@@ -466,6 +485,7 @@
 }
 
 #product_search_for_entry_folder{
+	display: none;
 	.floating_body{
 		.new_body{
 			#et_product_search_result{
