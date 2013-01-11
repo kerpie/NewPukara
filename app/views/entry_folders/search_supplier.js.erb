@@ -1,2 +1,6 @@
-<% toRender = render "search_supplier_result", :data => @suppliers %>
-$("#sup_search_result").html("<%= escape_javascript toRender %>");
+<% if @suppliers.empty? %>
+	$("#sup_search_result").html("<h2>No se encontraron proveedores que coincidan con ese nombre</h2>");
+<% else %>
+	<% toRender = render "search_supplier_result", :data => @suppliers %>
+	$("#sup_search_result").html("<%= escape_javascript toRender %>");
+<% end %>
