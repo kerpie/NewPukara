@@ -46,6 +46,7 @@ class EntryFoldersController < ApplicationController
     respond_to do |format|
       if @entry_folder.save
         EntryCode.generateEntryCodes(@entry_folder)
+        Stock.add_stock(@entry_folder)
         format.html { redirect_to @entry_folder, notice: 'Se ha creado un nuevo registro de ingreso' }
         format.json { render json: @entry_folder, status: :created, location: @entry_folder }
       else
@@ -59,9 +60,10 @@ class EntryFoldersController < ApplicationController
   # PUT /entry_folders/1.json
   def update
     @entry_folder = EntryFolder.find(params[:id])
-
+    Stock.prepare_to_update @entry_folder
     respond_to do |format|
       if @entry_folder.update_attributes(params[:entry_folder])
+        Stock.add_stock @entry_folder
         format.html { redirect_to @entry_folder, notice: 'Los datos del registro se han modificado' }
         format.json { head :no_content }
       else
@@ -75,6 +77,7 @@ class EntryFoldersController < ApplicationController
   # DELETE /entry_folders/1.json
   def destroy
     @entry_folder = EntryFolder.find(params[:id])
+    Stock.prepare_to_update @entry_folder
     @entry_folder.destroy
 
     respond_to do |format|

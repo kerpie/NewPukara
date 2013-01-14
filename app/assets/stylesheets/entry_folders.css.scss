@@ -108,7 +108,7 @@
 			padding: 10px;
 			background: #ccc;
 			.et_supplier{
-				width: 480px;
+				width: 550px;
 				margin: 3px auto;
 				padding: 6px;
 				overflow: hidden;
@@ -126,7 +126,7 @@
 					padding: 5px;
 					background: white;
 					display: block;
-					width: 180px;
+					width: 220px;
 					float: left;
 					display: none;
 				}
@@ -134,7 +134,7 @@
 					background: white;
 					padding: 5px;
 					display: block;
-					width: 100px;
+					width: 140px;
 					text-align: center;
 					float: right;
 					text-decoration: none;
@@ -143,8 +143,14 @@
 						color: white;
 					}
 				}
+				#sup_id{
+					display: block;
+				}
 				select{
 					padding: 5px;
+				}
+				.forever_hidden{
+					display: none;
 				}
 			}
 			&:hover{
@@ -289,6 +295,9 @@
 			&:hover{
 				background: #aaa;
 			}
+		}
+		.forever_hidden{
+			display: none;
 		}
 		#entry_folder_submit_link{
 			width: 1000px;

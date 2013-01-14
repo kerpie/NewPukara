@@ -5,4 +5,5 @@ class Store < ActiveRecord::Base
   validates :address, :presence => {:message => " no puede estar vacio"}
 
   has_many :user
+  has_many :stock
 end

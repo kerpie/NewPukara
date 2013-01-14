@@ -1,26 +1,46 @@
-<section id="output_folders_index">
-  <h1>Registros de Salida</h1>
+<section class="output_folders_title_part">
+  <hgroup class="output_folders_title">
+    <h1>Registros de Salida</h1>
+  </hgroup>
+</section>
 
-  <table>
-    <tr>
-      <th>Cliente</th>
-      <th>Estado del Registro</th>
-      <th>Fecha</th>
-      <th>Registrado por</th>
-      <th>Opciones</th>
+<section id="output_folder_index">
+  <ul id="of_inner_nav_bar">
+    <% FolderState.all.each do |fs|%>
+      <% if fs == FolderState.first %>
+        <li class="clicker selected"><%= fs.name %></li>
+      <% else %>
+        <li class="clicker"><%= fs.name %></li>
+      <% end %>
+    <% end %>
+  </ul>
 
-    </tr>
+  <section id="of_data_part">
+    <% @response.each do |key, value| %>
+      <section id=<%= key.name %> class="classified_by_folder_state">
+        <table>
+        <tr>
+          <th>Cliente</th>
+          <th>Estado del Registro</th>
+          <th>Fecha</th>
+          <th>Registrado por</th>
+          <th>Opciones</th>
 
-  <% @output_folders.each do |output_folder| %>
-    <tr>
-      <td><%= output_folder.client_id %></td>
-      <td><%= output_folder.folder_state.name %></td>
-      <td><%= output_folder.date %></td>
-      <td><%= output_folder.user.username %></td>
-      <td><%= link_to 'Show', output_folder %></td>
-    </tr>
-  <% end %>
-  </table>
+        </tr>
+
+        <% value.each do |val| %>
+          <tr>
+            <td><%= val.client_id %></td>
+            <td><%= val.folder_state.name %></td>
+            <td><%= val.date %></td>
+            <td><%= val.user.username %></td>
+            <td><%= link_to 'Mostrar', val %></td>
+          </tr>
+        <% end %>
+        </table>
+      </section>
+    <% end %>
+  </section>
 
   <section id="output_folders_new_options">
     <%= link_to 'Registrar Nueva Salida', new_output_folder_path %>
