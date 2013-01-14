@@ -1,36 +1,74 @@
-#output_folders_index{
-	width: 900px;
-	margin: 0 auto;
-	background: white;
-	border: 1px solid black;
-	padding: 10px;
-	h1{
-		margin: 3px auto 0px;
-		width: 500px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-		padding: 3px;
-	}
-	table{
-		width: 700px;
-		margin: 0 auto;
-		tr{
-			td,th{
-				padding: 7px;
-				border: 1px solid black;
+#output_folder_index{
+	#of_inner_nav_bar{
+		width: 660px;
+		margin: 10px auto;
+		overflow: hidden;
+		li{
+			float: left;
+			width: 180px;
+			padding: 10px;
+			text-align: center;
+			background: #aaaaaa;
+			margin: 10px;
+			color: white;
+			text-transform: uppercase;
+			font-weight: bold;
+			cursor: pointer;
+			&:hover{
+				background: #00bce3;	
 			}
-			th{
-				background: lightgray;
+		}
+		.selected{
+			background: #00bce3;
+		}
+	}
+	#of_data_part{
+		width: 900px;
+		margin: 10px auto;
+		.classified_by_folder_state{
+			width: 800px;
+			margin: 10px auto;
+			display: block;
+			table{
+				width: 600px;
+				padding: 10px;
+				margin: 0 auto;
+				th, td{
+					text-align: center;
+				}
+				th{
+					padding: 10px;
+					background: #272727;
+					color: #FFFFFF;
+				}
+				td{
+					color: #191919;
+					border-bottom: 1px solid #191919;
+					a{
+						text-decoration: none;
+						padding: 10px;
+						display: block;
+						&:hover{
+							background: #00bce3;
+						}
+					}
+				}
 			}
 		}
 	}
 	#output_folders_new_options{
-		width: 300px;
-		margin: 10px auto 0px;
+		width: 400px;
+		margin: 10px auto;
 		text-align: center;
-		padding: 10px;
+		a{
+			width: 200px;
+			padding: 10px;
+			background: #272727;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+		}
 	}
 }
 

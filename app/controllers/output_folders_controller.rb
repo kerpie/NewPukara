@@ -2,8 +2,17 @@ class OutputFoldersController < ApplicationController
   # GET /output_folders
   # GET /output_folders.json
   def index
-    @output_folders = OutputFolder.all
+    
+    @response = Hash.new 
+    
+    FolderState.all.each do |fs|
+      tmp = OutputFolder.where(:folder_state_id => fs)
+      unless(tmp.empty?)
+        @response[fs] = tmp
+      end
+    end
 
+    @output_folders = OutputFolder.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @output_folders }

@@ -99,6 +99,12 @@ Final::Application.routes.draw do
 
   #Stores
   resources :stores
+
+  #Stock
+  match "stock/check_stock" => "stock#check_stock", :as => :check_stock
+  match "stock/add_stock" => "stock#add_stock", :as => :add_stock
+  match "stock/remove_stock" => "stock#remove_stock", :as => :remove_stock
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

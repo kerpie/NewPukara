@@ -8,6 +8,62 @@
 	<%= render 'form' %>
 </section>
 
+<section id="supplier_search" class="floating_part">
+	<div class="floating_body">
+		<div class="title">
+			<h1>Busqueda de Proveedor</h1>
+			<div class="second_title">
+				<%= link_to_function "X", "hideBrandsMenu(this)" %>
+			</div>
+		</div>
+		<div class="new_body">
+			<%= form_tag search_supplier_path, :remote => true do %>
+				<div class="form_div">
+					<%= label_tag "name", "Nombre"%><br/>
+					<%= text_field_tag "name" %>
+				</div>
+				<div class="form_div">
+					<%= link_to_function "Buscar", "submitRegularForm(this)" %>
+				</div>
+				<div class="submit_part">
+					<%= submit_tag "enviar" %>
+				</div>
+			<% end %>
+			<div id="sup_search_result">
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="product_search_for_entry_folder" class="floating_part">
+	<%= hidden_field_tag "new_", 0, :class => "new_id" %>
+	<div class="floating_body">
+		<div class="title">
+			<h1>Busqueda de Productos</h1>
+			<div class="second_title">
+				<%= link_to_function "X", "hideBrandsMenu(this)" %>
+			</div>
+		</div>
+		<div class="new_body">
+			<%= form_tag search_product_path, :remote => true do %>
+			<div class="form_div">
+				<%= label_tag "model", "Modelo:" %><br/>
+				<%= datalist_text_field_tag "model", "model_list", Model.all %>
+			</div>
+			<div class="form_div">
+				<%= link_to_function "Buscar producto","submitRegularForm(this)" %>
+			</div>
+			<div class="submit_part">
+				<%= submit_tag "consultar" %>
+			</div>
+			<% end %>
+			<div id="et_product_search_result">
+			</div>
+		</div>
+	</div>
+</section>
+
 <section id="entry_folders_edit_options">
 	<ul>
 		<li><%= link_to 'Mostrar', @entry_folder %></li>
