@@ -1,9 +1,47 @@
+<section class="output_folders_title_part">
+  <hgroup class="output_folders_title">
+    <h1>Nuevo Registro de Salida</h1>
+  </hgroup>
+</section>
+
 <section id="output_folders_new">
-	<h1>Nuevo Registro de Salida</h1>
-
 	<%= render 'form' %>
+</section>
 
-	<div id="output_folders_new_options">
-		<%= link_to 'Volver', output_folders_path %>
+<section id="output_folders_new_options">
+	<%= link_to 'Volver', output_folders_path %>
+</section>
+
+<section id="of_client_search" class="floating_part">
+	<div class="floating_body">
+		<div class="title">
+			<h1>Busqueda de Cliente</h1>
+			<div class="second_title">
+				<%= link_to_function "X", "hideBrandsMenu(this)" %>
+			</div>
+		</div>
+		<div class="new_body">
+			<%= form_tag client_search_path, :remote => true do %>
+				<div id="radio_part" class="form_div">
+					<% ClientType.all.each do |ct| %>
+						<%= radio_button_tag "client_type",ct.id, false %>
+						<%= label_tag "client_type", ct.name %>
+					<% end %>
+				</div>
+				<div class="form_div">
+					<%= label_tag "number", "DNI/RUC: " %><br/>
+					<%= text_field_tag "number" %>
+				</div>
+				<div class="form_div">
+					<%= link_to_function "Consultar", "searchClient()" %>
+				</div>
+				<div class="submit_part">
+					<%= submit_tag "Buscar", :id => "client_seach_submit_button" %>
+				</div>
+			<% end %>
+			<div id="client_search_result">
+
+			</div>
+		</div>
 	</div>
 </section>

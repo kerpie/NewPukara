@@ -1,1 +1,6 @@
-$("#client_search_show").html("<h1><%= @client.name %></h1>")
+<% if @client.empty? %>
+	$("#client_search_result").html("<h2>No se encontraron proveedores que coincidan con ese nombre</h2>");
+<% else %>
+	<% toRender = render "search_client_result", :data => @client %>
+	$("#client_search_result").html("<%= escape_javascript toRender %>");
+<% end %>

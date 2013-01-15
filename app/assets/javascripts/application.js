@@ -217,8 +217,8 @@ function submitCreateEntryFolderForm(link){
 function useThisSupplier(link){
 	$(link).parents(".floating_part").hide();
 
-	$("#entry_folder_supplier_id").val($("#new_client_to_change li input:checked").val());
-	$("#sup_id").html($("#new_client_to_change li input:checked").next("span").html());
+	$("#entry_folder_supplier_id").val($("#new_supplier_to_change li input:checked").val());
+	$("#sup_id").html($("#new_supplier_to_change li input:checked").next("span").html());
 	$("#sup_id").show();
 }
 

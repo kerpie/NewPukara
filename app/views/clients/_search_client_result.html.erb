@@ -1,0 +1,10 @@
+<ul id="new_client_to_change">
+	<% data.each do |item| %>
+		<li>
+			<%= radio_button_tag :client_id, item.id, false %>
+			<span><%= item.name %></span>
+		</li>
+	<% end %>
+</ul>
+
+<%= link_to_function "Confirmar cliente", "useThisClient(this)" %>

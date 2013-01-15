@@ -533,18 +533,3 @@ form{
 .floating_body .new_body a:hover{
 	box-shadow: 0px 0px 3px #FFF;
 }
-
-.floating_body .new_body #radio_part{
-	display: block;
-	margin: 30px auto 10px;
-	width: 300px;
-	text-align: center;
-}
-
-#check_stock, 
-#check_stock_result, 
-#client_search, 
-#client_register,
-#client_search_result{
-	display: none;
-}

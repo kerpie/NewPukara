@@ -5,6 +5,7 @@ Final::Application.routes.draw do
   resources :output_folders
 
   match "clients/search" => "clients#search", :as => :client_search
+  match "clients/new_search" => "clients#new_search", :as => :new_client_search
   resources :clients
 
   match "entry_folders/search_product" => "entry_folders#search_product", :as => :search_product

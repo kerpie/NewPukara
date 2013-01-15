@@ -1,3 +1,18 @@
+.output_folders_title_part{
+	.output_folders_title{
+		width: 1000px;
+		h1{
+			width: 400px;
+			font-size: 30px;
+			color: white;
+			background: #272727;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 20px;
+		}
+	}
+}
+
 #output_folder_index{
 	#of_inner_nav_bar{
 		width: 660px;
@@ -68,6 +83,28 @@
 			text-align: center;
 			text-decoration: none;
 			display: inline-block;
+			&:hover{
+				background: #00bce3;
+			}
+		}
+	}
+}
+
+#output_folders_new_options{
+	a{
+		width: 300px;
+		color: white;
+		background: #aaa;
+		text-align: center;
+		margin: 10px auto;
+		display: block;
+		font-family: 'Dosis', sans-serif;
+		font-size: 16px;
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 13px 10px;
+		&:hover{
+			background: #00b0e3;
 		}
 	}
 }

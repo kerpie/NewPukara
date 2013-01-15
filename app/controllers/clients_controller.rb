@@ -87,13 +87,14 @@ class ClientsController < ApplicationController
     number = params[:number]
 
     if ct == ClientType.first 
-      @client = Client.where(:client_type_id => ct,:DNI => number).first
+      @client = Client.where(:client_type_id => ct,:DNI => number)
     else
-      @client = Client.where(:client_type_id => ct,:RUC => number).first
+      @client = Client.where(:client_type_id => ct,:RUC => number)
     end
     
     respond_to do |format|
       format.js
     end
   end
+
 end
