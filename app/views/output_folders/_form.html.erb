@@ -11,23 +11,28 @@
     </div>
   <% end %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
-  <div class="field">
-    <%= f.label :client_id, "Cliente" %><br />
-    <%= f.collection_select :client_id, Client.all, :id, :name %>
-  </div>
-  <div class="field">
-    <%= f.label :folder_state_id, "Estado del Registro:" %><br />
-    <%= f.collection_select :folder_state_id, FolderState.all, :id, :name %>
-  </div>
-  <div class="field">
-    <%= f.label :date, "Fecha: " %><br />
-    <%= f.date_select :date %>
-  </div>
-  <div class="field">
-    <p>Registrado por: <%= current_user.username %></p>
+
+  <div id="output_folder_client_part">
+    <div class="of_supplier">
+      <%= f.text_field :client_id, :class => "forever_hidden" %>
+      <%= f.label :clnt_id, "Cliente: " %>
+      <span id="clnt_id"><%= @output_folder.client.nil? ? "Elija un cliente" : @output_folder.client.name %></span>
+      <%= link_to_function "Cambiar cliente", "showClientSearch()", :id => "change_client_link" %>
+    </div>
+    <div class="of_supplier">
+      <%= f.label :folder_state_id, "Estado del Documento:" %>
+      <%= f.collection_select :folder_state_id, FolderState.all, :id, :name %>
+    </div>
+    <div class="of_supplier">
+      <%= f.label :date, "Fecha: " %>
+      <%= f.date_select :date %>
+    </div>
+    <div class="of_supplier">
+      <p>Registrado por: <%= current_user.username %></p>
+    </div>
   </div>
 
-  <div id="document_part">
+  <div id="output_folder_documents_part">
     <%= f.fields_for :output_documents do |ed| %>
       <%= render 'output_documents_field', :data => ed %>
     <% end %>
@@ -35,7 +40,7 @@
       <%= link_to_add_field("Agregar Documento", f, :output_documents)%>
     </div>
   </div>
-  <div id="doc_detail_part">
+  <div id="output_folder_detail_part">
       <%= f.fields_for :output_document_details do |edd| %>
         <%= render 'output_document_details_field', :data => edd %>
       <% end %>

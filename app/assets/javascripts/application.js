@@ -225,3 +225,16 @@ function useThisSupplier(link){
 function showSupplierSearch(){
 	$("#supplier_search").show();
 }
+
+//OutputFolder
+function useThisClient(link){
+	$(link).parents(".floating_part").hide();
+
+	$("#output_folder_client_id").val($("#new_client_to_change li input:checked").val());
+	$("#clnt_id").html($("#new_client_to_change li input:checked").next("span").html());
+	$("#clnt_id").show();
+}
+
+function showClientSearch(){
+	$("#of_client_search").show();
+}

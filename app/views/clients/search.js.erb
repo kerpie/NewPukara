@@ -1,6 +1,6 @@
-<% if @client.empty? %>
-	$("#client_search_result").html("<h2>No se encontraron proveedores que coincidan con ese nombre</h2>");
-<% else %>
+$("#client_search_result").html("");
+<% unless @client.empty? %>
 	<% toRender = render "search_client_result", :data => @client %>
 	$("#client_search_result").html("<%= escape_javascript toRender %>");
 <% end %>
+$("#client_search_result").append("<h2>No se encontraron proveedores que coincidan con ese nombre</h2><%= escape_javascript link_to 'Registrar nuevo cliente', new_client_path %>");

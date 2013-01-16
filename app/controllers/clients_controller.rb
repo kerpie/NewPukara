@@ -82,19 +82,17 @@ class ClientsController < ApplicationController
   end
 
   def search
-
     ct = ClientType.find(params[:client_type])
     number = params[:number]
 
     if ct == ClientType.first 
-      @client = Client.where(:client_type_id => ct,:DNI => number)
+      @client = Client.find(:all, :conditions => ["DNI like ?", "%" + number + "%"])
     else
-      @client = Client.where(:client_type_id => ct,:RUC => number)
+      @client = Client.find(:all, :conditions => ["RUC like ?", "%" + number + "%"])
     end
     
     respond_to do |format|
       format.js
     end
   end
-
 end
