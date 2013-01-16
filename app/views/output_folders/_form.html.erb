@@ -49,7 +49,10 @@
       </div>
   </div>
 
-  <div class="actions">
+  <div id="output_folder_submit_link">
+    <%= link_to_function "Registrar", "submitCreateOutputFolderForm(this)" %>
+  </div>
+  <div id="output_folder_submit_button">
     <%= f.submit "Insertar" %>
   </div>
 <% end %>

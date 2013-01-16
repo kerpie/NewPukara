@@ -110,106 +110,233 @@
 }
 
 #output_folders_new, #output_folders_edit{
-	width: 900px;
+	width: 1000px;
 	margin: 0 auto;
-	border: 1px solid black;
-	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 0px;
-		width: 300px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
 	form{
-		width: 700px;
+		width:1000px;
 		margin: 0 auto;
-		padding: 10px;
-		.field{
-			display: block;
-			margin: 5px auto;
-			width: 209px;
-			padding: 3px;
-		}
-		.actions{
-			width: 300px;
-			margin: 0 auto;
-			text-align: center;
-			input{
-				display: inline-block;
-			}
-		}
-		#document_part{
-			text-align: center;
-			width: 600px;
+		#output_folder_client_part{
+			width: 1000px;
 			margin: 10px auto;
 			padding: 10px;
-			overflow: hidden;
+			background: #ccc;
+			.of_supplier{
+				width: 550px;
+				margin: 3px auto;
+				padding: 6px;
+				overflow: hidden;
+				label{
+					width: 150px;
+					background: #373737;
+					padding: 5px;
+					text-align: right;
+					color: white;
+					display: block;
+					float: left;
+					margin-right: 6px;
+				}
+				span{
+					padding: 5px;
+					background: white;
+					display: block;
+					width: 220px;
+					float: left;
+					display: none;
+				}
+				a{
+					background: white;
+					padding: 5px;
+					display: block;
+					width: 140px;
+					text-align: center;
+					float: right;
+					text-decoration: none;
+					&:hover{
+						background: #00b0e3;
+						color: white;
+					}
+				}
+				#clnt_id{
+					display: block;
+				}
+				select{
+					padding: 5px;
+				}
+				.forever_hidden{
+					display: none;
+				}
+			}
+			&:hover{
+				background: #aaa;
+			}
+		}
+		#output_folder_documents_part{
+			width: 1000px;
+			margin: 0 auto;
+			padding: 10px;
+			background: #ccc;
 			text-align: center;
-			.doc_row{
-				width: 200px;
-				background:darkgray;
-				padding: 5px;
+			.of_doc_item{
 				display: inline-block;
-				margin: 5px;
+				width: 260px;
+				padding: 10px;
+				margin: 0px 10px;
+				background: #bbb;
+				.nested_doc_field{
+					overflow: hidden;
+					padding: 5px;
+					text-align: left;
+					label{
+						width: 88px;
+						display: block;
+						padding: 6px;
+						text-align: right;
+						color: white;
+						background: #373737;
+						float: left;
+						margin-right: 6px;
+					}
+					input[type=text]{
+						width: 130px;
+					}
+					select,input[type=checkbox]{
+						margin-top: 8px;
+					}
+					select, input{
+						display: inline-block;
+						padding: 6px;
+					}
+				}
+			}
+			.of_doc_item:first-child{
+				margin-right: 7px;
 			}
 			#add_doc{
-				width: 600px;
 				text-align: center;
-				margin: 10px auto 10px;
 				a{
-					margin: 0 auto;
-					width:200px;
+					text-decoration: none;
+					padding: 10px;
+					margin-top: 10px;
+					display: inline-block;
+					background: #272727;
+					color: white;
+					width: 300px;
 					text-align: center;
+					&:hover{
+						background: #00b0e3;
+					}
 				}
 			}
-		}
-		#doc_detail_part{
-			width: 600px;
-			margin: 0 auto;
-			.doc_detail_row{
-				background: lightgray;
-				width: 400px;
-				margin: 5px auto;
-				padding: 10px;
-			}
-			#add_doc_detail{
-				width: 600px;
-				text-align: center;
-				margin: 10px auto 30px;
-				a{
-					margin: 0 auto;
-					width:200px;
-					text-align: center;
-				}
+			&:hover{
+				background: #aaa;
 			}
 		}
-	}
-	#output_folders_new_options{
-		width: 300px;
-		padding: 3px;
-		margin: 6px auto 3px;
-		text-align: center;
-	}
-	#output_folders_edit_options{
-		width: 300px;
-		margin: 15px auto 0px;
-		text-align: center;
-		ul{
-			display: inline-block;
+		#output_folder_detail_part{
+			width: 1000px;
+			margin: 10px auto;
+			padding: 10px;
+			background: #ccc;
 			text-align: center;
 			overflow: hidden;
-			li{
+			.of_doc_detail_item{
 				display: inline-block;
-				padding: 5px;
+				background: #bbb;
 				float: left;
+				padding: 10px;
+				margin: 5px;
+				width: 470px;
+				.nested_doc_detail_field{
+					clear: both;
+					text-align: left;
+					label{
+						width: 150px;
+						background: #272727;
+						padding: 5px;
+						color: white;
+						display: block;
+						text-align: right;
+						float: left;
+						margin: 2px 6px 2px 0px;
+					}
+					input, select{
+						padding: 5px;
+					}
+					input[type=text],input[type=checkbox]{
+						width: 285px;
+					}
+					input[type=checkbox]{
+						margin-top: 10px;
+					}
+					.m_part{
+						width: 295px;
+						position: relative;
+						left: -8px;
+						float: right;
+						span{
+							padding: 5px;
+							display: block;
+							background: white;
+							text-align: center;
+							margin: 5px 0px;
+							cursor: pointer;
+							&:hover{
+								background: #00b0e3;
+								color: white;
+							}
+						}
+					}
+				}
 			}
-		}	
+			#add_doc_detail{
+				clear: both;
+				text-align: center;
+				a{
+					text-decoration: none;
+					padding: 10px;
+					margin-top: 10px;
+					display: inline-block;
+					background: #272727;
+					color: white;
+					width: 300px;
+					text-align: center;
+					&:hover{
+						background: #00b0e3;
+					}
+				}
+			}
+			&:hover{
+				background: #aaa;
+			}
+		}
+		.forever_hidden{
+			display: none;
+		}
+		#output_folder_submit_link{
+			width: 1000px;
+			auto: 0px auto;
+			text-align: center;
+			padding: 10px;
+			a{
+				text-decoration: none;
+				padding: 10px;
+				display: inline-block;
+				background: #272727;
+				color: white;
+				width: 300px;
+				margin: 0 auto;
+				text-align: center;
+				&:hover{
+					background: #00b0e3;
+				}
+			}
+		}
+		#output_folder_submit_button{
+			display: none;
+		}
 	}
 }
 
+/* Borrar desde aca */
 #output_folders_show{
 	width: 900px;
 	margin: 0 auto;
@@ -269,4 +396,8 @@
 			}
 		}
 	}
+}
+
+#of_client_search{
+	display:none;
 }
