@@ -1,0 +1,47 @@
+<section class="sell_price_title_part">
+  <hgroup class="sell_price_title">
+    <h1>Precio de venta</h1>
+  </hgroup>
+</section>
+
+<section id="sell_price_show">
+	<h1><%= @product.full_name.capitalize %></h1>
+	<% if @sell_prices.empty? %>
+		<h1>No hay precios registrados para este producto</h1>
+	<% else %>
+		<table>
+			<tr>
+				<th>Tipo de Precio</th>
+				<th>Valor</th>
+			</tr>
+		<% @sell_prices.each do |sp| %>
+			<tr>
+				<td><%= sp.price_type.name %></td>
+				<td><%= sp.sell_price %></td>
+			</tr>
+		<% end %>
+		</table>
+	<% end %>
+</section>
+
+<section>
+	<p>Modificar precios de venta</p>
+</section>
+
+<section>
+	<%= form_tag register_sell_price_path, :remote => true do %>
+		<table>
+			<tr>
+				<th>Tipo de Precio</th>
+				<th>Valor</th>
+			</tr>
+			<% PriceType.all.each do |pt| %>
+				<tr>
+					<td><%= pt.name %></td>
+					<td><%= text_field_tag pt.name %></td>
+				</tr>
+			<% end %>
+		</table>
+		<%= submit_tag "enviar" %>
+	<% end %>
+</section>

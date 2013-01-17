@@ -1,14 +1,19 @@
+<section class="entry_code_title_part">
+  <hgroup class="entry_code_title">
+    <h1>formulario de registro</h1>
+  </hgroup>
+</section>
+
 <section id="code_entry_register">
-	<h1>Formulario de Registro</h1>
 	<%= form_tag entry_code_save_codes_path, :remote => true do %>
 		<% @folder.entry_document_details.each do |dd| %>
 			<%= hidden_field_tag "folder_id", @folder.id %>
 			<div class="document_detail_form">
 				<div class="data">
 					<span>Producto: </span>
-					<%= dd.product.full_name %><br/>
+					<p><%= dd.product.full_name %></p><br/>
 					<span>Cantidad: </span>
-					<%= dd.quantity %><br/>
+					<p><%= dd.quantity %></p><br/>
 				</div>
 				<div class="dd_data">
 					<table>

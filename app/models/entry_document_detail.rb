@@ -10,5 +10,5 @@ class EntryDocumentDetail < ActiveRecord::Base
   belongs_to :unit
 
   has_many :entry_codes, :dependent => :delete_all
-  has_many :sell_prices, :dependent => :delete_all
+  
 end

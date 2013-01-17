@@ -7,7 +7,6 @@ class SellPriceController < ApplicationController
   end
 
   def result
-
     doc_type = DocumentType.find(params[:doc_type])
     @result = EntryDocument.where(:numeration => params[:numbers], :document_type_id => doc_type).all
     respond_to do |format|

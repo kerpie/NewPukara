@@ -1,6 +1,6 @@
 class SellPrice < ActiveRecord::Base
-  attr_accessible :entry_document_detail_id, :price_type_id, :sell_price
+  attr_accessible :product_id, :price_type_id, :sell_price
 
-  belongs_to :entry_document_detail
+  belongs_to :product_id
   belongs_to :price_type
 end

@@ -275,6 +275,19 @@
 		margin: 10px auto;
 		#product_description_left_part{
 			float: left;
+			#sell_price_part{
+				width: 300px;
+				margin: 5px auto;
+				text-align: center;
+				a{
+					display: block;
+					background: #00b0e3;
+					color: white;
+					padding: 10px;
+					text-decoration: none;
+					text-transform: uppercase;
+				}
+			}
 		}
 		#product_description_right_part{
 			float: right;
@@ -328,4 +341,19 @@
 			}
 		}
 	}
+}
+
+.sell_price_title_part{
+	width: 1000px;
+	overflow: hidden;
+	h1{
+		width: 400px;
+		font-size: 30px;
+		color: white;
+		background: #272727;
+		text-align: center;
+		text-transform: uppercase;
+		padding: 20px;
+		float: left;
+	}	
 }

@@ -1,18 +1,23 @@
+.entry_code_title_part{
+	.entry_code_title{
+		width: 1000px;
+		h1{
+			width: 400px;
+			font-size: 30px;
+			color: white;
+			background: #272727;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 20px;
+		}
+	}
+}
+
 #entry_code_search{
 	width: 900px;
-	margin: 0 auto;
-	border: 1px solid black;
+	margin: 10px auto;
 	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 0px;
-		width: 300px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-		padding: 3px;
-	}
+	background: #d0d0d0;
 	form{
 		width: 500px;
 		margin: 0 auto;
@@ -20,6 +25,43 @@
 		text-align: center;
 		.search_part{
 			padding: 10px;
+			label{
+				font-size: 13px;
+			}
+			span{
+				width: 150px;
+				margin: 0 auto;
+				text-align: center;
+				text-transform: uppercase;
+				background: white;
+				display: block;
+				padding: 8px;
+				cursor: pointer;
+				&:hover{
+					background: #00bce3;
+					color: white;
+				}
+			}
+			input, select{
+				padding: 6px;
+			}
+			.forever_hidden{
+				display: none;
+			}
+			.supplier_search_in_entry_codes{
+				a{
+					text-decoration: none;
+					padding: 3px;
+					background: #787878;
+					display: block;
+					width: 200px;
+					color: white;
+					margin: 3px auto;
+					&:hover{
+						background: #00bce3;
+					}
+				}
+			}
 		}
 	}	
 	#error_message{
@@ -35,49 +77,131 @@
 		padding: 10px;
 		margin: 0 auto;
 		width: 400px;
-		background: lightgray;
+		background: #383838;
+		p{
+			color: white;
+			width: 300px;
+			margin: 0 auto;
+			padding: 2px;
+			text-align: center;
+		}
 		form{
 			width: 200px;
+		}
+		input[type=submit]{
+			background: white;
+			padding: 5px;
+			border: 1px solid white;
+			&:hover{
+				background: #00bce3;
+				border: 1px solid #00bce3;
+				color: white;
+			}
 		}
 	}
 }
 
-#code_entry_register{
-	width: 900px;
-	margin: 0 auto;
-	border: 1px solid black;
+#code_entry_show{
+	width: 920px;
+	margin: 10px auto;
 	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 0px;
-		width: 300px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-		padding: 3px;
+	background: #d0d0d0;
+	.document_detail_form{
+		margin: 0 auto;
+		width: 900px;
+		padding: 10px;
+		.data{
+			width: 500px;
+			background: #AAA;
+			padding: 5px;
+			text-align: center;
+			margin: 0 auto;
+			span{
+				margin: 10px auto 0px;
+				width: 100;
+				text-align: center;
+				display: block;
+				width: 100px;
+				font-weight: 700;
+				
+			}
+			p{
+				text-transform: uppercase;
+			}
+		}
+		.dd_data{
+			width: 800px;
+			margin: 10px auto;
+			text-align: center;
+			table{
+				width: 600px;
+				display: inline-block;
+				tr{
+					th{
+						background: #272727;	
+						color: white;
+						font-weight: bold;
+						width: 300px;
+					}
+					th,td{
+						border: 1px solid black;
+						padding: 5px;
+					}
+				}
+			}
+		}
+		&:hover{
+			background: #bbb;
+		}
 	}
+}
+
+#code_entry_register {
+	width: 900px;
+	margin: 10px auto;
+	padding: 10px;
+	background: #d0d0d0;
 	form{
-		width: 600px;
+		width: 800px;
 		margin: 10px auto;
 		.document_detail_form{
 			.data{
-				width: 300px;
-				background: lightgray;
-				padding: 10px;
+				width: 500px;
+				background: #AAA;
+				padding: 5px;
+				text-align: center;
+				span{
+					margin: 10px auto 0px;
+					width: 100;
+					text-align: center;
+					display: block;
+					width: 100px;
+					font-weight: 700;
+					
+				}
+				p{
+					text-transform: uppercase;
+				}
 			}
 			.dd_data{
-				width: 400px;
+				width: 800px;
 				margin: 10px auto;
+				text-align: center;
 				table{
-					width: 300px;
+					width: 600px;
+					display: inline-block;
 					tr{
 						th{
-							background: lightgray;	
+							background: #272727;	
+							color: white;
+							font-weight: bold;
+							width: 300px;
 						}
 						th,td{
 							border: 1px solid black;
-							padding: 5px;
+							input{
+								padding: 5px;
+							}
 						}
 					}
 				}
@@ -85,10 +209,19 @@
 		}
 		#submit_input{
 			width: 300px;
-			margin: 0 auto;
+			margin: 5px auto;
+			display: block;
 			text-align: center;
 			input{
 				display: inline-block;
+				background: white;
+				border: 1px solid white;
+				padding: 7px;
+				&:hover{
+					border: 1px solid #00bce3;
+					background: #00bce3;
+					color: white;
+				}
 			}
 		}
 	}
@@ -96,9 +229,22 @@
 		width: 400px;
 		margin: 0 auto;
 		text-align: center;
+		background: #787878;
+		padding: 10px;
 		form{
 			width: 300px;
 			margin: 0px auto;
+			input[type=submit]{
+				display: inline-block;
+				background: white;
+				border: 1px solid white;
+				padding: 7px;
+				&:hover{
+					border: 1px solid #00bce3;
+					background: #00bce3;
+					color: white;
+				}
+			}
 		}
 	}
 	.document_detail_form{

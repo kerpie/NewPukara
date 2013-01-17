@@ -17,6 +17,7 @@ class Product < ActiveRecord::Base
   has_many :entry_document_details, :dependent => :destroy
   has_many :output_document_details, :dependent => :destroy
   has_many :stock
+  has_many :sell_prices, :dependent => :delete_all
 
   has_attached_file :image, :styles => {
     :medium => "200x200>",

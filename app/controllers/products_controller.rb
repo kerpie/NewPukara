@@ -124,4 +124,21 @@ class ProductsController < ApplicationController
       format.js
     end
   end
+
+  def sell_price
+
+    @product = Product.find(params[:id])
+    @sell_prices = SellPrice.where(:product_id => @product)
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def register_sell_price
+    respond_to do |format|
+      format.js
+    end
+  end
+
 end

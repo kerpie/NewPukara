@@ -68,6 +68,8 @@ Final::Application.routes.draw do
   match "brand/create_model_one" => "brand#create_model_one", :as => :model_create_one
   
   #Product
+  match "products/:id/sell_price" => "products#sell_price", :as => :product_sell_price
+  match "products/register_sell_price" => "products#register_sell_price", :as => :register_sell_price
   match "products/model_changer" => "products#model_changer", :as => :model_changer
   match "products/search" => "products#search", :as => :product_search
   match "products/second_search" => "products#second_search", :as => :second_search
@@ -87,13 +89,6 @@ Final::Application.routes.draw do
   match "output_code/result" => "output_code#result", :as => :code_output_result
   match "output_code/save_codes" => "output_code#save_codes", :as => :code_output_save_codes
   match "output_code/show" => "output_code#show", :as => :code_output_show
-
-  #SellPrice
-  match "sell_price/search" => "sell_price#search", :as => :sell_price_search
-  match "sell_price/result" => "sell_price#result", :as => :sell_price_result
-  match "sell_price/register" => "sell_price#register", :as => :sell_price_register
-  match "sell_price/save_price" => "sell_price#save_price", :as => :sell_price_save_price
-  match "sell_price/show" => "sell_price#show", :as => :sell_price_show
 
   #Supplier
   resources :suppliers

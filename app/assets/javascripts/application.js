@@ -217,9 +217,15 @@ function submitCreateEntryFolderForm(link){
 function useThisSupplier(link){
 	$(link).parents(".floating_part").hide();
 
-	$("#entry_folder_supplier_id").val($("#new_supplier_to_change li input:checked").val());
-	$("#sup_id").html($("#new_supplier_to_change li input:checked").next("span").html());
-	$("#sup_id").show();
+	if($(".search_part").length){
+		$("#supplier").val($("#new_supplier_to_change li input:checked").val());
+		$("#supplier_name").val($("#new_supplier_to_change li input:checked").next("span").html());
+	}
+	else{
+		$("#entry_folder_supplier_id").val($("#new_supplier_to_change li input:checked").val());
+		$("#sup_id").html($("#new_supplier_to_change li input:checked").next("span").html());
+		$("#sup_id").show();
+	}
 }
 
 function showSupplierSearch(){
