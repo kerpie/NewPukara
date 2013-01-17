@@ -136,6 +136,20 @@ class ProductsController < ApplicationController
   end
 
   def register_sell_price
+
+    PriceType.all.each do |pt|
+      sp = SellPrice.where(:product_id => params[:prod_id], :price_type_id => pt).first    
+      if sp.nil?
+        sp = SellPrice.new
+        sp.product_id = params[:prod_id]
+        sp.price_type_id = pt.id
+      end     
+      sp.sell_price = params[pt.name]
+      sp.save
+    end
+
+    @response = SellPrice.where(:product_id => params[:prod_id])
+
     respond_to do |format|
       format.js
     end

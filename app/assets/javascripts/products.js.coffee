@@ -29,3 +29,14 @@ jQuery ->
 
 submitModelChanger = (link) ->
 	$(link).parent().next("#model_changer_submit").find("input").trigger('click');
+
+jQuery ->
+	$("#to_show_sell_price_register_form").click ->
+		if($(this).hasClass("shown"))
+			$(this).next("form").hide()
+			$(this).html("Modificar precios de venta")
+			$(this).removeClass("shown")
+		else
+			$(this).next("form").show()
+			$(this).html("Ocultar formulario de ingreso")
+			$(this).addClass("shown")

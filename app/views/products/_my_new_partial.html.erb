@@ -1,0 +1,12 @@
+<table>
+	<tr>
+		<th>Tipo de Precio</th>
+		<th>Valor</th>
+	</tr>
+<% data.each do |sp| %>
+	<tr>
+		<td><%= sp.price_type.name %></td>
+		<td><%= sp.sell_price %></td>
+	</tr>
+<% end %>
+</table>
