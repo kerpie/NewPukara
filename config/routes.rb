@@ -68,6 +68,7 @@ Final::Application.routes.draw do
   match "brand/create_model_one" => "brand#create_model_one", :as => :model_create_one
   
   #Product
+  match "products/search_for_stock" => "products#search_for_stock", :as => :product_search_for_stock
   match "products/:id/sell_price" => "products#sell_price", :as => :product_sell_price
   match "products/register_sell_price" => "products#register_sell_price", :as => :register_sell_price
   match "products/model_changer" => "products#model_changer", :as => :model_changer

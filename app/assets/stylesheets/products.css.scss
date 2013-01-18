@@ -357,3 +357,104 @@
 		float: left;
 	}	
 }
+
+#sell_price_show{
+	width: 900px;
+	margin: 10px auto;
+	h1{
+		font-size: 16px;
+		color: white;
+		width: 300px;
+		margin: 0 auto;
+		padding: 10px;
+		background: #505050;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	#changeable{
+		margin: 10px auto;
+		width: 500px;
+		h2{
+			background: red;
+			width: 400px;
+			color: white;
+			text-align: center;
+			margin: 30px auto;
+			padding: 5px;
+		}
+		table{
+			width: 500px;
+			margin: 0 auto;
+			tr{
+				th,td{
+					padding: 8px;
+				}
+				th{
+					background: #272727;
+					color: white;
+					text-align: center;
+				}
+				td{
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+#sell_price_register{
+	width: 900px;
+	margin: 50px auto;
+	p{
+		background: #272727;
+		width: 400px;
+		color: white;
+		text-align: center;
+		margin: 30px auto 10px;
+		padding: 10px;
+		&:hover{
+			background: #00b0e3;
+		}
+	}
+	form{
+		display: none;
+		width: 600px;
+		margin: 0 auto;
+		table{
+			width: 500px;
+			margin: 0 auto;
+			tr{
+				th,td{
+					padding: 8px;
+				}
+				th{
+					background: #272727;
+					color: white;
+					text-align: center;
+				}
+				td{
+					text-align: center;
+				}
+			}
+		}
+		#new_submit_button{
+			width: 400px;
+			margin: 10px auto;
+			text-align: center;
+			input{
+				width: 200px;
+				margin: 0 auto;
+				padding: 5px;
+				text-align: center;
+				border: 1px solid white;
+				background: white;
+				color: #272727;
+				&:hover{
+					border: 1px solid #00b0e3;
+					color: white;
+					background: #00b0e3;
+				}
+			}
+		}
+	}
+}

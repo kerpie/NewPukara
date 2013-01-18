@@ -20,4 +20,15 @@ module ApplicationHelper
 		result = field_tag + datalist_items.html_safe
 	end
 
+	def second_datalist_text_field_tag(name, list_name, collection)
+		field_tag = text_field_tag(name, nil, :list => list_name)
+		datalist_part = "<datalist id=\"#{list_name}\">"
+		datalist_part_middle = ""
+		collection.each do |c|
+			datalist_part_middle = datalist_part_middle + "<option value=\"#{c.model.name}\">#{c.model.name}</option>"
+		end
+		datalist_part_final = "</datalist>"
+		datalist_items = datalist_part + datalist_part_middle + datalist_part_final
+		result = field_tag + datalist_items.html_safe
+	end
 end

@@ -1,0 +1,2 @@
+<% toRender = render "search_for_stock_partial", :data => @response %>
+$("#of_product_search_result").html("<%= escape_javascript toRender %>");

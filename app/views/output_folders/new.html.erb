@@ -45,3 +45,25 @@
 		</div>
 	</div>
 </section>
+
+<section id="of_product_search" class="floating_part">
+	<div class="floating_body">
+		<div class="title">
+			<h1>Busqueda de Producto</h1>
+			<div class="second_title">
+				<%= link_to_function "X", "hideBrandsMenu(this)" %>
+			</div>
+		</div>
+		<div class="new_body">
+			<%= form_tag product_search_for_stock_path, :remote => true do %>
+				<div class="form_div">
+					<%= label_tag "modelo", "Modelo:" %>
+					<%= second_datalist_text_field_tag "modelo", "model_list", Product.select(:model_id).uniq %>
+				</div>
+				<%= submit_tag "enviar" %>
+			<% end %>
+			<div id="of_product_search_result">
+			</div>
+		</div>
+	</div>
+</section>

@@ -136,9 +136,49 @@ class ProductsController < ApplicationController
   end
 
   def register_sell_price
+
+    PriceType.all.each do |pt|
+      sp = SellPrice.where(:product_id => params[:prod_id], :price_type_id => pt).first    
+      if sp.nil?
+        sp = SellPrice.new
+        sp.product_id = params[:prod_id]
+        sp.price_type_id = pt.id
+      end     
+      sp.sell_price = params[pt.name]
+      sp.save
+    end
+
+    @response = SellPrice.where(:product_id => params[:prod_id])
+
     respond_to do |format|
       format.js
     end
   end
 
+  def search_for_stock
+
+    name = params[:modelo]
+    products = Array.new
+    
+    models = Model.find(:all, :conditions => ["name like ?", "%"+name+"%"])
+    models.each do |model|
+      product = Product.where(:model_id => model).first
+      unless product.nil?
+        products << product
+      end
+    end
+
+    @response = Hash.new
+    
+    products.each do |product|
+      stock = Stock.where(:product_id => product)
+      unless stock.empty?
+        @response[product] = stock
+      end
+    end
+
+    respond_to do |format|
+      format.js
+    end
+  end
 end

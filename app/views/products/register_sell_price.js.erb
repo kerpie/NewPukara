@@ -1,1 +1,4 @@
-alert("hola Mundo");
+<% toRender = render "my_new_partial", :data => @response %>
+$("#changeable").html("<%= escape_javascript toRender %>");
+$("#sell_price_register form").hide();
+$("#sell_price_register p").html("Modificar precios de venta");

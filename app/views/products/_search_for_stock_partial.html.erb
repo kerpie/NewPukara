@@ -1,0 +1,11 @@
+<% data.each do |key, value| %>
+	<div class= "of_product_item">
+		<%= image_tag key.image.url(:medium), :width => 200, :height => 170 %>
+		<p>
+			<% value.each do |v| %>
+				<%= v.store.name %>
+				<%= v.quantity %> <br>
+			<% end %>
+		</p>
+	</div>
+<% end %>

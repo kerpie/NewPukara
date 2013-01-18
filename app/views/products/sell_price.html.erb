@@ -6,29 +6,17 @@
 
 <section id="sell_price_show">
 	<h1><%= @product.full_name.capitalize %></h1>
-	<% if @sell_prices.empty? %>
-		<h1>No hay precios registrados para este producto</h1>
-	<% else %>
-		<table>
-			<tr>
-				<th>Tipo de Precio</th>
-				<th>Valor</th>
-			</tr>
-		<% @sell_prices.each do |sp| %>
-			<tr>
-				<td><%= sp.price_type.name %></td>
-				<td><%= sp.sell_price %></td>
-			</tr>
+	<div id="changeable">
+		<% if @sell_prices.empty? %>
+			<h2>No hay precios registrados para este producto</h2>
+		<% else %>
+			<%= render "my_new_partial", :data => @sell_prices %>
 		<% end %>
-		</table>
-	<% end %>
+	</div>
 </section>
 
-<section>
-	<p>Modificar precios de venta</p>
-</section>
-
-<section>
+<section id="sell_price_register">
+	<p id="to_show_sell_price_register_form">Modificar precios de venta</p>
 	<%= form_tag register_sell_price_path, :remote => true do %>
 		<table>
 			<tr>
@@ -42,6 +30,9 @@
 				</tr>
 			<% end %>
 		</table>
-		<%= submit_tag "enviar" %>
+		<%= hidden_field_tag "prod_id", @product.id %>
+		<div id="new_submit_button">
+			<%= submit_tag "enviar" %>
+		</div>
 	<% end %>
 </section>

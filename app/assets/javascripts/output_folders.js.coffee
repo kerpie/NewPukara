@@ -10,3 +10,7 @@ jQuery ->
 				$(this).show()
 			else
 				$(this).hide()
+
+jQuery ->
+	$(".my_clickable_space").click ->
+		
