@@ -47,6 +47,7 @@
 </section>
 
 <section id="of_product_search" class="floating_part">
+	<%= hidden_field_tag "new_", 0, :class => "new_id" %>
 	<div class="floating_body">
 		<div class="title">
 			<h1>Busqueda de Producto</h1>
@@ -57,7 +58,7 @@
 		<div class="new_body">
 			<%= form_tag product_search_for_stock_path, :remote => true do %>
 				<div class="form_div">
-					<%= label_tag "modelo", "Modelo:" %>
+					<%= label_tag "modelo", "Modelo:" %><br>
 					<%= second_datalist_text_field_tag "modelo", "model_list", Product.select(:model_id).uniq %>
 				</div>
 				<%= submit_tag "enviar" %>

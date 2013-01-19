@@ -20,7 +20,7 @@ doneTyping = () ->
 jQuery ->
 	$("#brand_id").keyup ->
 		clearTimeout(typingTimer)
-		if($("#brand_id").val)
+		if($("#brand_id").val())
 			typingTimer = setTimeout(doneTyping, doneTypingInterval)
 
 jQuery ->

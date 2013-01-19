@@ -261,8 +261,14 @@
 					input, select{
 						padding: 5px;
 					}
-					input[type=text],input[type=checkbox]{
+					.name, .number,input[type=checkbox]{
 						width: 285px;
+					}
+					.sell_price{
+						width: 297px;
+					}
+					.number{
+						width: 100px;
 					}
 					input[type=checkbox]{
 						margin-top: 10px;
@@ -284,6 +290,9 @@
 								color: white;
 							}
 						}
+					}
+					#max_quantity{
+						color: red;
 					}
 				}
 			}
@@ -398,6 +407,67 @@
 	}
 }
 
-#of_client_search{
+#of_product_search .floating_body .new_body {
+	form{
+		input[type=submit]{
+			background: white;
+			color: #00b0e3;
+			padding: 5px;
+			width: 200px;
+			margin: 0 auto;
+			border: 1px solid white;
+			display: block;
+			&:hover{
+				background: #00bce3;
+				border: 1px solid #00bce3;
+				color: white;
+			}
+		}
+	}
+	#of_product_search_result{
+		.of_product_item{
+			display: block;
+			margin: 10px auto;
+			width: 200px;
+			padding: 10px;
+			img{
+				width: 200px;
+				margin: 5px auto;
+				display: block;
+			}
+			p{
+				width: 200px;
+				text-transform: uppercase;
+				text-align: center;
+			}
+			.store_data{
+				width: 200px;
+				margin: 5px auto;
+				display: block;
+				ul{
+					width: 150px;
+					overflow: hidden;
+					margin: 5px auto;
+					display: block;
+					li{
+						float: left;
+						padding: 5px;
+					}
+					li:last-child{
+						float: right;
+						background: red;
+						color: white;
+						padding: 5px;
+					}
+				}
+			}
+			&:hover{
+				background: white;
+			}
+		}
+	}
+}
+
+#of_client_search, #of_product_search{
 	display:none;
 }

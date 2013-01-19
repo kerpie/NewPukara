@@ -1,11 +1,19 @@
-<% data.each do |key, value| %>
+<% data.each do |product, value| %>
 	<div class= "of_product_item">
-		<%= image_tag key.image.url(:medium), :width => 200, :height => 170 %>
-		<p>
+		<%= hidden_field_tag "", product.id , :class => "product_id" %>
+		<%= image_tag product.image.url(:medium), :width => 200, :height => 170 %>
+		<p class="product_name"><%= product.full_name %></p>
+		<div class="store_data">
 			<% value.each do |v| %>
-				<%= v.store.name %>
-				<%= v.quantity %> <br>
+				<ul class="of_store_list">
+					<%= hidden_field_tag "", v.store.id, :class => "store_id" %>
+					<li><%= v.store.name %></li>
+					<li class="of_clickable_item_list"><%= v.quantity %></li>
+				</ul>
 			<% end %>
-		</p>
+		</div>
+		<div id="my_hidden_price_part" style="display: none;">
+			<%= select_tag "", PriceType.check_prices(product.id).html_safe, :class=>"sell_price" %>
+		</div>
 	</div>
 <% end %>

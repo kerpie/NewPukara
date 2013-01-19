@@ -35,7 +35,7 @@ class OutputFoldersController < ApplicationController
   def new
     @output_folder = OutputFolder.new
     @output_folder.output_documents.build
-    @output_folder.output_document_details.build
+  
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @output_folder }

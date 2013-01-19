@@ -11,5 +11,4 @@ jQuery ->
 		id = $(".new_id").attr('id').substring(4)
 		$("#kid_"+id).val($(this).find("p").html())
 		$("#kid_"+id).parent().prev().val($(this).find(".hidden_data").val())
-
 		$(this).parents(".floating_part").hide()

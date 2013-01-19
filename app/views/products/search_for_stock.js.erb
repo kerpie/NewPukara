@@ -1,2 +1,6 @@
-<% toRender = render "search_for_stock_partial", :data => @response %>
-$("#of_product_search_result").html("<%= escape_javascript toRender %>");
+<% if @response.empty? %>
+	$("#of_product_search_result").html("<h2>No se encontraron productos ese modelo</h2>");
+<% else %>
+	<% toRender = render "search_for_stock_partial", :data => @response %>
+	$("#of_product_search_result").html("<%= escape_javascript toRender %>");
+<% end %>

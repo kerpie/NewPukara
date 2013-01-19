@@ -47,4 +47,5 @@ class SellPriceController < ApplicationController
       format.html
     end
   end
+
 end
