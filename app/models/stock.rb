@@ -38,4 +38,33 @@ class Stock < ActiveRecord::Base
   		stock.save
   	end
   end
+
+  def self.reduce_stock(folder)
+    user = folder.user
+    folder.output_document_details.each do |odd|
+      stock = (Stock.check_stock(odd.product.id, user.store_id)).first
+      q = stock.quantity
+      stock.quantity = q - odd.quantity
+      stock.save
+    end
+  end
+
+  def self.add_output_stock(folder)
+    user = folder.user
+    previous_stock = 0
+  
+    folder.output_document_details.each do |odd|
+      stock = (Stock.check_stock(odd.product.id, user.store.id)).first
+      if stock.nil?
+        stock = Stock.new
+        stock.product_id = odd.product.id
+        stock.store_id = user.store.id
+      else
+        previous_stock = stock.quantity
+      end
+      stock.quantity = previous_stock + (odd.quantity * odd.unit.value)
+      stock.save
+    end
+  end
+
 end

@@ -1,3 +1,8 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+jQuery ->
+	$("#client_client_type_id").change ->
+		if (parseInt($(this).val()) == 4)
+			$("#client_DNI").parent().hide()
+			$("#client_RUC").parent().show()
+		else
+			$("#client_DNI").parent().show()
+			$("#client_RUC").parent().hide()

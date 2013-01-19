@@ -71,6 +71,11 @@ class OutputFoldersController < ApplicationController
 
     respond_to do |format|
       if @output_folder.update_attributes(params[:output_folder])
+        if(@output_folder.folder_state_id == FolderState.last.id)
+          Stock.reduce_stock @output_folder
+        else
+          Stock.add_output_stock @output_folder
+        end
         format.html { redirect_to @output_folder, notice: 'Output folder was successfully updated.' }
         format.json { head :no_content }
       else
