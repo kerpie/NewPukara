@@ -8,8 +8,10 @@
 	<%= form_tag nil do %>
 		<section id="sale_process_supplier_part">
 			<div id="real_supplier_data">
-				<%= label_tag :supplier_id, "Cliente: " %>
-				<%= text_field_tag :supplier_id %>
+				<%= label_tag :client_id, "Cliente: " %>
+				<%= text_field_tag :client_id, "",:class => "forever_hidden" %>
+				<%= text_field_tag :client_real_name %>
+				<span id="client_number"></span>
 			</div>
 			<span id="click_to_search_client">Buscar cliente</span>
 		</section>
@@ -23,9 +25,10 @@
 	</div>
 	<div class="box_body">
 		<div id="text_to_search">
+			<%= label_tag "search_client_text", "Buscar: " %>
 			<%= text_field_tag "search_client_text" %>
 		</div>
-		<div>
+		<div id="sp_client_data">
 			<table>
 				<tr>
 					<th>Nombre</th>
@@ -33,7 +36,7 @@
 					<th>DNI/RUC</th>
 				</tr>
 				<% @clients.each do |client| %>
-					<tr>
+					<tr <%= "id=client_"+client.id.to_s%> class="clickable_row search_here_row">
 						<td><%= client.name %></td>
 						<td><%= client.client_type.name %></td>
 						<% if client.DNI.empty? %>
@@ -44,6 +47,7 @@
 					</tr>
 				<% end %>
 			</table>
+			<p id="test"></p>
 		</div>
 	</div>
 </section>

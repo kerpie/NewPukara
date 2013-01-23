@@ -28,6 +28,9 @@
 			#real_supplier_data{
 				float: left;
 				padding: 5px;
+				.forever_hidden{
+					display: none;
+				}
 			}
 			#click_to_search_client{
 				float: right;
@@ -75,5 +78,55 @@
 	}
 	.box_body{
 		padding: 10px;
+	}
+}
+
+#my_search_client_box{
+	.box_body{
+		overflow: hidden;
+		#text_to_search{
+			width: 500px;
+			margin: 0 auto;
+			text-align: center;
+			label{
+				display: inline-block;
+			}
+			input{
+				width: 200px;
+				display: inline-block;
+			}
+		}
+		#sp_client_data{
+			width:800px;
+			height: 350px;
+			margin: 0 auto;
+			//background: red;
+			overflow: auto;
+			table{
+				width: 600px;
+				margin: 20px auto;
+				tr{
+					cursor: pointer;
+					th{
+						background: #272727;
+						color: white;
+						padding: 10px;
+						&:first-child{
+							width: 300px;
+						}
+						&:last-child{
+							width: 200px;
+						};
+					}
+					td{
+						padding: 10px;
+						text-align: center;
+					}
+					&:hover{
+						background: white;
+					}
+				}
+			}
+		}
 	}
 }
