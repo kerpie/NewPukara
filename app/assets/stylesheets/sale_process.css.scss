@@ -1,3 +1,79 @@
-// Place all the styles related to the sale_process controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.common_title_part{
+	.common_title{
+		width: 1000px;
+		h1{
+			width: 400px;
+			font-size: 30px;
+			color: white;
+			background: #272727;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 20px;
+		}
+	}
+}
+
+#sale_process_form{
+	width: 1000px;
+	margin: 10px auto;
+	//background: red;
+	padding: 10px;
+	form{
+		width: 900px;
+		margin: 0 auto;
+		background: #ccc;
+		padding: 10px;
+		#sale_process_supplier_part{
+			overflow: hidden;
+			#real_supplier_data{
+				float: left;
+				padding: 5px;
+			}
+			#click_to_search_client{
+				float: right;
+				padding: 5px;
+				font-weight: bold;
+				color: white;
+				background: #00b0e3;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.new_box{
+	display: none;
+	position:absolute;
+	top: 50%;
+	width: 1000px;
+	height: 500px;
+	z-index: 100;
+	background: #00b0e3;
+	margin: -250px auto;
+	.box_title{
+		overflow: hidden;
+		h1{
+			float: left;
+			padding: 10px;
+			font-size: 18px;
+			text-transform: uppercase;
+			font-weight: bold;
+			color: white;
+		}
+		h2{
+			float: right;
+			padding: 10px;
+			color: white;
+			font-size: 18px;
+			text-transform: uppercase;
+			font-weight: bold;
+			cursor: pointer;
+			&:hover{
+				background: red;
+			}
+		}
+	}
+	.box_body{
+		padding: 10px;
+	}
+}

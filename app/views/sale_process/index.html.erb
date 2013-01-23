@@ -1,1 +1,60 @@
-<%= @products %>
+<section class="common_title_part">
+  <hgroup class="common_title">
+    <h1>Nueva Cotizacion</h1>
+  </hgroup>
+</section>
+
+<section id="sale_process_form">
+	<%= form_tag nil do %>
+		<section id="sale_process_supplier_part">
+			<div id="real_supplier_data">
+				<%= label_tag :supplier_id, "Cliente: " %>
+				<%= text_field_tag :supplier_id %>
+			</div>
+			<span id="click_to_search_client">Buscar cliente</span>
+		</section>
+	<% end %>
+</section>
+
+<section id="my_search_client_box" class="new_box">
+	<div class="box_title">
+		<h1>Busqueda de cliente</h1>
+		<h2 class="close_box">X</h2>
+	</div>
+	<div class="box_body">
+		<div id="text_to_search">
+			<%= text_field_tag "search_client_text" %>
+		</div>
+		<div>
+			<table>
+				<tr>
+					<th>Nombre</th>
+					<th>Tipo</th>
+					<th>DNI/RUC</th>
+				</tr>
+				<% @clients.each do |client| %>
+					<tr>
+						<td><%= client.name %></td>
+						<td><%= client.client_type.name %></td>
+						<% if client.DNI.empty? %>
+							<td><%= client.RUC %></td>
+						<% else %>
+							<td><%= client.DNI %></td>
+						<% end %>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</section>
+
+<section id="my_search_product_box" class="new_box">
+	<div class="box_title">
+		<h1>Busqueda de producto</h1>
+		<h2>X</h2>
+	</div>
+	<div class="box_body">
+		<span>Hi!!!</span>
+	</div>
+</section>
+<!-- <%= @products %> -->	
