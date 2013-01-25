@@ -128,5 +128,19 @@
 				}
 			}
 		}
+		#sp_show_new_client_form{
+			width: 300px;
+			margin: 10px auto;
+			background: #505050;
+			color: white;
+			padding: 10px;
+			text-align: center;
+			&:hover{
+				background: #272727;
+			}
+		}
+		#sp_new_client_form{
+			display:none;
+		}
 	}
 }

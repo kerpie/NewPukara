@@ -1,8 +1,9 @@
 Final::Application.routes.draw do
 
-  match "sale_process/index" => "sale_process#index", :as => :sale_process_index
-
   root :to => 'output_folders#index'
+
+  match "sale_process/index" => "sale_process#index", :as => :sale_process_index
+  match "sale_process/new_client" => "sale_process#new_client", :as => :sale_process_new_client
 
   resources :output_folders
 

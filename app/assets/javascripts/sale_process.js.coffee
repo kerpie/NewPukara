@@ -38,3 +38,10 @@ jQuery ->
 					$(this).show()
 				else
 					$(this).hide()
+
+jQuery ->
+	$("#sp_show_new_client_form").click ->
+		$("#text_to_search").hide()
+		$("#sp_client_data").hide()
+		$(this).hide()
+		$("#sp_new_client_form").show()

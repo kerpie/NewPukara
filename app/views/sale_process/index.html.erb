@@ -33,21 +33,37 @@
 				<tr>
 					<th>Nombre</th>
 					<th>Tipo</th>
-					<th>DNI/RUC</th>
+					<th>Tipo de documento</th>
+					<th>Numero</th>
 				</tr>
 				<% @clients.each do |client| %>
 					<tr <%= "id=client_"+client.id.to_s%> class="clickable_row search_here_row">
 						<td><%= client.name %></td>
 						<td><%= client.client_type.name %></td>
-						<% if client.DNI.empty? %>
-							<td><%= client.RUC %></td>
-						<% else %>
-							<td><%= client.DNI %></td>
-						<% end %>
+						<td><%= client.client_type.identification_type %></td>
+						<td><%= client.identification_number %></td>
 					</tr>
 				<% end %>
 			</table>
-			<p id="test"></p>
+		</div>
+		<p id="sp_show_new_client_form">Registrar nuevo cliente</p>
+		<div id="sp_new_client_form">
+			<%= form_tag sale_process_new_client_path, :remote => true do %>
+				<%= label_tag "name", "Nombre: "%>
+				<%= text_field_tag "name" %><br/>
+
+				<%= label_tag "address", "Direccion: " %>
+				<%= text_field_tag "address" %><br/>
+
+				<%= label_tag "client_type_id", "Tipo de Cliente" %>
+				<%= text_field_tag "client_type_id" %><br/>
+
+				<%= label_tag "identification_number", "Numero" %>
+				<%= text_field_tag "identification_number" %>
+
+				<%= submit_tag %>
+
+			<% end %>
 		</div>
 	</div>
 </section>
