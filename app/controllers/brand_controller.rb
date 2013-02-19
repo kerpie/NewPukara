@@ -93,7 +93,7 @@ class BrandController < ApplicationController
   end
 
   def model_type_destroy
-    @model_type = ModelType.find(params[:pm_id])
+    @model_type = ModelType.find(params[:mt_id])
     @model_type.destroy
     respond_to do |f|
       f.js

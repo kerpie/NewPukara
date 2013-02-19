@@ -1,6 +1,10 @@
 <section id="br_index">
 	<hgroup id="br_title">
 		<h1>Marcas y Modelos</h1>
+		<div id="search_brand_part">
+			<%= label_tag "search_brand", "Buscar: "%>
+			<%= text_field_tag "search_brand", "Buscar por marca" %>
+		</div>
 	</hgroup>
 	<section id="brs">
 		<% @third_hash.each do |brand, hash| %>
