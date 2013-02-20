@@ -25697,3 +25697,550 @@ Served asset /stores.css - 304 Not Modified (0ms)
 
 Started GET "/assets/suppliers.css?body=1" for 127.0.0.1 at 2013-02-19 17:57:50 -0500
 Served asset /suppliers.css - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-20 12:34:59 -0500
+Processing by OutputFoldersController#index as HTML
+Completed 401 Unauthorized in 34ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-02-20 12:34:59 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 1838ms (Views: 1670.5ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/brand.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /brand.js - 200 OK (1ms)
+
+
+Started GET "/assets/client_type.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /client_type.js - 200 OK (1ms)
+
+
+Started GET "/assets/clients.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /clients.js - 200 OK (1ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /document_type.js - 200 OK (1ms)
+
+
+Started GET "/assets/entry_code.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /entry_code.js - 200 OK (2ms)
+
+
+Started GET "/assets/entry_folders.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /entry_folders.js - 200 OK (1ms)
+
+
+Started GET "/assets/model_type.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /model_type.js - 200 OK (1ms)
+
+
+Started GET "/assets/output_code.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /output_code.js - 200 OK (1ms)
+
+
+Started GET "/assets/output_folders.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /output_folders.js - 200 OK (1ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /price_type.js - 200 OK (1ms)
+
+
+Started GET "/assets/product_type.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /product_type.js - 200 OK (1ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /products.js - 200 OK (2ms)
+
+
+Started GET "/assets/sale_process.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /sale_process.js - 200 OK (1ms)
+
+
+Started GET "/assets/stock.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /stock.js - 200 OK (1ms)
+
+
+Started GET "/assets/stores.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /stores.js - 200 OK (1ms)
+
+
+Started GET "/assets/suppliers.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /suppliers.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /application.js - 200 OK (83ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /application.css - 200 OK (22ms)
+
+
+Started GET "/assets/brand.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:01 -0500
+Served asset /brand.css - 200 OK (2ms)
+
+
+Started GET "/assets/client_type.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /client_type.css - 200 OK (2ms)
+
+
+Started GET "/assets/clients.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /clients.css - 200 OK (1ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /document_type.css - 200 OK (1ms)
+
+
+Started GET "/assets/entry_code.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /entry_code.css - 200 OK (2ms)
+
+
+Started GET "/assets/entry_folders.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /entry_folders.css - 200 OK (2ms)
+
+
+Started GET "/assets/model_type.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /model_type.css - 200 OK (2ms)
+
+
+Started GET "/assets/output_code.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /output_code.css - 200 OK (2ms)
+
+
+Started GET "/assets/output_folders.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /output_folders.css - 200 OK (1ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /price_type.css - 200 OK (2ms)
+
+
+Started GET "/assets/product_type.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /product_type.css - 200 OK (2ms)
+
+
+Started GET "/assets/sale_process.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /sale_process.css - 200 OK (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /scaffolds.css - 200 OK (2ms)
+
+
+Started GET "/assets/stock.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /stock.css - 200 OK (2ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /products.css - 200 OK (1ms)
+
+
+Started GET "/assets/stores.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /stores.css - 200 OK (2ms)
+
+
+Started GET "/assets/suppliers.css?body=1" for 127.0.0.1 at 2013-02-20 12:35:02 -0500
+Served asset /suppliers.css - 200 OK (1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k8es6uIiVTLlMNCLGuOKIOzRAYtC3N5lF8DVUdwEwVI=", "user"=>{"username"=>"kerpie", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'kerpie' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (2.6ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-02-19 22:33:13.082496', "current_sign_in_at" = '2013-02-20 17:38:47.300257', "sign_in_count" = 62, "updated_at" = '2013-02-20 17:38:47.314780' WHERE "users"."id" = 1[0m
+  [1m[35m (123.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 384ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Processing by OutputFoldersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mFolderState Load (0.2ms)[0m  SELECT "folder_states".* FROM "folder_states" 
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "output_folders" WHERE "output_folders"."folder_state_id" = 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "output_folders" WHERE "output_folders"."folder_state_id" = 2
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "output_folders" WHERE "output_folders"."folder_state_id" = 3[0m
+  [1m[35mOutputFolder Load (0.1ms)[0m  SELECT "output_folders".* FROM "output_folders" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "folder_states".* FROM "folder_states" [0m
+  [1m[35mFolderState Load (0.2ms)[0m  SELECT "folder_states".* FROM "folder_states" LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "folder_states".* FROM "folder_states" LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "folder_states".* FROM "folder_states" LIMIT 1
+  [1m[36mOutputFolder Load (0.2ms)[0m  [1mSELECT "output_folders".* FROM "output_folders" WHERE "output_folders"."folder_state_id" = 1[0m
+  [1m[35mFolderState Load (0.2ms)[0m  SELECT "folder_states".* FROM "folder_states" WHERE "folder_states"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mOutputFolder Load (0.2ms)[0m  SELECT "output_folders".* FROM "output_folders" WHERE "output_folders"."folder_state_id" = 2
+  [1m[36mFolderState Load (0.1ms)[0m  [1mSELECT "folder_states".* FROM "folder_states" WHERE "folder_states"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mOutputFolder Load (0.2ms)[0m  [1mSELECT "output_folders".* FROM "output_folders" WHERE "output_folders"."folder_state_id" = 3[0m
+  [1m[35mFolderState Load (0.1ms)[0m  SELECT "folder_states".* FROM "folder_states" WHERE "folder_states"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered output_folders/index.html.erb within layouts/application (83.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'Vendedor' LIMIT 1[0m
+Completed 200 OK in 262ms (Views: 217.0ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/brand.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /brand.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/client_type.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /client_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/clients.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /clients.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/entry_code.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /entry_code.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/entry_folders.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /entry_folders.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /model_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/output_code.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /output_code.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/output_folders.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /output_folders.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /price_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /product_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sale_process.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /sale_process.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stock.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /stock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stores.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /stores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/suppliers.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /suppliers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/brand.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /brand.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/client_type.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /client_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/clients.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /clients.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/entry_code.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /entry_code.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/entry_folders.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /entry_folders.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:47 -0500
+Served asset /model_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/output_code.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:48 -0500
+Served asset /output_code.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/output_folders.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:48 -0500
+Served asset /output_folders.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:48 -0500
+Served asset /price_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:48 -0500
+Served asset /product_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:48 -0500
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sale_process.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:48 -0500
+Served asset /sale_process.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:48 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stock.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:48 -0500
+Served asset /stock.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stores.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:48 -0500
+Served asset /stores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/suppliers.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:48 -0500
+Served asset /suppliers.css - 304 Not Modified (0ms)
+
+
+Started GET "/brand/index" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Processing by BrandController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mBrand Load (0.1ms)[0m  [1mSELECT "brands".* FROM "brands" [0m
+  [1m[35mParentModel Load (0.1ms)[0m  SELECT "parent_models".* FROM "parent_models" 
+  [1m[36mModelType Load (0.1ms)[0m  [1mSELECT "model_types".* FROM "model_types" WHERE "model_types"."parent_model_id" = 13[0m
+  [1m[35mModel Load (0.1ms)[0m  SELECT "models".* FROM "models" WHERE "models"."brand_id" = 22 AND "models"."model_type_id" = 13
+  [1m[36mModelType Load (0.2ms)[0m  [1mSELECT "model_types".* FROM "model_types" WHERE "model_types"."parent_model_id" = 14[0m
+  [1m[35mModel Load (0.1ms)[0m  SELECT "models".* FROM "models" WHERE "models"."brand_id" = 22 AND "models"."model_type_id" = 14
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "parent_models".* FROM "parent_models" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "model_types".* FROM "model_types" WHERE "model_types"."parent_model_id" = 13
+  [1m[36mModel Load (0.1ms)[0m  [1mSELECT "models".* FROM "models" WHERE "models"."brand_id" = 23 AND "models"."model_type_id" = 13[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "model_types".* FROM "model_types" WHERE "model_types"."parent_model_id" = 14
+  [1m[36mModel Load (0.1ms)[0m  [1mSELECT "models".* FROM "models" WHERE "models"."brand_id" = 23 AND "models"."model_type_id" = 14[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parent_models".* FROM "parent_models" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "model_types".* FROM "model_types" WHERE "model_types"."parent_model_id" = 13[0m
+  [1m[35mModel Load (0.1ms)[0m  SELECT "models".* FROM "models" WHERE "models"."brand_id" = 24 AND "models"."model_type_id" = 13
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "model_types".* FROM "model_types" WHERE "model_types"."parent_model_id" = 14[0m
+  [1m[35mModel Load (0.1ms)[0m  SELECT "models".* FROM "models" WHERE "models"."brand_id" = 24 AND "models"."model_type_id" = 14
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'SuperAdmin' LIMIT 1[0m
+  Rendered brand/_model_part.html.erb (3.1ms)
+  Rendered brand/_model_part.html.erb (1.4ms)
+  Rendered brand/_model_part.html.erb (1.4ms)
+  Rendered brand/_model_type_partial.html.erb (9.9ms)
+  Rendered brand/_model_type_partial.html.erb (0.1ms)
+  Rendered brand/_brand_part.html.erb (13.9ms)
+  Rendered brand/_model_part.html.erb (0.7ms)
+  Rendered brand/_model_type_partial.html.erb (1.2ms)
+  Rendered brand/_model_type_partial.html.erb (0.0ms)
+  Rendered brand/_brand_part.html.erb (3.4ms)
+  Rendered brand/_model_type_partial.html.erb (0.0ms)
+  Rendered brand/_model_part.html.erb (0.7ms)
+  Rendered brand/_model_type_partial.html.erb (1.2ms)
+  Rendered brand/_brand_part.html.erb (2.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parent_models".* FROM "parent_models" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "parent_models".* FROM "parent_models" [0m
+  Rendered brand/index.html.erb within layouts/application (54.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" 
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "roles_users" ON "roles"."id" = "roles_users"."role_id" WHERE "roles_users"."user_id" = 1 AND "roles"."name" = 'Vendedor' LIMIT 1[0m
+Completed 200 OK in 242ms (Views: 118.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/brand.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /brand.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/client_type.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /client_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/clients.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /clients.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /document_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/entry_code.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /entry_code.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/entry_folders.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /entry_folders.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /model_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/output_code.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /output_code.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/output_folders.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /output_folders.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /price_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /product_type.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sale_process.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /sale_process.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stock.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /stock.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stores.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /stores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/suppliers.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /suppliers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/brand.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /brand.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/client_type.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /client_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/clients.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /clients.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/document_type.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /document_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/entry_code.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /entry_code.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/entry_folders.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /entry_folders.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/model_type.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /model_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/output_code.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /output_code.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/output_folders.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /output_folders.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/price_type.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /price_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/product_type.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /product_type.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sale_process.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /sale_process.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stock.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /stock.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/stores.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /stores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/suppliers.css?body=1" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /suppliers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/edit.png" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /edit.png - 200 OK (13ms)
+
+
+Started GET "/assets/delete2.png" for 127.0.0.1 at 2013-02-20 12:38:54 -0500
+Served asset /delete2.png - 200 OK (3ms)
