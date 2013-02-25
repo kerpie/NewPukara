@@ -1,25 +1,83 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<section id="devise_edit_user_title">
+  <hgroup id="edit_user_title">
+    <h1>Modificar valores de <%= current_user.full_name %></h1>
+  </hgroup>
+</section>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+<section id="new_user_form">
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+    <div class="new_user_form_field">
+      <%= f.label :name, "Nombre:" %>
+      <%= f.text_field :name %>
+    </div>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
+     <div class="new_user_form_field">
+      <%= f.label :last_name, "Apellidos:" %>
+      <%= f.text_field :last_name %>
+    </div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+     <div class="new_user_form_field">
+      <%= f.label :username, "Usuario:" %>
+      <%= f.text_field :username, :readonly => true %>
+    </div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
+    <div class="new_user_form_field">
+      <%= f.label :email, "Correo: " %>
+      <%= f.email_field :email %>
+    </div>
 
-  <div><%= f.submit "Update" %></div>
-<% end %>
+    <div class="new_user_form_field">
+      <%= f.label :salary, "Salario:" %>
+      <%= f.text_field :salary %>
+    </div>
 
-<h3>Cancel my account</h3>
+     <div class="new_user_form_field">
+      <%= f.label :small_code, "Código personal:" %>
+      <%= f.text_field :small_code %>
+    </div>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
 
-<%= link_to "Back", :back %>
+    <div class="new_user_form_field">
+      <%= f.label :dni, "DNI: " %>
+      <%= f.number_field :dni %>
+    </div>
+
+     <div class="new_user_form_field">
+      <%= f.label :address, "Dirección:" %>
+      <%= f.text_field :address %>
+    </div>
+
+     <div class="new_user_form_field">
+      <%= f.label :relative_phone, "Teléfono de contacto:" %>
+      <%= f.text_field :relative_phone %>
+    </div>
+
+    <div class="new_user_form_field">
+      <%= f.label :password %>
+      <%= f.password_field :password, :autocomplete => "off" %>
+      <h3>Dejar en blanco si no quieres cambiarlo</h3>
+    </div>
+    
+    <div class="new_user_form_field">
+      <%= f.label :image, "Foto:" %>
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="new_user_form_field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+
+    <div class="new_user_form_field">
+      <%= f.label :current_password %>
+      <%= f.password_field :current_password %>
+      <h3>Escribe tu contraseña actual para proceder</h3>
+    </div>
+
+    <div id="submit_new_user_form">
+      <%= f.submit "Registrar", :id => "submit_new_user" %>
+    </div>
+  <% end %>
+</section>

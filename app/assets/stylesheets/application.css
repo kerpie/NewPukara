@@ -221,39 +221,61 @@ body{
 /* General Layout */
 
 #user_data{
-	background: #787878;
-	border: 1px solid #191919;
-	padding: 15px;
+	background: #575757;
+//	border: 1px solid #191919;
+	padding: 10px;
+	width: 210px;
+	height: 100px;
 	text-align: center;
 	z-index: 5;
 	color: white;
 	position: fixed;
 	font-family: 'Dosis', sans-serif;  
 	margin: 20px 10px;
-	bottom: 80px ;
+	bottom: 0px ;
+	overflow: hidden;
 }
 
-#user_data p{
-	margin: 4px;
+#user_data:hover{
+	background: #272727;
 }
 
-#user_data ul li{
-	margin: 3px 3px;
-	padding: 3px 0px;
+#user_data img{
+	float: left;
 }
 
-#user_data ul li a{
-	width: 70px;
-	height: 20px;
-	color: white;
+#user_data div{
+	float: right;
+	width: 100px;
+	height: 100px;
+}
+
+#user_data div p{
+	width: 100%;
+	text-align: center;
+	padding: 10px 0px 10px;
+	font-weight: bold;
+}
+
+#user_data div ul{
+	width: 100%;
+	text-align: center;
+	display: block;
+}
+
+#user_data div ul li a{
 	text-decoration: none;
-	padding: 4px 8px;
+	padding: 5px 0px 5px;
+	font-size: 12px;
+	display: block;
+	color: white;
+	text-transform: uppercase;
 }
 
-#user_data ul li a:hover{
+#user_data div ul li a:hover{
 	background: #00b0e3;
+	color: white;
 }
-
 
 #prev_nav_bar{
 	background: #272727;

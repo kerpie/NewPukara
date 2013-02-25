@@ -6,20 +6,21 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible 	:email, 
-                    :password, 
-                    :password_confirmation,
-                    :remember_me, 
-                    :username, 
-                    :dni, 
-                    :address, 
-                    :relative_phone, 
-                    :name, 
-                    :last_name, 
-                    :salary, 
-                    :small_code, 
-                    :role_ids, 
-                    :store_id
+  attr_accessible 	:email, #
+                    :password, #
+                    :password_confirmation, #
+                    :remember_me, #
+                    :username, #
+                    :dni, #
+                    :address, #
+                    :relative_phone, #
+                    :name, # 
+                    :last_name, #
+                    :salary, #
+                    :small_code, #
+                    :role_ids, #
+                    :store_id, #
+                    :image
                     
   # attr_accessible :title, :body
 
@@ -40,6 +41,10 @@ class User < ActiveRecord::Base
   :url => "/system/:class/:attachment/:id/:style/:filename", :dependent => :destroy
 
   def role?(role)
-      return !!self.roles.find_by_name(role.to_s.camelize)
+    return !!self.roles.find_by_name(role.to_s.camelize)
+  end
+
+  def full_name
+    name.split(" ")[0] + " "+ last_name.split(" ")[0]
   end
 end

@@ -18,7 +18,6 @@ Final::Application.routes.draw do
   #Users
   match "user/index" => "user#index"  
   match "user/:id" => "user#show", :as => :show_user
-  match "user/:id/edit" => "user#edit", :as => :edit_user
   devise_for :users, :controllers => { :registrations => "users/registrations" }
   
   #DocumentType

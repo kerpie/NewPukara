@@ -8,8 +8,11 @@ class Ability
     elsif user.role? :Vendedor
         can :check, [OutputFolder, Client, Product]
         can :search, Product
-    else
-        #permisos para el usuario invitado
+    elsif :Cajero
+    elsif :Administrador
+    elsif :Almacenero
+    elsif :Contador
+    elsif :Asistente
     end
 
     # Define abilities for the passed in user here. For example:

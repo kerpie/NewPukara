@@ -1,40 +1,95 @@
-<section id="br_index">
-  <hgroup id="br_title">
+<section id="devise_new_user_title">
+  <hgroup id="new_user_title">
     <h1>Registrar nuevo usuario</h1>
   </hgroup>
 </section>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<section id="devise_error_messages">
   <%= devise_error_messages! %>
+</section>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+<section id="new_user_form">
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
-  <div><%= f.label :username %><br />
-  <%= f.text_field :username %></div>
+    <div class="new_user_form_field">
+      <%= f.label :name, "Nombre:" %>
+      <%= f.text_field :name %>
+    </div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+     <div class="new_user_form_field">
+      <%= f.label :last_name, "Apellidos:" %>
+      <%= f.text_field :last_name %>
+    </div>
 
-  <div><%= f.label :dni %><br />
-  <%= f.number_field :dni %></div>
+     <div class="new_user_form_field">
+      <%= f.label :username, "Usuario:" %>
+      <%= f.text_field :username, :readonly => true %>
+    </div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+    <div class="new_user_form_field">
+      <%= f.label :email, "Correo: " %>
+      <%= f.email_field :email %>
+    </div>
 
-  <div>
-  	<% for role in Role.all %>
-  		<%= check_box_tag "user[role_ids][]", role.id %>
-  		<%= role.name %><br>
-  	<% end %>
-  </div>
+    <div class="new_user_form_field">
+      <%= f.label :salary, "Salario:" %>
+      <%= f.text_field :salary %>
+    </div>
 
-  <div>
-    <%= f.label :store_id, "Local" %>
-    <%= f.collection_select :store_id, Store.all, :id, :name %>
-  </div>
+     <div class="new_user_form_field">
+      <%= f.label :small_code, "Código personal:" %>
+      <%= f.text_field :small_code %>
+    </div>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+    <div class="new_user_form_field">
+      <%= f.label :dni, "DNI: " %>
+      <%= f.number_field :dni %>
+    </div>
+
+     <div class="new_user_form_field">
+      <%= f.label :address, "Dirección:" %>
+      <%= f.text_field :address %>
+    </div>
+
+     <div class="new_user_form_field">
+      <%= f.label :relative_phone, "Teléfono de contacto:" %>
+      <%= f.text_field :relative_phone %>
+    </div>
+
+    <div class="new_user_form_field">
+      <%= f.label :password, "Contraseña: " %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="new_user_form_field">
+      <%= f.label :password_confirmation, "Confirmar Contraseña:" %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+
+    <h2>ROLES</h2>
+    <div class="new_user_form_field roles">
+    	<% for role in Role.all %>
+        <div>
+      		<%= check_box_tag "user[role_ids][]", role.id %>
+      		<%= label_tag nil, role.name %><br>
+        </div>
+    	<% end %>
+    </div>
+    
+    <div class="new_user_form_field">
+      <%= f.label :image, "Foto:" %>
+      <%= f.file_field :image %>
+    </div>
+    
+    <h2>Local</h2>
+    <div class="new_user_form_field">
+      <%= f.label :store_id, "Local" %>
+      <%= f.collection_select :store_id, Store.all, :id, :name %>
+    </div>
+
+    <div id="submit_new_user_form">
+      <%= f.submit "Registrar", :id => "submit_new_user" %>
+    </div>
+  <% end %>
+</section>
