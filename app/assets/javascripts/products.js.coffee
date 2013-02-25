@@ -1,5 +1,5 @@
 typingTimer = null
-doneTypingInterval = 1000
+doneTypingInterval = 500
 
 jQuery -> 
 	$('#toHide').hide();
@@ -18,7 +18,7 @@ doneTyping = () ->
 	$("#submiting").find("input").trigger('click');
 
 jQuery ->
-	$("#brand_id").keyup ->
+	$("#brand_id").change ->
 		clearTimeout(typingTimer)
 		if($("#brand_id").val())
 			typingTimer = setTimeout(doneTyping, doneTypingInterval)

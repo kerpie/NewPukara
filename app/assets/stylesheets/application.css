@@ -113,11 +113,12 @@ body{
 
 #signing form{
 	padding: 5px;
+	width: 600px;	
 }
 
 #signing form .field{
 	margin: 0 auto;
-	width: 290px;
+	width: 400px;
 	padding: 5px;
 	text-align: center;
 }
@@ -273,7 +274,7 @@ body{
 	float: left;
 }
 
-#prev_nav_bar h1:hover, #prev_nav_bar ul .selected_link{
+#prev_nav_bar h1:hover{
 	background: #333333;
 	color: white;
 }

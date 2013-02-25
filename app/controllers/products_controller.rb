@@ -83,7 +83,7 @@ class ProductsController < ApplicationController
   end
 
   def model_changer
-    brand = Brand.where(:name => params[:brand_id])
+    brand = Brand.where(:name => params[:brand_id].upcase)
     model_type = ModelType.find(params[:model_type_id])
 
     @result = Model.where(:brand_id => brand, :model_type_id => model_type)

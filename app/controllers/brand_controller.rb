@@ -5,7 +5,7 @@ class BrandController < ApplicationController
     second_hash = Hash.new
     @third_hash = Hash.new
 
-    Brand.all.each do |brand|
+    Brand.order('name ASC').each do |brand|
       ParentModel.all.each do |pm|
         pm.model_types.each do |mt|
           models = Model.where(:brand_id => brand, :model_type_id => mt).all
@@ -29,7 +29,7 @@ class BrandController < ApplicationController
     def create
     @create = Brand.new
     @create.name = unless params[:name].nil? 
-                        params[:name].upcase
+                        params[:name].upcase.strip
                       end
     authorize! :create, Brand.new 
     respond_to do |f|
@@ -52,7 +52,7 @@ class BrandController < ApplicationController
   def create_class
     @create = ParentModel.new
     @create.name = unless params[:name].nil? 
-                        params[:name].upcase
+                        params[:name].upcase.strip
                       end
     respond_to do |f|
       if @create.save
@@ -73,7 +73,7 @@ class BrandController < ApplicationController
 
   def parent_model_update
     @parent_model = ParentModel.find(params[:pm_id])
-    @parent_model.name = params[:new_name].upcase
+    @parent_model.name = params[:new_name].upcase.strip
     
     respond_to do |f|
       if @parent_model.save
@@ -93,7 +93,7 @@ class BrandController < ApplicationController
   end
 
   def model_type_destroy
-    @model_type = ModelType.find(params[:pm_id])
+    @model_type = ModelType.find(params[:mt_id])
     @model_type.destroy
     respond_to do |f|
       f.js
@@ -103,7 +103,7 @@ class BrandController < ApplicationController
   def model_type_update
     @model_type = ModelType.find(params[:mt_id])
     @model_type.name =  unless params[:new_name].nil? 
-                          params[:new_name].upcase
+                          params[:new_name].upcase.strip
                         end
     @model_type.save
     respond_to do |f|
@@ -113,7 +113,7 @@ class BrandController < ApplicationController
 
   def update
     @up_brand = Brand.find(params[:brand_id])
-    @up_brand.name = params[:new_value].upcase
+    @up_brand.name = params[:new_value].upcase.strip
     authorize! :update, Brand.new
     respond_to do |f|
       if @up_brand.save
@@ -135,7 +135,7 @@ class BrandController < ApplicationController
     @create = Model.new
     @create.brand_id = params[:brand_id]
     @create.model_type_id = params[:model_type_id]
-    @create.name = params[:name].upcase
+    @create.name = params[:name].upcase.strip
     authorize! :create, Model.new 
     respond_to do |f|
       if @create.save
@@ -148,7 +148,7 @@ class BrandController < ApplicationController
 
   def update_model
     @up_model = Model.find(params[:model_id])
-    @up_model.name = params[:new_value].upcase
+    @up_model.name = params[:new_value].upcase.strip
     
     authorize! :update, Model.new
     respond_to do |f|
@@ -171,7 +171,7 @@ class BrandController < ApplicationController
   def create_model_type
     @create = ModelType.new
     @create.parent_model_id = params[:parent].upcase
-    @create.name = params[:name].upcase
+    @create.name = params[:name].upcase.strip
     respond_to do |f|
       if @create.save
         f.js

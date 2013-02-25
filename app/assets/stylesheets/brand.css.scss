@@ -1,6 +1,7 @@
 #br_index{
 	#br_title{
 		width: 1000px;
+		overflow: hidden;
 		h1{
 			width: 400px;
 			font-size: 30px;
@@ -9,6 +10,13 @@
 			text-align: center;
 			text-transform: uppercase;
 			padding: 20px;
+			float:left;
+		}
+		#search_brand_part{
+			float: right;
+			width: 400px;
+			text-align: center;
+			margin-top: 18px;
 		}
 	}
 	#brs{

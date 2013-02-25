@@ -8,8 +8,8 @@ module ApplicationHelper
 		link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")")
 	end
 
-	def datalist_text_field_tag(name, list_name, collection)
-		field_tag = text_field_tag(name, nil, :list => list_name)
+	def datalist_text_field_tag(name, input_value, list_name, collection)
+		field_tag = text_field_tag(name, input_value, :list => list_name)
 		datalist_part = "<datalist id=\"#{list_name}\">"
 		datalist_part_middle = ""
 		collection.each do |c|

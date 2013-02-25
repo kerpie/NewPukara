@@ -13,15 +13,15 @@
 <%= form_tag model_changer_path, :id => "model_changer_form", :remote => true do %>
   <div class="model_changer_form_div">
     <%= label_tag "brand_id", "Marca: " %>
-    <%= datalist_text_field_tag "brand_id", "midorys", Brand.all %>
+    <%= datalist_text_field_tag "brand_id", @product.model.nil? ? "" : @product.model.brand.name , "midorys", Brand.all %>
   </div>
   <div class="model_changer_form_div">
     <%= label_tag "myClass", "Clase: " %>
-    <%= select_tag "myClass", options_from_collection_for_select(ParentModel.all, :id, :name) %>
+    <%= select_tag "myClass", options_from_collection_for_select(ParentModel.all, :id, :name, ParentModel.first.id) %>
   </div>
   <div class="model_changer_form_div">
     <%= label_tag "model_type_id", "Sub-Clase: " %>
-    <%= select_tag "model_type_id", option_groups_from_collection_for_select(ParentModel.all, :model_types, :name, :id, :name, 3) %>
+    <%= select_tag "model_type_id", option_groups_from_collection_for_select(ParentModel.all, :model_types, :name, :id, :name, ParentModel.first.id) %>
   </div>
   <div id="submiting">
     <%= submit_tag "consultar" %>

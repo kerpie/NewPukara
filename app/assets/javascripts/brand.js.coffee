@@ -26,3 +26,22 @@ jQuery ->
 		tmpId = li.attr("id").substring(6)
 		id = "mt_" + tmpId
 		$("#"+id).show()
+
+jQuery -> 
+	$("#search_brand").click ->
+		if($(this).val() == "Buscar por marca")
+			$(this).val("")
+
+jQuery ->
+	$("#search_brand").blur ->
+		if $(this).val().length == 0
+			$(this).val("Buscar por marca")
+
+jQuery -> 
+	$("#search_brand").keyup ->
+		textToSearch = $(this).val().toUpperCase()
+		$(".model_part").each ->
+			if($(this).find(".br_name h1").text().search(new RegExp(textToSearch, "i"))< 0)
+				$(this).hide()				
+			else
+				$(this).show()			
