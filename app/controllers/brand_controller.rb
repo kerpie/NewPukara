@@ -5,7 +5,7 @@ class BrandController < ApplicationController
     second_hash = Hash.new
     @third_hash = Hash.new
 
-    Brand.order('name ASC').first(50).each do |brand|
+    Brand.order('name ASC').first(30).each do |brand|
       ParentModel.all.each do |pm|
         pm.model_types.each do |mt|
           models = Model.where(:brand_id => brand, :model_type_id => mt).all
