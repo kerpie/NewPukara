@@ -18,7 +18,7 @@ Final::Application.routes.draw do
   resources :entry_folders
   
   #Users
-  match "user/index" => "user#index"  
+  match "user/index" => "user#index", :as => :users_index
   match "user/:id" => "user#show", :as => :show_user
   devise_for :users, :controllers => { :registrations => "users/registrations" }
   
@@ -86,7 +86,7 @@ Final::Application.routes.draw do
   match "products/last_search" => "products#last_search", :as => :last_search
   resources :products
 
-  #CodeEntry
+  #EntryCode
   match "entry_code/search" => "entry_code#search", :as => :code_entry_search
   match "entry_code/result" => "entry_code#result", :as => :code_entry_result
   match "entry_code/register" => "entry_code#register", :as => :code_entry_register

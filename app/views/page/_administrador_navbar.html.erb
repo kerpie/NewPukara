@@ -1,0 +1,23 @@
+<li class="first_level_item"><%= link_to "Clientes", :clients %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Registrar cliente", new_client_path %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Proveedores", suppliers_path %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Registrar proveedor", new_supplier_path %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Códigos", nil %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Códigos de Salida", :code_output_search %></li>
+		<li class="second_level_item"><%= link_to "Códigos de Entrada", :code_entry_search %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Documentos", nil %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Documentos de Salida",  :output_folders %></li>
+		<li class="second_level_item"><%= link_to "Documentos de Entrada", :entry_folders %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Reportes", nil %></li>

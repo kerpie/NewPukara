@@ -55,16 +55,16 @@
     </div>
 
     <div class="new_user_form_field">
+      <%= f.label :image, "Foto:" %>
+      <%= f.file_field :image %>
+    </div>
+    
+    <div class="new_user_form_field">
       <%= f.label :password %>
       <%= f.password_field :password, :autocomplete => "off" %>
       <h3>Dejar en blanco si no quieres cambiarlo</h3>
     </div>
     
-    <div class="new_user_form_field">
-      <%= f.label :image, "Foto:" %>
-      <%= f.file_field :image %>
-    </div>
-
     <div class="new_user_form_field">
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation %>

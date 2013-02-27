@@ -322,17 +322,12 @@ body{
 	color: white;
 }
 
-.first_level_item a{
+.first_level_item a:link, .first_level_item a:visited{
 	text-decoration: none;
 	padding: 15px;
 	display: block;
 	font-family: "Dosis",sans-serif;
-	&:link{
-		color: white;
-	}
-	&:visited{
-		color: white;	
-	}
+	color: white;
 }
 
 .first_level_item:hover .second_level_list{
@@ -401,7 +396,6 @@ body{
 	z-index: 10;
 	bottom: 0px;
 	right: 58px;
-	display: none;
 }
 
 #vendor_list ul li{

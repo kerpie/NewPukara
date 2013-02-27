@@ -1,33 +1,33 @@
-<ul class="first_level_list">
-	<li class="first_level_item"><a href="#">Documentos</a>
-		<ul class="second_level_list">
-			<li class="second_level_item"><%= link_to "Documentos de Salida", :output_folders %></li>
-			<li class="second_level_item"><%= link_to "Documentos de Entrada", :entry_folders %></li>
-			<li class="second_level_item"><%= link_to "Tipos de Documentos", :document_type_index %></li>
-		</ul>
-	</li>
-	<li class="first_level_item"><a href="#">Codigos</a>
-		<ul class="second_level_list">
-			<li class="second_level_item"><%= link_to "Codigos de Salida", :code_output_search %></li>
-			<li class="second_level_item"><%= link_to "Codigos de Entrada", :code_entry_search %></li>
-		</ul>
-	</li>
-	<li class="first_level_item"><%= link_to "Marcas y Modelos", brand_index_path %>
-		<ul class="second_level_list">
-			<li class="second_level_item"><%= link_to_function "Registrar nuevo valor", "showBrandMenu(this)" %></li>
-		</ul>
-	</li>
-	<li class="first_level_item"><%= link_to "Productos", products_path %></li>
-	<li class="first_level_item"><a href="#">Clientes</a></li>
-	<li class="first_level_item"><%= link_to "Precios de Venta", "#" %>
-		<ul class="second_level_list">
-			<li class="second_level_item"><%= link_to "Tipo de Precio", :price_type_index %></li>
-		</ul>
-	</li>
-	<li class="first_level_item"><%= link_to "Proveedores", :suppliers %>
-		<ul class="second_level_list">
-			<li class="second_level_item"><%= link_to "Nuevo proveedor", new_supplier_path %></li>	
-		</ul>
-	</li>
-	<li class="first_level_item"><a href="#">Locales</a></li>
-</ul>
+<li class="first_level_item"><%= link_to "Documentos", "#" %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Documentos de Salida", :output_folders %></li>
+		<li class="second_level_item"><%= link_to "Documentos de Entrada", :entry_folders %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Usuarios", users_index_path %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Registrar nuevo usuario", :new_user_registration %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Marcas y Modelos", brand_index_path %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to_function "Registrar nuevo valor", "showBrandMenu(this)" %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Proveedores", suppliers_path %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Registrar proveedor", new_supplier_path %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Producto", products_path %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Registrar producto", new_product_path %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Códigos", nil %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Códigos de Salida", :code_output_search %></li>
+		<li class="second_level_item"><%= link_to "Códigos de Entrada", :code_entry_search %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Reportes", nil %></li>

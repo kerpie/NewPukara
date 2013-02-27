@@ -33,10 +33,10 @@ module ApplicationHelper
 	end
 
 	def render_proper_navbar(user)
-		if user.role? "SuperAdmin"
-			render "page/superadmin_navbar.html"
-		elsif user.role? "Vendedor"
-			render "page/vendedor_navbar.html"
+		result = ""
+		user.roles.each do |role|
+			result = result + render("page/"+role.name.downcase+"_navbar.html")
 		end
+		result
 	end
 end
