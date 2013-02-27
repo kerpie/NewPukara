@@ -1,0 +1,26 @@
+<li class="first_level_item"><%= link_to "Clientes", :clients %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Registrar nuevo cliente", new_client_path %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Productos", :products %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Registrar nuevo producto", new_product_path %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Codigos", nil %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Consultar código", "#" %></li>
+		<li class="second_level_item"><%= link_to "Registrar códigos", :price_type_index %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Marcas y Modelos", brand_index_path %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to_function "Registrar nuevo valor", "showBrandMenu(this)" %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Ingresos", :entry_folders %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Registrar nuevo ingreso", new_entry_folder_path %></li>
+	</ul>
+</li>

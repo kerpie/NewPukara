@@ -17,7 +17,7 @@
 				<%= image_tag current_user.image.url(:medium), :width => 100, :height => 100 %>
 				<div>
 					<p><%= current_user.username.upcase %></p>
-					<ul>
+					<ul class="first_level_list">
 						<li><%= link_to "editar perfil", edit_user_registration_path %></li>
 						<li><%= link_to "cerrar sesion", destroy_user_session_path, :method => :delete %></li>
 					</ul>
@@ -25,38 +25,8 @@
 			</section>
 			<section id="prev_nav_bar">
 				<h1>Huguito</h1>
-				<ul class="first_level">
-					<li><a href="#">Documentos</a>
-						<ul class="second_level">
-							<li><%= link_to "Documentos de Salida", :output_folders %></li>
-							<li><%= link_to "Documentos de Entrada", :entry_folders %></li>
-							<li><%= link_to "Tipos de Documentos", :document_type_index %></li>
-						</ul>
-					</li>
-					<li><a href="#">Codigos</a>
-						<ul class="second_level">
-							<li><%= link_to "Codigos de Salida", :code_output_search %></li>
-							<li><%= link_to "Codigos de Entrada", :code_entry_search %></li>
-						</ul>
-					</li>
-					<li><%= link_to "Marcas y Modelos", brand_index_path %>
-						<ul class="second_level">
-							<li><%= link_to_function "Registrar nuevo valor", "showBrandMenu(this)" %></li>
-						</ul>
-					</li>
-					<li><%= link_to "Productos", products_path %></li>
-					<li><a href="#">Clientes</a></li>
-					<li><%= link_to "Precios de Venta", "#" %>
-						<ul class="second_level">
-							<li><%= link_to "Tipo de Precio", :price_type_index %></li>
-						</ul>
-					</li>
-					<li><%= link_to "Proveedores", :suppliers %>
-						<ul class="second_level">
-							<li><%= link_to "Nuevo proveedor", new_supplier_path %></li>	
-						</ul>
-					</li>
-					<li><a href="#">Locales</a></li>
+				<ul class="first_level_list">
+					<%= (render_proper_navbar current_user).html_safe %>
 				</ul>
 			</section>
 

@@ -1,0 +1,28 @@
+<li class="first_level_item"><%= link_to "Documentos", "#" %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Documentos de Salida", :output_folders %></li>
+		<li class="second_level_item"><%= link_to "Documentos de Entrada", :entry_folders %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Usuarios", users_index_path %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Registrar nuevo usuario", :new_user_registration %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Proveedores", suppliers_path %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Registrar proveedor", new_supplier_path %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Producto", products_path %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Registrar producto", new_product_path %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Códigos", nil %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Códigos de Salida", :code_output_search %></li>
+		<li class="second_level_item"><%= link_to "Códigos de Entrada", :code_entry_search %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Reportes", nil %></li>

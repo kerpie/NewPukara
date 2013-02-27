@@ -14,7 +14,7 @@ en:
   devise:
     failure:
       already_authenticated: 'Ya has iniciado sesion'
-      unauthenticated: 'Necesita iniciar sesion para seguir usando el sistema'
+      unauthenticated: 'Necesita iniciar sesion para utilizar el sistema'
       unconfirmed: 'You have to confirm your account before continuing.'
       locked: 'Tu cuenta esta bloqueada'
       invalid: 'Usuario o contraseña no valido'
