@@ -1,0 +1,15 @@
+<ul class="first_level_list">
+	<li class="first_level_item"><%= link_to "Clientes", :clients %>
+		<ul class="second_level_list">
+			<li class="second_level_item"><%= link_to "Registrar nuevo cliente", new_client_path %></li>
+		</ul>
+	</li>
+	<li class="first_level_item"><%= link_to "Productos", :products %>	</li>
+	<li class="first_level_item"><%= link_to "Cotizaciones", nil %></li>
+	<li class="first_level_item"><%= link_to "Codigos", nil %>
+		<ul class="second_level_list">
+			<li class="second_level_item"><%= link_to "Consultar código", "#" %></li>
+			<li class="second_level_item"><%= link_to "Registrar códigos", :price_type_index %></li>
+		</ul>
+	</li>
+</ul>
