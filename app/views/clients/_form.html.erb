@@ -19,14 +19,7 @@
     <%= f.label :client_type_id, "Tipo de Cliente" %><br />
     <%= f.collection_select :client_type_id, ClientType.all, :id, :name %>
   </div>
-  <div class="field">
-    <%= f.label :RUC %><br />
-    <%= f.text_field :RUC %>
-  </div>
-  <div class="field">
-    <%= f.label :DNI %><br />
-    <%= f.text_field :DNI %>
-  </div>
+
   <div class="field">
     <%= f.label :address, "Direccion" %><br />
     <%= f.text_field :address %>

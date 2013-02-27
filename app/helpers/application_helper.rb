@@ -31,4 +31,12 @@ module ApplicationHelper
 		datalist_items = datalist_part + datalist_part_middle + datalist_part_final
 		result = field_tag + datalist_items.html_safe
 	end
+
+	def render_proper_navbar(user)
+		if user.role? "SuperAdmin"
+			render "page/superadmin_navbar.html"
+		elsif user.role? "Vendedor"
+			render "page/vendedor_navbar.html"
+		end
+	end
 end
