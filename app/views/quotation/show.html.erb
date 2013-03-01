@@ -1,0 +1,87 @@
+<section id="quotation_index">
+	<hgroup id="quotation_title">
+		<h1>Cotizacion</h1>
+		<h2 id="click_to_pay">Pagar cotizacion</h2>
+	</hgroup>
+</section>
+
+<section id="quotations_show">
+	<section id="quotation_show_upper_part">
+		<section id="client_part">
+			<table>
+				<tr>
+					<td colspan="2"><p><span>Señor(es): </span><%= @q.client.name %></p></td>
+				</tr>
+				<tr>
+					<td><p><span>Lugar de destino: </span><%= @q.client.address %></p></td>
+					<% if @q.client.client_type == ClientType.first %>
+						<td><p><span>RUC: </span><%= @q.client.identification_number %></p></td>
+					<% else %>
+						<td><p><span>DNI: </span><%= @q.client.identification_number%></p></td>
+					<% end %>
+				</tr>
+				<tr>
+					<td colspan="2"><p><span>Fecha: </span><%= @q.date.to_s %></p></td>
+				</tr>
+			</table>
+		</section>
+	</section>
+	<section id="quotation_show_details_part">
+		<table>
+			<tr>
+				<th>Código</th>
+				<th>Descripción</th>
+				<th>Cantidad</th>
+				<th>Unidad</th>
+				<th>Precio Unitario</th>
+				<th>Total</th>
+			</tr>
+			<% total = 0 %>
+			<% @q.quotation_details.each do |qd| %>			
+				<% tmpTotal = qd.unit.value * qd.quantity * qd.sell_price%>
+				<% total = total + tmpTotal %>
+				<tr>
+					<td><%= qd.product.id %></td>
+					<td><%= qd.product.full_name %></td>
+					<td><%= qd.quantity %></td>
+					<td><%= qd.unit.name %></td>
+					<td><%= qd.sell_price %></td>
+					<td><%= tmpTotal %></td>
+				</tr>
+			<% end %>
+			<tr>
+				<td colspan="5" style="text-align: right;"><p>Total</p></td>
+				<td><%= total %></td>
+			</tr>
+		</table>
+	</section>
+</section>
+
+<section id="pay_quotation_part">
+	<div id="pay_upper_part">
+		<h1>Pagar cotizacion</h1>
+		<h2><%= link_to_function "X", "closePayBox(this)" %></h2>
+	</div>
+	<%= form_tag pay_quotation_path, :remote => true do %>
+		<%= hidden_field_tag "id", @q.id %>
+		<div class="pay_part">
+			<%= label_tag "money_received", "Dinero entregado: " %><br>
+			<%= text_field_tag "money_received" %>
+		</div>
+		<div class="pay_part">
+			<%= label_tag "money_returned", "Vuelto: " %><br>
+			<%= text_field_tag "money_returned" %>
+		</div>
+		<div class="pay_part">
+			<%= label_tag "money_expected", "Total a Cancelar" %><br>
+			<%= text_field_tag "money_expected", total, :readonly => true %>
+		</div>
+		<div class="pay_part">
+			<%= label_tag "money_type_id", "Tipo de Moneda: " %><br>
+			<%= select_tag "money_type_id", options_from_collection_for_select(MoneyType.all, :id, :name) %>
+		</div>
+		<div class="submit_pay">
+			<%= submit_tag "Pagar" %>
+		</div>
+	<% end %>
+</section>

@@ -18,3 +18,49 @@
 		color: rgba(150,150,150,1)
 	}
 }
+
+#config{
+	width: 1000px;
+	margin: 20px auto;
+	padding: 30px;
+	overflow: hidden;
+	h1{
+		text-align:center;
+		margin: 20px auto;
+		font-family: 'Dosis', sans-serif;
+		font-size: 70px;
+		color: rgba(150,150,150,0.7);
+	}
+	section{
+		width: 440px;
+		padding: 20px;
+		margin: 10px;
+		float: left;
+		h2{
+			width: 380px;
+			padding: 10px;
+			text-align:center;
+			text-transform: uppercase;
+			font-weight: bold;
+			background: #999;
+			color: white;
+			margin: 0 auto;
+		}
+		div{
+			width: 400px;
+			margin: 0 auto;
+			text-align: center;
+			a{
+				width: 380px;
+				display: block;
+				margin: 0 auto;
+				padding: 10px;
+				text-decoration: none;
+				&:hover{
+					background: #00b0e3;
+					color: white;
+				}
+			}
+		}
+	}
+}

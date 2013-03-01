@@ -1,13 +1,10 @@
 class Product < ActiveRecord::Base
   attr_accessible :description, :model_id, :monthly_price, :monthly_quantity, :product_type_id, :image
 
-  validates :description, :presence => {:message => " no puede estar vacio"}
-  
+  validates :description, :presence => {:message => " no puede estar vacio"} 
   validates :model_id, :presence => {:message => " no puede estar vacio"}
   validates :model_id, :uniqueness => {:message => " ya ha sido tomado"}
-
   validates :product_type_id, :presence => {:message => " no puede estar vacio"}
-  
   validates :monthly_price, :presence => {:message => " no puede estar vacio"}
   validates :monthly_quantity, :presence => {:message => " no puede estar vacio"}
 
@@ -16,6 +13,7 @@ class Product < ActiveRecord::Base
 
   has_many :entry_document_details, :dependent => :destroy
   has_many :output_document_details, :dependent => :destroy
+  has_many :quotation_details, :dependent => :destroy
   has_many :stock
   has_many :sell_prices, :dependent => :delete_all
 

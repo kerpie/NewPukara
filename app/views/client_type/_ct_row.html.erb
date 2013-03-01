@@ -1,0 +1,12 @@
+<tr id=<%="#{ct.id}" %>>
+	<td><%= ct.name %></td>
+	<td><%= ct.identification_type %></td>
+	<td><%= ct.identification_quantity %></td>
+	<td><%= link_to_function "Modificar", "updateClientTypeForm('#{ct.id.to_s}','#{ct.name}', '#{ct.identification_type}', '#{ct.identification_quantity}')" %></td>
+	<td><%= link_to_function "Eliminar", "deleteClientType(this)" %>
+		<%= form_tag client_type_destroy_path, :remote => true, :class => "delete_ct" do %>
+			<%= hidden_field_tag "ct_id", ct.id %>
+			<%= submit_tag "enviar", :class => "destroy_client_type" %>
+		<% end %>
+	</td>
+</tr>

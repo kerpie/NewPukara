@@ -288,7 +288,7 @@ body{
 	z-index: 5;
 }
 
-#prev_nav_bar h1{
+#prev_nav_bar h1 a{
 	font-size: 30px;
 	padding: 20px;
 	text-transform: uppercase;
@@ -296,6 +296,7 @@ body{
 	color: #787878;
 	float: left;
 	font-family: "Dosis",sans-serif;
+	text-decoration: none;
 }
 
 #prev_nav_bar h1:hover{
@@ -396,6 +397,9 @@ body{
 	z-index: 10;
 	bottom: 0px;
 	right: 58px;
+
+	/* modificar */ 
+	display: none;
 }
 
 #vendor_list ul li{

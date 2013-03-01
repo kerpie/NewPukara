@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
   has_many :entry_folders
   has_many :output_folders
+  has_many :quotations
   belongs_to :store
 
   has_attached_file :image, :styles => {

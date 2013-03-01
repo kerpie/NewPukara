@@ -11,6 +11,8 @@ class ClientTypeController < ApplicationController
   def create
     @new_ct = ClientType.new
     @new_ct.name = params[:name]
+    @new_ct.identification_type = params[:identification_type]
+    @new_ct.identification_quantity = params[:identification_quantity]
     authorize! :create, @new_ct
     respond_to do |f|
       if @new_ct.save
@@ -31,8 +33,10 @@ class ClientTypeController < ApplicationController
   end
 
   def update
-    @up_ct = ClientType.find(params[:ct_id])
-    @up_ct.name = params[:new_value]
+    @up_ct = ClientType.find(params[:ctupdate_id])
+    @up_ct.name = params[:up_name]
+    @up_ct.identification_type = params[:up_identification_type]
+    @up_ct.identification_quantity = params[:up_identification_quantity]
     authorize! :update, @up_ct
     respond_to do |f|
       if @up_ct.save

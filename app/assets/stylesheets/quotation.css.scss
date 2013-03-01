@@ -1,0 +1,224 @@
+#quotation_index{
+	#quotation_title{
+		width: 1000px;
+		overflow: hidden;
+		padding: 10px;
+		h1{
+			width: 400px;
+			font-size: 30px;
+			color: white;
+			background: #272727;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 20px;
+			float:left;
+		}
+		h2{
+			float: right;
+			display: block;
+			padding: 20px;
+			background: #00b0e3;
+			color: white;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 18px;
+			font-weight: bold;
+			&:hover{
+				box-shadow: 0px 0px 5px #00b0e3;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+#search_quotation{
+	width: 1000px;
+	margin: 20px auto;
+	form{
+		width: 600px;
+		margin: 0 auto;
+		.search_quotation_form_div{
+			width: 400px;
+			margin: 0 auto;
+			text-align: center;
+			label{
+				color: #272727;
+				padding: 10px;
+			}	
+			input{
+				width: 300px;
+				text-align:center;
+				padding: 5px;
+			}
+		}
+		.search_quotation_form_div_submit{
+			width: 400px;
+			margin: 20px auto;
+			text-align: center;
+			input{
+				border: none;
+				background: #00b0e3;
+				color: white;
+				padding:10px;
+				text-transform: uppercase;
+				&:hover{
+					box-shadow: 0px 0px 5px #00b0e3;
+				}
+			}
+		}
+	}
+	#search_response{
+		width: 600px;
+		margin: 0 auto;
+		text-align: center;
+		h2{
+			width: 400px;
+			font-size: 20px;
+			margin: 0 auto;
+			padding: 10px;
+			background: red;
+			color: white;
+		}
+	}	
+}
+
+#quotations_show{
+	width: 1000px;
+	margin: 10px auto;
+	padding: 10px;
+	#quotation_show_upper_part{
+		width: 800px;
+		margin: 10px auto;
+		padding: 10px;
+		background: #ccc;
+		#client_part{
+			width: 800px;
+			margin: 0 auto;
+			table{
+				width: 600px;
+				margin: 0 auto;
+				border: 1px solid black;
+				tr{
+					td{
+						border: 1px solid black;
+						padding: 5px;
+						p{
+							span{
+								font-weight: bold;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	#quotation_show_details_part{
+		width: 800px;
+		margin: 10px auto;
+		padding: 10px;
+		background: #ccc;
+		table{
+			width: 800px;
+			margin: 0 auto;
+			tr{
+				th{
+					text-align: center;
+					font-size: 16px;
+					text-transform: uppercase;
+					background: #272727;
+					color: white;
+					padding: 10px;
+				}
+				td{
+					text-align: center;
+					padding: 5px;
+					border-bottom: 1px solid #272727;
+				}
+				&:last-child{
+					td{
+						font-weight: bold;
+						border-bottom: none;
+						&:first-child{
+							text-transform: uppercase;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#pay_quotation_part{
+	position: absolute;
+	width: 600px;
+	height: 500px;
+	top: 50%;
+	left: 50%;
+	margin: -250px -300px;
+	background: #00b0e3;
+	padding: 10px;
+	display: none;
+	#pay_upper_part{
+		padding: 10px;
+		text-align: center;
+		overflow: hidden;
+		h1{
+			text-transform: uppercase;
+			color: white;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 10px;
+			float: left;
+		}
+		h2{
+			float: right;
+			a{
+				padding: 10px;
+				color: rgba(255,255,255, 0.5);
+				text-decoration:none;
+				&:hover{
+					background: red;
+					color: white;
+				}
+			}
+		}
+	}
+	form{
+		width: 400px;
+		margin: 0 auto;
+		text-align: center;
+		.pay_part{
+			width: 300px;
+			margin: 5px auto;
+			padding: 10px;
+			label{
+				color: white;
+			}
+			input, select{
+				text-align: center;
+				width: 300px;
+				padding: 10px;
+			}
+			select{
+				width: 320px;
+			}
+		}
+		.submit_pay{
+			text-align: center;
+			width: 300px;
+			margin: 10px auto;
+			input{
+				display: inline-block;
+				text-align: center;
+				border: none;
+				color: #00b0e3;
+				background: white;
+				padding: 10px;
+				text-transform: uppercase;
+				&:hover{
+					box-shadow: 0px 0px 5px white;
+				}
+			}
+		}
+	}
+}

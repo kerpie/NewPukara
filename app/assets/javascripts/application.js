@@ -247,5 +247,32 @@ function showClientSearch(){
 }
 
 function submitCreateOutputFolderForm(link){
-	$(link).parent().next("#output_folder_submit_button").find("input").trigger('click');	
+	$(link).parent().next("#ouput_folder_submit_button").find("input").trigger('click');	
+}
+
+//ClientType updateform
+function updateClientTypeForm(id, name, type, q){
+	$("#ctupdate_id").val(id);
+	$("#up_name").val(name);
+	$("#up_identification_type").val(type);
+	$("#up_identification_quantity").val(q);
+	$("#update_client_type").parents(".floating_box").show();
+}
+
+function showCreateClientTypeForm(){
+	$("#create_client_type")[0].reset();
+	$("#create_client_type").parents(".floating_box").show();
+}
+
+function hideFloatingBox(link){
+	$(link).parents(".floating_box").hide();
+}
+
+function deleteClientType(link){
+	$(link).next('.delete_ct').find(".destroy_client_type").trigger("click");
+}
+
+//Quotation
+function closePayBox(link){
+	$(link).parents("#pay_quotation_part").hide();
 }

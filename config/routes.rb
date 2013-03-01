@@ -2,10 +2,16 @@ Final::Application.routes.draw do
 
   root :to => 'page#index'
 
-  match "page/index" => "page#index", :as => :real_index
+  #Quotation 
+  match "quotation/index" => "quotation#index", :as => :quotation_index
+  match "quotation/search" => "quotation#search", :as => :quotation_search
+  match "quotation/show/:id" => "quotation#show", :as => :quotation_show
+  match "quotation/update" => "quotation#update", :as => :quotation_update
+  match "quotation/new" => "quotation#new", :as => :quotation_new
+  match "quotation/create" => "quotation#create", :as => :quotation_create
+  match "quotation/pay" => "quotation#pay_quotation", :as => :pay_quotation
 
-  match "sale_process/index" => "sale_process#index", :as => :sale_process_index
-  match "sale_process/new_client" => "sale_process#new_client", :as => :sale_process_new_client
+  match "page/index" => "page#index", :as => :real_index
 
   resources :output_folders
 
@@ -49,8 +55,8 @@ Final::Application.routes.draw do
   #ClientType
   match "client_type/index" => "client_type#index", :as => :client_type_index
   match "client_type/create" => "client_type#create", :as => :client_type_create
-  match "client_type/update" => "client_type#destroy", :as => :client_type_destroy
-  match "client_type/destroy" => "client_type#update", :as => :client_type_update
+  match "client_type/destroy" => "client_type#destroy", :as => :client_type_destroy
+  match "client_type/update" => "client_type#update", :as => :client_type_update
 
   #Brand
   match "brand/index" => "brand#index", :as => :brand_index

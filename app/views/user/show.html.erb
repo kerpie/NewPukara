@@ -1,1 +1,36 @@
-<%= @user.username %><br>
+<section id="users_index">
+  <hgroup id="users_title">
+    <h1>Usuario: <%= @user.full_name %></h1>
+  </hgroup>
+</section>
+
+<section id="users_show">
+  <div class="user_show_part">
+    <span>Nombre:</span>
+    <p><%= @user.name %></p>
+  </div>
+  <div class="user_show_part">
+    <span>Apellido:</span>
+    <p><%= @user.last_name %></p>
+  </div>
+  <div class="user_show_part">
+    <span>DNI:</span>
+    <p><%= @user.dni %></p>
+  </div>
+  <div class="user_show_part">
+    <span>Direccion:</span>
+    <p><%= @user.address %></p>
+  </div>
+  <div class="user_show_part">
+    <span>Telefono:</span>
+    <p><%= @user.relative_phone %></p>
+  </div>
+  <section id="user_role_part">
+    <h1>ROLES</h1>
+    <ul>
+      <% @user.roles.each do |role| %>
+        <li><%= role.name %></li>
+      <% end %>
+    </ul>
+  </section>
+</section>

@@ -15,6 +15,103 @@
 	}
 }
 
+#users_index{
+	width: 1000px;
+	margin: 0 auto;
+	padding: 10px;
+	table{
+		margin: 10px auto;
+		width: 900px;
+		text-align: center;
+		tbody{
+			tr{
+				th{
+					padding: 10px;
+					color: white;
+					background: #272727;
+					border: 1px solid #272727;
+					font-family: 'Dosis', sans-serif;
+					font-size: 15px;
+					text-transform: uppercase;
+				}
+				td{
+					padding: 7px;
+					border: 1px solid #272727;
+					a{
+						text-decoration: none;
+						display: block;
+						padding: 5px 20px;
+						color: #272727;
+						&:hover{
+							background: #bbb;	
+							color: white;
+						}
+					}
+					&:hover{
+						background: #bbb;
+						a{
+							color: white;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#users_show{
+	width: 600px;
+	margin: 0 auto;
+	padding: 10px;
+	background: #ccc;
+	clear: both;
+	.user_show_part{
+		overflow: hidden;
+		span{
+			width: 150px;
+			background: #272727;
+			color: white;
+			padding: 10px;
+			text-align: right;
+			float: left;
+			margin: 10px;
+		}
+		p{
+			text-align: left;
+			padding: 10px;
+			margin: 10px 0px;
+		}
+	}
+	&:hover{
+		background: #bbb;
+	}
+	#user_role_part{
+		width: 500px;
+		padding: 20px;
+		margin: 0 auto;
+		h1{
+			width: 500px;
+			margin: 0 auto;
+			background: #777;
+			text-align: center;
+			color: white;
+			padding: 10px;
+			font-size: 20px;
+		}
+		ul{
+			width: 300px;
+			margin: 15px auto;
+			li{
+				display: block;
+				padding: 10px;
+				width: 100px;
+				margin: 0 auto;
+					text-align: center;
+			}
+		}
+	}
+}
+
 #devise_edit_user_title{
 	#edit_user_title{
 		width: 1000px;
@@ -74,7 +171,7 @@
 				overflow: hidden;
 				input{
 					float: left;
-					
+					width: 10px;
 				}
 				label{
 					padding: 0px;

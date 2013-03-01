@@ -1,7 +1,7 @@
 <% data.each do |product, value| %>
 	<div class= "of_product_item">
 		<%= hidden_field_tag "", product.id , :class => "product_id" %>
-		<%= image_tag product.image.url(:medium), :width => 200, :height => 170 %>
+		<%= image_tag image_url(product, :medium), :width => 200, :height => 170 %>
 		<p class="product_name"><%= product.full_name %></p>
 		<div class="store_data">
 			<% value.each do |v| %>

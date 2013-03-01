@@ -4,19 +4,21 @@
   </hgroup>
 </section>
 
-<table id="users_list">
-	<tr>
-		<th>Nombre de Usuario</th>
-		<th>Nombre completo</th>
-		<th>DNI</th>
-		<th>Opciones</th>
-	</tr>
-	<% @users.each do |user| %>
+<section id="users_index">
+	<table id="users_list">
 		<tr>
-			<td><%= user.username %></td>
-			<td><%= user.name.to_s + user.last_name.to_s %></td>
-			<td><%= user.dni %></td>
-			<td><%= link_to "Mostrar", show_user_path(user.id)  %></td>
+			<th>Nombre de Usuario</th>
+			<th>Nombre completo</th>
+			<th>DNI</th>
+			<th>Opciones</th>
 		</tr>
-	<% end %>
-</table>
+		<% @users.each do |user| %>
+			<tr>
+				<td><%= user.username %></td>
+				<td><%= user.name.to_s + " " + user.last_name.to_s %></td>
+				<td><%= user.dni %></td>
+				<td><%= link_to "Mostrar", show_user_path(user.id)  %></td>
+			</tr>
+		<% end %>
+	</table>
+</section>

@@ -39,4 +39,12 @@ module ApplicationHelper
 		end
 		result
 	end
+
+	def image_url(product, size)
+		if product.image?
+			product.image.url(size)
+		else
+			"missing.jpg"
+		end
+	end
 end

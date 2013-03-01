@@ -10,7 +10,7 @@
             <%= link_to product, :class => "clickable_product" do %>
               <div class="product_preview">
                 <div class="image_preview">
-                  <%= image_tag product.image.url(:medium), :width => 200, :height => 170 %>
+                  <%= image_tag image_url(product, :medium), :width => 200, :height => 170 %>
                 </div>
                 <div class="explanation">
                   <table>

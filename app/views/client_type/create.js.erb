@@ -1,1 +1,3 @@
-alert('Creado! presiona F5');
+<% toRender = render "ct_row.html", :ct => @new_ct %>
+$("#create_client_type").parents(".floating_box").hide();
+$("#client_type_index table").append("<%= escape_javascript toRender %>")

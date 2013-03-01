@@ -1,1 +1,4 @@
-alert('Actualizado! presiona F5');
+$("#update_client_type").parents(".floating_box").hide();
+<% toRender = render "ct_row.html", :ct => @up_ct %>
+$("#<%= @up_ct.id %>").remove();
+$("#client_type_index table").append("<%= escape_javascript toRender %>");

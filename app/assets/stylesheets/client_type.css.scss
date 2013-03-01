@@ -1,46 +1,138 @@
-#client_type_index{
-	h1{
-		width: 300px;
-		margin: 0 auto;
-		padding: 5px;
-		text-transform: uppercase;
-		font-weight: bold;
-		text-align:center;
-	}
-	background: white;
-	width: 1000px;
-	margin: 0 auto;
-	padding: 10px;
-	border: 1px solid black;
-	.client_type_item{
-		overflow: hidden;
-		padding: 10px;
-		margin: 5px;
-		span{
-			float: left;
-		}
-		.client_type_row_options{
-			float: right;
-			overflow: hidden;
-			.link_to_destroy_client_type, .destroy_client_type{
-				float: left;
-				margin-right: 10px;
-			}
-			.link_to_update_client_type, .update_client_type{
-				float: right;
-			}
-		}
-	}
-	#create_client_type{
-		width: 279px;
-		margin: 0 auto;
-		padding: 5px 10px 10px 10px;
+#client_type_title_part{
+	#client_type_title{
+		width: 1000px;
 		h1{
-			width: 180px;
-			padding: 5px;
+			width: 400px;
+			font-size: 30px;
+			color: white;
+			background: #272727;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 20px;
+		}
+	}
+}
+
+#client_type_index{
+	width: 1000px;
+	margin: 10px auto;
+	padding: 10px;
+	table{
+		width: 900px;
+		margin: 0 auto;
+		padding: 10px;
+		tr{
+			th{
+				background: #272727;
+				color: white;
+				text-transform: uppercase;
+				text-align: center;
+				padding: 5px;
+				font-weight: bold;
+			}
+			td{
+				text-align: center;
+				padding: 5px;
+				color: black;
+				border-bottom: 1px solid #272727;
+				a{
+					padding: 5px;
+					display:block;
+					text-decoration: none;
+					&:hover{
+						background: #00b0e3;
+						color: white;
+					}
+				}
+				.delete_ct{
+					display: none;
+				}
+			}
+		}
+	}
+	#create_new_client_type_link{
+		width: 300px;
+		text-align: center;
+		margin: 30px auto;
+		a{
+			padding: 10px;
+			background: #272727;
+			text-decoration: none;
+			color: white;
+			&:hover{
+				background: #00b0e3;
+			}
+		}
+	}
+}
+
+.floating_box{
+	position:absolute;
+	width: 800px;
+	margin: -100px -400px;
+	background: #00b0e3;
+	top:50%;
+	left:50%;
+	display: none;
+	.upper_part{
+		h1{
+			width: 100%;
+			text-align: center;
+			text-transform: uppercase;
+			color: white;
+			font-size: 20px;
+			padding: 10px;
+			font-weight: bold;
+		}
+		h2{
+			a{
+				position:absolute;
+				top:0px;
+				right: 0px;
+				padding: 10px;
+				font-size: 20px;
+				color: rgba(255,255,255,0.5);
+				text-decoration: none;
+				&:hover{
+					background: red;
+					color: white;
+				}
+			}
+		}
+	}
+	form{
+		width: 600px;
+		margin: 0 auto;
+		.client_type_new_form_div{
+			width: 200px;
 			margin: 5px auto;
-			font-weight: normal;
-			text-transform: none;
+			padding: 5px;
+			text-align: center;
+			label{
+				color: white;
+				font-size: 13px;
+				text-align: center;
+			}
+			input{
+				width: 180px;
+				margin: 0 auto;
+			}
+		}
+		.submit_button_part{
+			width: 200px;
+			text-align: center;
+			margin: 15px auto 10px;
+			input{
+				background: white;
+				color: #00b0e3;
+				border: none;
+				padding: 10px;
+				width: 150px;
+				font-size: 16px;
+				&:hover{
+					box-shadow: 0px 0px 5px white;
+				}
+			}
 		}
 	}
 }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130220235017) do
+ActiveRecord::Schema.define(:version => 20130301183834) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -98,6 +98,13 @@ ActiveRecord::Schema.define(:version => 20130220235017) do
     t.datetime "updated_at",    :null => false
   end
 
+  create_table "money_types", :force => true do |t|
+    t.string   "name"
+    t.float    "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "notifications", :force => true do |t|
     t.integer  "user_id"
     t.integer  "local_id"
@@ -170,6 +177,29 @@ ActiveRecord::Schema.define(:version => 20130220235017) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "quotation_details", :force => true do |t|
+    t.integer  "quotation_id"
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.float    "sell_price"
+    t.integer  "unit_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "quotations", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "client_id"
+    t.date     "date"
+    t.string   "code"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.float    "money_received"
+    t.float    "money_returned"
+    t.float    "money_expected"
+    t.integer  "money_type_id"
   end
 
   create_table "roles", :force => true do |t|

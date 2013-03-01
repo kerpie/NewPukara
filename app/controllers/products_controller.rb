@@ -157,20 +157,20 @@ class ProductsController < ApplicationController
 
   def search_for_stock
 
-    name = params[:modelo]
-    products = Array.new
+    mod = params[:modelo]
+    @products = Array.new
     
-    models = Model.find(:all, :conditions => ["name like ?", "%"+name+"%"])
+    models = Model.where(["name like ?", "%#{mod}%"])
     models.each do |model|
       product = Product.where(:model_id => model).first
       unless product.nil?
-        products << product
+        @products << product
       end
     end
 
     @response = Hash.new
     
-    products.each do |product|
+    @products.each do |product|
       stock = Stock.where(:product_id => product)
       unless stock.empty?
         @response[product] = stock

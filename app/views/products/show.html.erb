@@ -9,7 +9,7 @@
 
   <section id="product_description">
     <div id="product_description_left_part">
-      <%= image_tag @product.image.url(:large) %>
+      <%= image_tag image_url(@product, :large), :width => 400, :height => 400 %>
       <div id="sell_price_part">
         <%= link_to "Ver Precios de Venta", product_sell_price_path %>
       </div>
