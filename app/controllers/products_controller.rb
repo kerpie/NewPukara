@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   def index
     #@products = Product.all
     @products = Product.first(30)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
