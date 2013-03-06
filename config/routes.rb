@@ -1,5 +1,7 @@
 Final::Application.routes.draw do
 
+  
+
   root :to => 'page#index'
 
   #Quotation 
@@ -57,6 +59,12 @@ Final::Application.routes.draw do
   match "client_type/create" => "client_type#create", :as => :client_type_create
   match "client_type/destroy" => "client_type#destroy", :as => :client_type_destroy
   match "client_type/update" => "client_type#update", :as => :client_type_update
+
+  #MoneyType
+  match "money_type/index" => "money_type#index", :as => :money_type_index
+  match "money_type/create" => "money_type#create", :as => :money_type_create
+  match "money_type/destroy" => "money_type#destroy", :as => :money_type_destroy
+  match "money_type/update" => "money_type#update", :as => :money_type_update
 
   #Brand
   match "brand/index" => "brand#index", :as => :brand_index

@@ -1,0 +1,4 @@
+$("#update_money_type").parents(".floating_box").hide();
+<% toRender = render "mt_row.html", :mt => @up_mt %>
+$("#<%= @up_mt.id %>").remove();
+$("#money_type_index table").append("<%= escape_javascript toRender %>");

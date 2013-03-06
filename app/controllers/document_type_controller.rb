@@ -2,7 +2,6 @@ class DocumentTypeController < ApplicationController
   
   def index
     @dt = DocumentType.all 
-    authorize! :read, DocumentType.new
     respond_to do |f|
       f.html
     end

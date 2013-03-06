@@ -272,7 +272,23 @@ function deleteClientType(link){
 	$(link).next('.delete_ct').find(".destroy_client_type").trigger("click");
 }
 
-//Quotation
-function closePayBox(link){
-	$(link).parents("#pay_quotation_part").hide();
+//MoneyType updateform
+function updateMoneyTypeForm(id, name, value){
+	$("#mtupdate_id").val(id);
+	$("#up_name").val(name);
+	$("#up_value").val(value);
+	$("#update_money_type").parents(".floating_box").show();
+}
+
+function showCreateMoneyTypeForm(){
+	$("#create_money_type")[0].reset();
+	$("#create_money_type").parents(".floating_box").show();
+}
+
+function hideFloatingBox(link){
+	$(link).parents(".floating_box").hide();
+}
+
+function deleteMoneyType(link){
+	$(link).next('.delete_mt').find(".destroy_money_type").trigger("click");
 }

@@ -1,5 +1,0 @@
-<% if @q.nil? %>
-	$("#search_response").html("<h2>No existen cotizaciones con ese codigo</h2>");
-<% else %>
-	window.location.href = "show/<%= @q.id.to_s %>";
-<% end %>
