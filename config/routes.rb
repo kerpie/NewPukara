@@ -10,6 +10,7 @@ Final::Application.routes.draw do
   match "quotation/new" => "quotation#new", :as => :quotation_new
   match "quotation/create" => "quotation#create", :as => :quotation_create
   match "quotation/pay" => "quotation#pay_quotation", :as => :pay_quotation
+  match "quotation/client_search" => "quotation#client_search", :as => :client_search
 
   match "page/index" => "page#index", :as => :real_index
 

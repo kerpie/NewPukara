@@ -7,8 +7,17 @@
 <section id="new_quotation">
 	<%= form_tag quotation_new_path, :remote => true do %>
 		<div>
+			<%= label_tag "client_name", "Cliente: " %>
+			<%= text_field_tag "client_name" %>
+			<%= hidden_field_tag "client_id", 0 %>
+		</div>
+		<div>
 			
-
 		</div>
 	<% end %>
+</section>
+
+<section id="client_search_for_quotation">
+	<div>		
+	</div>	
 </section>
