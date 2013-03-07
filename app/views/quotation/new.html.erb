@@ -4,20 +4,41 @@
 	</hgroup>
 </section>
 
-<section id="new_quotation">
-	<%= form_tag quotation_new_path, :remote => true do %>
+<section id="new_quotation_form">
+	<%= form_tag "" do |f| %>
 		<div>
-			<%= label_tag "client_name", "Cliente: " %>
+			<%= hidden_field_tag "client_real_id", :value => 0 %>
+			<%= label_tag "client_name", "Cliente:" %>
 			<%= text_field_tag "client_name" %>
-			<%= hidden_field_tag "client_id", 0 %>
 		</div>
-		<div>
-			
-		</div>
-	<% end %>
+	<% end -%>
 </section>
 
-<section id="client_search_for_quotation">
-	<div>		
-	</div>	
+<section id="search_client_for_quotation">
+	<hgroup>
+		<h1>Buscar cliente</h1>
+		<h2>X</h2>
+	</hgroup>
+	<div id="lower_part_csfnq">
+		<div id="csfnq_input_text">
+			<%= label_tag "csfnq", "Buscar por Nombre/DNI/RUC: " %>
+			<%= text_field_tag "csfnq" %>
+		</div>
+		<table id="client_list_fnq">
+			<tr>
+				<th>Nombre</th>
+				<th>Tipo de Cliente</th>
+				<th>Tipo de Identificacion</th>
+				<th>Número de Identificación</th>
+			</tr>
+			<% Client.all.each do |client| %>
+				<tr id=<%= client.id.to_s %> class="clickable_row">
+					<td><%= client.name %></td>
+					<td><%= client.client_type.name %></td>
+					<td><%= client.client_type.identification_type %></td>
+					<td><%= client.identification_number %></td>
+				</tr>
+			<% end -%>
+		</table>
+	</div>
 </section>

@@ -12,6 +12,7 @@ class Ability
     elsif user.role? :Administrador
         can :manage, :all
     elsif user.role? :Almacenero
+        can :manage, :all
     elsif user.role? :Contador
     elsif user.role? :Asistente
     end
