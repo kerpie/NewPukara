@@ -1,0 +1,11 @@
+<tr id=<%="#{mt.id}" %>>
+	<td><%= mt.name %></td>
+	<td><%= mt.value %></td>
+	<td><%= link_to_function "Modificar", "updateMoneyTypeForm('#{mt.id.to_s}','#{mt.name}', '#{mt.value}')" %></td>
+	<td><%= link_to_function "Eliminar", "deleteMoneyType(this)" %>
+		<%= form_tag money_type_destroy_path, :remote => true, :class => "delete_mt" do %>
+			<%= hidden_field_tag "mt_id", mt.id %>
+			<%= submit_tag "enviar", :class => "destroy_money_type" %>
+		<% end %>
+	</td>
+</tr>

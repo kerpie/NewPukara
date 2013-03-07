@@ -1,0 +1,3 @@
+<% toRender = render "mt_row.html", :mt => @new_mt %>
+$("#create_money_type").parents(".floating_box").hide();
+$("#money_type_index table").append("<%= escape_javascript toRender %>")

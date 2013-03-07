@@ -1,0 +1,27 @@
+<div id=<%= "money_type_" + "#{mt.id}" %> class="money_type_item">
+	<span><%= mt.name %></span>
+	<div class="money_type_row_options">
+		<div class="destroy_money_type" id=<%="destroy_form_"+mt.id.to_s%>>
+			<%= form_tag money_type_destroy_path, :remote => true do %>
+				<%= hidden_field_tag "mt_id", mt.id %>
+				<%= image_submit_tag "delete2.png", :confirm => "Confirme la operacion para proceder", :width => 14, :height => 14 %>
+			<% end %>
+		</div>
+		<%= image_tag "edit.png", :width => 14, :height => 14, :class => "money_type_edit_image" %>
+	</div>
+</div>
+<div class="update_money_type" id=<%="update_form_"+mt.id.to_s%>>
+	<%= form_tag money_type_update_path, :remote => true do %>
+		<div class="mt_update_form_div">
+			<%= hidden_field_tag 'mt_id', mt.id %>
+		</div>
+		<div class="mt_update_form_div">
+			<%= label_tag 'new_value', 'Nuevo Valor: ' %>
+			<%= text_field_tag 'new_value' %>
+			<%= link_to_function "Registrar", "submitUpdateMoneyTypeForm(this)" %>
+		</div>
+		<div class="mt_update_form_div_submit">
+			<%= submit_tag 'Actualizar' %>
+		</div>
+	<% end %>
+</div>

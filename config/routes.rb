@@ -3,14 +3,9 @@ Final::Application.routes.draw do
   root :to => 'page#index'
 
   #Quotation 
-  match "quotation/index" => "quotation#index", :as => :quotation_index
-  match "quotation/search" => "quotation#search", :as => :quotation_search
-  match "quotation/show/:id" => "quotation#show", :as => :quotation_show
-  match "quotation/update" => "quotation#update", :as => :quotation_update
-  match "quotation/new" => "quotation#new", :as => :quotation_new
-  match "quotation/create" => "quotation#create", :as => :quotation_create
-  match "quotation/pay" => "quotation#pay_quotation", :as => :pay_quotation
-  match "quotation/client_search" => "quotation#client_search", :as => :client_search
+  match "quotations/search_index" => "quotations#search_index", :as => :quotation_search_index
+  match "quotations/search" => "quotations#search", :as => :quotation_search
+  resources :quotations
 
   match "page/index" => "page#index", :as => :real_index
 
@@ -58,6 +53,12 @@ Final::Application.routes.draw do
   match "client_type/create" => "client_type#create", :as => :client_type_create
   match "client_type/destroy" => "client_type#destroy", :as => :client_type_destroy
   match "client_type/update" => "client_type#update", :as => :client_type_update
+
+  #MoneyType
+  match "money_type/index" => "money_type#index", :as => :money_type_index
+  match "money_type/create" => "money_type#create", :as => :money_type_create
+  match "money_type/destroy" => "money_type#destroy", :as => :money_type_destroy
+  match "money_type/update" => "money_type#update", :as => :money_type_update
 
   #Brand
   match "brand/index" => "brand#index", :as => :brand_index

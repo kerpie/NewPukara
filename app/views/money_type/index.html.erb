@@ -1,0 +1,64 @@
+<section id="money_type_title_part">
+	<hgroup id="money_type_title">
+		<h1>Tipo de dinero</h1>
+	</hgroup>
+</section>
+
+<section id="money_type_index">
+	<table>
+		<tr>
+			<th>Tipo</th>
+			<th>Valor</th>
+			<th colspan="2">Opciones</th>
+		</tr>
+		<% @mt.each do |mt| %>
+			<%= render "mt_row.html", :mt => mt %>
+		<% end %>
+	</table>
+
+	<section id="create_new_money_type_link">
+		<%= link_to_function "Crear nuevo tipo", "showCreateMoneyTypeForm()"%>
+	</section>
+
+</section>
+
+<section class="floating_box">
+	<div class="upper_part">
+		<h1>Crear nuevo tipo de dinero</h1>
+		<h2><%= link_to_function "X", "hideFloatingBox(this)" %></h2>
+	</div>
+	<%= form_tag money_type_create_path, :id => "create_money_type", :remote => true do %>
+		<div class="money_type_new_form_div">
+			<%= label_tag "name","Nombre:" %><br>
+			<%= text_field_tag "name" %>
+		</div>
+		<div class="money_type_new_form_div">
+			<%= label_tag "value", "Valor en soles: " %><br>
+			<%= text_field_tag "value" %>
+		</div>
+		<div class="submit_button_part">
+			<%= submit_tag "Guardar", :id => "money_type_create_input_submit_button"%>
+		</div>
+	<% end %>
+</section>
+
+<section class="floating_box">
+	<div class="upper_part">
+		<h1>Modificar tipo de Dinero</h1>
+		<h2><%= link_to_function "X", "hideFloatingBox(this)" %></h2>
+	</div>
+	<%= form_tag money_type_update_path, :id => "update_money_type", :remote => true do %>
+		<%= hidden_field_tag "mtupdate_id", "" %>
+		<div class="money_type_new_form_div">
+			<%= label_tag "up_name","Nombre:" %><br>
+			<%= text_field_tag "up_name" %>
+		</div>
+		<div class="money_type_new_form_div">
+			<%= label_tag "up_value", "Valor en soles: " %><br>
+			<%= text_field_tag "up_value"%>
+		</div>
+		<div class="submit_button_part">
+			<%= submit_tag "Guardar", :id => "money_type_create_input_submit_button"%>
+		</div>
+	<% end %>
+</section>
