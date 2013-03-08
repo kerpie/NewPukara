@@ -7,10 +7,10 @@
 	<%= data.text_field "quantity" %>
 </div>
 <div>
-	<%= data.label "sell_price", "Precio" %>
+	<%= data.label "sell_price", "Precio:" %>
 	<%= data.text_field "sell_price" %>
 </div>
 <div>
-	<%= data.label "unit_id", "Unidad" %>
+	<%= data.label "unit_id", "Unidad:" %>
 	<%= data.collection_select "unit_id", Unit.all, :id, :name %>
 </div>

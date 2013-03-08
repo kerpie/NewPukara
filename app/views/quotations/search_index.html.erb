@@ -4,14 +4,15 @@
 	</hgroup>
 </section>
 
-<section>
+<section id="search_quotation_index">
 	<%= form_tag quotation_search_path,:id => "search_for_quotation", :remote => true do |f| %>
-		<div>
-			
+		<div class="search_quotation_div">
+			<%= label_tag "code", "Código:" %><br>
+			<%= text_field_tag "code" %>
 		</div>
-		<%= label_tag "code", "Codigo" %><br>
-		<%= text_field_tag "code" %><br>
-		<%= submit_tag "Buscar" %>
+		<div class="search_quotation_div">
+			<%= submit_tag "Buscar" %>
+		</div>
 	<% end %>
 </section>
 
