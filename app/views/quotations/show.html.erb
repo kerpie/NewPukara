@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @quotation.user_id %>
+</p>
+
+<p>
+  <b>Client:</b>
+  <%= @quotation.client_id %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @quotation.date %>
+</p>
+
+<p>
+  <b>Code:</b>
+  <%= @quotation.code %>
+</p>
+
+<p>
+  <b>Money received:</b>
+  <%= @quotation.money_received %>
+</p>
+
+<p>
+  <b>Money returned:</b>
+  <%= @quotation.money_returned %>
+</p>
+
+<p>
+  <b>Money expected:</b>
+  <%= @quotation.money_expected %>
+</p>
+
+<p>
+  <b>Money type:</b>
+  <%= @quotation.money_type_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_quotation_path(@quotation) %> |
+<%= link_to 'Back', quotations_path %>

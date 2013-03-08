@@ -1,6 +1,9 @@
 <section id="products_index">
   <hgroup id="products_title">
     <h1>Productos</h1>
+    <div>
+      <%= text_field_tag "search_product_in_index", "Buscar por modelo" %>
+    </div>
   </hgroup>
   <section id="products">
     <ul>
@@ -19,8 +22,8 @@
                       <td><%= product.model.brand.name %></td>
                     </tr>
                     <tr>
-                      <td>Modelo: </td>
-                      <td><%= product.model.name %></td>
+                      <td>Tipo: </td>
+                      <td><%= product.product_type.name %></td>
                     </tr>
                     <tr>
                       <td>Clase: </td>
@@ -31,8 +34,8 @@
                       <td><%= product.model.model_type.name %></td>
                     </tr>
                     <tr>
-                      <td>Tipo: </td>
-                      <td><%= product.product_type.name %></td>
+                      <td>Modelo: </td>
+                      <td><%= product.model.name %></td>
                     </tr>
                   </table>
                 </div>

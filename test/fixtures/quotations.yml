@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  client_id: 1
+  date: 2013-03-07
+  code: MyString
+  money_received: 1.5
+  money_returned: 1.5
+  money_expected: 1.5
+  money_type_id: 1
+
+two:
+  user_id: 1
+  client_id: 1
+  date: 2013-03-07
+  code: MyString
+  money_received: 1.5
+  money_returned: 1.5
+  money_expected: 1.5
+  money_type_id: 1

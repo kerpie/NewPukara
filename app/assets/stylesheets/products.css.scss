@@ -4,6 +4,7 @@
 	padding: 10px;
 	#products_title{
 		width: 1000px;
+		overflow: hidden;
 		h1{
 			width: 500px;
 			font-size: 30px;
@@ -12,6 +13,16 @@
 			text-align: center;
 			text-transform: uppercase;
 			padding: 20px;
+			float: left;
+		}
+		div{
+			float:right;
+			input{
+				padding: 10px;
+				width: 200px;
+				text-align:center;
+				margin: 10px;
+			}
 		}
 	}
 	#products{

@@ -1,0 +1,53 @@
+<%= form_for(@quotation) do |f| %>
+  <% if @quotation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quotation.errors.count, "error") %> prohibited this quotation from being saved:</h2>
+
+      <ul>
+      <% @quotation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <p><%= current_user.full_name %></p>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  <div class="field">
+    <%= f.label :client_id %><br />
+    <%= f.collection_select :client_id, Client.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :code %><br />
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :money_received %><br />
+    <%= f.text_field :money_received %>
+  </div>
+  <div class="field">
+    <%= f.label :money_returned %><br />
+    <%= f.text_field :money_returned %>
+  </div>
+  <div class="field">
+    <%= f.label :money_expected %><br />
+    <%= f.text_field :money_expected %>
+  </div>
+  <div class="field">
+    <%= f.label :money_type_id %><br />
+    <%= f.collection_select :money_type_id, MoneyType.all, :id, :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  <%= f.fields_for :quotation_details do |qd| %>
+    <%= render 'quotation_details_field', :data => qd %>
+  <% end %>
+<% end %>

@@ -40,3 +40,23 @@ jQuery ->
 			$(this).next("form").show()
 			$(this).html("Ocultar formulario de ingreso")
 			$(this).addClass("shown")
+
+jQuery ->
+	$("#search_product_in_index").click ->
+		if($(this).val() == "Buscar por modelo")
+			$(this).val("")
+
+jQuery ->
+	jQuery ->
+	$("#search_product_in_index").blur ->
+		if $(this).val().length == 0
+			$(this).val("Buscar por modelo")
+
+jQuery -> 
+	$("#search_product_in_index").keyup ->
+		textToSearch = $(this).val().toUpperCase()
+		$("#products ul li").each ->
+			if($(this).find(".explanation table tr:last-child td:last-child").text().search(new RegExp(textToSearch, "i"))< 0)
+				$(this).hide()				
+			else
+				$(this).show()			

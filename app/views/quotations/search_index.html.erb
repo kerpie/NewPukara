@@ -1,0 +1,20 @@
+<section id="quotation_title_part">
+	<hgroup id="quotation_title">
+		<h1>Buscar cotizacion</h1>
+	</hgroup>
+</section>
+
+<section>
+	<%= form_tag quotation_search_path,:id => "search_for_quotation", :remote => true do |f| %>
+		<div>
+			
+		</div>
+		<%= label_tag "code", "Codigo" %><br>
+		<%= text_field_tag "code" %><br>
+		<%= submit_tag "Buscar" %>
+	<% end %>
+</section>
+
+<section id="search_response">
+	
+</section>
