@@ -292,3 +292,8 @@ function hideFloatingBox(link){
 function deleteMoneyType(link){
 	$(link).next('.delete_mt').find(".destroy_money_type").trigger("click");
 }
+
+//Quotation 
+function closeFloatingBox(link){
+	$(link).parents(".q_box").hide();
+}

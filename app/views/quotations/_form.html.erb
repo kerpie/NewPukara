@@ -1,56 +1,103 @@
 <% if @quotation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@quotation.errors.count, "error") %> prohibited this quotation from being saved:</h2>
-      <ul>
-      <% @quotation.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@quotation.errors.count, "error") %> prohibited this quotation from being saved:</h2>
+    <ul>
+    <% @quotation.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
-<%= form_for(@quotation) do |f| %>
-  <section>
-    <div class="field">
-      <p><%= current_user.full_name %></p>
+<section id="q_new_form">
+  <%= form_for(@quotation) do |f| %>
+    <section id="q_real_data_to_send">
+      <%= f.hidden_field :client_id %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
-    </div>
-    <div class="field">
-      <%= f.label :client_id %><br />
-      <%= f.collection_select :client_id, Client.all, :id, :name %>
-    </div>
-    <div class="field">
-      <%= f.label :date %><br />
-      <%= f.date_select :date %>
-    </div>
-    <div class="field">
-      <%= f.label :code %><br />
-      <%= f.text_field :code %>
-    </div>
-    <div class="field">
-      <%= f.label :money_received %><br />
-      <%= f.text_field :money_received %>
-    </div>
-    <div class="field">
-      <%= f.label :money_returned %><br />
-      <%= f.text_field :money_returned %>
-    </div>
-    <div class="field">
-      <%= f.label :money_expected %><br />
-      <%= f.text_field :money_expected %>
-    </div>
-    <div class="field">
-      <%= f.label :money_type_id %><br />
-      <%= f.collection_select :money_type_id, MoneyType.all, :id, :name %>
-    </div>
-    <div class="actions">
+    </section>
+    <section id="q_upper_part">
+      <table>
+        <tbody>
+          <tr>
+            <th> Cliente </th>
+            <th> Fecha </th>
+          </tr>
+          <tr>
+            <td id="no_padding"><%= text_field_tag "q_client_name" %></td>
+            <td><%= f.date_select :date %></td>
+          </tr>
+          <tr>
+            <th> Persona de Contacto </th>
+            <th id="identification_type_part"> DNI/RUC </th>
+          </tr>
+          <tr>
+            <td><%= current_user.full_name %></td>
+            <td id="q_identification_number"></td>
+          </tr>
+          <tr>
+            <th> Direccion </th>
+            <th> Condiciones de Pago </th>
+          </tr>
+          <tr>
+            <td id="q_address"></td>
+            <td id="q_condiciones_pago"></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="q_detail_part">
+      <table>
+        <tbody>
+          <tr>
+            <th class="small_part"> Cantidad </th>
+            <th class="small_part"> Codigo </th>
+            <th> Descripcion </th>
+            <th class="small_part"> P. Unit </th>
+            <th class="small_part"> Importe </th>
+          </tr>        
+          <%= f.fields_for :quotation_details do |qd| %>
+            <%= render 'quotation_details_field', :data => qd %>
+          <% end %>
+        </tbody>
+      </table>
+    </section>
+
+      <!-- <div class="field">
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+      </div>
+      <div class="field">
+        <%= f.label :client_id %><br />
+        <%= f.collection_select :client_id, Client.all, :id, :name %>
+      </div>
+      <div class="field">
+        <%= f.label :date %><br />
+        
+      </div>
+      <div class="field">
+        <%= f.label :code %><br />
+        <%= f.text_field :code %>
+      </div>
+      <div class="field">
+        <%= f.label :money_received %><br />
+        <%= f.text_field :money_received %>
+      </div>
+      <div class="field">
+        <%= f.label :money_returned %><br />
+        <%= f.text_field :money_returned %>
+      </div>
+      <div class="field">
+        <%= f.label :money_expected %><br />
+        <%= f.text_field :money_expected %>
+      </div>
+      <div class="field">
+        <%= f.label :money_type_id %><br />
+        <%= f.collection_select :money_type_id, MoneyType.all, :id, :name %>
+      </div> -->
+    
+
+    <div id="submit_new_quotation_form">
       <%= f.submit %>
     </div>
-  </section>
-
-  <section>
-    <%= f.fields_for :quotation_details do |qd| %>
-      <%= render 'quotation_details_field', :data => qd %>
-    <% end %>
-  </section>
-<% end %>
+  <% end %>    
+</section>

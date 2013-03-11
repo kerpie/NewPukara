@@ -1,5 +1,7 @@
 class Client < ActiveRecord::Base
-  attr_accessible :DNI, :RUC, :address, :client_type_id, :name
+  attr_accessible :identification_number, :address, :client_type_id, :name
+
+  validates :identification_number, :uniqueness => :true
 
   belongs_to :client_type
   has_many :output_folders

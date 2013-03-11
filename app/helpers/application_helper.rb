@@ -47,4 +47,8 @@ module ApplicationHelper
 			"missing.jpg"
 		end
 	end
+
+	def give_me_my_address(client)
+		client.address
+	end
 end

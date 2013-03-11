@@ -5,8 +5,37 @@
 </section>
 
 <section>
+	<%= render 'form' %>
 </section>
 
-<section>
-	<%= render 'form' %>
+<section id="q_clients_list" class="q_box">
+	<div id="q_client_search_title">
+		<h1>Buscar cliente</h1>
+		<h2><%= link_to_function "X", "closeFloatingBox(this)" %></h2>
+	</div>
+	<section id="q_action_search">
+		<div id="q_1">
+			<%= label_tag "q_client_search", "Buscar: "%>			<%= text_field_tag "q_client_search" %>
+		</div>
+		<div id="q_2">
+			<table>
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Tipo de Identificacion</th>
+						<th>Numero de Identificacion</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @clients.each do |client| %>
+						<tr <%= "id=" + client.id.to_s %>>
+							<td <%= "data-address= "+ client.address %> ><%= client.name %></td>
+							<td><%= client.client_type.identification_type %></td>
+							<td><%= client.identification_number %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>						
+		</div>
+	</section>
 </section>

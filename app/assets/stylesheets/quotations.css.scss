@@ -59,3 +59,184 @@
 		text-transform: uppercase;
 	}
 }
+
+#q_new_form{
+	width: 1000px;
+	margin: 20px auto;
+	form{
+		width: 900px;
+		margin: 10px auto;
+		#q_upper_part{
+			margin: 20px auto;
+			width: 900px;
+			table{
+				width: 100%;
+				tbody{
+					tr{
+						text-align: center;
+						th{
+							padding: 10px;
+							background: #373737;
+							color: white;
+							font-weight: bold;
+							text-transform: uppercase;
+							&:first-child{
+								width: 70%;
+							}
+							&:last-child{
+								width: 30%;	
+							}
+						}
+						td{
+							padding: 10px;
+							background: white;
+							input{
+								width: 100%;
+								padding: 10px;
+								text-align: center;
+							}
+						}
+						#q_address{
+							height: 20px;
+						}
+						#no_padding{
+							padding: 0px;
+						}
+					}
+				}
+			}
+		}
+		#q_detail_part{
+			margin: 0px auto;
+			width: 900px;
+			table{
+				width: 100%;
+				tbody{
+					tr{
+						border-bottom: 1px solid #272727;
+						th{
+							text-align:center;
+							padding: 10px;
+							background: #474747;
+							color: white;
+							text-transform: uppercase;
+							font-weight: bold;
+						}
+						td{
+							padding: 5px;
+							text-align: center;
+							input{
+								//padding: 10px;
+								width: 98%;
+								display: inline-block;
+							}
+						}
+						.small_part{
+							width: 10%;
+							text-align: center;
+							input{
+								width: 80%;
+								display: inline-block;
+							}
+						}
+					}
+				}
+			}
+		}
+		#submit_new_quotation_form{
+			display: none;
+		}
+	}
+}
+
+.q_box{
+	width: 600px;
+	background: #00b0e3;
+	color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -250px -300px;
+	display:none;
+}
+
+#q_clients_list{
+	height: 500px;
+	overflow: scroll;
+	#q_client_search_title	{
+		width: 100%;
+		h1{
+			width: 98%;
+			padding: 1%;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		h2{
+			a{
+				width: 8%;
+				padding: 1%;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				text-align: center;
+				text-transform: uppercase;
+				color: white;
+				text-decoration:none;
+				&:hover{
+					font-weight: bold;	
+					background: red;
+				}
+			}
+		}
+	}
+	#q_action_search{
+		width: 100%;
+		padding: 10px;
+		#q_1{
+			width: 80%;
+			margin: 5px auto;
+			text-align: center;
+			input{
+				width: 200px;
+			}
+		}
+		#q_2{
+			width: 80%;
+			margin: 10px auto;
+			table{
+				thead{
+					tr{
+						th{
+							text-align: center;
+							width: 23%;
+							padding: 1%;
+							background: #666;
+							font-weight:bold;
+							vertical-align: middle;
+							&:first-child{
+								width: 48%;
+								padding: 1%;
+							}
+						}
+					}
+				}
+				tbody{
+					tr{
+						td{
+							text-align: center;
+							width: 23%;
+							padding: 1%;
+							vertical-align: middle;
+							&:first-child{
+								width: 48%;
+								padding: 1%;
+								text-align: left;
+							}	
+						}
+					}
+				}
+			}
+		}
+	}
+}

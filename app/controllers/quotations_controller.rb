@@ -25,7 +25,10 @@ class QuotationsController < ApplicationController
   # GET /quotations/new.json
   def new
     @quotation = Quotation.new
-    @quotation.quotation_details.build
+    3.times do 
+      @quotation.quotation_details.build
+    end
+    @clients = Client.all
 
     respond_to do |format|
       format.html # new.html.erb

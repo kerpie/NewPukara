@@ -13,6 +13,7 @@
 			<section id="main_section">
 				<%= yield %>	
 			</section>
+
 			<section id="user_data">
 				<%= image_tag current_user.image.url(:medium), :width => 100, :height => 100 %>
 				<div>
@@ -23,6 +24,7 @@
 					</ul>
 				</div>
 			</section>
+
 			<section id="prev_nav_bar">
 				<h1><%= link_to "Huguito", root_path %></h1>
 				<ul class="first_level_list">
