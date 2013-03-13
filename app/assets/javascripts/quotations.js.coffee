@@ -71,3 +71,8 @@ jQuery ->
 	$("#qp_search_input").blur ->
 		if $(this).val().length == 0
 			$(this).val("MAQUINA SIRUBA REMALLADORA")
+
+jQuery ->
+	$("#qp_search_input").keyup (event)->
+		if event.which == 27
+			$(this).parents(".q_box").hide();
