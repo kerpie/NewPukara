@@ -33,6 +33,13 @@ function add_fields(link, association, content){
 	$("#mid_").attr('id', "mid_"+new_id);
 }
 
+function add_q_fields(link, association, content){
+	var new_id = new Date().getTime();
+	var regexp = new RegExp("[\d]+")
+	var regexp = new RegExp("new_"+association,"g");
+	$("#q_detail_part table").append(content.replace(regexp, new_id))
+}
+
 function submitForm(link){
 	$(link).parents("form").submit();
 }

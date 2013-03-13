@@ -5,6 +5,7 @@ Final::Application.routes.draw do
   #Quotation 
   match "quotations/search_index" => "quotations#search_index", :as => :quotation_search_index
   match "quotations/search" => "quotations#search", :as => :quotation_search
+  match "quotations/search_product" => "quotations#search_product", :as => :quotation_search_product
   resources :quotations
 
   match "page/index" => "page#index", :as => :real_index

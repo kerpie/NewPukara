@@ -100,4 +100,40 @@ class QuotationsController < ApplicationController
       format.js
     end
   end
+
+  def search_product
+
+    temp = params[:qp_search_input].split(" ")
+    @response = []
+    if temp.length > 1
+      pt = temp[0]
+      b = temp[1]
+      pm = temp[2]
+
+      b = Brand.where("name like ?", "%"+b+"%").first
+      pt = ProductType.where("name like ?", "%"+pt+"%").first
+      pm = ParentModel.where("name like ?", "%"+pm+"%").first
+
+      pm.model_types.each do |mt|
+        tmp = Model.where(:model_type_id => mt, :brand_id => b)
+        tmp.each do |m|
+          unless m.product.nil?
+            @response << m.product
+          end
+        end
+      end
+    else
+      m = Model.where("name like ?", "%"+ temp[0]+ "%").first
+      unless m.nil?
+        unless m.product.nil?
+          @response[0] = m.product
+        end
+      end
+    end
+
+
+    respond_to do |format|
+      format.js
+    end
+  end
 end

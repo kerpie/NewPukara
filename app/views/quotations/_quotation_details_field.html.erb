@@ -1,9 +1,10 @@
-<tr>
+<tr class="qd">
 	<td class="small_part"><%= data.text_field "quantity", :width => 10 %></td>
 	<td class="small_part"><%= text_field_tag "", nil, :class => "tmp" %></td>
-	<td><%= text_field_tag "", nil, :class => "tmp" %></td>
+	<td class="in_product"><%= text_field_tag "", nil, :class => "tmp" %></td>
 	<td class="small_part"><%= text_field_tag "", nil, :class => "tmp" %></td>
 	<td class="small_part"><%= text_field_tag "", nil, :class => "tmp" %></td>
+	<td class="small_part"><%= data.check_box :_destroy %></td>
 </tr>
 <!-- <div>
 	<%= data.label "product_id", "Producto:" %>
@@ -21,3 +22,5 @@
 	<%= data.label "unit_id", "Unidad:" %>
 	<%= data.collection_select "unit_id", Unit.all, :id, :name %>
 </div> -->
+
+

@@ -28,8 +28,8 @@
 				</thead>
 				<tbody>
 					<% @clients.each do |client| %>
-						<tr <%= "id=" + client.id.to_s %>>
-							<td <%= "data-address= "+ client.address %> ><%= client.name %></td>
+						<tr <%= "id=" + client.id.to_s %> data-address="<%=  client.address %>">
+							<td><%= client.name %></td>
 							<td><%= client.client_type.identification_type %></td>
 							<td><%= client.identification_number %></td>
 						</tr>
@@ -38,4 +38,24 @@
 			</table>						
 		</div>
 	</section>
+</section>
+
+<section id="q_product_search" class="q_box">
+	<div id="qp_search">
+		<div>
+			<%= form_tag quotation_search_product_path, remote: true do%>
+				<%= label_tag "qp_search_input", "Buscar Producto:" %>
+				<%= text_field_tag "qp_search_input", "MAQUINA SIRUBA REMALLADORA" %>
+			<% end %>
+		</div>
+		<h2><%= link_to_function "X", "closeFloatingBox(this)" %></h2>
+	</div>
+	<div id="qp_result">
+		<ul>
+			
+		</ul>
+	</div>
+	<div id="qp_bad_result">
+		<h2>No existen productos con esas caracteristicas</h2>
+	</div>
 </section>

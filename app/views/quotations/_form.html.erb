@@ -55,12 +55,16 @@
             <th> Descripcion </th>
             <th class="small_part"> P. Unit </th>
             <th class="small_part"> Importe </th>
+            <th class="small_part"> Borrar </th>
           </tr>        
           <%= f.fields_for :quotation_details do |qd| %>
             <%= render 'quotation_details_field', :data => qd %>
           <% end %>
         </tbody>
       </table>
+      <div>
+        <%= link_to_add_q_field("Agregar producto", f, :quotation_details) %>
+      </div>
     </section>
 
       <!-- <div class="field">

@@ -1,0 +1,13 @@
+<% if @response.count >= 1 %>
+	<% toRender = "" %>
+	<% @response.each do |p| %>
+		<% toRender = toRender + render("product_search_result", :product => p) %>
+	<% end %>
+	$("#qp_bad_result").hide();
+	$("#qp_result ul").show();
+	$("#qp_result ul").html("");
+	$("#qp_result ul").append("<%= escape_javascript toRender.html_safe %>");
+<% else %>
+	$("#qp_result ul").hide();
+	$("#qp_bad_result").show();
+<% end %>
