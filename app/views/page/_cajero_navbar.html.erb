@@ -1,3 +1,11 @@
-<li class="first_level_item"><%= link_to "Clientes", :clients %></li>
-<li class="first_level_item"><%= link_to "Cotizaciones", nil %></li>
+<li class="first_level_item"><%= link_to "Clientes", :clients %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Registrar nuevo cliente", new_client_path %></li>
+	</ul>
+</li>
+<li class="first_level_item"><%= link_to "Cotizaciones", quotation_search_index_path %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Nueva Cotización", new_quotation_path %></li>
+	</ul>
+</li>
 <li class="first_level_item"><%= link_to "Documentos", :output_folders %></li>
