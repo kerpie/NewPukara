@@ -6,10 +6,6 @@
     <th>Client</th>
     <th>Date</th>
     <th>Code</th>
-    <th>Money received</th>
-    <th>Money returned</th>
-    <th>Money expected</th>
-    <th>Money type</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,10 +17,6 @@
     <td><%= quotation.client.name %></td>
     <td><%= quotation.date %></td>
     <td><%= quotation.code %></td>
-    <td><%= quotation.money_received %></td>
-    <td><%= quotation.money_returned %></td>
-    <td><%= quotation.money_expected %></td>
-    <td><%= quotation.money_type.name %></td>
     <td><%= link_to 'Show', quotation %></td>
     <td><%= link_to 'Edit', edit_quotation_path(quotation) %></td>
     <td><%= link_to 'Destroy', quotation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
