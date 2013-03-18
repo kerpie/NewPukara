@@ -25,9 +25,6 @@ class QuotationsController < ApplicationController
   # GET /quotations/new.json
   def new
     @quotation = Quotation.new
-    3.times do 
-      @quotation.quotation_details.build
-    end
     @clients = Client.all
 
     respond_to do |format|
@@ -45,6 +42,10 @@ class QuotationsController < ApplicationController
   # POST /quotations.json
   def create
     @quotation = Quotation.new(params[:quotation])
+
+    o =  [('a'..'z'),('A'..'Z')].map{|i| i.to_a}.flatten
+    string  =  (0...6).map{ o[rand(o.length)] }.join
+    @quotation.code = string 
 
     respond_to do |format|
       if @quotation.save
@@ -93,7 +94,7 @@ class QuotationsController < ApplicationController
 
   def search
 
-    code = params[:code]
+    code = params[:code].strip
     @q = Quotation.find_by_code(code)
     
     respond_to do |format|
@@ -105,10 +106,10 @@ class QuotationsController < ApplicationController
 
     temp = params[:qp_search_input].split(" ")
     @response = []
-    if temp.length > 1
-      pt = temp[0]
-      b = temp[1]
-      pm = temp[2]
+    if temp.length == 3
+      pt = temp[0].upcase
+      b = temp[1].upcase
+      pm = temp[2].upcase
 
       b = Brand.where("name like ?", "%"+b+"%").first
       pt = ProductType.where("name like ?", "%"+pt+"%").first
@@ -122,11 +123,26 @@ class QuotationsController < ApplicationController
           end
         end
       end
-    else
-      m = Model.where("name like ?", "%"+ temp[0]+ "%").first
-      unless m.nil?
+    elsif temp.length == 2
+      pt = temp[0].upcase
+      b = temp[1].upcase
+
+      b = Brand.where("name like ?", "%"+b+"%").first
+      pt = ProductType.where("name like ?", "%"+pt+"%").first
+
+      tmp = Model.where(brand_id: b).all
+
+      tmp.each do |m|
         unless m.product.nil?
-          @response[0] = m.product
+          @response << m.product 
+        end
+      end
+
+    else
+      m = Model.where("name like ?", "%"+ temp[0].upcase + "%").all
+      m.each do |model|
+        unless model.product.nil?
+          @response << model.product
         end
       end
     end
@@ -134,6 +150,77 @@ class QuotationsController < ApplicationController
 
     respond_to do |format|
       format.js
+    end
+  end
+
+  def search_stock
+
+    user_id = params[:user_id]
+    p_id = params[:product_id]
+
+    store = User.find(user_id).store
+
+    @product = Product.find(p_id)
+    @stock = Stock.where(product_id: p_id).all
+    @price = SellPrice.where(product_id: p_id).all
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def pay_quotation
+
+    q = Quotation.find(params[:q_id])
+
+    q.money_expected = params[:money_expected_].to_f
+    q.money_received = params[:money_received_].to_f
+    q.money_returned = params[:money_returned_].to_f
+    q.payment_status = true
+
+    documents = []
+    DocumentType.all.each do |dt|
+      unless params[dt.id.to_s].nil?
+        documents << dt
+      end
+    end
+
+    #Create OutputFolder
+    of = OutputFolder.new
+    of.client = q.client
+    of.date = Time.now
+    of.folder_state = FolderState.last
+    of.user = q.user
+    of.save 
+
+    #Create OutputDocument
+    documents.each do |d|
+      od = OutputDocument.new
+      od.numeration = "1000"
+      od.document_type = d
+      od.output_folder = of
+      od.save
+    end
+
+    #Create OuputDocumentDetail
+    q.quotation_details.each do |qd|
+      odd = OutputDocumentDetail.new
+      odd.output_folder = of
+      odd.product = qd.product
+      odd.sell_price = qd.sell_price
+      odd.quantity = qd.quantity
+      odd.unit = qd.unit
+      odd.save
+    end
+
+    Stock.reduce_stock(of)
+
+    respond_to do |format|
+      if q.save
+        format.js
+      else
+        format.js
+      end
     end
   end
 end

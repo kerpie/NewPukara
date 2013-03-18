@@ -35,12 +35,10 @@
             <td id="q_identification_number"></td>
           </tr>
           <tr>
-            <th> Direccion </th>
-            <th> Condiciones de Pago </th>
+            <th colspan=2> Direccion </th>
           </tr>
           <tr>
-            <td id="q_address"></td>
-            <td id="q_condiciones_pago"></td>
+            <td colspan=2 id="q_address"></td>
           </tr>
         </tbody>
       </table>
@@ -60,48 +58,19 @@
           <%= f.fields_for :quotation_details do |qd| %>
             <%= render 'quotation_details_field', :data => qd %>
           <% end %>
+          <tr id="untouchable_row">
+            <td colspan="4">TOTAL</td>
+            <td colspan="2"id="quotation_total">mucho</td>
+          </tr>
         </tbody>
       </table>
       <div>
         <%= link_to_add_q_field("Agregar producto", f, :quotation_details) %>
       </div>
-    </section>
-
-      <!-- <div class="field">
-        <%= f.hidden_field :user_id, :value => current_user.id %>
-      </div>
-      <div class="field">
-        <%= f.label :client_id %><br />
-        <%= f.collection_select :client_id, Client.all, :id, :name %>
-      </div>
-      <div class="field">
-        <%= f.label :date %><br />
-        
-      </div>
-      <div class="field">
-        <%= f.label :code %><br />
-        <%= f.text_field :code %>
-      </div>
-      <div class="field">
-        <%= f.label :money_received %><br />
-        <%= f.text_field :money_received %>
-      </div>
-      <div class="field">
-        <%= f.label :money_returned %><br />
-        <%= f.text_field :money_returned %>
-      </div>
-      <div class="field">
-        <%= f.label :money_expected %><br />
-        <%= f.text_field :money_expected %>
-      </div>
-      <div class="field">
-        <%= f.label :money_type_id %><br />
-        <%= f.collection_select :money_type_id, MoneyType.all, :id, :name %>
-      </div> -->
-    
+    </section>   
 
     <div id="submit_new_quotation_form">
-      <%= f.submit %>
+      <%= f.submit "Registrar cotizacion" %>
     </div>
   <% end %>    
 </section>

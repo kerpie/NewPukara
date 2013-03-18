@@ -1,0 +1,8 @@
+<tr class='product_by_store'>
+	<td><%= stock.store.name %></td>
+	<% if stock.store == current_user.store %>
+		<td class="my_store"><%= stock.quantity %></td>
+	<% else %>
+		<td><%= stock.quantity %></td>
+	<% end -%>
+</tr>

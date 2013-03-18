@@ -1,0 +1,11 @@
+<tr id=<%="#{pt.id}" %>>
+	<td><%= pt.name %></td>
+	<td><%= (pt.discount * 100).to_s + "%" %></td>
+	<td><%= link_to_function "Modificar", "updatePriceTypeForm('#{pt.id.to_s}','#{pt.name}', '#{pt.discount}' * 100)" %></td>
+	<td><%= link_to_function "Eliminar", "deletePriceType(this)" %>
+		<%= form_tag price_type_destroy_path, :remote => true, :class => "delete_pt" do %>
+			<%= hidden_field_tag "pt_id", pt.id %>
+			<%= submit_tag "enviar", :class => "destroy_price_type" %>
+		<% end %>
+	</td>
+</tr>

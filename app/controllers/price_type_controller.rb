@@ -1,17 +1,16 @@
 class PriceTypeController < ApplicationController
 	
   def index
-  	@pt = PriceType.all 
-    authorize! :read, @pt
+    @pt = PriceType.all 
     respond_to do |f|
       f.html
     end
   end
 
   def create
-  	@new_pt = PriceType.new
+    @new_pt = PriceType.new
     @new_pt.name = params[:name]
-    authorize! :create, @new_pt
+    @new_pt.discount = (params[:discount].to_f)/100
     respond_to do |f|
       if @new_pt.save
         f.js
@@ -22,7 +21,7 @@ class PriceTypeController < ApplicationController
   end
 
   def destroy
-  	@del_pt = PriceType.find(params[:pt_id])
+    @del_pt = PriceType.find(params[:pt_id])
     @del_pt.destroy
 
     respond_to do |f|
@@ -31,9 +30,9 @@ class PriceTypeController < ApplicationController
   end
 
   def update
-  	@up_pt = PriceType.find(params[:pt_id])
-    @up_pt.name = params[:new_value]
-    authorize! :update, @up_pt
+    @up_pt = PriceType.find(params[:ptupdate_id])
+    @up_pt.name = params[:up_name]
+    @up_pt.discount = (params[:up_discount].to_f)/100
     respond_to do |f|
       if @up_pt.save
         f.js

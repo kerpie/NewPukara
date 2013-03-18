@@ -40,6 +40,9 @@
 	#of_data_part{
 		width: 900px;
 		margin: 10px auto;
+		#Pendiente, #Anulado{
+			display: none;
+		}
 		.classified_by_folder_state{
 			width: 800px;
 			margin: 10px auto;

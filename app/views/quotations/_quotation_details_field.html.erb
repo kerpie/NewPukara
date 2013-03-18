@@ -1,26 +1,11 @@
-<tr class="qd">
-	<td class="small_part"><%= data.text_field "quantity", :width => 10 %></td>
-	<td class="small_part"><%= text_field_tag "", nil, :class => "tmp" %></td>
-	<td class="in_product"><%= text_field_tag "", nil, :class => "tmp" %></td>
-	<td class="small_part"><%= text_field_tag "", nil, :class => "tmp" %></td>
-	<td class="small_part"><%= text_field_tag "", nil, :class => "tmp" %></td>
+<tr class="qd" id="new_quotation_details">
+	<td class="small_part quantity_goes_here"><%= data.text_field "quantity", :width => 10, :readonly =>true %></td>
+	<td class="small_part code_goes_here"><%= text_field_tag "product_code", "-", :class => "tmp", :readonly =>true %></td>
+	<td class="in_product product_goes_here">
+		<%= data.hidden_field "product_id" %>
+		<%= text_field_tag "", nil, :class => "tmp" %>
+	</td>
+	<td class="small_part price_goes_here"><%= data.text_field "sell_price", :class => "tmp" %><%= data.hidden_field "unit_id" %></td>
+	<td class="small_part total_goes_here"><%= text_field_tag "", nil, :class => "tmp" %></td>
 	<td class="small_part"><%= data.check_box :_destroy %></td>
 </tr>
-<!-- <div>
-	<%= data.label "product_id", "Producto:" %>
-	<%= data.collection_select "product_id", Product.all, :id, :full_name %>
-</div>
-<div>
-	<%= data.label "quantity", "Cantidad:" %>
-	
-</div>
-<div>
-	<%= data.label "sell_price", "Precio:" %>
-	<%= data.text_field "sell_price" %>
-</div>
-<div>
-	<%= data.label "unit_id", "Unidad:" %>
-	<%= data.collection_select "unit_id", Unit.all, :id, :name %>
-</div> -->
-
-

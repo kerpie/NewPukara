@@ -37,7 +37,7 @@ function add_q_fields(link, association, content){
 	var new_id = new Date().getTime();
 	var regexp = new RegExp("[\d]+")
 	var regexp = new RegExp("new_"+association,"g");
-	$("#q_detail_part table").append(content.replace(regexp, new_id))
+	$("#untouchable_row").before(content.replace(regexp, new_id))
 }
 
 function submitForm(link){
@@ -209,12 +209,16 @@ function submitCreateDocTypeForm(link){
 }
 
 //PriceType
-function submitUpdateForm(link){
-	$(link).parent().next(".pt_update_form_div_submit").find("input").trigger('click');
+function showCreatePriceTypeForm(){
+	$("#create_price_type")[0].reset();
+	$("#create_price_type").parents(".floating_box").show();
 }
 
-function submitCreateForm(link){
-	$(link).parent().next(".pt_create_form_div_submit").find("input").trigger('click');	
+function updatePriceTypeForm(id, name, discount){
+	$("#ptupdate_id").val(id);
+	$("#up_name").val(name);
+	$("#up_discount").val(discount);
+	$("#update_price_type").parents(".floating_box").show();
 }
 
 //EntryFolder
@@ -254,7 +258,7 @@ function showClientSearch(){
 }
 
 function submitCreateOutputFolderForm(link){
-	$(link).parent().next("#ouput_folder_submit_button").find("input").trigger('click');	
+	$(link).parent().next("#output_folder_submit_button").find("input").trigger('click');	
 }
 
 //ClientType updateform

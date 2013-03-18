@@ -59,3 +59,57 @@
 		<h2>No existen productos con esas caracteristicas</h2>
 	</div>
 </section>
+
+<section id="price_negotiation" class="q_box">
+	<div id="title_goes_here">
+		<h1>Precio de venta</h1>
+		<h2><%= link_to_function "X", "closeFloatingBox(this)"%></h2>
+	</div>
+	<div id="the_image_goes_here">
+		<div id="up">
+			<%= image_tag nil, :class => "pn_img" %>
+			<h2></h2>
+			<h1 id="qp_full_name"></h1>
+			<%= hidden_field_tag "this_is_the_product_id_you_shouldnt_be_seeing" %>
+		</div>
+		<div id="down">
+			<table>
+				<thead>
+					<tr>
+						<th>Local</th>
+						<th>Cantidad</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+			<div>
+				<%= label_tag "product_quantity", "Cantidad:" %>
+				<%= text_field_tag "product_quantity" %>
+				<%= select_tag "product_unit", new_options_from_collection_for_select(Unit, :id, :name), :prompt => "Selecciona unidad" %>
+			</div>
+			<h2>Recuerda que si pides una cantidad superior a la existente en tu local se necesitara pedir de otros almacenes</h2>
+		</div>
+		<div id="downer">
+			<table>
+				<thead>
+					<tr>
+						<th>Tipo de Venta</th>
+						<th>Precio</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>data</td>
+					</tr>
+				</tbody>
+			</table>
+			<div>
+				<%= label_tag "product_price", "Precio:" %>
+				<%= text_field_tag "product_price" %>
+				<h2></h2>
+			</div>
+		</div>
+	</div>
+</section>

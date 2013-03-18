@@ -59,4 +59,13 @@ module ApplicationHelper
 	def give_me_my_address(client)
 		client.address
 	end
+
+	def new_options_from_collection_for_select(rails_model, id, name)
+		text = ""
+		rails_model.all.each do |rm|
+			text = text + "<option value=#{rm.id} data-unit_value=#{rm.value}>#{rm.name}</option>"
+		end
+		return text.html_safe
+	end
+
 end

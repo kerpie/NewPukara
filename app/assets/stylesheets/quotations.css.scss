@@ -1,5 +1,6 @@
 #quotation_title_part{
 	#quotation_title{
+		overflow: hidden;
 		width: 1000px;
 		h1{
 			width: 400px;
@@ -9,8 +10,41 @@
 			text-align: center;
 			text-transform: uppercase;
 			padding: 20px;
+			float: left;
+		}
+		#pay_quotation_part{
+			float: right;
+			h1{
+				padding: 10px;
+				width: 300px;
+				font-size: 30px;
+				margin: 10px;
+				color: white;
+				background: #00b0e3;
+			}
+			.to_pay{
+				background: #00b0e3;
+				&:hover{
+					box-shadow: 0px 0px 4px #00b0e3;
+					cursor: pointer;
+				}
+			}
+			.payed{
+				background: red;
+			}
 		}
 	}
+}
+
+#show_code{
+	width: 60%;
+	padding: 20px;
+	font-size: 30px;
+	color: white;
+	background: #00b0e3;
+	margin: 10px auto;
+	text-align: center;
+	font-weight: bold;
 }
 
 #search_quotation_index{
@@ -22,7 +56,7 @@
 		margin: 10px auto;
 		padding: 10px;
 		.search_quotation_div{
-			width: 300px;
+			width: 400px;
 			margin: 0 auto;
 			text-align: center;
 			label{
@@ -30,6 +64,10 @@
 				padding: 5px;
 			}
 			input{
+				padding: 10px;
+				font-size: 20px;
+				text-align: center;
+				width: 350px;
 			}
 			input[type=submit]{
 				border: 0px;
@@ -137,14 +175,53 @@
 							input{
 								width: 80%;
 								display: inline-block;
+								text-align: center;
 							}
 						}
+					}
+					#untouchable_row{
+						td:first-child{
+							background: #474747;
+							text-align: right;
+							color: white;
+						}
+					}
+				}
+			}
+			div{
+				width: 100%;
+				margin: 20px auto;
+				text-align: center;
+				a{
+					width: 400px;
+					text-transform: uppercase;
+					text-align: center;
+					background: #00b0e3;
+					color: white;
+					padding: 10px;
+					text-decoration: none;
+					&:hover{
+						box-shadow: 0px 0px 4px #00b0e3;
 					}
 				}
 			}
 		}
 		#submit_new_quotation_form{
-			display: none;
+			width: 100%;
+			text-align: center;
+			input{
+				width: 600px;
+				text-transform: uppercase;
+				text-align: center;
+				background: #00b0e3;
+				color: white;
+				padding: 10px;
+				text-decoration: none;
+				border: none;
+				&:hover{
+					box-shadow: 0px 0px 4px #00b0e3;
+				}
+			}
 		}
 	}
 }
@@ -161,7 +238,7 @@
 }
 
 #q_product_search{
-	display: block;
+	display: none;;
 	width: 800px;
 	margin: -50px -400px;
 	#qp_search{
@@ -210,12 +287,26 @@
 				float: left;
 				background: rgba(255,255,255,0.1);
 				div{
+					position: relative;
 					width: 180px;
 					height: 180px;
 					padding: 10px;
-					img{
+					form{
 						width: 180px;
 						height: 180px;
+						input{
+							width: 180px;
+							height: 180px;
+						}
+					}
+					h2{
+						position: absolute;
+						bottom: 10px;
+						padding: 5px;
+						width: 170px;
+						text-align: center;
+						background: black;
+						font-size: 20px;
 					}
 					&:hover{
 						background: white;
@@ -317,6 +408,319 @@
 							}	
 						}
 					}
+				}
+			}
+		}
+	}
+}
+
+#price_negotiation{
+	#title_goes_here{
+		width: 100%;
+		h1{
+			width: 98%;
+			padding: 1%;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		h2{
+			a{
+				width: 8%;
+				padding: 1%;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				text-align: center;
+				text-transform: uppercase;
+				color: white;
+				text-decoration:none;
+				&:hover{
+					font-weight: bold;	
+					background: red;
+				}
+			}
+		}
+	}
+	#the_image_goes_here{
+		#up{
+			width: 100%;
+			position: relative;
+			img{
+				width: 180px;
+				height: 180px;
+				margin: 10px auto;
+				display: block;
+			}
+			h2{
+				position: absolute;
+				width: 170px;
+				padding: 5px;
+				font-size: 20px;
+				bottom: 28px;
+				left: 210px;
+				background: black;
+				text-align: center;
+			}
+			h1{
+				width: 100%;
+				text-align: center;
+				text-transform: uppercase;
+				color: white;
+				font-size: 17px;
+				font-weight: bold;
+			}
+		}
+		#down{
+			width: 580px;
+			overflow: hidden;
+			padding: 10px;
+			table{
+				width: 400px;
+				float: left;
+				thead{
+					tr{
+						th{
+							background: #272727;
+							padding: 5px;
+							text-align: center;
+							text-transform: uppercase;
+							&:first-child{
+								width: 70%;
+							}
+							&:last-child{
+								width: 30%;
+							}
+						}
+					}
+				}
+				tbody{
+					tr{
+						td{
+							padding: 5px;
+							text-align: center;
+							border-bottom: 1px solid #272727;
+							&:first-child{
+								text-align: left;
+							}
+						}
+						.my_store{
+							background: red;
+							color: white;
+						}
+					}
+				}
+			}
+			div{
+				width: 150px;
+				float: right;
+				background: white;
+				text-align: center;
+				padding: 10px;
+				label{
+					color: #00b0e3;
+				}
+				input{
+					padding: 10px;
+					font-size: 20px;
+					width: 100px;
+					text-align: center;
+				}
+			}
+			h2{
+				clear: both;
+				width: 100%;
+				background: red;
+				color: white;
+				text-align: center;
+				margin-top: 10px;
+			}
+		}
+		#downer{
+			display: none;
+			width: 580px;
+			overflow: hidden;
+			padding: 10px;
+			table{
+				width: 400px;
+				float: left;
+				thead{
+					tr{
+						th{
+							background: #272727;
+							padding: 5px;
+							text-align: center;
+							text-transform: uppercase;
+							&:first-child{
+								width: 70%;
+							}
+							&:last-child{
+								width: 30%;
+							}
+						}
+					}
+				}
+				tbody{
+					tr{
+						cursor: pointer;
+						td{
+							padding: 5px;
+							text-align: center;
+							border-bottom: 1px solid #272727;
+							&:first-child{
+								text-align: left;
+							}
+						}
+						.my_store{
+							background: red;
+							color: white;
+						}
+						&:hover{
+							background: rgba(255,255,255,0.5);
+						}
+					}
+				}
+			}
+			div{
+				width: 150px;
+				float: right;
+				background: white;
+				text-align: center;
+				padding: 10px;
+				label{
+					color: #00b0e3;
+				}
+				input{
+					padding: 10px;
+					font-size: 20px;
+					width: 100px;
+					text-align: center;
+				}
+				h2{
+					display: none;
+					background: red;
+					color: white;
+					text-align: center;
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
+
+#pay_quotation_form{
+	display: none;
+	#pqf_title{
+		width: 100%;
+		h1{
+			width: 98%;
+			padding: 1%;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		h2{
+			a{
+				width: 8%;
+				padding: 1%;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				text-align: center;
+				text-transform: uppercase;
+				color: white;
+				text-decoration:none;
+				&:hover{
+					font-weight: bold;	
+					background: red;
+				}
+			}
+		}
+	}
+	#pq_form{
+		width: 100%;
+		form{
+			width: 70%;
+			margin: 10px auto;
+			.pq_form_div{
+				text-align: center;
+				width:100%;
+				padding: 10px;
+				label{
+					padding: 5px;
+				}
+				input{
+					padding: 5px;
+					font-size: 17px;
+					text-align: center;
+				}
+				select{
+			 		padding: 3px;
+			 	}
+			}
+			.pq_form_check{
+				text-align: center;
+				width:100%;
+				h1{
+					width: 60%;
+					padding: 10px;
+					text-align: center;
+					margin: 0 auto;
+					background: #444;
+					color: white;
+					text-transform: uppercase;
+				}
+				div{
+					text-align: left;
+					width: 50%;
+					margin: 0 auto;
+					padding: 10px;
+				}
+			}
+			.pq_form_submit{
+				width: 100%;
+				padding: 10px;
+				text-align: center;
+				input{
+					background: white;
+					padding: 5px;
+					font-size: 16px;
+					border: none;
+					color: #00b0e3;
+					&:hover{
+						box-shadow: 0px 0px 4px white;
+					}
+				}
+			}
+		}
+	}
+}
+
+#q_show, #qd_show{
+	width: 100%;
+	table{
+		width: 70%;
+		margin: 20px auto;
+		tr{
+			th{
+				padding: 10px;
+				color: white;
+				background: #272727;
+				text-transform: uppercase;
+			}
+			td{
+				padding: 10px;
+				text-align: center;
+				background: white;
+			}
+		}
+		#total_part{
+			td{
+				&:first-child{
+					text-align: right;
+					background: #272727;
+					color: white;
+					font-weight: bold;
 				}
 			}
 		}

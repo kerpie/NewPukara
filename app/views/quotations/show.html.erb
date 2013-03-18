@@ -1,45 +1,118 @@
-<p id="notice"><%= notice %></p>
+<section id="quotation_title_part">
+  <hgroup id="quotation_title">
+    <h1>Marcas y Modelos</h1>
+    <div id="pay_quotation_part">
+      <% if @quotation.payment_status != true %>
+        <h1 class="to_pay">Pagar Cotizacion</h1>
+      <% else %>
+        <h1 class="payed">Cotizacion pagada</h1>
+      <% end %>
+    </div>
+  </hgroup>
+</section>
 
-<p>
-  <b>User:</b>
-  <%= @quotation.user_id %>
-</p>
+<h1 id="show_code"><%= @quotation.code %></h1>
 
-<p>
-  <b>Client:</b>
-  <%= @quotation.client_id %>
-</p>
+<section id="q_show">
+  <table>
+    <tbody>
+      <tr>
+        <th>Cliente</th>
+        <th>Fecha</th>
+      </tr>
+      <tr>
+        <td><%= @quotation.client.name %></td>
+        <td><%= @quotation.date %></td>
+      </tr>
+      <tr>
+        <th>Registrado por:</th>
+        <th><%= @quotation.client.client_type.identification_type + " del cliente: " %></th>
+      </tr>
+      <tr>
+        <td><%= @quotation.user.full_name %></td>
+        <td><%= @quotation.client.identification_number %></td>
+      </tr>
+      <tr>
+        <th colspan=2>Direccion</th>
+      </tr>
+      <tr>
+        <td colspan=2><%= @quotation.client.address %></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
-<p>
-  <b>Date:</b>
-  <%= @quotation.date %>
-</p>
+<section id="qd_show">
+  <table>
+    <thead>
+      <tr>
+        <th>Cantidad</th>
+        <th>Codigo</th>
+        <th>Descripcion</th>
+        <th>P.Unit</th>
+        <th>Importe</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% tmp = 0 %>
+      <% @quotation.quotation_details.each do |qd| %>
+        <tr>
+          <td><%= qd.quantity %></td>
+          <td> - </td>
+          <td><%= qd.product.full_name %></td>
+          <td><%= qd.sell_price %></td>
+          <% tmp = tmp + (qd.quantity*qd.sell_price) %>
+          <td><%= qd.quantity * qd.sell_price %></td>
+        </tr>
+      <% end %>
+      <tr id="total_part">
+        <td colspan=4>TOTAL</td>
+        <td id="total_to_pay"><%= tmp %></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
-<p>
-  <b>Code:</b>
-  <%= @quotation.code %>
-</p>
+<% if @quotation.payment_status != true %>
+  <section id="pay_quotation_form" class="q_box">
+      <div id="pqf_title">
+        <h1>Pagar cotizacion</h1>
+        <h2><%= link_to_function "X", "closeFloatingBox(this)"%></h2>
+      </div>
+      <div id="pq_form">
+        <%= form_tag quotation_pay_quotation_path, remote: true do %>
+          <%= hidden_field_tag "q_id", @quotation.id %>
+          <div class="pq_form_div">
+            <%= label_tag "money_expected", "Total a pagar: " %><br>
+            <%= text_field "money_expected", "" %>
+          </div>
+          <div class="pq_form_div">
+            <%= label_tag "money_received", "Cantidad recibida: " %><br>
+            <%= text_field "money_received", "" %>
+          </div>
+          <div class="pq_form_div">
+            <%= label_tag "money_returned", "Vuelto: " %><br>
+            <%= text_field "money_returned", "" %>
+          </div>
+          <div class="pq_form_div">
+            <%= label_tag "money_type", "Tipo de Dinero: " %>
+            <%= select_tag "money_type", options_from_collection_for_select(MoneyType.all, :id, :name) %>
+          </div>
 
-<p>
-  <b>Money received:</b>
-  <%= @quotation.money_received %>
-</p>
+          <div class="pq_form_div pq_form_check">
+            <h1>Documentos a generar</h1>
+            <div>
+              <% DocumentType.all.each do |dt| %>
+                <%= check_box_tag dt.id, dt.id %>
+                <%= label_tag dt.id, dt.name %><br>
+              <% end %>
+            </div>
+          </div>
 
-<p>
-  <b>Money returned:</b>
-  <%= @quotation.money_returned %>
-</p>
-
-<p>
-  <b>Money expected:</b>
-  <%= @quotation.money_expected %>
-</p>
-
-<p>
-  <b>Money type:</b>
-  <%= @quotation.money_type_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_quotation_path(@quotation) %> |
-<%= link_to 'Back', quotations_path %>
+          <div class="pq_form_submit">
+            <%= submit_tag "Registrar pago" %>
+          </div>
+        <% end %>
+      </div>
+  </section>
+<% end -%>

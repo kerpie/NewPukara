@@ -23,7 +23,7 @@
 	width: 1000px;
 	margin: 20px auto;
 	padding: 30px;
-	overflow: hidden;
+	text-align: center;
 	h1{
 		text-align:center;
 		margin: 20px auto;
@@ -32,10 +32,10 @@
 		color: rgba(150,150,150,0.7);
 	}
 	section{
-		width: 440px;
+		width: 420px;
 		padding: 20px;
 		margin: 10px;
-		float: left;
+		display: inline-block;
 		h2{
 			width: 380px;
 			padding: 10px;

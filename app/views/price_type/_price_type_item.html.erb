@@ -1,7 +1,7 @@
-<div id=<%= "price_type_#{pt.id}" %> class="price_type_item">
+<div id=<%= "price_type_" + "#{pt.id}" %> class="price_type_item">
 	<span><%= pt.name %></span>
 	<div class="price_type_row_options">
-		<div class="destroy_price_type" id=<%="destroy_form_#{pt.id.to_s}" %>>
+		<div class="destroy_price_type" id=<%="destroy_form_"+pt.id.to_s%>>
 			<%= form_tag price_type_destroy_path, :remote => true do %>
 				<%= hidden_field_tag "pt_id", pt.id %>
 				<%= image_submit_tag "delete2.png", :confirm => "Confirme la operacion para proceder", :width => 14, :height => 14 %>
@@ -10,15 +10,15 @@
 		<%= image_tag "edit.png", :width => 14, :height => 14, :class => "price_type_edit_image" %>
 	</div>
 </div>
-<div class="update_price_type" id=<%="update_form_#{pt.id}" %>>
+<div class="update_price_type" id=<%="update_form_"+pt.id.to_s%>>
 	<%= form_tag price_type_update_path, :remote => true do %>
 		<div class="pt_update_form_div">
 			<%= hidden_field_tag 'pt_id', pt.id %>
 		</div>
 		<div class="pt_update_form_div">
-			<%= label_tag 'new_value', 'Nuevo Valor' %>
-			<%= text_field_tag 'new_value' %>
-			<%= link_to_function "Registrar", "submitUpdateForm(this)"%>
+			<%= label_tag 'new_discount', 'Nuevo Valor: ' %>
+			<%= text_field_tag 'new_discount' %>
+			<%= link_to_function "Registrar", "submitUpdatePriceTypeForm(this)" %>
 		</div>
 		<div class="pt_update_form_div_submit">
 			<%= submit_tag 'Actualizar' %>

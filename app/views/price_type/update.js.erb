@@ -1,1 +1,4 @@
-$("<%= escape_javascript "#price_type_#{@up_pt.id} span" %>").html("<%= escape_javascript(@up_pt.name) %>");
+$("#update_price_type").parents(".floating_box").hide();
+<% toRender = render "pt_row.html", :pt => @up_pt %>
+$("#<%= @up_pt.id %>").remove();
+$("#price_type_index table").append("<%= escape_javascript toRender %>");

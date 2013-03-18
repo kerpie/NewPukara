@@ -14,99 +14,125 @@
 }
 
 #price_type_index{
-	width: 800px;
+	width: 1000px;
 	margin: 10px auto;
 	padding: 10px;
-	.price_type_item{
-		overflow: hidden;
-		width: 600px;
-		margin: 10px auto;
-		span{
-			float: left;
-			padding: 8px;
-		}
-		.price_type_row_options{
-			width: 70px;
-			float: right;
-			overflow: hidden;
-			.destroy_price_type{
-				float: left;
-				margin: 8px;
-				display: block;
-				form{
-					width: 10px;
-				}
-			}
-			img{
-				margin: 8px;
-			}
-		}
-		&:hover{
-			background: #00b0e3;
-			span{
+	table{
+		width: 900px;
+		margin: 0 auto;
+		padding: 10px;
+		tr{
+			th{
+				background: #272727;
 				color: white;
+				text-transform: uppercase;
+				text-align: center;
+				padding: 5px;
+				font-weight: bold;
 			}
-		}
-	}
-	.update_price_type{
-		display: none;
-		text-align: center;
-		form{
-			width: 450px;
-			margin: 0 auto;
-			background: #ccc;
-			padding: 10px;
-			.pt_update_form_div{
-				font-family: 'Dosis', sans-serif;
+			td{
+				text-align: center;
+				padding: 5px;
+				color: black;
+				border-bottom: 1px solid #272727;
 				a{
-					background: #272727;
-					color: white;
-					text-decoration:none;
-					padding: 8px;
+					padding: 5px;
+					display:block;
+					text-decoration: none;
 					&:hover{
 						background: #00b0e3;
+						color: white;
 					}
 				}
+				.delete_pt{
+					display: none;
+				}
 			}
-			.pt_update_form_div_submit{
-				display: none;
-			}
-			&:hover{
-				background: #bbb;
-			};
 		}
 	}
-}
-
-#create_price_type{
-	width: 600px;
-	margin: 0 auto;
-	background: #ccc;
-	text-align: center;
-	padding: 6px 10px 15px;
-	h1{
-		width: 400px;
-		margin: 5px auto;
+	#create_new_price_type_link{
+		width: 300px;
 		text-align: center;
-		font-size: 13px;
-		color: white;
-	}
-	.pt_create_form_div{
-		font-family: 'Dosis', sans-serif;
+		margin: 30px auto;
 		a{
+			padding: 10px;
 			background: #272727;
+			text-decoration: none;
 			color: white;
-			text-decoration:none;
-			padding: 8px;
 			&:hover{
 				background: #00b0e3;
 			}
 		}
 	}
-	.pt_create_form_div_submit{
-		display: none;
+}
+
+.floating_box{
+	position:absolute;
+	width: 800px;
+	margin: -100px -400px;
+	background: #00b0e3;
+	top:50%;
+	left:50%;
+	display: none;
+	.upper_part{
+		h1{
+			width: 100%;
+			text-align: center;
+			text-transform: uppercase;
+			color: white;
+			font-size: 20px;
+			padding: 10px;
+			font-weight: bold;
+		}
+		h2{
+			a{
+				position:absolute;
+				top:0px;
+				right: 0px;
+				padding: 10px;
+				font-size: 20px;
+				color: rgba(255,255,255,0.5);
+				text-decoration: none;
+				&:hover{
+					background: red;
+					color: white;
+				}
+			}
+		}
 	}
-	&:hover{
-		background: #aaa;
+	form{
+		width: 600px;
+		margin: 0 auto;
+		.price_type_new_form_div{
+			width: 200px;
+			margin: 5px auto;
+			padding: 5px;
+			text-align: center;
+			label{
+				color: white;
+				font-size: 13px;
+				text-align: center;
+			}
+			input{
+				width: 180px;
+				margin: 0 auto;
+			}
+		}
+		.submit_button_part{
+			width: 200px;
+			text-align: center;
+			margin: 15px auto 10px;
+			input{
+				background: white;
+				color: #00b0e3;
+				border: none;
+				padding: 10px;
+				width: 150px;
+				font-size: 16px;
+				&:hover{
+					box-shadow: 0px 0px 5px white;
+				}
+			}
+		}
 	}
 }

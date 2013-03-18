@@ -11,6 +11,15 @@ class EntryCodeController < ApplicationController
   	doc_type = DocumentType.find(params[:doc_type])
   	@result = EntryDocument.where(:numeration => params[:numbers], :document_type_id => doc_type).all
 
+    supplier = Supplier.find(params[:supplier])
+
+    @response = []
+    @result.each do |ed|
+      if ed.entry_folder.supplier == supplier
+        @response << ed.entry_folder
+      end
+    end
+
   	respond_to do |format|
 		  format.js 
   	end
