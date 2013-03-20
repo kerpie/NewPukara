@@ -150,3 +150,8 @@ jQuery ->
 jQuery ->
 	$("#money_received_").keyup ->
 		$("#money_returned_").val(parseFloat($(this).val()) - parseFloat($("#money_expected_").val()))
+
+jQuery ->
+	$(".change_user_item").click ->
+		$("#quotation_user_id").val($(this).parent().attr("id")) 
+		$("#who_register h1").html("Registrado por: "+ $(this).text())

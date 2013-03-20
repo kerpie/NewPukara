@@ -68,4 +68,15 @@ module ApplicationHelper
 		return text.html_safe
 	end
 
+	def show_vendors(user)
+		store = user.store
+		response = ""
+		User.where(store_id: store).all.each do |user|
+			if user.role? "Vendedor"
+				response = response + "<li id=\"#{user.id}\"><p class=\"change_user_item\">#{user.full_name}</p></li>"
+			end
+		end
+		response.html_safe
+	end
+
 end

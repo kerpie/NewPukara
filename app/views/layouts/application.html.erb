@@ -14,37 +14,35 @@
 				<%= yield %>	
 			</section>
 
-			<section id="user_data">
-				<%= image_tag current_user.image.url(:medium), :width => 100, :height => 100 %>
-				<div>
-					<p><%= current_user.username.upcase %></p>
-					<ul class="first_level_list">
-						<li><%= link_to "editar perfil", edit_user_registration_path %></li>
-						<li><%= link_to "cerrar sesion", destroy_user_session_path, :method => :delete %></li>
-					</ul>
-				</div>
-			</section>
-
 			<section id="prev_nav_bar">
 				<h1><%= link_to "Huguito", root_path %></h1>
 				<ul class="first_level_list">
 					<%= (render_proper_navbar current_user).html_safe %>
 				</ul>
 			</section>
+			
 			<% if current_user.role?("Vendedor") %>
 				<div id="vendor_list">
-					<ul>
-						<% User.all.each do |tmp|%>
-							<% if tmp.role? "Vendedor" %>
-								<% if tmp.username.empty? %>
-									<li><p>Hostia!</p></li>
-								<% else %>
-									<li><p>Midory Castillo Peralta</p></li>
-								<% end %>
-							<% end %>
-						<% end %>
+					<ul id="">
+						<li id="first_vendor">
+							<p class="change_user_item">Cambiar Vendedor</p>
+							<ul id="vendors">
+								<%= show_vendors(current_user) %>
+							</ul>
+						</li>
 					</ul>
 				</div>
+			<% else %>
+				<section id="user_data">
+					<%= image_tag current_user.image.url(:medium), :width => 100, :height => 100 %>
+					<div>
+						<p><%= current_user.username.upcase %></p>
+						<ul class="first_level_list">
+							<li><%= link_to "editar perfil", edit_user_registration_path %></li>
+							<li><%= link_to "cerrar sesion", destroy_user_session_path, :method => :delete %></li>
+						</ul>
+					</div>
+				</section>
 			<% end %>
 		<% else %>		
 			<%= yield %>	

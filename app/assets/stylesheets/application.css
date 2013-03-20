@@ -303,6 +303,15 @@ body{
 	color: white;
 }
 
+#close_session{
+	background: rgba(255,0,0,0.3);
+	color: white;
+}
+
+#close_session a:hover{
+	background: red;
+}
+
 .first_level_list{
 	overflow: hidden;
 }
@@ -394,27 +403,44 @@ body{
 	background: white;
 	color: black;
 	z-index: 10;
-	bottom: 0px;
-	right: 58px;
-
-	/* modificar */ 
-	display: none;
+	top: 0px;
+	right: 0px;
 }
 
-#vendor_list ul li{
-	//padding: 5px 10px;
-}
-
-#vendor_list ul li p{
-	padding: 20px 40px;
+.change_user_item{
+	padding: 20px;
 	background: #aaa;
 	color: #FFF;
 }
 
-#vendor_list ul li p:hover{
+.change_user_item:hover{
 	background: #00b0e3;
 	color: white;
 }
+
+#vendors{
+	display: none;	
+	position:fixed;
+}
+
+#vendors li{
+	width: 200px;
+	position: relative;
+	left: -41px;
+}
+
+#vendors li p{
+	text-align: center;
+	cursor: pointer;
+}
+
+#first_vendor:hover #vendors{
+	display: block;
+	position: absolute;
+	z-index: 10;
+}
+
+
 
 .floating_part{
 	position: fixed;
