@@ -1,3 +1,131 @@
-// Place all the styles related to the OutputCode controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.output_code_title_part{
+	.output_code_title{
+		width: 1000px;
+		h1{
+			width: 400px;
+			font-size: 30px;
+			color: white;
+			background: #272727;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 20px;
+		}
+	}
+}
+
+#output_code_search{
+	width: 900px;
+	margin: 10px auto;
+	padding: 10px;
+	background: #d0d0d0;
+	h1{
+		width: 880px;
+		color: white;
+		text-transform: uppercase;
+		text-align: center;
+		padding: 10px;
+		background: #333;
+		font-weight: bold;
+	}
+	form{
+		width: 500px;
+		margin: 0 auto;
+		padding: 10px;
+		text-align: center;
+		.search_part{
+			padding: 10px;
+			label{
+				font-size: 13px;
+			}
+			input, select{
+				padding: 6px;
+			}
+			input[type=submit]{
+				background: #00b0e3;
+				color: white;
+				text-align: center;
+				width: 150px;
+				padding: 10px;
+				border: none;
+				&:hover{
+					box-shadow: 0px 0px 4px #00b0e3;
+				}
+			}
+		}
+	}
+}
+
+#code_output_register{
+	width: 100%;
+	margin: 10px 0px;
+	padding: 5px;
+	background: #ccc;
+	.document_detail_form{
+		margin: 10px auto;
+		display: block;
+		.data{
+			width: 60%;
+			margin: 10px auto;
+			padding: 10px;
+			background: #bbb;
+		}
+		.dd_data{
+			width: 60%;
+			margin: 0 auto;
+			table{
+				margin: 0 auto;
+				tr{
+					border-bottom: 1px solid black;
+					th{
+						padding: 10px;
+						background: #272727;
+						color: white;
+						text-align: center;
+					}
+					td{
+						text-align: center;
+						padding: 10px;
+					}
+				}	
+			}
+		}
+	}
+	#submit_input input{
+		background: #00b0e3;
+		color: white;
+		margin: 0 auto;
+		width: 300px;
+		padding: 10px;
+		border: none;
+		text-align: center;
+		text-transform: uppercase;
+		&:hover{
+			box-shadow: 0px 0px 4px #00b0e3;
+		}
+	}
+
+	#alert{
+		width: 400px;
+		margin: 10px auto;
+		padding: 20px;
+		form{
+			width: 400px;
+			margin: 0 auto;
+			text-align: center;
+			input[type=submit]{
+				border: none;
+				background: red;
+				color: white;
+				width: 200px;
+				margin: 0 auto;
+				padding: 10px;
+				text-align: center;
+				text-transform: uppercase;
+				&:hover{
+					box-shadow: 0px 0px 4px red;
+				}
+			}
+		}
+	}
+
+}

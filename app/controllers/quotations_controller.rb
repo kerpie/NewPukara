@@ -186,26 +186,27 @@ class QuotationsController < ApplicationController
     end
 
     #Create OutputFolder
-    of = OutputFolder.new
-    of.client = q.client
-    of.date = Time.now
-    of.folder_state = FolderState.last
-    of.user = q.user
-    of.save 
+    @of = OutputFolder.new
+    @of.client = q.client
+    @of.date = Time.now
+    @of.folder_state = FolderState.last
+    @of.user = q.user
+    @of.quotation = q
+    @of.save 
 
     #Create OutputDocument
     documents.each do |d|
       od = OutputDocument.new
       od.numeration = "1000"
       od.document_type = d
-      od.output_folder = of
+      od.output_folder = @of
       od.save
     end
 
     #Create OuputDocumentDetail
     q.quotation_details.each do |qd|
       odd = OutputDocumentDetail.new
-      odd.output_folder = of
+      odd.output_folder = @of
       odd.product = qd.product
       odd.sell_price = qd.sell_price
       odd.quantity = qd.quantity
@@ -213,14 +214,34 @@ class QuotationsController < ApplicationController
       odd.save
     end
 
-    Stock.reduce_stock(of)
+    Stock.reduce_stock(@of)
 
     respond_to do |format|
       if q.save
+        OutputCode.createOutputCodes(@of)
         format.js
       else
         format.js
       end
+    end
+  end
+
+  def auth_user
+
+    user_id = params[:user_to_auth]
+    small_code = params[:small_code]
+
+    user = User.find(user_id)
+    @can_continue = false
+
+    if(user.small_code.to_s == small_code)
+      @can_continue = true
+    else
+      @can_continue = false
+    end
+
+    respond_to do |format|
+      format.js
     end
   end
 end

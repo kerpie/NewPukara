@@ -4,6 +4,7 @@ class OutputFolder < ActiveRecord::Base
   					:folder_state_id, 
   					:user_id, 
   					:output_documents_attributes, 
+            :quotation_id,
   					:output_document_details_attributes
 
   validates :client_id, :presence => {:message => " no puede estar vacio"}
@@ -13,6 +14,7 @@ class OutputFolder < ActiveRecord::Base
 
   has_many :output_documents, :dependent => :delete_all
   has_many :output_document_details, :dependent => :delete_all
+  belongs_to :quotation
   belongs_to :folder_state
   belongs_to :client
   belongs_to :user

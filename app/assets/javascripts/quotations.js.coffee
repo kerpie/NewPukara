@@ -154,4 +154,11 @@ jQuery ->
 jQuery ->
 	$(".change_user_item").click ->
 		$("#quotation_user_id").val($(this).parent().attr("id")) 
+		$("#user_to_auth").val($(this).parent().attr("id"))
 		$("#who_register h1").html("Registrado por: "+ $(this).text())
+		$("#inside_auth_user_form").html("Registrado por: "+ $(this).text())
+
+jQuery ->
+	$("#quotation_title div h2").click ->
+		$("#authenticate_user").show()
+		$("#small_code").focus()

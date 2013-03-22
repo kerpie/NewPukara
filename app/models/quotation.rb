@@ -13,7 +13,8 @@ class Quotation < ActiveRecord::Base
   validates :user_id, :presence => {:message => " no puede estar vacio"}
   validates :date, :presence => {:message => " no puede estar vacio"}
 
-  has_many :quotation_details             
+  has_many :quotation_details
+  has_one :output_folder             
 	belongs_to :user
 	belongs_to :money_type
 	belongs_to :client

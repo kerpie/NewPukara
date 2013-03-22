@@ -1,5 +1,10 @@
+<section class="output_code_title_part">
+  <hgroup class="output_code_title">
+    <h1>Codigos Registrados</h1>
+  </hgroup>
+</section>
+
 <section id="code_output_register">
-	<h1>Codigos Registrados</h1>
 	<% @folder.output_document_details.each do |dd| %>
 		<%= hidden_field_tag "folder_id", @folder.id %>
 		<div class="document_detail_form">

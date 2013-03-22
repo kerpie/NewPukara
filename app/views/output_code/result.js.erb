@@ -1,8 +1,8 @@
-<% if @result.count > 0 %>
+<% unless @result.nil? %>
 	$("#error_message").hide();
 	$("#success_message").show();
-	$("#doc_register_id").attr('value', <%= @result.first.id %>);
-	$("#folder_id").attr('value', <%= @result.first.output_folder.id %>);
+	$("#doc_register_id").attr('value', <%= @result.id %>);
+	$("#folder_id").attr('value', <%= @result.id %>);
 <% else %>
 	$("#success_message").hide();
 	$("#error_message").show();

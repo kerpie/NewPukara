@@ -1,4 +1,5 @@
 #quotation_title_part{
+	overflow: hidden;
 	#quotation_title{
 		overflow: hidden;
 		width: 1000px;
@@ -12,25 +13,27 @@
 			padding: 20px;
 			float: left;
 		}
-		#pay_quotation_part{
+		div{
 			float: right;
-			h1{
-				padding: 10px;
-				width: 300px;
-				font-size: 30px;
-				margin: 10px;
+			//padding: 10px;
+			margin: 10px;
+			h1, h2{
+				border: none;
+				background: #00b0e3;
 				color: white;
-				background: #00b0e3;
-			}
-			.to_pay{
-				background: #00b0e3;
+				text-transform: uppercase;
+				text-align: center;
+				padding: 10px;
+				cursor: pointer;
 				&:hover{
 					box-shadow: 0px 0px 4px #00b0e3;
-					cursor: pointer;
 				}
 			}
 			.payed{
 				background: red;
+				&:hover{
+					box-shadow: 0px 0px 4px red;
+				}
 			}
 		}
 	}
@@ -207,6 +210,7 @@
 			}
 		}
 		#submit_new_quotation_form{
+			display: none;
 			width: 100%;
 			text-align: center;
 			input{
@@ -736,5 +740,66 @@
 		color: white;	
 		padding: 20px;
 		font-size: 20px;
+	}
+}
+
+#authenticate_user{
+	#au_title{
+		width: 100%;
+		h1{
+			width: 98%;
+			padding: 1%;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		h2{
+			a{
+				width: 8%;
+				padding: 1%;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				text-align: center;
+				text-transform: uppercase;
+				color: white;
+				text-decoration:none;
+				&:hover{
+					font-weight: bold;	
+					background: red;
+				}
+			}
+		}
+	}
+	div{
+		margin: 0 auto;
+		padding: 5px;
+		text-align: center;
+		padding: 10px;
+		form{
+			width: 100%;
+			label{
+				//text-align: center;
+			}
+			input{
+				width: 400px;
+				padding: 10px;
+				margin: 0 auto;
+				font-size: 16px;
+				text-align: center;
+				display: block;
+			}
+			input[type=submit]{
+				width: 300px;
+				padding: 10px;
+				background: white;
+				border: none;
+				color: #00b0e3;
+				text-transform: uppercase;
+				&:hover{
+					box-shadow: 0px 0px 4px white;
+				}
+			}
+		}
 	}
 }

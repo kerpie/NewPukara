@@ -1,6 +1,9 @@
 <section id="quotation_title_part">
 	<hgroup id="quotation_title">
 		<h1>Nueva cotizacion</h1>
+		<div id="q_auth_user">
+			<h2>Autenticar Usuario</h2>
+		</div>
 	</hgroup>
 </section>
 
@@ -12,6 +15,26 @@
 	<%= render 'form' %>
 </section>
 
+<section id="authenticate_user" class="q_box">
+	<div id="au_title">
+		<h1>Autenticar usuario</h1>
+		<h2><%= link_to_function "X", "closeFloatingBox(this)"%></h2>
+	</div>
+	<div>
+		<%= form_tag quotation_auth_user_path, :remote => true do %>
+			<%= hidden_field_tag "user_to_auth", current_user.id %>
+			<h1 id="inside_auth_user_form">Registrado por: <%= current_user.full_name %></h1>
+			<div>
+				<%= label_tag "small_code", "Codigo personal" %><br>
+				<%= text_field_tag "small_code" %>
+			</div>
+			<div>
+				<%= submit_tag "Continuar", :id => "auth_user_submit_button" %>
+			</div>
+		<% end -%>
+	</div>
+</section>
+
 <section id="q_clients_list" class="q_box">
 	<div id="q_client_search_title">
 		<h1>Buscar cliente</h1>
@@ -19,7 +42,8 @@
 	</div>
 	<section id="q_action_search">
 		<div id="q_1">
-			<%= label_tag "q_client_search", "Buscar: "%>			<%= text_field_tag "q_client_search" %>
+			<%= label_tag "q_client_search", "Buscar: "%>
+			<%= text_field_tag "q_client_search" %>
 		</div>
 		<div id="q_2">
 			<table>
@@ -47,7 +71,7 @@
 <section id="q_product_search" class="q_box">
 	<div id="qp_search">
 		<div>
-			<%= form_tag quotation_search_product_path, remote: true do%>
+			<%= form_tag quotation_search_product_path, remote: true do %>
 				<%= label_tag "qp_search_input", "Buscar Producto:" %>
 				<%= text_field_tag "qp_search_input", "MAQUINA SIRUBA REMALLADORA" %>
 			<% end %>

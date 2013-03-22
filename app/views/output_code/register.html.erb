@@ -1,6 +1,12 @@
+<section class="output_code_title_part">
+  <hgroup class="output_code_title">
+    <h1>Formulario de Registro</h1>
+  </hgroup>
+</section>
+
 <section id="code_output_register">
-	<h1>Formulario de Registro</h1>
-	<%= form_tag output_code_save_codes_path, :remote => true do %>
+	
+	<%= form_tag code_output_save_codes_path, :remote => true do %>
 		<% @folder.output_document_details.each do |dd| %>
 			<%= hidden_field_tag "folder_id", @folder.id %>
 			<div class="document_detail_form">
@@ -17,7 +23,7 @@
 						</tr>
 						<% dd.output_codes.each do |code| %>
 							<tr>
-								<td><%= text_field_with_value("code_"+code.id.to_s,code, nil) %></td>
+								<td><%= ouput_text_field_with_value("code_"+code.id.to_s,code) %></td>
 							</tr>
 						<% end %>
 					</table>

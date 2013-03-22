@@ -1,17 +1,21 @@
+<section class="output_code_title_part">
+  <hgroup class="output_code_title">
+    <h1>códigos de salida</h1>
+  </hgroup>
+</section>
+
 <section id="output_code_search">
 
 	<h1>Buscar Documento</h1>
 
 	<%= form_tag code_output_result_path,:remote => true do %>
 		<div class="search_part">
-		<%= label_tag "doc_type", "Tipo de Documento: "%><br/>
-		<%= select_tag "doc_type", options_from_collection_for_select(DocumentType.all, :id, :name) %>
-		</div>
-		<div class="search_part">
-		<%= label_tag "numbers", "Numeracion del documento: "%><br/>
+		<%= label_tag "numbers", "Codigo de la Cotizacion: " %><br/>
 		<%= text_field_tag "numbers" %>
 		</div>
-		<%= submit_tag "Consultar" %>
+		<div class="search_part">
+			<%= submit_tag "Consultar" %>
+		</div>
 	<% end %>
 
 	<p id="error_message">No hay documentos registrados con esos datos</p>
