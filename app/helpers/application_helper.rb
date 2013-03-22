@@ -79,4 +79,7 @@ module ApplicationHelper
 		response.html_safe
 	end
 
+	def default_null_image
+		return "missing.jpg"
+	end
 end
