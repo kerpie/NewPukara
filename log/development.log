@@ -66385,3 +66385,5 @@ Served asset /suppliers.css - 304 Not Modified (0ms)
 
 Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2013-03-21 09:32:59 -0500
 Served asset /user.css - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mSELECT version FROM schema_migrations[0m
