@@ -1,0 +1,15 @@
+<table>
+	<thead>
+		<tr>
+			<th colspan="2">Producto</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% total.times do |i| %>
+			<tr>
+				<td><%= names[i] %></td>
+				<td><%= link_to "Mostrar", response[i] %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

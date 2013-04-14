@@ -20,6 +20,11 @@
   </div>
 
   <div class="supplier_show_part">
+    <span>Correo:</span>
+    <p><%= @supplier.mail %></p>
+  </div>  
+
+  <div class="supplier_show_part">
     <span>Persona de Contacto:</span>
     <p><%= @supplier.contact_person %></p>
   </div>
@@ -30,14 +35,20 @@
   </div>
 
   <div class="supplier_show_part">
+    <span>Ciudad:</span>
+    <p><%= @supplier.city %></p>
+  </div>
+
+  <div class="supplier_show_part">
     <span>Pais:</span>
     <p><%= @supplier.country %></p>
   </div>
 
   <div class="supplier_show_part">
-    <span>Ciudad:</span>
-    <p><%= @supplier.city %></p>
+    <span>Otros:</span>
+    <p><%= @supplier.other %></p>
   </div>
+
 </section>
 
 <div id="suppliers_show_options">

@@ -3,6 +3,7 @@ Final::Application.routes.draw do
   root :to => 'page#index'
 
   #Quotation 
+  match "quotaions/new_client" => "quotations#new_client", :as => :quotation_new_client
   match "quotations/search_index" => "quotations#search_index", :as => :quotation_search_index
   match "quotations/search" => "quotations#search", :as => :quotation_search
   match "quotations/search_product" => "quotations#search_product", :as => :quotation_search_product
@@ -24,6 +25,8 @@ Final::Application.routes.draw do
   resources :entry_folders
   
   #Users
+  match "user/:id/edit" => "user#edit", :as => :edit_user
+  match "user/update" => "user#update", :as => :update_user
   match "user/index" => "user#index", :as => :users_index
   match "user/:id" => "user#show", :as => :show_user
   devise_for :users, :controllers => { :registrations => "users/registrations" }
@@ -64,7 +67,10 @@ Final::Application.routes.draw do
   match "money_type/destroy" => "money_type#destroy", :as => :money_type_destroy
   match "money_type/update" => "money_type#update", :as => :money_type_update
 
-  #Brand
+  #Brand new routes
+  match "brand/new_search" => "brand#new_search", :as => :brand_new_search
+
+  #Brand previous routes
   match "brand/index" => "brand#index", :as => :brand_index
   match "brand/destroy" => "brand#destroy", :as => :brand_destroy
   match "brand/update" => "brand#update", :as => :brand_update

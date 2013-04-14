@@ -83,16 +83,16 @@
         <%= form_tag quotation_pay_quotation_path, remote: true do %>
           <%= hidden_field_tag "q_id", @quotation.id %>
           <div class="pq_form_div">
-            <%= label_tag "money_expected", "Total a pagar: " %><br>
-            <%= text_field "money_expected", "" %>
+            <%= label_tag "mexpected", "Total a pagar: " %><br>
+            <%= text_field "mexpected", "" %>
           </div>
           <div class="pq_form_div">
-            <%= label_tag "money_received", "Cantidad recibida: " %><br>
-            <%= text_field "money_received", "" %>
+            <%= label_tag "mreceived", "Cantidad recibida: " %><br>
+            <%= text_field "mreceived", "" %>
           </div>
           <div class="pq_form_div">
-            <%= label_tag "money_returned", "Vuelto: " %><br>
-            <%= text_field "money_returned", "" %>
+            <%= label_tag "mreturned", "Vuelto: " %><br>
+            <%= text_field "mreturned", "" %>
           </div>
           <div class="pq_form_div">
             <%= label_tag "money_type", "Tipo de Dinero: " %>

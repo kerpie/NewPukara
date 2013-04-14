@@ -31,3 +31,11 @@ jQuery ->
 				if tmp.length > 0
 					name_result = name_result + tmp[0] 
 		$("#user_username").val(name_result + lname_result)
+
+jQuery ->
+	$('#user_dni').keyup ->
+		value = $(this).val()
+		if value.length < 9
+			$(this).val(value)
+		else
+			$(this).val(value.substring(0,8))

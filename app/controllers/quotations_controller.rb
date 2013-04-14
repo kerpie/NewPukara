@@ -87,6 +87,9 @@ class QuotationsController < ApplicationController
   end
 
   def search_index
+
+    @quotations = Quotation.last(10)
+
     respond_to do |format|
       format.html
     end
@@ -173,9 +176,9 @@ class QuotationsController < ApplicationController
 
     q = Quotation.find(params[:q_id])
 
-    q.money_expected = params[:money_expected_].to_f
-    q.money_received = params[:money_received_].to_f
-    q.money_returned = params[:money_returned_].to_f
+    q.money_expected = params[:mexpected].to_f
+    q.money_received = params[:mreceived].to_f
+    q.money_returned = params[:mreturned].to_f
     q.payment_status = true
 
     documents = []
@@ -240,6 +243,15 @@ class QuotationsController < ApplicationController
       @can_continue = false
     end
 
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def create_client
+    client = Client.new
+    client.save
+    
     respond_to do |format|
       format.js
     end

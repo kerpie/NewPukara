@@ -14,4 +14,19 @@ class UserController < ApplicationController
   		format.html
   	end
   end
+
+  def edit
+    @user = User.find(params[:id])
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @user.name = par
+    respond_to do |format|
+      format.js
+    end
+  end
 end

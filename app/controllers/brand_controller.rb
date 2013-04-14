@@ -5,6 +5,7 @@ class BrandController < ApplicationController
     second_hash = Hash.new
     @third_hash = Hash.new
 
+=begin
     Brand.order('name ASC').first(5).each do |brand|
       ParentModel.all.each do |pm|
         pm.model_types.each do |mt|
@@ -19,6 +20,7 @@ class BrandController < ApplicationController
       @third_hash[brand] = second_hash  
       second_hash = Hash.new
     end
+=end
 
     authorize! :read, Brand.new
     respond_to do |f|
@@ -26,7 +28,58 @@ class BrandController < ApplicationController
     end
   end
 
-    def create
+  def new_search
+
+    found = false
+    text = params[:search_param].upcase
+    @response = []
+    @names = []
+
+    Product.all.each do |product|
+      name = product.full_name
+      unless name.match(text).nil?
+        @response << product
+        @names << name 
+      end
+    end
+
+    @total = @response.count
+
+=begin 
+    @brands = Brand.where(["name like ?", "%"+text+"%"]).all
+
+    if @brands.count > 0
+      found = true
+    end
+
+    if found
+      @parent_models = ParentModel.where(["name like ?", "%"+text+"%"]).all
+      if @parent_models.count > 0
+        found = true
+      end
+    end
+
+    if found
+      @model_types = ModelType.where(["name like ?", "%"+text+"%"]).all
+      if @model_types.count > 0
+        found = true
+      end
+    end
+
+    if found 
+      @models = Model.where(["name like ?", "%"+text+"%"]).all
+      if @models.count > 0 
+        found = true
+      end
+    end
+=end
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def create
     @create = Brand.new
     @create.name = unless params[:name].nil? 
                         params[:name].upcase.strip

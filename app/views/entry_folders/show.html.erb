@@ -49,7 +49,7 @@
 				<span class="ef_show_doc_detail_title">Producto: </span>
 				<span class="ef_show_doc_detail_value"><%= dd.product.full_name %></span>
 				<span class="ef_show_doc_detail_title">Precio de Compra</span>
-				<span class="ef_show_doc_detail_value"><%= dd.purchase_price %></span>
+				<span class="ef_show_doc_detail_value"><%= dd.purchase_price.to_s + " " + dd.money_type.name %></span>
 				<span class="ef_show_doc_detail_title">Cantidad:</span>
 				<span class="ef_show_doc_detail_value"><%= dd.quantity %></span>
 				<span class="ef_show_doc_detail_title">Unidad:</span>

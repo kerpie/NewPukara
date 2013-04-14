@@ -1,6 +1,6 @@
-<li class="first_level_item"><%= link_to "Clientes", :clients %>
+<li class="first_level_item"><%= link_to "Proveedores", :suppliers %>
 	<ul class="second_level_list">
-		<li class="second_level_item"><%= link_to "Registrar nuevo cliente", new_client_path %></li>
+		<li class="second_level_item"><%= link_to "Registrar nuevo proveedor", new_supplier_path %></li>
 	</ul>
 </li>
 <li class="first_level_item"><%= link_to "Productos", :products %>
@@ -8,10 +8,10 @@
 		<li class="second_level_item"><%= link_to "Registrar nuevo producto", new_product_path %></li>
 	</ul>
 </li>
-<li class="first_level_item"><%= link_to "Codigos", nil %>
+<li class="first_level_item"><%= link_to "Series", nil %>
 	<ul class="second_level_list">
-		<li class="second_level_item"><%= link_to "Consultar código", "#" %></li>
-		<li class="second_level_item"><%= link_to "Registrar códigos", :price_type_index %></li>
+		<li class="second_level_item"><%= link_to "Consultar Series", "#" %></li>
+		<li class="second_level_item"><%= link_to "Registrar Series", :price_type_index %></li>
 	</ul>
 </li>
 <li class="first_level_item"><%= link_to "Marcas y Modelos", brand_index_path %>

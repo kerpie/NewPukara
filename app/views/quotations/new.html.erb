@@ -141,3 +141,24 @@
 		</div>
 	</div>
 </section>
+
+<section id="new_client_from_quotation" class="q_box">
+	<div id="new_client_from_quotation_title">
+		<h1>Registro de nuevo cliente</h1>
+		<h2><%= link_to_function "X", "closeFloatingBox(this)"%></h2>
+	</div>
+	<div id="new_client_from_quotation_registration_form">
+		<%= form_tag quotation_new_client_path, :remote => true do %>
+			<div class="new_client_from_quotation_form_div">
+				<%= label_tag "name", "Nombre: " %><br/>			
+				<%= text_field_tag "name" %>
+			</div>
+			<div class="new_client_from_quotation_form_div">
+				<%= label_tag "" %>
+			</div>
+			<div>
+				<%= submit_tag "Guardar" %>
+			</div>
+		<% end %>
+	</div>
+</section>

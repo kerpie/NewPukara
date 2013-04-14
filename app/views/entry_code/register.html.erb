@@ -18,8 +18,8 @@
 				<div class="dd_data">
 					<table>
 						<tr>
-							<th>Codigo Generado</th>
-							<th>Codigo Original</th>
+							<th>Código Generado</th>
+							<th>Series Original</th>
 						</tr>
 						<% dd.entry_codes.each do |code| %>
 							<tr>
@@ -32,13 +32,13 @@
 			</div>
 		<% end %>
 		<div id="submit_input">
-			<%= submit_tag "Registrar Codigos"%>
+			<%= submit_tag "Registrar Series"%>
 		</div>
 	<% end %>
 	<div id="alert">
 		<%= form_tag code_entry_show_path do %>
 			<%= hidden_field_tag "folder_id", @folder.id %>
-			<%= submit_tag "Ver Codigos Registrados" %>
+			<%= submit_tag "Ver Series Registradas" %>
 		<% end %>
 	</div>
 </section>

@@ -7,9 +7,19 @@
 		</div>
 	</hgroup>
 	<section id="brs">
-		<% @third_hash.each do |brand, hash| %>
+		<!-- <% @third_hash.each do |brand, hash| %>
 			<%= render "brand_part", :brand => brand, :hash => hash %>
-		<% end %>
+		<% end %> -->
+		<div id="new_search_to_avoid_error">
+			<%= form_tag brand_new_search_path, :id => "brand_new_search", :remote => true do %>
+				<%= label_tag :search_param, "Buscar: " %>
+				<%= text_field_tag :search_param %>
+				<%= submit_tag "Buscar" %>
+			<% end %>
+		</div>
+		<div id="response_to_avoid_error">
+			
+		</div>
 	</section>
 </section>
 

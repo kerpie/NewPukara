@@ -1,6 +1,6 @@
 <section class="output_code_title_part">
   <hgroup class="output_code_title">
-    <h1>códigos de salida</h1>
+    <h1>Series de salida</h1>
   </hgroup>
 </section>
 
@@ -23,11 +23,11 @@
 		<p>Se encontro el documento indicado</p>
 		<%= form_tag code_output_register_path do %>
 			<%= hidden_field_tag "doc_register_id", :value => 0 %>
-			<%= submit_tag "Registrar Codigos" %>
+			<%= submit_tag "Registrar Series" %>
 		<% end %>
 		<%= form_tag code_output_show_path do %>
 			<%= hidden_field_tag "folder_id", :value => 0 %>
-			<%= submit_tag "Ver Codigos" %>
+			<%= submit_tag "Ver Series" %>
 		<% end %>
 	</div>
 </section>

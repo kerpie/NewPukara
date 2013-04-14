@@ -474,3 +474,12 @@
 #of_client_search, #of_product_search{
 	display:none;
 }
+
+@media print{
+	#prev_nav_bar,#vendor_list {
+		display: none;
+	}
+	.doc_row{
+		color: red;
+	}
+}

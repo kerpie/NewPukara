@@ -24,10 +24,10 @@
 		<li class="second_level_item"><%= link_to "Registrar producto", new_product_path %></li>
 	</ul>
 </li>
-<li class="first_level_item"><%= link_to "Códigos", nil %>
+<li class="first_level_item"><%= link_to "Series", nil %>
 	<ul class="second_level_list">
-		<li class="second_level_item"><%= link_to "Códigos de Salida", :code_output_search %></li>
-		<li class="second_level_item"><%= link_to "Códigos de Entrada", :code_entry_search %></li>
+		<li class="second_level_item"><%= link_to "Series de Salida", :code_output_search %></li>
+		<li class="second_level_item"><%= link_to "Series de Entrada", :code_entry_search %></li>
 	</ul>
 </li>
 <li class="first_level_item"><%= link_to "Cotizaciones", quotation_search_index_path %>
@@ -36,4 +36,9 @@
 	</ul>
 </li>
 <li class="first_level_item"><%= link_to "Locales", :stores %></li>
+<li class="first_level_item"><%= link_to "Clientes", :clients %>
+	<ul class="second_level_list">
+		<li class="second_level_item"><%= link_to "Nuevo cliente", new_client_path %></li>
+	</ul>
+</li>
 <li class="first_level_item"><%= link_to "Reportes", nil %></li>

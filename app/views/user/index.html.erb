@@ -13,7 +13,11 @@
 			<th>Opciones</th>
 		</tr>
 		<% @users.each do |user| %>
-			<tr>
+			<% tmp = "" %>
+			<% user.roles.each do |role| %>
+				<% tmp = role.name + " " + tmp %>
+			<% end %>
+			<tr class="<%= tmp %>">
 				<td><%= user.username %></td>
 				<td><%= user.name.to_s + " " + user.last_name.to_s %></td>
 				<td><%= user.dni %></td>

@@ -19,3 +19,28 @@
 <section id="search_response">
 	
 </section>
+
+<section id="last_quotations">
+	<table>
+		<thead>
+			<tr>
+				<td>Codigo</td>
+				<td>Cliente</td>
+				<td>Fecha</td>
+				<td>Total a pagar</td>
+				<td>Estado de la Cotizacion</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @quotations.each do |quotation| %>
+				<tr>
+					<td><%= quotation.code %></td>
+					<td><%= quotation.client.name %></td>
+					<td><%= quotation.date.to_formatted_s(:rfc822) %></td>
+					<td><%= quotation.money_expected %></td>
+					<td><%= quotation.payment_status %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</section>

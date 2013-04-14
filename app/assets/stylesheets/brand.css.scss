@@ -17,104 +17,159 @@
 			width: 400px;
 			text-align: center;
 			margin-top: 18px;
+			display: none;
 		}
 	}
 	#brs{
 		width: 970px;
 		margin: 10px auto;
-		.model_part{
-			clear: both;
-			overflow: hidden;
-			margin: 8px auto;	
-			padding: 10px;
-			.br_name{
-				text-transform: uppercase;
-				text-align: center;
-				float: left;
-				overflow: hidden;
-				width: 300px;
-				background: #00b0e3;
-				h1{
-					font-size: 20px;
-					padding: 20px;
-					width: 200px;
-					color: white;	
-					float: left;
+		#new_search_to_avoid_error{
+			width: 600px;
+			margin: 0 auto;
+			text-align: center;
+			form{
+				width: 600px;
+				input[type=text]{
+					width: 400px;
+					padding: 10px;
 				}
-				form{
-					float: right;
-					width: 10px;
-					height: 10px;
-					padding: 20px;
+				input[type=submit]{
+					display: none;
+				}
+				label{
+					padding: 10px;
+					display: none;
 				}
 			}
-			.mds{
-				float: right;
-				.class_part{
-					.pt_md_name{
-						font-size: 20px;
-						padding: 20px;
-						width: 560px;
-						background: #474747;
-						color: white;	
-						text-transform: uppercase;
-						text-align: center;
+		}
+		#response_to_avoid_error{
+			width: 800px;
+			margin: 10px auto;
+			table{
+				width: 700px;
+				margin: 0px auto;
+				thead{
+					tr{
+						th{
+							text-align: center;
+							padding: 10px;
+							text-transform: uppercase;
+							color: white;
+							background: #272727;
+						}
 					}
 				}
-				.models{
-					width: 600px;
-					margin: 0px auto 10px;
-					h1{
-						width: 580px;
-						text-align: center;
-						text-transform: capitalize;
-						padding: 10px;
-						font-size: 15px;
-						border-bottom: 1px solid #272727;
-						margin: 5px auto;
-					}
-					ul{
-						overflow: hidden;
-						li{
-							width:180px;
-							float: left;
-							background: #AAA;
-							color: #FFF;
-							padding: 10px;
-							text-align: center;
-							overflow: hidden;
-							p{
-								float: left;
-							}
-							.model_edit_options{
-								float: right;
-								overflow: hidden;
-								width: 25px;
-								padding: 3px;
-								img{
-									float: left;
+				tbody{
+					tr{
+						td{
+							a{
+								display: block;
+								padding: 10px;
+								text-align: center;
+								text-decoration: none;
+								&:hover{
+									color: white;
+									background: #00b0e3;
 								}
-								form{
-									width: 10px;
-									height: 10px;
-									float: right;
-									input{
-										display: block;
-									}
-								}
-							}
-							&:hover{
-								background: #00b0e3;
-								color: white;
 							}
 						}
 					}
 				}
 			}
-			&:hover{
-				background: #d0d0d0;
-			}
 		}
+		// .model_part{
+		// 	clear: both;
+		// 	overflow: hidden;
+		// 	margin: 8px auto;	
+		// 	padding: 10px;
+		// 	.br_name{
+		// 		text-transform: uppercase;
+		// 		text-align: center;
+		// 		float: left;
+		// 		overflow: hidden;
+		// 		width: 300px;
+		// 		background: #00b0e3;
+		// 		h1{
+		// 			font-size: 20px;
+		// 			padding: 20px;
+		// 			width: 200px;
+		// 			color: white;	
+		// 			float: left;
+		// 		}
+		// 		form{
+		// 			float: right;
+		// 			width: 10px;
+		// 			height: 10px;
+		// 			padding: 20px;
+		// 		}
+		// 	}
+		// 	.mds{
+		// 		float: right;
+		// 		.class_part{
+		// 			.pt_md_name{
+		// 				font-size: 20px;
+		// 				padding: 20px;
+		// 				width: 560px;
+		// 				background: #474747;
+		// 				color: white;	
+		// 				text-transform: uppercase;
+		// 				text-align: center;
+		// 			}
+		// 		}
+		// 		.models{
+		// 			width: 600px;
+		// 			margin: 0px auto 10px;
+		// 			h1{
+		// 				width: 580px;
+		// 				text-align: center;
+		// 				text-transform: capitalize;
+		// 				padding: 10px;
+		// 				font-size: 15px;
+		// 				border-bottom: 1px solid #272727;
+		// 				margin: 5px auto;
+		// 			}
+		// 			ul{
+		// 				overflow: hidden;
+		// 				li{
+		// 					width:180px;
+		// 					float: left;
+		// 					background: #AAA;
+		// 					color: #FFF;
+		// 					padding: 10px;
+		// 					text-align: center;
+		// 					overflow: hidden;
+		// 					p{
+		// 						float: left;
+		// 					}
+		// 					.model_edit_options{
+		// 						float: right;
+		// 						overflow: hidden;
+		// 						width: 25px;
+		// 						padding: 3px;
+		// 						img{
+		// 							float: left;
+		// 						}
+		// 						form{
+		// 							width: 10px;
+		// 							height: 10px;
+		// 							float: right;
+		// 							input{
+		// 								display: block;
+		// 							}
+		// 						}
+		// 					}
+		// 					&:hover{
+		// 						background: #00b0e3;
+		// 						color: white;
+		// 					}
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// 	&:hover{
+		// 		background: #d0d0d0;
+		// 	}
+		// }
 	}
 }
 

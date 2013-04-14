@@ -82,11 +82,24 @@
 	}
 }
 
+.required{
+	background: rgba(255,0,0,0.6);
+}
+
 #suppliers_new, #suppliers_edit{
 	width: 540px;
 	margin: 0 auto;
 	padding: 10px;
 	background: #ccc;
+	h2{
+		width: 450px;
+		margin: 0 auto;
+		text-align: center;
+		background: red;
+		color: white;
+		padding: 10px;
+		font-size: 18px;
+	}
 	form{
 		width: 500px;
 		margin: 0 auto;

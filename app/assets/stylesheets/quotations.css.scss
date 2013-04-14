@@ -52,8 +52,7 @@
 
 #search_quotation_index{
 	width: 500px;
-	margin: 10px auto;
-	padding: 10px;
+	margin: 30px auto 10px;
 	form{
 		width: 400px;
 		margin: 10px auto;
@@ -88,7 +87,6 @@
 #search_response{
 	width: 500px;
 	margin: 0 auto;
-	padding: 10px;
 	h2{
 		width: 400px;
 		margin: 0 auto;
@@ -802,4 +800,8 @@
 			}
 		}
 	}
+}
+
+#new_client_from_quotation{
+	display: block;
 }

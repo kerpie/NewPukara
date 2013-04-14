@@ -11,19 +11,50 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="new_client_form_field">
     <%= f.label :name, "Nombre" %><br />
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :client_type_id, "Tipo de Cliente" %><br />
-    <%= f.collection_select :client_type_id, ClientType.all, :id, :name %>
+  <div class="new_client_form_field">
+    <%= label_tag "client_type_id", "Tipo de Cliente" %><br />
+    <%= select_tag "client_type_id", client_type_collection(ClientType, :id, :name) %>
   </div>
 
-  <div class="field">
+  <div class="new_client_form_field">
+    <%= f.label :identification_number, "RUC/DNI" %><br/>
+    <%= f.text_field :identification_number %>
+  </div>
+
+  <div class="new_client_form_field">
+    <%= f.label :phone, "Telefono: " %>  
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="new_client_form_field">
+    <%= f.label :mobile, "Celular: " %>
+    <%= f.text_field :mobile %>
+  </div>
+
+  <div class="new_client_form_field">
+    <%= f.label :mail, "Correo: " %>
+    <%= f.text_field :mail %>
+  </div>
+
+  <div class="new_client_form_field">
+    <%= f.label :contact_person, "Persona de contacto: "%>
+    <%= f.text_field :contact_person %>
+  </div>
+
+  <div class="new_client_form_field">
     <%= f.label :address, "Direccion" %><br />
     <%= f.text_field :address %>
   </div>
+
+  <div class="new_client_form_field">
+    <%= f.label :reference, "Otros: " %>
+    <%= f.text_area :reference %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Insertar" %>
   </div>

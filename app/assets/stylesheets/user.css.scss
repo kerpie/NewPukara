@@ -112,6 +112,27 @@
 	}
 }
 
+#user_edit_link{
+	width: 600px;
+	margin: 0 auto;
+	text-align: center;
+	display: none;
+	a{
+		display: block;
+		margin: 0 auto;
+		width: 150px;
+		background: #00b0e3;
+		padding: 15px;
+		font-size: 15px;
+		text-decoration: none;
+		color: white;
+		&:hover{
+			background: white;
+			color: #00b0e3;
+		}
+	}
+}
+
 #devise_edit_user_title{
 	#edit_user_title{
 		width: 1000px;

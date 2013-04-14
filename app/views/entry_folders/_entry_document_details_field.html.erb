@@ -9,11 +9,12 @@
   </div>
   <div class="nested_doc_detail_field">
     <%= data.label :purchase_price, "Precio de Compra: " %>
-    <%= data.text_field :purchase_price, :size =>  10 %>
+    <%= data.text_field :purchase_price, :class => "purchase_price_goes_here", :style => "width: 160px" %>
+    <%= data.collection_select :money_type_id, MoneyType.all, :id, :name %>
   </div>
   <div class="nested_doc_detail_field">
     <%= data.label :quantity, "Cantidad: " %>
-    <%= data.text_field :quantity, :size => 10 %>
+    <%= data.text_field :quantity %>
   </div>
   <div class="nested_doc_detail_field">
     <%= data.label :unit_id, "Unidad" %>

@@ -52,7 +52,7 @@ module ApplicationHelper
 		if product.image?
 			product.image.url(size)
 		else
-			"missing.jpg"
+			default_null_image
 		end
 	end
 
@@ -64,6 +64,14 @@ module ApplicationHelper
 		text = ""
 		rails_model.all.each do |rm|
 			text = text + "<option value=#{rm.id} data-unit_value=#{rm.value}>#{rm.name}</option>"
+		end
+		return text.html_safe
+	end
+
+	def client_type_collection(model, id, name)
+		text = ""
+		model.all.each do |rm|
+			text = text + "<option value=#{rm.id} data-limit=#{rm.identification_quantity}>#{rm.name}</option>"
 		end
 		return text.html_safe
 	end

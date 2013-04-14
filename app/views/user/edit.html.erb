@@ -1,0 +1,96 @@
+<section id="devise_edit_user_title">
+  <hgroup id="edit_user_title">
+    <h1>Modificar valores de <%= @user.full_name %></h1>
+  </hgroup>
+</section>
+
+<section id="new_user_form">
+  <%= form_tag update_user_path, :remote => true do %>
+    
+  	<%= hidden_field_tag "user_id", @user.id %>
+
+    <div class="new_user_form_field">
+      <%= label_tag "user_name", "Nombre:" %>
+      <%= text_field_tag "user_name", @user.name %>
+    </div>
+
+     <div class="new_user_form_field">
+      <%= label_tag "user_last_name", "Apellidos:" %>
+      <%= text_field_tag "user_last_name", @user.last_name %>
+    </div>
+
+     <div class="new_user_form_field">
+      <%= label_tag "user_username", "Usuario:" %>
+      <%= text_field_tag "user_username", @user.username, :readonly => true %>
+    </div>
+
+    <div class="new_user_form_field">
+      <%= label "user_email", "Correo: " %>
+      <%= email_field "user_email", @user.email %>
+    </div>
+
+    <% if current_user.role? "SuperAdmin" %>
+      <div class="new_user_form_field">
+        <%= label_tag "user_salary", "Salario:" %>
+        <%= text_field_tag "user_salary", @user.salary %>
+      </div>
+    <% end %>
+
+    <div class="new_user_form_field">
+      <%= label_tag "user_small_code", "Código personal:" %>
+      <%= text_field_tag "user_small_code", @user.small_code %>
+    </div>
+
+    <div class="new_user_form_field">
+      <%= label_tag "user_dni", "DNI: " %>
+      <%= number_field_tag "user_dni", @user.dni %>
+    </div>
+
+     <div class="new_user_form_field">
+      <%= label_tag "user_address", "Dirección:" %>
+      <%= text_field_tag "user_address", @user.address %>
+    </div>
+
+     <div class="new_user_form_field">
+      <%= label_tag "user_relative_phone", "Teléfono de contacto:" %>
+      <%= text_field_tag "user_relative_phone", @user.relative_phone %>
+    </div>
+
+    <h2>ROLES</h2>
+    <div class="new_user_form_field roles">
+      <% for role in Role.all %>
+        <div>
+          <% if @user.role? role.name %>
+            <%= check_box_tag "user[role_ids][]", role.id, checked = true %>
+          <% else %>
+            <%= check_box_tag "user[role_ids][]", role.id, checked = false %>
+          <% end %>
+          <%= label_tag nil, role.name %><br>
+        </div>
+      <% end %>
+    </div>
+
+    <% unless current_user.role? "SuperAdmin" %>
+      <div class="new_user_form_field">
+        <%= f.label :password, "Contraseña: " %>
+        <%= f.password_field :password, :autocomplete => "off" %>
+        <h3>Dejar en blanco si no quieres cambiarlo</h3>
+      </div>
+      
+      <div class="new_user_form_field">
+        <%= f.label :password_confirmation, "Confirmación de contraseña:" %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+
+      <div class="new_user_form_field">
+        <%= f.label :current_password, "Contraseña actual: " %>
+        <%= f.password_field :current_password %>
+        <h3>Escribe tu contraseña actual para proceder</h3>
+      </div>
+    <% end %>
+
+    <div id="submit_new_user_form">
+      <%= submit_tag "Registrar", :id => "submit_new_user" %>
+    </div>
+  <% end %>
+</section>

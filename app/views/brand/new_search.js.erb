@@ -1,0 +1,2 @@
+<% toRender = render("new_search_table", :total => @total, :response => @response, :names => @names) %>
+$("#response_to_avoid_error").html("<%= escape_javascript toRender %>")

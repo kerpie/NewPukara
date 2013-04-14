@@ -41,6 +41,7 @@ class ClientsController < ApplicationController
   # POST /clients.json
   def create
     @client = Client.new(params[:client])
+    @client.client_type_id = params[:client_type_id]
 
     respond_to do |format|
       if @client.save
@@ -57,6 +58,7 @@ class ClientsController < ApplicationController
   # PUT /clients/1.json
   def update
     @client = Client.find(params[:id])
+    @client.client_type_id = params[:client_type_id]
 
     respond_to do |format|
       if @client.update_attributes(params[:client])

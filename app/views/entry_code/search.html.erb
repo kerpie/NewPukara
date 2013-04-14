@@ -1,6 +1,6 @@
 <section class="entry_code_title_part">
   <hgroup class="entry_code_title">
-    <h1>códigos de ingreso</h1>
+    <h1>Series de ingreso</h1>
   </hgroup>
 </section>
 
@@ -34,11 +34,11 @@
 		<p>Se encontró el documento indicado</p>
 		<%= form_tag code_entry_register_path do %>
 			<%= hidden_field_tag "doc_register_id", :value => 0 %>
-			<%= submit_tag "Registrar Codigos" %>
+			<%= submit_tag "Registrar Series" %>
 		<% end %>
 		<%= form_tag code_entry_show_path do %>
 			<%= hidden_field_tag "folder_id", :value => 0 %>
-			<%= submit_tag "Ver Codigos" %>
+			<%= submit_tag "Ver Series" %>
 		<% end %>
 	</div>
 </section>
