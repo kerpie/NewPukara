@@ -45,6 +45,14 @@
 		#response_to_avoid_error{
 			width: 800px;
 			margin: 10px auto;
+			h2{
+				width: 700px;
+				text-align: center;
+				padding: 10px;
+				background:red;
+				color: white;
+				text-transform: uppercase;
+			}
 			table{
 				width: 700px;
 				margin: 0px auto;

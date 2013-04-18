@@ -135,11 +135,46 @@
 								text-align: center;
 							}
 						}
-						#q_address{
+						#q_address, #q_contact_to{
 							height: 20px;
 						}
 						#no_padding{
 							padding: 0px;
+						}
+					}
+				}
+			}
+		}
+		#money_part{
+			margin: 20px auto;
+			width: 900px;
+			table{
+				width: 100%;
+				thead{
+					tr{
+						text-align: center;
+						th{
+							padding: 10px;
+							background: #373737;
+							color: white;
+							font-weight: bold;
+							text-transform: uppercase;
+							width: 100%;
+						}
+					}
+				}
+				tbody{
+					tr{
+						text-align: center;
+						td{
+							padding: 10px;
+							background: white;
+							select{
+								width: 80%;
+								padding: 10px;
+								text-align: center;
+								font-size: 18px;
+							}
 						}
 					}
 				}
@@ -581,6 +616,9 @@
 							background: rgba(255,255,255,0.5);
 						}
 					}
+					.guess_who_is_selected{
+						background: rgba(255,255,255,0.5);
+					}
 				}
 			}
 			div{
@@ -804,4 +842,98 @@
 
 #new_client_from_quotation{
 	display: block;
+}
+
+#ask_for_product{
+	width: 1000px;
+	top: 50%;
+	left: 50%;
+	margin: -250px -500px;
+	#afp_up{
+		width: 1000px;
+		text-align: center;
+		overflow: hidden;
+		h1{
+			width: 910px;
+			padding: 20px;
+			float: left;
+			font-size: 18px;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		h2{
+			color: white;
+			float: right;
+			text-align: center;
+			a{
+				text-decoration: none;
+				padding: 20px;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				&:hover{
+					background: red;
+				}
+			}
+		}
+	}
+	#afp_down{
+		width: 1000px;
+		h2{
+			width: 900px;
+			background: red;
+			padding: 10px;
+			text-align: center;
+			color: white;
+			font-size: 18px;
+			margin: 0 auto;
+		}
+		form{
+			width: 900px;
+			display: block;
+			margin: 10px auto;
+			table{
+				width: 900px;
+				thead{
+					tr{
+						th{
+							padding: 10px;
+							text-align: center;
+							color: white;
+							background: #272727;
+							&:last-child{
+								width: 80%;
+							}
+						}
+					}
+				}
+				tbody{
+					tr{
+						td{
+							text-align: center;
+							padding: 10px;
+							input[type=text]{
+								width: 90%;
+							}
+						}
+						&:last-child{
+							td{
+								input[type=submit]{
+									border: none;
+									width: 500px;
+									margin: 10px;
+									background: white;
+									padding: 10px;
+									&:hover{
+										background: #272727;
+										color: white;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

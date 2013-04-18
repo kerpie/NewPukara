@@ -17,6 +17,7 @@
             <tr>
               <th>Tipo de Documento</th>
               <th>Numeracion</th>
+              <th>Fecha</th>
               <th>Opciones</th>
             </tr>
             <% docs.each do |doc| %>
@@ -24,6 +25,7 @@
                 <tr>
                   <td><%= d.document_type.name %></td>
                   <td><%= d.numeration %></td>
+                  <td><%= d.entry_folder.date %></td>
                   <td><%= link_to "Mostrar", doc %></td>
                 </tr>
               <% end %>

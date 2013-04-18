@@ -1,26 +1,24 @@
-<% unless @stock.empty? %>
+<% if @stock.empty? %>
+	alert("No hay stock disponible para ese producto en ningun local!");
+<% else %>
 	<% toRender = "" %>
 	<% @stock.each do |data| %>
 		<% toRender = toRender + render("product_by_store", :stock => data) %>
 	<% end %>
-<% else %>
-	alert("No hay stock disponible para ese producto en ningun local!");
+	<% anotherRender = "" %>
+	<% @price.each do |price| %>
+		<% anotherRender = anotherRender + render("product_price", :sell_price => price) %>
+	<% end %>
+	$("#this_is_the_product_id_you_shouldnt_be_seeing").val("<%= @product.id %>");
+	$("#price_negotiation").show();
+	$("#price_negotiation").css("margin", "-270px -300px");
+	$("#q_product_search").hide();
+	$("#downer").hide();
+	$("#product_price").attr("readonly", true);
+	$("#the_image_goes_here").find("img").attr("src", "<%= @product.image.url(:medium) %>");
+	$("#the_image_goes_here #up").find("h2").html("<%= @product.model.name %>");
+	$("#qp_full_name").html("<%= @product.full_name %>");
+	$("#the_image_goes_here #down").find("table tbody").html("<%= escape_javascript toRender.html_safe %>");
+	$("#the_image_goes_here #downer").find("table tbody").html("<%= escape_javascript anotherRender.html_safe %>");
+	$("#product_quantity").focus();
 <% end %>
-
-<% anotherRender = "" %>
-<% @price.each do |price| %>
-	<% anotherRender = anotherRender + render("product_price", :sell_price => price) %>
-<% end %>
-
-$("#this_is_the_product_id_you_shouldnt_be_seeing").val("<%= @product.id %>");
-$("#price_negotiation").show();
-$("#price_negotiation").css("margin", "-270px -300px");
-$("#q_product_search").hide();
-$("#downer").hide();
-$("#product_price").attr("readonly", true);
-$("#the_image_goes_here").find("img").attr("src", "<%= @product.image.url(:medium) %>");
-$("#the_image_goes_here #up").find("h2").html("<%= @product.model.name %>");
-$("#qp_full_name").html("<%= @product.full_name %>");
-$("#the_image_goes_here #down").find("table tbody").html("<%= escape_javascript toRender.html_safe %>");
-$("#the_image_goes_here #downer").find("table tbody").html("<%= escape_javascript anotherRender.html_safe %>");
-$("#product_quantity").focus();

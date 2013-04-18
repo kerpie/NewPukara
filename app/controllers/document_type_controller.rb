@@ -9,7 +9,7 @@ class DocumentTypeController < ApplicationController
 
   def create
     @new_dt = DocumentType.new
-    @new_dt.name = params[:name]
+    @new_dt.name = params[:name].upcase
     authorize! :create, DocumentType.new
     respond_to do |f|
       if @new_dt.save

@@ -15,9 +15,7 @@
         </tr>
       <% end %>
     </table>
-    <% if can? :create, Supplier.new %>
-        <div id="suppliers_new_options">
-            <%= link_to 'Registrar nuevo proveedor', new_supplier_path %>
-        </div>
-    <% end %>
+    <div id="suppliers_new_options">
+        <%= link_to 'Registrar nuevo proveedor', new_supplier_path %>
+    </div>
 </section>

@@ -3,10 +3,10 @@
 		<th>Tipo de Precio</th>
 		<th>Valor</th>
 	</tr>
-<% data.each do |sp| %>
-	<tr>
-		<td><%= sp.price_type.name %></td>
-		<td><%= sp.sell_price %></td>
-	</tr>
-<% end %>
+	<% data.each do |sp| %>
+		<tr>
+			<td><%= sp.price_type.name %></td>
+			<td><%= sp.sell_price.to_s + " " + sp.money_type.name %></td>
+		</tr>
+	<% end %>
 </table>

@@ -31,7 +31,7 @@
             <th id="identification_type_part"> DNI/RUC </th>
           </tr>
           <tr>
-            <td><%= current_user.full_name %></td>
+            <td id="q_contact_to"></td>
             <td id="q_identification_number"></td>
           </tr>
           <tr>
@@ -43,6 +43,23 @@
         </tbody>
       </table>
     </section>
+
+    <!-- 
+      <section id="money_part">
+        <table>
+          <thead>
+            <tr>
+              <th>MONEDA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= f.collection_select :money_type_id, MoneyType.all, :id, :name %></td>
+            </tr>
+          </tbody>
+        </table>
+      </section> 
+    -->
 
     <section id="q_detail_part">
       <table>

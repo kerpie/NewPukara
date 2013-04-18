@@ -87,7 +87,7 @@ class EntryFoldersController < ApplicationController
   end
 
   def search_supplier
-    name = params[:name]
+    name = params[:name].upcase
     @suppliers = Supplier.find(:all, :conditions => ["name like ?", "%" + name + "%"])
     respond_to do |format|
       format.js
@@ -95,12 +95,19 @@ class EntryFoldersController < ApplicationController
   end
 
   def search_product
-    model_name = params[:model]
-    model = Model.where(:name => model_name).all
+    text = params[:search_param].upcase
     @products = Hash.new
+
+    Product.all.each do |product|
+      unless product.full_name.match(text).nil?
+        @products[product.model] = product
+      end
+    end
+=begin
     model.each do |m|
       @products[m] = Product.where(:model_id => m).first
     end
+=end
     respond_to do |format|
       format.js
     end

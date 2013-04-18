@@ -1,125 +1,155 @@
-#stores_index{
-	width: 900px;
-	margin: 0 auto;
-	border: 1px solid black;
-	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 0px;
-		width: 300px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-		padding: 3px;
+#stores_title_part{
+	#stores_title{
+		width: 1000px;
+		overflow: hidden;
+		h1{
+			width: 400px;
+			font-size: 30px;
+			color: white;
+			background: #272727;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 20px;
+			margin: 0px 0px 10px 0px;
+			float: left;
+		}
+		#notice{
+			float: right;
+		}
 	}
+}
+
+#stores_index{
+	width: 700px;
+	margin: 0 auto;
+	padding: 10px;
 	table{
 		margin: 10px auto;
 		width: 500px;
 		text-align: center;
 		tbody{
 			tr{
-				th,td{
-					padding: 3px;
-					border: 1px solid black;
+				th{
+					padding: 10px;
+					color: white;
+					background: #272727;
+					border: 1px solid #272727;
+					font-family: 'Dosis', sans-serif;
+					font-size: 15px;
+					text-transform: uppercase;
+				}
+				td{
+					border: 1px solid #272727;
+					a{
+						text-decoration: none;
+						display: block;
+						padding: 10px;
+						color: #272727;
+						&:hover{
+							background: #00b0e3;	
+							color: white;
+						}
+					}
 				}
 			}
 		}
 	}
 	#stores_new_options{
-		width: 300px;
+		width: 500px;
 		margin: 10px auto 0px;
 		text-align: center;
-		padding: 10px;
+		padding: 20px;
+		a{
+			text-align: center;
+			background: #272727;
+			padding: 10px;
+			font-size: 14px;
+			text-transform: uppercase;
+			color: white;
+			text-decoration: none;
+			font-family: 'Dosis', sans-serif;
+			&:hover{
+				background: #00b0e3;
+			}
+		}
 	}
 }
+
 
 #stores_new, #stores_edit{
-	width: 900px;
+	width: 700px;
 	margin: 0 auto;
-	border: 1px solid black;
 	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 0px;
-		width: 300px;
+	background: #ccc;
+	h2{
+		width: 450px;
+		margin: 0 auto;
 		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
+		background: red;
+		color: white;
+		padding: 10px;
+		font-size: 18px;
 	}
 	form{
-		width: 500px;
+		width: 600px;
 		margin: 0 auto;
 		padding: 10px;
-		.field{
-			display: block;
+		.store_field{
 			margin: 5px auto;
-			width: 209px;
+			width: 500px;
 			padding: 3px;
-		}
-		.actions{
-			width: 300px;
+			overflow: hidden;
+			label{
+				float: left;
+				text-align: right;
+				padding: 10px;
+				background: #272727;
+				color: white;
+				width: 130px;
+			}
+			input{
+				float: right;
+				padding: 10px;
+				width: 320px;
+			}
+		}		
+		.store_action{
+			width: 400px;
 			margin: 0 auto;
 			text-align: center;
-			input{
-				display: inline-block;
+			input[type=submit]{
+				width: 200px;
+				text-align: center;
+				margin: 10px auto;
+				background: #00b0e3;
+				padding: 10px;
+				border: none;
+				color: white;
+				&:hover{
+					box-shadow: 0px 0px 4px #00b0e3;
+				}
 			}
 		}
 	}
-	#stores_new_options{
-		width: 300px;
-		padding: 3px;
-		margin: 6px auto 3px;
-		text-align: center;
-	}
-	#stores_edit_options{
-		width: 300px;
-		margin: 15px auto 0px;
-		text-align: center;
+	#stores_new_options, #stores_edit_options{
+		width: 700px;
+		margin: 0 auto;
 		ul{
-			display: inline-block;
+			width: 700px;
 			text-align: center;
-			overflow: hidden;
+			margin: 10px auto;
 			li{
 				display: inline-block;
-				padding: 5px;
-				float: left;
-			}
-		}	
-	}
-}
-
-#stores_edit{
-  	width: 900px;
-	margin: 0 auto;
-	border: 1px solid black;
-	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 0px;
-		width: 300px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-	form{
-		width: 500px;
-		margin: 0 auto;
-		padding: 10px;
-		.field{
-			display: block;
-			margin: 5px auto;
-			width: 209px;
-			padding: 3px;
-		}
-		.actions{
-			width: 300px;
-			margin: 0 auto;
-			text-align: center;
-			input{
-				display: inline-block;
+				a{
+					width: 150px;
+					padding: 10px;
+					background: #272727;
+					text-decoration: none;
+					color: white;
+					&:hover{
+						background: #00b0e3;
+					}
+				}
 			}
 		}
 	}
@@ -128,37 +158,105 @@
 #stores_show{
 	width: 900px;
 	margin: 0 auto;
-	border: 1px solid black;
-	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 15px;
-		width: 300px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-	p{
-		width: 250px;
-		display: block;
-		margin: 3px auto;
-		b{
-			font-weight: bold;
+	.store_show_part{
+		width: 500px;
+		overflow: hidden;
+		margin: 0 auto;
+		span{
+			width: 150px;
+			background: #272727;
+			color: white;
+			padding: 10px;
+			text-align: right;
+			float: left;
+			margin: 10px;
+		}
+		p{
+			text-align: left;
+			padding: 10px;
+			margin: 10px 0px;
 		}
 	}
-	#stores_show_options{
-		width: 300px;
-		margin: 15px auto 0px;
-		text-align: center;
-		ul{
-			display: inline-block;
+	#products_in_this_store{
+		width: 800px;
+		margin: 10px auto;
+		padding: 10px;
+		h1{
+			margin: 10px auto;
+			width: 600px;
+			padding: 10px;
 			text-align: center;
-			overflow: hidden;
+			font-size: 18px;
+			text-transform: uppercase;
+			background: #272727;
+			color: white;
+		}
+		table{
+			width: 800px;
+			margin: 0 auto;
+			thead{
+				tr{
+					td{
+						background: #272727;
+						color: white;
+						text-align: center;
+						text-transform: uppercase;
+						color: white;
+						padding: 10px;
+					}
+				}
+			}
+			tbody{
+				tr{
+					td{
+						&:first-child{
+							text-align: left;
+							a{
+								padding: 10px;
+								display: block;
+								text-decoration: none;
+								color: black;
+								&:hover{
+									background: #00b0e3;
+									color: white;
+								}
+							}
+						}
+						&:last-child{
+							text-align: center;
+						}
+					}
+					&:hover{
+						background: #aaa;
+						color: white;
+					}
+				}
+			}
+		}
+		&:hover{
+			background: #ccc;
+		}
+	}
+	
+	#stores_show_options{
+		width: 700px;
+		margin: 20px auto;
+		ul{
+			width: 700px;
+			text-align: center;
+			margin: 10px auto;
 			li{
 				display: inline-block;
-				padding: 5px;
-				float: left;
+				a{
+					width: 150px;
+					padding: 10px;
+					background: #272727;
+					text-decoration: none;
+					color: white;
+					&:hover{
+						background: #00b0e3;
+					}
+				}
 			}
 		}
 	}

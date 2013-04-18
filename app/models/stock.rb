@@ -13,7 +13,6 @@ class Stock < ActiveRecord::Base
 
   def self.prepare_to_update(folder)
   	user = folder.user
-
   	folder.entry_document_details.each do |edd|
   		stock = (Stock.check_stock(edd.product.id, user.store.id)).first
   		stock.quantity = stock.quantity - (edd.quantity * edd.unit.value)

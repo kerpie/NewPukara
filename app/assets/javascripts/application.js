@@ -242,6 +242,7 @@ function useThisSupplier(link){
 
 function showSupplierSearch(){
 	$("#supplier_search").show();
+	$("#name").focus();
 }
 
 //OutputFolder

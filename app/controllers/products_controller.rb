@@ -3,12 +3,30 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    #@products = Product.all
     #@products = Product.first(30)
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
+    end
+  end
+
+  def new_search
+
+    text = params[:search_param].upcase
+    @products = []
+
+    Product.all.each do |product|
+      unless product.full_name.match(text).nil?
+        @products << product
+      end
+    end
+
+    @total = @products.count
+
+    respond_to do |format|
+      format.js
     end
   end
 
@@ -145,6 +163,7 @@ class ProductsController < ApplicationController
         sp.product_id = params[:prod_id]
         sp.price_type_id = pt.id
       end     
+      sp.money_type_id = params["select_#{pt.name}"]
       sp.sell_price = params[pt.name]
       sp.save
     end
@@ -180,6 +199,16 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       format.js
+    end
+  end
+
+  def stock_for_product
+
+    @product = Product.find(params[:id])
+    @stock = Stock.where(product_id: @product).all
+
+    respond_to do |format|
+      format.html
     end
   end
 end

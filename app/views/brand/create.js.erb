@@ -4,4 +4,5 @@
 <% hash[@new_brand] = second_hash %>
 <% toRender = render "brand_part", :brand => @create, :hash => hash %>
 
-$("#brs").append("<%= escape_javascript(toRender) %>");
+//$("#brs").append("<%= escape_javascript(toRender) %>");
+alert("La marca <%= @create.name %> fue creada con exito");

@@ -27,6 +27,7 @@ jQuery ->
 			$("#q_address").html($("#q_2 table tbody tr.shown").first().attr("data-address"))
 			$("#identification_type_part").html($("#q_2 table tbody tr.shown").first().find("td:first-child").next().text())
 			$("#q_identification_number").html($("#q_2 table tbody tr.shown").first().find("td:last-child").text())
+			$("#q_contact_to").html($("#q_2 table tbody tr.shown").first().attr("data-contact_person"))
 			passClientData()
 		if event.which == 27
 			$(this).parents(".q_box").hide()
@@ -52,6 +53,7 @@ jQuery ->
 		$("#q_address").html($(this).attr("data-address"))
 		$("#identification_type_part").html($(this).find("td:first-child").next().text())
 		$("#q_identification_number").html($(this).find("td:last-child").text())
+		$("#q_contact_to").html($(this).attr("data-contact_person"))
 		passClientData()
 
 passClientData = () ->
@@ -69,27 +71,23 @@ jQuery ->
 			id_row = $(this).parents(".qd").attr("id")
 
 jQuery ->
-	$("#qp_search_input").click ->
-		if $(this).val() == "MAQUINA SIRUBA REMALLADORA"
-			$(this).val("")
-
-jQuery ->
-	$("#qp_search_input").blur ->
-		if $(this).val().length == 0
-			$(this).val("MAQUINA SIRUBA REMALLADORA")
-
-jQuery ->
 	$("#qp_search_input").keyup (event)->
 		if event.which == 27
 			$(this).parents(".q_box").hide()
 
 jQuery ->
 	$("#product_quantity").keyup (event)->
-		$(this)
 		if event.which == 27
 			$(this).parents(".q_box").hide()
 		if event.which == 13
 			if(unit_changed && unit_id.length>0)
+				quantity = $(this).val()
+				total_stock = totalStock()
+				if quantity > parseInt($(".my_store").text())
+					unit = $("#product_quantity").next("select").find("option:selected").attr("data-unit_value")
+					$("#afp_down h2").text("Estas pidiendo "+quantity+" unidades y solo hay " + parseInt($(".my_store").text()) + " unidades en tu almacen")
+					$("#ask_for_product").show()
+					$(this).parents(".q_box").hide()
 				$("#downer").show()
 				$("#product_price").attr("readonly", true)
 				$("#product_price").focus()
@@ -98,6 +96,9 @@ jQuery ->
 
 jQuery ->
 	$("#downer table tbody tr").live "click", ->
+		$(this).parent().find('tr').each ->
+			$(this).removeClass("guess_who_is_selected")
+		$(this).addClass("guess_who_is_selected")
 		$("#downer table tbody tr").each ->
 			$(this).removeClass("here")
 		$(this).addClass("here")
@@ -143,13 +144,13 @@ jQuery ->
 jQuery ->
 	$(".to_pay").click ->
 		$("#pay_quotation_form").show()
-		$("#money_expected_").val($("#total_to_pay").text())
-		$("#money_expected_").attr("readonly", "true")
-		$("#money_returned_").attr("readonly", "true")
+		$("#money_expected").val($("#total_to_pay").text())
+		$("#money_expected").attr("readonly", "true")
+		$("#money_returned").attr("readonly", "true")
 
 jQuery ->
-	$("#money_received_").keyup ->
-		$("#money_returned_").val(parseFloat($(this).val()) - parseFloat($("#money_expected_").val()))
+	$("#money_received").keyup ->
+		$("#money_returned").val(parseFloat($(this).val()) - parseFloat($("#money_expected").val()))
 
 jQuery ->
 	$(".change_user_item").click ->
@@ -162,3 +163,14 @@ jQuery ->
 	$("#quotation_title div h2").click ->
 		$("#authenticate_user").show()
 		$("#small_code").focus()
+
+totalStock = ->
+	value = 0
+	$("#down table tbody tr").each ->
+		value = value + parseInt($(this).find("td:last-child").text())
+	value
+
+jQuery ->
+	$(".small_part input[type=checkbox]").live "click", ->
+		$(this).val(1)
+		$(this).parents("tr").hide()

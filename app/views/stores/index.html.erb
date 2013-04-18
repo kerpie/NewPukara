@@ -1,6 +1,10 @@
-<section id="stores_index">
-  <h1>Locales Registrados</h1>
+<section id="stores_title_part">
+  <hgroup id="stores_title">
+    <h1>Locales</h1>
+  </hgroup>
+</section>
 
+<section id="stores_index">
   <table>
     <tr>
       <th>Nombre</th>
@@ -14,9 +18,7 @@
       </tr>
     <% end %>
   </table>
-  <% if can? :create, Store.new %>
-    <div id="stores_new_options">
-      <%= link_to 'Crear nuevo local', new_store_path %>
-    </div>
-  <% end %>
+  <div id="stores_new_options">
+    <%= link_to 'Crear nuevo local', new_store_path %>
+  </div>
 </section>

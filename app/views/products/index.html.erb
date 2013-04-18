@@ -1,54 +1,23 @@
 <section id="products_index">
   <hgroup id="products_title">
     <h1>Productos</h1>
-    <div>
+    <section>
+      <div id="products_new_options">
+        <%= link_to 'Nuevo Producto', new_product_path %>
+      </div>
+    </section>
+    <!-- <div>
       <%= text_field_tag "search_product_in_index", "Buscar por modelo" %>
-    </div>
+    </div> -->
   </hgroup>
-  <section id="products">
-    <ul>
-      <% @products.each do |product| %>
-        <% unless product.nil? %>
-          <li>
-            <%= link_to product, :class => "clickable_product" do %>
-              <div class="product_preview">
-                <div class="image_preview">
-                  <%= image_tag image_url(product, :medium), :width => 200, :height => 170 %>
-                </div>
-                <div class="explanation">
-                  <table>
-                    <tr>
-                      <td>Marca: </td>
-                      <td><%= product.model.brand.name %></td>
-                    </tr>
-                    <tr>
-                      <td>Tipo: </td>
-                      <td><%= product.product_type.name %></td>
-                    </tr>
-                    <tr>
-                      <td>Clase: </td>
-                      <td><%= product.model.model_type.parent_model.name %></td>
-                    </tr>
-                    <tr>
-                      <td>Sub clase:</td>
-                      <td><%= product.model.model_type.name %></td>
-                    </tr>
-                    <tr>
-                      <td>Modelo: </td>
-                      <td><%= product.model.name %></td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            <% end %>
-          </li>
-        <% end %>
+  <section id="products_new_main">
+    <section id="products_new_search">
+      <%= form_tag new_product_search_path, :remote => true do %>
+        <%= text_field_tag :search_param %>
+        <%= submit_tag "consultar" %>
       <% end %>
-    </ul>
-  </section>
-  <section>
-    <div id="products_new_options">
-      <%= link_to 'Nuevo Producto', new_product_path %>
-    </div>
+    </section>
+    <section id="new_product_search_result">
+    </section>
   </section>
 </section>

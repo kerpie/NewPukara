@@ -56,7 +56,7 @@
 				</thead>
 				<tbody>
 					<% @clients.each do |client| %>
-						<tr <%= "id=" + client.id.to_s %> data-address="<%=  client.address %>">
+						<tr <%= "id=" + client.id.to_s %> data-address="<%=  client.address %>" data-contact_person="<%= client.contact_person %>">
 							<td><%= client.name %></td>
 							<td><%= client.client_type.identification_type %></td>
 							<td><%= client.identification_number %></td>
@@ -73,7 +73,7 @@
 		<div>
 			<%= form_tag quotation_search_product_path, remote: true do %>
 				<%= label_tag "qp_search_input", "Buscar Producto:" %>
-				<%= text_field_tag "qp_search_input", "MAQUINA SIRUBA REMALLADORA" %>
+				<%= text_field_tag "qp_search_input" %>
 			<% end %>
 		</div>
 		<h2><%= link_to_function "X", "closeFloatingBox(this)" %></h2>
@@ -125,12 +125,10 @@
 					<tr>
 						<th>Tipo de Venta</th>
 						<th>Precio</th>
+						<th>Moneda</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>data</td>
-					</tr>
 				</tbody>
 			</table>
 			<div>
@@ -142,23 +140,34 @@
 	</div>
 </section>
 
-<section id="new_client_from_quotation" class="q_box">
-	<div id="new_client_from_quotation_title">
-		<h1>Registro de nuevo cliente</h1>
+<section id="ask_for_product" class="q_box">
+	<div id="afp_up">
+		<h1>Enviar Mensaje a otras tiendas</h1>
 		<h2><%= link_to_function "X", "closeFloatingBox(this)"%></h2>
 	</div>
-	<div id="new_client_from_quotation_registration_form">
-		<%= form_tag quotation_new_client_path, :remote => true do %>
-			<div class="new_client_from_quotation_form_div">
-				<%= label_tag "name", "Nombre: " %><br/>			
-				<%= text_field_tag "name" %>
-			</div>
-			<div class="new_client_from_quotation_form_div">
-				<%= label_tag "" %>
-			</div>
-			<div>
-				<%= submit_tag "Guardar" %>
-			</div>
+	<div id="afp_down">
+		<h2></h2>
+		<%= form_tag quotation_receive_message_path, :remote => true do %>	
+			<% hidden_field_tag "user_id", current_user.id %>
+			<table>
+				<thead>
+					<tr>
+						<th>Local</th>
+						<th>Mensaje</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% Store.all.each do |store| %>
+						<tr>
+							<td><%= store.name %></td>
+							<td><%= text_field_tag "message_to_store_"+store.name.gsub(" ", "_") %></td>
+						</tr>
+					<% end -%>
+					<tr>
+						<td colspan="2"><%= submit_tag "ENVIAR MENSAJE" %></td>
+					</tr>
+				</tbody>
+			</table>
 		<% end %>
 	</div>
 </section>

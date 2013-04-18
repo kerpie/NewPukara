@@ -1,19 +1,44 @@
+<section id="suppliers_title_part">
+  <hgroup id="suppliers_title">
+    <h1><%= @store.name %></h1>
+    <% if notice %>
+      <p id="notice"><%= notice %></p>
+    <% end %>
+  </hgroup>
+</section>
+
 <section id="stores_show">
-	<% if notice %>
-		<p id="notice"><%= notice %></p>
-	<% end %>
 
-	<h1><%= @store.name %></h1>
+	<div class="store_show_part">
+		<span>Nombre: </span>
+		<p><%= @store.name %></p>
+	</div>
 
-	<p>
-	  <b>Nombre:</b>
-	  <%= @store.name %>
-	</p>
+	<div class="store_show_part">
+		<span>Direccion: </span>	
+		<p><%= @store.address %></p>
+	</div>
 
-	<p>
-	  <b>Dirección:</b>
-	  <%= @store.address %>
-	</p>
+	<section id="products_in_this_store">
+		<h1>Productos en este local</h1>
+		<table>
+			<thead>
+				<tr>
+					<td>Producto</td>
+					<td>Cantidad</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @store.stock.all.each do |st| %>
+					<tr>
+						<td><%= link_to st.product.full_name, st.product %></td>
+						<td><%= st.quantity %></td>
+					</tr>
+				<% end %>
+				<tr></tr>
+			</tbody>
+		</table>
+	</section>
 
 	<div id="stores_show_options">
 		<ul>

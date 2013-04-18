@@ -1,2 +1,6 @@
-<% toRender = render("new_search_table", :total => @total, :response => @response, :names => @names) %>
-$("#response_to_avoid_error").html("<%= escape_javascript toRender %>")
+<% if @total == 0 %>
+	$("#response_to_avoid_error").html("<h2> No existen productos registrados para esos datos, por favor intenta de nuevo </h2>")
+<% else %>
+	<% toRender = render("new_search_table", :total => @total, :response => @response, :names => @names) %>
+	$("#response_to_avoid_error").html("<%= escape_javascript toRender %>")
+<% end %>

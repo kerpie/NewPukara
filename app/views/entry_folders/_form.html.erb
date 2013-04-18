@@ -19,7 +19,7 @@
       <span id="sup_id"><%= @entry_folder.supplier.nil? ? " Elja un proveedor " : @entry_folder.supplier.name %></span>
       <%= link_to_function "Cambiar proveedor", "showSupplierSearch()", :id => "change_supplier_link" %>
     </div>
-    <div class="et_supplier">
+    <div class="et_supplier closed_eye">
       <%= f.label :folder_state_id, "Estado del Documento:" %>
       <%= f.collection_select :folder_state_id, FolderState.all, :id, :name %>
     </div>
@@ -27,9 +27,6 @@
       <%= f.label :date, "Fecha: " %>
       <%= f.date_select :date %>
     </div>    
-    <div class="et_supplier">
-      <p>Registrado por: <%= current_user.username %></p>
-    </div>
   </div>
   
   <div id="entry_folder_documents_part">

@@ -107,8 +107,15 @@ class QuotationsController < ApplicationController
 
   def search_product
 
-    temp = params[:qp_search_input].split(" ")
+    text = params[:qp_search_input].upcase
     @response = []
+
+    Product.all.each do |product|
+      unless product.full_name.match(text).nil?
+        @response << product
+      end
+    end
+=begin
     if temp.length == 3
       pt = temp[0].upcase
       b = temp[1].upcase
@@ -149,7 +156,7 @@ class QuotationsController < ApplicationController
         end
       end
     end
-
+=end
 
     respond_to do |format|
       format.js
@@ -176,9 +183,9 @@ class QuotationsController < ApplicationController
 
     q = Quotation.find(params[:q_id])
 
-    q.money_expected = params[:mexpected].to_f
-    q.money_received = params[:mreceived].to_f
-    q.money_returned = params[:mreturned].to_f
+    q.money_expected = params[:money_expected].to_f
+    q.money_received = params[:money_received].to_f
+    q.money_returned = params[:money_returned].to_f
     q.payment_status = true
 
     documents = []
@@ -252,6 +259,26 @@ class QuotationsController < ApplicationController
     client = Client.new
     client.save
     
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def receive_message
+
+    Store.all.each do |store|
+      p = "message_to_store_" + store.name.gsub(" ","_")
+      message_received = params[p]
+      unless message_received.empty?
+        notification = Notification.new
+        notification.message = message_received
+        notification.user_id = params[:user_id]
+        notification.store_id = store.id 
+        notification.save 
+      end
+    end
+    
+
     respond_to do |format|
       format.js
     end

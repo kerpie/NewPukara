@@ -1,0 +1,9 @@
+<% if @total == 0 %>
+	$("#new_product_search_result").html("<h2>No existen productos con esas caracteristicas, por favor intenta de nuevo</h2>")	
+<% else %>
+	<% toRender = "" %>
+	<% @total.times do |i| %>
+		<% toRender = toRender + render("new_search_response", :product => @products[i]) %>
+	<% end %>
+	$("#new_product_search_result").html("<ul><%= escape_javascript toRender.html_safe %></ul>")
+<% end %>

@@ -1,25 +1,14 @@
+<h2>Los campos sombreados son obligatorios</h2>
 <%= form_for(@store) do |f| %>
-  <% if @store.errors.any? %>
-    <div id="error_explanation">
-      <h2>Por favor revise los siguientes puntos y vuelva a intentarlo:</h2>
-
-      <ul>
-      <% @store.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name, "Nombre" %><br />
+  <div class="store_field required">
+    <%= f.label :name, "Nombre" %>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :address, "Direccion" %><br />
+  <div class="store_field required">
+    <%= f.label :address, "Direccion" %>
     <%= f.text_field :address %>
   </div>
-  <div class="actions">
+  <div class="store_action">
     <%= f.submit "Crear Local" %>
   </div>
 <% end %>

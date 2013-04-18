@@ -21,12 +21,13 @@
 		<table>
 			<tr>
 				<th>Tipo de Precio</th>
-				<th>Valor</th>
+				<th colspan="2">Valor</th>
 			</tr>
 			<% PriceType.all.each do |pt| %>
 				<tr>
 					<td><%= pt.name %></td>
 					<td><%= text_field_tag pt.name %></td>
+					<td><%= select_tag "select_#{pt.name}", options_from_collection_for_select(MoneyType.all, :id, :name) %></td>
 				</tr>
 			<% end %>
 		</table>

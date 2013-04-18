@@ -3,6 +3,7 @@ Final::Application.routes.draw do
   root :to => 'page#index'
 
   #Quotation 
+  match "quotaions/receive_message" => "quotations#receive_message", :as => :quotation_receive_message
   match "quotaions/new_client" => "quotations#new_client", :as => :quotation_new_client
   match "quotations/search_index" => "quotations#search_index", :as => :quotation_search_index
   match "quotations/search" => "quotations#search", :as => :quotation_search
@@ -94,9 +95,11 @@ Final::Application.routes.draw do
   match "brand/create_model_one" => "brand#create_model_one", :as => :model_create_one
   
   #Product
+  match "products/new_search" => "products#new_search", :as => :new_product_search
   match "products/return_sell_prices" => "products#return_sell_prices", :as => :product_return_sell_prices
   match "products/search_for_stock" => "products#search_for_stock", :as => :product_search_for_stock
   match "products/:id/sell_price" => "products#sell_price", :as => :product_sell_price
+  match "products/:id/stock" => "products#stock_for_product", :as => :product_stock_available 
   match "products/register_sell_price" => "products#register_sell_price", :as => :register_sell_price
   match "products/model_changer" => "products#model_changer", :as => :model_changer
   match "products/search" => "products#search", :as => :product_search

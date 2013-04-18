@@ -1,6 +1,7 @@
 .entry_folders_title_part{
 	.entry_folders_title{
 		width: 1000px;
+		overflow: hidden;
 		h1{
 			width: 400px;
 			font-size: 30px;
@@ -9,6 +10,7 @@
 			text-align: center;
 			text-transform: uppercase;
 			padding: 20px;
+			float: left;
 		}
 	}
 }
@@ -107,6 +109,9 @@
 			margin: 10px auto;
 			padding: 10px;
 			background: #ccc;
+			.closed_eye{
+				display: none;
+			}
 			.et_supplier{
 				width: 550px;
 				margin: 3px auto;
@@ -165,7 +170,7 @@
 			text-align: center;
 			.et_doc_item{
 				display: inline-block;
-				width: 260px;
+				width: 280px;
 				padding: 10px;
 				margin: 0px 10px;
 				background: #bbb;

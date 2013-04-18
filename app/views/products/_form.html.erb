@@ -47,13 +47,17 @@
       <%= f.label :image, "Imagen:" %>
       <%= f.file_field :image %>
     </div>
+    <div class="new_product_form_field">
+      <%= f.label :description, "Descripcion: " %>
+      <%= f.text_area :description, :rows => 10 %>
+    </div>
   </div>
-  <div id="new_product_right_segment">
+  <!-- <div id="new_product_right_segment">
     <div class="new_product_form_field">
       <%= f.label :description, "Descripcion: " %><br />
       <%= f.text_area :description, :rows => 10 %>
     </div>
-  </div>
+  </div> -->
   <div class="new_product_form_field">
     <%= f.hidden_field :monthly_quantity, :value => 0 %>
     <%= f.hidden_field :monthly_price, :value => 0  %>

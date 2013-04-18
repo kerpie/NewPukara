@@ -83,22 +83,21 @@
         <%= form_tag quotation_pay_quotation_path, remote: true do %>
           <%= hidden_field_tag "q_id", @quotation.id %>
           <div class="pq_form_div">
-            <%= label_tag "mexpected", "Total a pagar: " %><br>
-            <%= text_field "mexpected", "" %>
+            <%= label_tag "money_expected", "Total a pagar: " %><br>
+            <%= text_field_tag "money_expected", "" %>
           </div>
           <div class="pq_form_div">
-            <%= label_tag "mreceived", "Cantidad recibida: " %><br>
-            <%= text_field "mreceived", "" %>
+            <%= label_tag "money_received", "Cantidad recibida: " %><br>
+            <%= text_field_tag "money_received", "" %>
           </div>
           <div class="pq_form_div">
-            <%= label_tag "mreturned", "Vuelto: " %><br>
-            <%= text_field "mreturned", "" %>
+            <%= label_tag "money_returned", "Vuelto: " %><br>
+            <%= text_field_tag "money_returned", "" %>
           </div>
           <div class="pq_form_div">
             <%= label_tag "money_type", "Tipo de Dinero: " %>
             <%= select_tag "money_type", options_from_collection_for_select(MoneyType.all, :id, :name) %>
           </div>
-
           <div class="pq_form_div pq_form_check">
             <h1>Documentos a generar</h1>
             <div>

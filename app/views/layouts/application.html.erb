@@ -20,6 +20,14 @@
 					<%= (render_proper_navbar current_user).html_safe %>
 				</ul>
 			</section>
+			<section id="environment">
+				<span>Ambiente para: </span>
+				<ul>
+					<% current_user.roles.each do |role| %>
+						<li><%= role.name %></li>
+					<% end %>
+				</ul>
+			</section>
 			
 			<% if current_user.role?("Vendedor") %>
 				<div id="vendor_list">

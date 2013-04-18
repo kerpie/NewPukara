@@ -3,4 +3,5 @@ class MoneyType < ActiveRecord::Base
 
   has_many :quotations
   has_many :entry_document_details
+  has_many :sell_prices
 end

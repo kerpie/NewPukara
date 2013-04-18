@@ -1,0 +1,33 @@
+<li>
+  <%= link_to product, :class => "clickable_product" do %>
+    <div class="product_preview">
+      <div class="image_preview">
+        <%= image_tag image_url(product, :medium), :width => 200, :height => 170 %>
+      </div>
+      <div class="explanation">
+        <table>
+          <tr>
+            <td>Marca: </td>
+            <td><%= product.model.brand.name %></td>
+          </tr>
+          <tr>
+            <td>Tipo: </td>
+            <td><%= product.product_type.name %></td>
+          </tr>
+          <tr>
+            <td>Clase: </td>
+            <td><%= product.model.model_type.parent_model.name %></td>
+          </tr>
+          <tr>
+            <td>Sub clase:</td>
+            <td><%= product.model.model_type.name %></td>
+          </tr>
+          <tr>
+            <td>Modelo: </td>
+            <td><%= product.model.name %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  <% end %>
+</li>

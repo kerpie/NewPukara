@@ -1,0 +1,24 @@
+<section id="products_stock_available">
+	<hgroup id="products_title">
+	    <h1>Stock Disponible</h1>
+	</hgroup>
+
+	<h1><%= @product.full_name %></h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Local</th>
+				<th>Cantidad disponible</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @stock.each do |st| %>
+			<tr>
+				<td><%= st.store.name %></td>
+				<td><%= st.quantity %></td>
+			</tr>
+			<% end -%>
+		</tbody>
+	</table>
+</section>

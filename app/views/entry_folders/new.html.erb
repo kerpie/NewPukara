@@ -52,8 +52,8 @@
 		<div class="new_body">
 			<%= form_tag search_product_path, :remote => true do %>
 			<div class="form_div">
-				<%= label_tag "model", "Modelo:" %><br/>
-				<%= datalist_text_field_tag "model","", "model_list", Model.all %>
+				<%= label_tag "search_param", "Modelo:" %><br/>
+				<%= datalist_text_field_tag "search_param","", "model_list", Model.all %>
 			</div>
 			<div class="form_div">
 				<%= link_to_function "Buscar producto","submitRegularForm(this)" %>

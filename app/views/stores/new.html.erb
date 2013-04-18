@@ -1,9 +1,27 @@
+<section id="stores_title_part">
+  <hgroup id="stores_title">
+    <h1>Nuevo Local</h1>
+  </hgroup>
+</section>
+
 <section id="stores_new">
-	<h1>Nuevo Local</h1>
+	<% if @store.errors.any? %>
+	    <div id="error_explanation">
+	      <h2>Por favor revise los siguientes puntos y vuelva a intentarlo:</h2>
+
+	      <ul>
+	      <% @store.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
 
 	<%= render 'form' %>
 
 	<div id="stores_new_options">
-		<%= link_to 'Volver', stores_path %>
+		<ul>
+			<li><%= link_to 'Volver', stores_path %></li>
+		</ul>
 	</div>
 </section>

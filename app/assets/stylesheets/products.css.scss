@@ -15,22 +15,70 @@
 			padding: 20px;
 			float: left;
 		}
-		div{
+		// div{
+			
+		// 	input{
+		// 		padding: 10px;
+		// 		width: 200px;
+		// 		text-align:center;
+		// 		margin: 10px;
+		// 	}
+		// }
+		#products_new_options{
 			float:right;
-			input{
-				padding: 10px;
+			padding: 10px;
+			a{
 				width: 200px;
-				text-align:center;
-				margin: 10px;
+				display: block;
+				text-align: center;
+				text-decoration: none;
+				color: white;
+				margin: 0 auto;
+				padding: 10px;
+				background: #00b0e3;
+				&:hover{
+					box-shadow: 0px 0px 4px #00b0e3;
+				}
 			}
 		}
 	}
-	#products{
+	#products_new_main{
+		width: 950px;
 		margin: 10px auto;
+		#products_new_search{
+			width: 900px;
+			margin: 0 auto;
+			form{
+				width: 600px;
+				margin: 0 auto;
+				text-align: center;
+				input[type=submit]{
+					display: none;
+				}
+				input[type=text]{
+					padding: 10px;
+					font-size: 18px;
+					width: 400px;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+	#new_product_search_result{
+		margin: 10px auto;
+		h2{
+			background: red;
+			text-align: center;
+			font-size: 18px;
+			color: white;
+			padding: 10px;
+			width: 600px;
+			margin: 0 auto;
+		}
 		ul{
 			overflow: hidden;
 			li{
-				width: 490px;
+				width: 450px;
 				float: left;
 				padding: 5px;
 				.clickable_product{
@@ -72,21 +120,7 @@
 			}
 		}
 	}
-	#products_new_options{
-		a{
-			width: 200px;
-			display: block;
-			text-align: center;
-			text-decoration: none;
-			color: white;
-			margin: 0 auto;
-			padding: 10px;
-			background: #272727;
-			&:hover{
-				background: #00b0e3;
-			}
-		}
-	}
+	
 }
 
 #product_new, #product_edit{
@@ -152,47 +186,47 @@
 		background: #ccc;
 		overflow: hidden;
 		#new_product_left_segment{
-			float: left;
-		}
-		#new_product_right_segment{
-			width: 510px;
-			float: right;
-			overflow: hidden;
-			padding: 0px 10px 10px 10px;
-			margin-bottom: 15px;
-			label{
-				float: left;
-			}
-			textarea{
-				margin-top: -13px;
-				float: right;
-			}
-		}
-		.new_product_form_field{
-			padding: 10px;
-			overflow: hidden;
-			label{
-				background: #272727;
-				width: 120px;
-				text-align: right;
-				margin: 5px;
-				color: white;
-				padding: 5px;
-				float: left;
-				font-weight: bold;
-			}
-			input, select{
-				padding: 5px;
-				margin: 5px;
-			}
-			#toHide{
-				float: right;
-				padding: 5px;
-				p{
-					width: 270px;
+			.new_product_form_field{
+				padding: 10px;
+				overflow: hidden;
+				label{
+					background: #272727;
+					width: 120px;
+					text-align: right;
+					margin: 5px;
+					color: white;
+					padding: 5px;
+					float: left;
+					font-weight: bold;
+				}
+				input, select,textarea{
+					padding: 5px;
+					margin: 5px;
+				}
+				#toHide{
+					float: right;
+					padding: 5px;
+					p{
+						width: 270px;
+					}
 				}
 			}
 		}
+		// #new_product_right_segment{
+		// 	width: 510px;
+		// 	float: right;
+		// 	overflow: hidden;
+		// 	padding: 0px 10px 10px 10px;
+		// 	margin-bottom: 15px;
+		// 	label{
+		// 		float: left;
+		// 	}
+		// 	textarea{
+		// 		margin-top: -13px;
+		// 		float: right;
+		// 	}
+		// }
+		
 		#new_product_submit_link{
 			clear: both;
 			display: block;
@@ -296,7 +330,7 @@
 		margin: 10px auto;
 		#product_description_left_part{
 			float: left;
-			#sell_price_part{
+			.options_for_more_data_in_product{
 				width: 300px;
 				margin: 5px auto;
 				text-align: center;
@@ -474,6 +508,63 @@
 					border: 1px solid #00b0e3;
 					color: white;
 					background: #00b0e3;
+				}
+			}
+		}
+	}
+}
+
+#products_stock_available{
+width: 1000px;
+	margin: 0 auto;
+	padding: 10px;
+	#products_title{
+		width: 1000px;
+		overflow: hidden;
+		h1{
+			width: 400px;
+			font-size: 30px;
+			color: white;
+			background: #272727;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 20px;
+			float: left;
+		}
+	}	
+	h1{
+		width: 800px;
+		margin: 10px auto;
+		padding: 10px;
+		font-size: 18px;
+		background: #00b0e3;
+		color: white;
+		text-align: center;
+	}
+	table{
+		width: 800px;
+		margin: 10px auto;
+		thead{
+			tr{
+				th{
+					background: #272727;
+					color: white;
+					text-align: center;
+					text-transform: uppercase;
+					padding: 10px;
+					width: 50%;
+				}
+			}
+		}
+		tbody{
+			tr{
+				td{
+					text-align: center;
+					padding: 10px;
+				}
+				&:hover{
+					color: white;
+					background: #AAA;
 				}
 			}
 		}
