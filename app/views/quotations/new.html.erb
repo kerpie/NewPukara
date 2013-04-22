@@ -148,7 +148,7 @@
 	<div id="afp_down">
 		<h2></h2>
 		<%= form_tag quotation_receive_message_path, :remote => true do %>	
-			<% hidden_field_tag "user_id", current_user.id %>
+			<%= hidden_field_tag "user_id", current_user.id %>
 			<table>
 				<thead>
 					<tr>
@@ -158,10 +158,12 @@
 				</thead>
 				<tbody>
 					<% Store.all.each do |store| %>
-						<tr>
-							<td><%= store.name %></td>
-							<td><%= text_field_tag "message_to_store_"+store.name.gsub(" ", "_") %></td>
-						</tr>
+						<% unless store == current_user.store %>
+							<tr>
+								<td><%= store.name %></td>
+								<td><%= text_field_tag "message_to_store_"+store.name.gsub(" ", "_") , " ", :class => "my_message_to_other_store" %></td>
+							</tr>
+						<% end -%>
 					<% end -%>
 					<tr>
 						<td colspan="2"><%= submit_tag "ENVIAR MENSAJE" %></td>

@@ -309,3 +309,17 @@ function deleteMoneyType(link){
 function closeFloatingBox(link){
 	$(link).parents(".q_box").hide();
 }
+
+//Document Numeration 
+function showNumerationUpdateForm(link){
+	$("#update_numeration_form").show();
+	$(".window_content_part h2").text("Modificando " + $(link).parents("tr").find(".document_type").text())
+	$("#st_id").val($(link).parents(".order_by_store").attr('id'));
+	$("#dt_id").val($(link).parents("tr").find(".document_type").attr("data-doc_type_id"));
+	$("#initial_number").val($(link).parents("tr").find(".initial_number").text());
+	$("#current_number").val($(link).parents("tr").find(".current_number").text());
+}
+
+function closeWindow(link){
+	$(link).parents(".window").hide();
+}

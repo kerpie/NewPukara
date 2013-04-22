@@ -38,6 +38,11 @@ Final::Application.routes.draw do
   match "document_type/destroy" => "document_type#destroy", :as => :document_type_destroy
   match "document_type/update" => "document_type#update", :as => :document_type_update
 
+  #Numeration 
+  match "numeration/index" => "numeration#index", :as => :numeration_index
+  match "numeration/update" => "numeration#update", :as => :numeration_update
+  match "numeration/create_docs" => "numeration#reborn", :as => :numeration_reborn
+
   #PriceType
   match "price_type/index" => "price_type#index", :as => :price_type_index
   match "price_type/create" => "price_type#create", :as => :price_type_create

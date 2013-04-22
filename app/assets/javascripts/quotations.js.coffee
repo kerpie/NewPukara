@@ -83,10 +83,15 @@ jQuery ->
 			if(unit_changed && unit_id.length>0)
 				quantity = $(this).val()
 				total_stock = totalStock()
+				if quantity > total_stock
+					alert "No puede pedir mas de lo que hay en los almacenes"
+					return
 				if quantity > parseInt($(".my_store").text())
 					unit = $("#product_quantity").next("select").find("option:selected").attr("data-unit_value")
 					$("#afp_down h2").text("Estas pidiendo "+quantity+" unidades y solo hay " + parseInt($(".my_store").text()) + " unidades en tu almacen")
 					$("#ask_for_product").show()
+					$(".my_message_to_other_store").each ->
+						$(this).val("Necesito "+ "         unidades de " + $("#qp_full_name").text())
 					$(this).parents(".q_box").hide()
 				$("#downer").show()
 				$("#product_price").attr("readonly", true)
@@ -112,7 +117,7 @@ jQuery ->
 		val = $(this).val()
 		if event.which == 13
 			discount = parseFloat($("#downer table tbody tr.here").attr("id"))
-			price = parseFloat($("#downer table tbody tr.here td:last-child").html())
+			price = parseFloat($(".this_is_the_price").html())
 			if val < (price - price*discount)
 				alert("El precio no puede ser menor al establecido con el descuento")
 				$(this).val("")
@@ -124,6 +129,7 @@ jQuery ->
 				$("#"+id_row).find(".total_goes_here input").val(parseFloat($(this).val())*parseFloat($("#product_quantity").val()))
 				$("#"+id_row).find(".product_goes_here .tmp").val($("#qp_full_name").text())
 				$("#"+id_row).find(".product_goes_here input[type=hidden]").val($("#this_is_the_product_id_you_shouldnt_be_seeing").val())
+				$("#"+id_row).find(".money_type_goes_here").text($(".guess_who_is_selected").find("td:last-child").text())
 				$(this).val("")
 				$("#product_quantity").val("")
 				tmp_total = 0
@@ -135,11 +141,14 @@ jQuery ->
 			
 jQuery ->
 	$("#product_unit").change ->
-		unit_changed = true
-		unit_id = $(this).val()
-		unit = $(this).find("option:selected").attr("data-unit_value")
-		$("#product_quantity").val(parseFloat($("#product_quantity").val()) * parseFloat(unit))
-		$("#product_quantity").focus()
+		if $("#product_quantity").val().length > 0
+			unit_changed = true
+			unit_id = $(this).val()
+			unit = $(this).find("option:selected").attr("data-unit_value")
+			$("#product_quantity").val(parseFloat($("#product_quantity").val()) * parseFloat(unit))
+			$("#product_quantity").focus()
+		else
+			$("#product_quantity").val("")
 
 jQuery ->
 	$(".to_pay").click ->

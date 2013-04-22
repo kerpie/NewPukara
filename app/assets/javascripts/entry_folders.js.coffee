@@ -5,6 +5,7 @@ jQuery ->
 		$(".new_id").attr('id', "new_")
 		tmp_id = $(".new_id").attr('id') + id
 		$(".new_id").attr('id', tmp_id)
+		$("#search_param").focus()
 
 jQuery ->
 	$(".product_search_item").live "click", ->

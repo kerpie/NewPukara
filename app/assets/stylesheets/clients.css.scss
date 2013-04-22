@@ -1,130 +1,237 @@
-#clients_index{
-	width: 900px;
-	margin: 0 auto;
-	border: 1px solid black;
-	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 0px;
-		width: 300px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-		padding: 3px;
+#clients_title_part{
+	#clients_title{
+		width: 1000px;
+		overflow: hidden;
+		h1{
+			width: 400px;
+			font-size: 30px;
+			color: white;
+			background: #272727;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 20px;
+			margin: 0px 0px 10px 0px;
+			float: left;
+		}
+		#notice{
+			float: right;
+		}
 	}
+}
+
+#clients_index{
+	width: 700px;
+	margin: 0 auto;
+	padding: 10px;
 	table{
 		margin: 10px auto;
 		width: 500px;
 		text-align: center;
 		tbody{
 			tr{
-				th,td{
-					padding: 3px;
-					border: 1px solid black;
+				th{
+					padding: 10px;
+					color: white;
+					background: #272727;
+					border: 1px solid #272727;
+					font-family: 'Dosis', sans-serif;
+					font-size: 15px;
+					text-transform: uppercase;
+				}
+				td{
+					border: 1px solid #272727;
+					a{
+						text-decoration: none;
+						display: block;
+						padding: 10px;
+						color: #272727;
+						&:hover{
+							background: #bbb;	
+							color: white;
+						}
+					}
+					&:hover{
+						background: #bbb;
+						a{
+							color: white;
+						}
+					}
 				}
 			}
 		}
 	}
 	#clients_new_options{
-		width: 300px;
+		width: 500px;
 		margin: 10px auto 0px;
 		text-align: center;
-		padding: 10px;
+		padding: 20px;
+		a{
+			text-align: center;
+			background: #272727;
+			padding: 10px;
+			font-size: 14px;
+			text-transform: uppercase;
+			color: white;
+			text-decoration: none;
+			font-family: 'Dosis', sans-serif;
+			&:hover{
+				background: #00b0e3;
+			}
+		}
 	}
 }
 
 #clients_new, #clients_edit{
-	width: 900px;
+	width: 540px;
 	margin: 0 auto;
-	border: 1px solid black;
 	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 0px;
-		width: 300px;
+	background: #ccc;
+	h2{
+		width: 450px;
+		margin: 0 auto;
 		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
+		background: red;
+		color: white;
+		padding: 10px;
+		font-size: 18px;
 	}
 	form{
 		width: 500px;
 		margin: 0 auto;
 		padding: 10px;
-		.field{
-			display: block;
+		.client_field{
 			margin: 5px auto;
-			width: 209px;
+			width: 410px;
 			padding: 3px;
+			overflow: hidden;
+			label{
+				float: left;
+				text-align: right;
+				padding: 10px;
+				background: #272727;
+				color: white;
+				width: 30%;
+			}
+			input, select{
+				float: right;
+				padding: 10px;
+				text-align: center;
+				width: 50%;
+			}
+			select{
+				width: 55%;
+			}
+			textarea{
+				width: 100%;
+			}
 		}
 		.actions{
-			width: 300px;
-			margin: 0 auto;
-			text-align: center;
-			input{
-				display: inline-block;
-			}
+			display: none;
 		}
 	}
-	#clients_new_options{
-		width: 300px;
-		padding: 3px;
-		margin: 6px auto 3px;
-		text-align: center;
-	}
-	#clients_edit_options{
-		width: 300px;
-		margin: 15px auto 0px;
-		text-align: center;
-		ul{
-			display: inline-block;
-			text-align: center;
-			overflow: hidden;
-			li{
-				display: inline-block;
-				padding: 5px;
-				float: left;
-			}
-		}	
+	&:hover{
+		background: #bbb;
 	}
 }
 
 #clients_show{
-	width: 900px;
+	width: 600px;
 	margin: 0 auto;
-	border: 1px solid black;
 	padding: 10px;
-	background: white;
-	h1{
-		margin: 3px auto 15px;
-		width: 300px;
-		text-align: center;
-		font-size: 15px;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-	p{
-		width: 250px;
-		display: block;
-		margin: 3px auto;
-		b{
-			font-weight: bold;
+	background: #ccc;
+	clear: both;
+	.client_show_part{
+		overflow: hidden;
+		span{
+			width: 150px;
+			background: #272727;
+			color: white;
+			padding: 10px;
+			text-align: right;
+			float: left;
+			margin: 10px;
+		}
+		p{
+			text-align: left;
+			padding: 10px;
+			margin: 10px 0px;
 		}
 	}
-	#clients_show_options{
-		width: 300px;
-		margin: 15px auto 0px;
+	&:hover{
+		background: #bbb;
+	}
+}
+
+#clients_new_options{
+	width: 500px;
+	padding: 3px;
+	margin: 5px auto;
+	text-align: center;
+	a{
+		display: inline-block;
+		width: 200px;
 		text-align: center;
-		ul{
+		color: white;
+		text-decoration: none;
+		background: #272727;
+		font-size: 13px;
+		padding: 10px;
+		&:hover{
+			background: #00b0e3;
+		}
+	}
+}
+
+#clients_edit_options{
+	width: 300px;
+	margin: 15px auto 0px;
+	text-align: center;
+	ul{
+		display: inline-block;
+		text-align: center;
+		overflow: hidden;
+		li{
 			display: inline-block;
-			text-align: center;
-			overflow: hidden;
-			li{
-				display: inline-block;
-				padding: 5px;
-				float: left;
+			padding: 10px;
+			float: left;
+			width: 100px;
+			a{
+				text-decoration: none;
+				display: block;
+				padding: 10px;
+				color: white;				
+				background: #272727;
+				&:hover{
+					background: #00b0e3;
+				}
 			}
 		}
-	}
+	}	
+}
+
+#clients_show_options{
+	width: 500px;
+	margin: 15px auto 0px;
+	text-align: center;
+	ul{
+		display: inline-block;
+		text-align: center;
+		overflow: hidden;
+		li{
+			display: inline-block;
+			padding: 10px;
+			float: left;
+			width: 100px;
+			a{
+				text-decoration: none;
+				display: block;
+				padding: 10px;
+				color: white;				
+				background: #272727;
+				&:hover{
+					background: #00b0e3;
+				}
+			}
+		}
+	}	
 }

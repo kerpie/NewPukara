@@ -1,0 +1,6 @@
+<tr id="<%= numeration.id %>">
+	<td class="document_type" data-doc_type_id="<%= numeration.document_type.id %>"><%= numeration.document_type.name %></td>
+	<td class="initial_number"><%= numeration.initial_number %></td>
+	<td class="current_number"><%= numeration.current_number %></td>
+	<td><%= link_to_function "Modificar", "showNumerationUpdateForm(this)" %></td>
+</tr>

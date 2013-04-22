@@ -12,7 +12,7 @@ class EntryCode < ActiveRecord::Base
   			entry_code.entry_document_detail_id = edd.id
 
         #Generated Code
-        entry_code.generated_code = initials(edd.product.model.brand.name) + date_number(edd.entry_folder.date) + four_numbers(edd.id)
+        entry_code.generated_code = initials(edd.product.model.brand.name) + date_number(edd.entry_folder.date) + four_numbers(i+1)
         #entry_code.generated_code = edd.id.to_s + "-" + i.to_s + "-" + edd.product.model.brand.name.to_s
   			entry_code.save
   		end
@@ -47,8 +47,8 @@ end
 
 def four_numbers(id)
   new_id = id.to_s
-  if new_id.length < 4
-    this_number = 4 - new_id.length
+  if new_id.length < 5
+    this_number = 5 - new_id.length
     this_number.times do |i|
       new_id = "0" + new_id
     end

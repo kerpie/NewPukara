@@ -1,25 +1,65 @@
-<section id="clients_show">
-  <% if notice %>
-    <p id="notice"><%= notice %></p>
-  <% end %>
-
-  <h1><%= @client.name %></h1>
-
-  <p>
-    <b>Direccion:</b>
-    <%= @client.address %>
-  </p>
-
-  <p>
-    <b>Tipo de Cliente:</b>
-    <%= @client.client_type.name %>
-  </p>
-
-  <div id="clients_show_options">
-    <ul>
-      <li><%= link_to 'Editar', edit_client_path(@client) %></li>
-      <li><%= link_to 'Volver', clients_path %></li>
-      <li><%= link_to 'Eliminar', @client, confirm: 'Esta seguro?', method: :delete %></li>
-    </ul>    
-  </div>
+<section id="clients_title_part">
+  <hgroup id="clients_title">
+    <h1><%= @client.name %></h1>
+    <% if notice %>
+      <p id="notice"><%= notice %></p>
+    <% end %>
+  </hgroup>
 </section>
+
+<section id="clients_show">
+
+  <div class="client_show_part">
+    <span>Nombre:</span>
+    <p><%= @client.name %></p>
+  </div>
+
+  <div class="client_show_part">
+    <span>Direccion:</span>
+    <p><%= @client.address %></p>
+  </div>
+
+  <div class="client_show_part">
+    <span>Correo:</span>
+    <p><%= @client.mail %></p>
+  </div>
+
+  <div class="client_show_part">
+    <span>Tipo de Cliente:</span>
+    <p><%= @client.client_type.name %></p>
+  </div>
+
+  <div class="client_show_part">
+    <span><%= @client.client_type.identification_type %>:</span>
+    <p><%= @client.identification_number %></p>
+  </div>
+
+  <div class="client_show_part">
+    <span>Persona de Contacto:</span>
+    <p><%= @client.contact_person %></p>
+  </div>
+
+  <div class="client_show_part">
+    <span>Telefono:</span>
+    <p><%= @client.phone %></p>
+  </div>
+
+  <div class="client_show_part">
+    <span>Celular:</span>
+    <p><%= @client.mobile %></p>
+  </div>
+
+  <div class="client_show_part">
+    <span>Otros:</span>
+    <p><%= @client.reference %></p>
+  </div>
+
+</section>
+
+<div id="clients_show_options">
+  <ul>
+    <li><%= link_to 'Editar', edit_client_path(@client) %></li>
+    <li><%= link_to 'Volver', clients_path %></li>
+    <li><%= link_to 'Eliminar', @client, confirm: 'Esta seguro?', method: :delete %></li>
+  </ul>    
+</div>

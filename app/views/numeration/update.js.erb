@@ -1,0 +1,4 @@
+<% toRender = render("numeration_part", :numeration => @num) %>
+$(".order_by_store table tbody #<%= @num.id.to_s %>").replaceWith("<%= escape_javascript toRender %>");
+alert("Cambios hechos");
+$("#update_numeration_form").hide();

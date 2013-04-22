@@ -1,12 +1,16 @@
-<section id="clients_edit">
-	<h1>Editando Clientes</h1>
-
-	<%= render 'form' %>
-
-	<div id="clients_edit_options">
-		<ul>
-			<li><%= link_to 'Mostrar', @client %></li>
-			<li><%= link_to 'Volver', clients_path %></li>
-		</ul>
-	</div>
+<section id="clients_title_part">
+  <hgroup id="clients_title">
+    <h1>Modificando cliente</h1>
+  </hgroup>
 </section>
+
+<section id="clients_edit">
+	<%= render 'form' %>
+</section>
+
+<div id="clients_edit_options">
+	<ul>
+		<li><%= link_to 'Mostrar', @client %></li>
+		<li><%= link_to 'Volver', clients_path %></li>
+	</ul>
+</div>

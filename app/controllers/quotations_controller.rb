@@ -266,15 +266,19 @@ class QuotationsController < ApplicationController
 
   def receive_message
 
+    user = User.find(params[:user_id])
+
     Store.all.each do |store|
-      p = "message_to_store_" + store.name.gsub(" ","_")
-      message_received = params[p]
-      unless message_received.empty?
-        notification = Notification.new
-        notification.message = message_received
-        notification.user_id = params[:user_id]
-        notification.store_id = store.id 
-        notification.save 
+      unless user.store == store
+        p = "message_to_store_" + store.name.gsub(" ","_")
+        message_received = params[p]
+        unless message_received.empty?
+          notification = Notification.new
+          notification.message = message_received
+          notification.user_id = user.id 
+          notification.store_id = store.id 
+          notification.save 
+        end
       end
     end
     

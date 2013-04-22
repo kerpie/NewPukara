@@ -1,56 +1,47 @@
+<h2>Los campos sombreados son obligatorios</h2>
+
 <%= form_for(@client) do |f| %>
-  <% if @client.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
 
-      <ul>
-      <% @client.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="new_client_form_field">
-    <%= f.label :name, "Nombre" %><br />
+  <div class="client_field required">
+    <%= f.label :name, "Nombre" %>
     <%= f.text_field :name %>
   </div>
-  <div class="new_client_form_field">
-    <%= label_tag "client_type_id", "Tipo de Cliente" %><br />
+  <div class="client_field required">
+    <%= label_tag "client_type_id", "Tipo de Cliente" %>
     <%= select_tag "client_type_id", client_type_collection(ClientType, :id, :name) %>
   </div>
 
-  <div class="new_client_form_field">
-    <%= f.label :identification_number, "RUC/DNI" %><br/>
+  <div class="client_field required">
+    <%= f.label :identification_number, "RUC/DNI" %>
     <%= f.text_field :identification_number %>
   </div>
 
-  <div class="new_client_form_field">
+  <div class="client_field required">
     <%= f.label :phone, "Telefono: " %>  
     <%= f.text_field :phone %>
   </div>
 
-  <div class="new_client_form_field">
+  <div class="client_field">
     <%= f.label :mobile, "Celular: " %>
     <%= f.text_field :mobile %>
   </div>
 
-  <div class="new_client_form_field">
+  <div class="client_field required">
     <%= f.label :mail, "Correo: " %>
     <%= f.text_field :mail %>
   </div>
 
-  <div class="new_client_form_field">
+  <div class="client_field">
     <%= f.label :contact_person, "Persona de contacto: "%>
     <%= f.text_field :contact_person %>
   </div>
 
-  <div class="new_client_form_field">
-    <%= f.label :address, "Direccion" %><br />
+  <div class="client_field required">
+    <%= f.label :address, "Direccion" %>
     <%= f.text_field :address %>
   </div>
 
-  <div class="new_client_form_field">
+  <div class="client_field">
     <%= f.label :reference, "Otros: " %>
     <%= f.text_area :reference %>
   </div>

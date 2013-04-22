@@ -6,4 +6,10 @@ class Store < ActiveRecord::Base
 
   has_many :user
   has_many :stock
+  has_many :numerations
+
+  def underscore_name
+  	name.gsub(" ", "_")
+  end
+
 end

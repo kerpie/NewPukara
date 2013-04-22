@@ -1,0 +1,61 @@
+<section id="numerations_title_part">
+  <hgroup id="numerations_title">
+    <h1>Numeracion de Documentos</h1>
+  </hgroup>
+</section>
+
+<section id="numeration_index">
+
+	<section id="store_selection">
+		<%= select_tag "select_store_for_numeration", options_from_collection_for_select(Store.all, :id, :name) %>
+	</section>
+
+	<% @numerations.each do |store, data| %>
+		<section id="<%= store.id %>" class="order_by_store">
+			<table>
+				<thead>
+					<tr>
+						<th>Tipo de Documento</th>
+						<th>Numeracion Inicial</th>
+						<th>Numeracion Actual</th>
+						<th>Opciones</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% data.each do |numeration| %>
+						<%= render "numeration_part", :numeration => numeration %>
+					<% end %>
+				</tbody>
+			</table>
+		</section>
+	<% end -%>
+
+	<section id="numeration_option">
+		<h2><%= link_to "Crear nuevas numeraciones", numeration_reborn_path, :remote => true %></h2>
+	</section>
+</section>
+
+<section id="update_numeration_form" class="window">
+	<div class="window_upper_part">
+		<h1>Actualizar Numeracion de la documentacion</h1>
+		<h2><%= link_to_function "X", "closeWindow(this)" %></h2>
+	</div>
+	<div class="window_content_part">
+		<h2></h2>
+		<%= form_tag numeration_update_path, :remote => true do %>
+			<%= hidden_field_tag "dt_id" %>
+			<%= hidden_field_tag "st_id" %>
+			<div>
+				<%= label_tag "initial_number", "Numeracion Inicial: " %>
+				<%= text_field_tag "initial_number" %>
+			</div>
+			<div>
+				<%= label_tag "current_number", "Numeracion Actual: " %>
+				<%= text_field_tag "current_number" %>
+			</div>
+			<div>
+				<%= submit_tag "Modificar" %>
+			</div>
+		<% end -%>
+	</div>
+</section>
