@@ -39,8 +39,8 @@ class NumerationController < ApplicationController
         num = Numeration.where(:store_id => store, :document_type_id => dt).first
         if num.nil?
           num = Numeration.new
-          num.document_type_id = dt
-          num.store_id = store 
+          num.document_type_id = dt.id
+          num.store_id = store.id
           num.current_number = 0
           num.initial_number = 0
           num.save

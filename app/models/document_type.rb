@@ -5,5 +5,5 @@ class DocumentType < ActiveRecord::Base
 
   has_many :entry_documents, :dependent => :destroy 
   has_many :output_documents
-  has_many :numeration
+  has_many :numerations
 end
