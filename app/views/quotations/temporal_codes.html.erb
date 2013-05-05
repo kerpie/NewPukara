@@ -1,0 +1,36 @@
+<section id="quotation_title_part">
+	<hgroup id="quotation_title">
+		<h1>Proforma para <%= @q.client.name %></h1>
+	</hgroup>
+</section>
+
+<h1 id="show_code"><%= @q.code %></h1>
+
+<h1 id="code_advise">No se podra emitir los documentos correspondientes hasta que termines de registrar 
+	<% if @q.quotation_details.count > 1 %>
+		las series de los siguientes productos
+	<% else %>
+		la serie del siguiente producto
+	<% end %>
+</h1>
+
+<section id="form_for_temporal_codes">
+	<%= form_tag quotation_save_temporal_codes_path, :remote => true do %>
+		<%= hidden_field_tag "quotation_id", @q.id %>
+		<% @q.quotation_details.each do |qd| %>
+			<div class="fftc">
+				<h1><%= qd.product.full_name %></h1>
+				<div class="image_for_fftc">
+					<%= image_tag image_url(qd.product, :medium) %>
+				</div>
+				<div class="codes_to_save">
+					<h2>Series a guardar</h2>
+					<%= codes_field_with_value qd %>
+				</div>
+			</div>
+		<% end -%>
+		<div id="fftc_submit">
+			<%= submit_tag "registrar series" %>
+		</div>
+	<% end -%>
+</section>

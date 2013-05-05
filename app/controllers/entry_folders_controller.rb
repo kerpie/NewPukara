@@ -64,6 +64,7 @@ class EntryFoldersController < ApplicationController
     respond_to do |format|
       if @entry_folder.update_attributes(params[:entry_folder])
         Stock.add_stock @entry_folder
+        EntryCode.generateEntryCodes(@entry_folder)
         format.html { redirect_to @entry_folder, notice: 'Los datos del registro se han modificado' }
         format.json { head :no_content }
       else

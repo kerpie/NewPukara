@@ -11,6 +11,15 @@ Final::Application.routes.draw do
   match "quotations/search_stock" => "quotations#search_stock", :as => :quotation_search_stock
   match "quotations/pay_quotation" => "quotations#pay_quotation", :as => :quotation_pay_quotation
   match "quotations/auth_user" => "quotations#auth_user", :as => :quotation_auth_user
+  match "quotations/stupid_calculation" => "quotations#stupid_calculation", :as => :quotation_stupid_calculation
+  match "quotations/:id/temporal_codes" => "quotations#temporal_codes", :as => :quotation_temporal_codes
+  match "quotations/save_temporal_codes" => "quotations#save_temporal_codes", :as => :quotation_save_temporal_codes
+
+  #New full-ajax-request quotation
+  match "quotations/new_create" => "quotations#new_create", :as => :quotation_new_create
+  match "quotations/new_client_search" => "quotations#new_client_search", :as => :quotation_new_client_search
+  match "quotations/new_product_search" => "quotations#new_product_search", :as => :quotation_new_product_search
+  match "quotations/new_register_client" => "quotations#new_register_client", :as => :quotation_new_register_client
   resources :quotations
 
   match "page/index" => "page#index", :as => :real_index

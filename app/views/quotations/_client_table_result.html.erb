@@ -1,0 +1,18 @@
+<table> 
+	<thead>
+		<tr>
+			<th>Nombre</th>
+			<th>Tipo</th>
+			<th>DNI/RUC</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% clients.each do |client| %>
+			<tr>
+				<td><%= client.name %></td>
+				<td><%= client.client_type.name %></td>
+				<td><%= client.identification_number %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

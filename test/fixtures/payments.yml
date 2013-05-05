@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  money_type_id: 1
+  money_received: 1.5
+  money_returned: 1.5
+  quotation_id: 1
+
+two:
+  money_type_id: 1
+  money_received: 1.5
+  money_returned: 1.5
+  quotation_id: 1

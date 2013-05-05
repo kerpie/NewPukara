@@ -29,7 +29,6 @@ function add_fields(link, association, content){
 	var regexp = new RegExp("[\d]+")
 	var regexp = new RegExp("new_"+association,"g");
 	$(link).parent().before(content.replace(regexp, new_id));
-	$("#kid_").attr('id', "kid_"+new_id);
 	$("#mid_").attr('id', "mid_"+new_id);
 }
 
@@ -37,7 +36,7 @@ function add_q_fields(link, association, content){
 	var new_id = new Date().getTime();
 	var regexp = new RegExp("[\d]+")
 	var regexp = new RegExp("new_"+association,"g");
-	$("#untouchable_row").before(content.replace(regexp, new_id))
+	$("#q_detail_part table tbody").append(content.replace(regexp, new_id))
 }
 
 function submitForm(link){
@@ -308,6 +307,11 @@ function deleteMoneyType(link){
 //Quotation 
 function closeFloatingBox(link){
 	$(link).parents(".q_box").hide();
+}
+
+function ignoreMessage(link){
+	$(link).parents("tr").find(".my_message_to_other_store").val("");
+	$(link).parents("tr").hide();
 }
 
 //Document Numeration 

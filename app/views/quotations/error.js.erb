@@ -1,0 +1,8 @@
+<% 	
+	toRender = ""
+	@client.errors.full_messages.each do |msg|
+		toRender = toRender + "#{msg}\n"
+	end
+%>
+
+alert("<%= escape_javascript toRender %>");

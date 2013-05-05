@@ -8,7 +8,7 @@ class OutputCodeController < ApplicationController
 
   def result
 
-    q = Quotation.find_by_code(params[:numbers].to_s)
+    q = Quotation.find_by_code(params[:numbers].strip)
     @result = nil
     unless q.nil?
       unless q.output_folder.nil?

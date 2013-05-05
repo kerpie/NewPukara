@@ -44,22 +44,18 @@
       </table>
     </section>
 
-    <!-- 
-      <section id="money_part">
-        <table>
-          <thead>
-            <tr>
-              <th>MONEDA</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><%= f.collection_select :money_type_id, MoneyType.all, :id, :name %></td>
-            </tr>
-          </tbody>
-        </table>
-      </section> 
-    -->
+    <section id="money_part">
+      <table>
+        <thead>
+          <tr>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          </tr>
+        </tbody>
+      </table>
+    </section> 
 
     <section id="q_detail_part">
       <table>
@@ -76,10 +72,6 @@
           <%= f.fields_for :quotation_details do |qd| %>
             <%= render 'quotation_details_field', :data => qd %>
           <% end %>
-          <tr id="untouchable_row">
-            <td colspan="4">TOTAL</td>
-            <td colspan="2"id="quotation_total"> -- </td>
-          </tr>
         </tbody>
       </table>
       <div>

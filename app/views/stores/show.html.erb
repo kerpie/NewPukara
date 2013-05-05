@@ -19,26 +19,28 @@
 		<p><%= @store.address %></p>
 	</div>
 
-	<section id="products_in_this_store">
-		<h1>Productos en este local</h1>
-		<table>
-			<thead>
-				<tr>
-					<td>Producto</td>
-					<td>Cantidad</td>
-				</tr>
-			</thead>
-			<tbody>
-				<% @store.stock.all.each do |st| %>
+	<% unless @store.stock.all.empty? %>
+		<section id="products_in_this_store">
+			<h1>Productos en este local</h1>
+			<table>
+				<thead>
 					<tr>
-						<td><%= link_to st.product.full_name, st.product %></td>
-						<td><%= st.quantity %></td>
+						<td>Producto</td>
+						<td>Cantidad</td>
 					</tr>
-				<% end %>
-				<tr></tr>
-			</tbody>
-		</table>
-	</section>
+				</thead>
+				<tbody>
+					<% @store.stock.all.each do |st| %>
+						<tr>
+							<td><%= link_to st.product.full_name, st.product %></td>
+							<td><%= st.quantity %></td>
+						</tr>
+					<% end %>
+					<tr></tr>
+				</tbody>
+			</table>
+		</section>
+	<% end %>
 
 	<div id="stores_show_options">
 		<ul>

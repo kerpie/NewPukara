@@ -1,0 +1,11 @@
+<%
+	ths = ""
+	tds = ""
+	@response.each do |key, value|
+		ths = ths + "<th>#{key}</th>"
+		tds = tds + "<td>#{value}</td>"
+	end
+%>
+
+$("#money_part table thead tr").html("<%= escape_javascript ths.html_safe %>");
+$("#money_part table tbody tr").html("<%= escape_javascript tds.html_safe %>");

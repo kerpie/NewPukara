@@ -1,9 +1,18 @@
 <% unless @result.nil? %>
-	$("#error_message").hide();
+	$("#error_message").fadeOut(200);
 	$("#success_message").show();
 	$("#doc_register_id").attr('value', <%= @result.id %>);
 	$("#folder_id").attr('value', <%= @result.id %>);
 <% else %>
 	$("#success_message").hide();
-	$("#error_message").show();
+	$("#error_message").fadeOut(300, function(){
+		$("#error_message").fadeIn(200);
+	});
+<% end %>
+
+//Si hay un formulario pero no hay documento creado
+<% if @q.nil? %>
+	alert(" q = nil ");
+<% else %>
+	alert(" q != nil ");
 <% end %>

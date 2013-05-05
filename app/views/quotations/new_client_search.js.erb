@@ -1,0 +1,5 @@
+<% toRender = render("client_table_result", :clients => @clients) %>
+$("#new_q_client_search_result").html("<%= escape_javascript toRender %>");
+$("#new_q_client_search_result").css("height","440px");
+$("#new_q_search_client").css("height", "500px");
+$("#new_q_search_client").css("margin", "-250px -400px");

@@ -1,0 +1,80 @@
+<section id="quotation_title_part">
+	<hgroup id="quotation_title">
+		<h1>Nueva cotizacion</h1>
+	</hgroup>
+</section>
+
+<section id="new_q_search_client" class="window">
+	<div class="window_upper_part">
+		<h1>Buscar cliente</h1>
+		<h2><%= link_to_function "X", "closeWindow(this)" %></h2>
+	</div>
+	<div class="window_content_part">
+		<div id="new_q_client_search_form">
+			<%= form_tag quotation_new_client_search_path, :remote => :true do %>
+				<%= label_tag "text_to_search", "Nombre/DNI/RUC: " %>
+				<%= text_field_tag "text_to_search" %>
+			<% end -%>
+		</div>
+		<div id="new_q_client_search_result">
+			
+		</div>
+	</div>
+</section>
+
+<section id="new_q_product_search" class="window">
+	<div class="window_upper_part">
+		<h1>Buscar producto</h1>
+		<h2><%= link_to_function "X", "closeWindow(this)" %></h2>
+	</div>
+	<div class="window_content_part">
+		<div id="new_q_product_search_form">
+			<%= form_tag quotation_new_product_search_path, :remote => :true do %>
+				<%= label_tag "text_to_search", "Buscar: " %>
+				<%= text_field_tag "text_to_search" %>
+			<% end -%>
+		</div>
+		<div id="new_q_product_search_result">
+			
+		</div>
+	</div>
+</section>
+
+<section id="new_q_register_client" class="window">
+	<div class="window_upper_part">
+		<h1>Registrar nuevo cliente</h1>
+		<h2><%= link_to_function "X", "closeWindow(this)" %></h2>
+	</div>
+	<div class="window_content_part">
+		<div id="new_q_register_client_form">
+			<%= form_tag quotation_new_register_client_path, :remote => true do %>
+				<div>
+					<%= label_tag "client_name", "Nombre: " %>
+					<%= text_field_tag "client_name_tag" %>
+				</div>
+				<div>
+					<%= label_tag "client_phone", "Telefono: " %>
+					<%= text_field_tag "client_phone" %>
+				</div>
+				<div>
+					<%= label_tag "client_mobile", "Celular: " %>
+					<%= text_field_tag "client_mobile" %>
+				</div>
+				<div>
+					<%= label_tag "client_mail", "Correo: " %>
+					<%= text_field_tag "client_mail" %>
+				</div>
+				<div>
+					<%= label_tag "client_type", "Tipo de Cliente" %>
+					<%= select_tag "client_type", client_type_collection(ClientType, :id, :name) %>
+				</div>
+				<div>
+					<%= text_field_tag "client_identification_number" %>
+				</div>
+				<div>
+					<%= submit_tag "Guardar" %>
+				</div>
+			<% end -%>
+		</div>
+	</div>
+</section>

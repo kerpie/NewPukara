@@ -5,8 +5,14 @@
 		<%= data.hidden_field "product_id" %>
 		<%= text_field_tag "", nil, :class => "tmp" %>
 	</td>
-	<td class="small_part money_type_goes_here"></td>
-	<td class="small_part price_goes_here"><%= data.text_field "sell_price", :class => "tmp" %><%= data.hidden_field "unit_id" %></td>
+	<td class="small_part money_type_goes_here">
+		<%= data.hidden_field "money_type_id" %><span></span>
+	</td>
+	<td class="small_part price_goes_here">
+		<%= data.text_field "sell_price", :class => "tmp" %>
+		<%= data.hidden_field "unit_id" %>
+		<%= data.hidden_field "money_value", :value => 0, :class => "my_money_value" %>
+	</td>
 	<td class="small_part total_goes_here"><%= text_field_tag "", nil, :class => "tmp" %></td>
 	<td class="small_part"><%= data.check_box :_destroy %></td>
 </tr>

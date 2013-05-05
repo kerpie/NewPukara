@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130419200429) do
+ActiveRecord::Schema.define(:version => 20130504164433) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -169,6 +169,15 @@ ActiveRecord::Schema.define(:version => 20130419200429) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "payments", :force => true do |t|
+    t.integer  "money_type_id"
+    t.integer  "quotation_id"
+    t.float    "money_received"
+    t.float    "money_returned"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
   create_table "price_types", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -202,8 +211,10 @@ ActiveRecord::Schema.define(:version => 20130419200429) do
     t.integer  "unit_id"
     t.integer  "quantity"
     t.float    "sell_price"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "money_type_id"
+    t.float    "money_value"
   end
 
   create_table "quotations", :force => true do |t|
@@ -211,13 +222,10 @@ ActiveRecord::Schema.define(:version => 20130419200429) do
     t.integer  "client_id"
     t.date     "date"
     t.string   "code"
-    t.float    "money_received"
-    t.float    "money_returned"
-    t.float    "money_expected"
-    t.integer  "money_type_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.boolean  "payment_status"
+    t.float    "money_expected"
   end
 
   create_table "roles", :force => true do |t|
@@ -267,6 +275,13 @@ ActiveRecord::Schema.define(:version => 20130419200429) do
     t.datetime "updated_at",     :null => false
     t.string   "mail"
     t.string   "other"
+  end
+
+  create_table "temporal_numerations", :force => true do |t|
+    t.integer  "quotation_detail_id"
+    t.string   "temporal_code"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "units", :force => true do |t|

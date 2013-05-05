@@ -50,6 +50,82 @@
 	font-weight: bold;
 }
 
+#code_advise{
+	width: 100%;
+	margin: 10px;
+	background: red;
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 10px;
+	font-size: 18px;
+}
+
+#form_for_temporal_codes{
+	width: 1000px;
+	form{
+		width: 1000px;
+		.fftc{
+			width: 800px;
+			margin: 0 auto;
+			overflow: hidden;
+			padding: 10px;
+			h1{
+				width: 100%;
+				background: #272727;
+				color: white;
+				text-align: center;
+			}
+			.image_for_fftc{
+				float: left;
+				width: 400px;
+				padding-top: 40px;
+				img{
+					margin: 0 auto;
+					display: block;
+				}
+			}
+			.codes_to_save{
+				float: right;
+				width: 400px;
+				h2{
+					width: 100%;
+					border-bottom: 1px solid black;
+					text-align: center;
+					text-transform: uppercase;
+					padding: 5px;
+				}
+				.fftc_product{
+					padding: 5px;
+					input{
+						display: block;
+						margin: 0 auto;
+						padding: 3px;
+					}
+				}
+			}
+		}
+		#fftc_submit{
+			width: 500px;
+			margin: 10px auto;
+			input{
+				width: 300px;
+				display: block;
+				margin: 0 auto;
+				background: #00b0e3;
+				color: white;
+				padding: 10px;
+				text-transform: uppercase;
+				text-align: center;
+				border: none;
+				&:hover{
+					box-shadow: 0px 0px 4px #00b0e3;
+				}
+			}
+		}
+	}
+}
+
 #search_quotation_index{
 	width: 500px;
 	margin: 30px auto 10px;
@@ -152,29 +228,21 @@
 				width: 100%;
 				thead{
 					tr{
-						text-align: center;
 						th{
-							padding: 10px;
 							background: #373737;
 							color: white;
-							font-weight: bold;
 							text-transform: uppercase;
-							width: 100%;
+							text-align: center;
+							padding: 10px;
 						}
 					}
 				}
 				tbody{
 					tr{
-						text-align: center;
 						td{
 							padding: 10px;
 							background: white;
-							select{
-								width: 80%;
-								padding: 10px;
-								text-align: center;
-								font-size: 18px;
-							}
+							text-align: center;
 						}
 					}
 				}
@@ -213,13 +281,6 @@
 								display: inline-block;
 								text-align: center;
 							}
-						}
-					}
-					#untouchable_row{
-						td:first-child{
-							background: #474747;
-							text-align: right;
-							color: white;
 						}
 					}
 				}
@@ -736,7 +797,7 @@
 	}
 }
 
-#q_show, #qd_show{
+#q_show, #qd_show, #q_show_price{
 	width: 100%;
 	table{
 		width: 70%;
@@ -752,6 +813,12 @@
 				padding: 10px;
 				text-align: center;
 				background: white;
+			}
+			.prices{
+				color: white;
+				background: #00b0e3;
+				font-size: 18px;
+				font-weight: bold;
 			}
 		}
 		#total_part{
@@ -901,9 +968,6 @@
 							text-align: center;
 							color: white;
 							background: #272727;
-							&:last-child{
-								width: 80%;
-							}
 						}
 					}
 				}
@@ -936,4 +1000,117 @@
 			}
 		}
 	}
+}
+
+#different_prices{
+	display: none;
+}
+
+//New quotation form
+#new_q_search_client{
+	display: none;
+	width: 800px;
+	height: 75px;
+	margin: -100px -400px;
+	.window_upper_part{
+		font-size: 18px;
+		padding: 10px;
+	}
+	.window_content_part{
+		#new_q_client_search_form{
+			form{
+				label{
+					color: white;
+					padding: 5px;
+				}
+				input{
+					padding: 5px;
+				}
+			}
+		}
+		#new_q_client_search_result{
+			overflow: auto;
+			table{
+				width: 600px;
+				margin: 20px auto;
+				thead{
+					tr{
+						th{
+							padding: 10px;
+							color: white;
+							background: #272727;
+							text-align: center;
+							text-transform: uppercase;
+						}
+					}
+				}
+				tbody{
+					tr{
+						td{
+							padding: 5px;
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#new_q_product_search{
+	display: none;
+	width: 800px;
+	height: 75px;
+	margin: -100px -400px;
+	.window_upper_part{
+		font-size: 18px;
+		padding: 10px;
+	}
+	.window_content_part{
+		#new_q_product_search_form{
+			form{
+				label{
+					color: white;
+					padding: 5px;
+				}
+				input{
+					padding: 5px;
+				}
+			}
+		}
+		#new_q_product_search_result{
+			overflow: auto;
+			table{
+				width: 600px;
+				margin: 20px auto;
+				thead{
+					tr{
+						th{
+							padding: 10px;
+							color: white;
+							background: #272727;
+							text-align: center;
+							text-transform: uppercase;
+						}
+					}
+				}
+				tbody{
+					tr{
+						td{
+							padding: 5px;
+							text-align: center;
+						}
+						&:hover{
+							background: #ccc;
+							color: white;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#new_q_register_client{
+	display: block;
 }

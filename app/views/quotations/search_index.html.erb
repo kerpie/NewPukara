@@ -27,7 +27,6 @@
 				<td>Codigo</td>
 				<td>Cliente</td>
 				<td>Fecha</td>
-				<td>Total a pagar</td>
 				<td>Estado de la Cotizacion</td>
 			</tr>
 		</thead>
@@ -37,7 +36,6 @@
 					<td><%= quotation.code %></td>
 					<td><%= quotation.client.name %></td>
 					<td><%= quotation.date.to_formatted_s(:rfc822) %></td>
-					<td><%= quotation.money_expected %></td>
 					<td><%= quotation.payment_status %></td>
 				</tr>
 			<% end %>

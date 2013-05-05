@@ -86,9 +86,17 @@ jQuery ->
 				if quantity > total_stock
 					alert "No puede pedir mas de lo que hay en los almacenes"
 					return
-				if quantity > parseInt($(".my_store").text())
+				if $(".my_store").text().length == 0 or quantity > parseInt($(".my_store").text())
 					unit = $("#product_quantity").next("select").find("option:selected").attr("data-unit_value")
-					$("#afp_down h2").text("Estas pidiendo "+quantity+" unidades y solo hay " + parseInt($(".my_store").text()) + " unidades en tu almacen")
+					my_store_value = $(".my_store").text()
+					message = "" 
+					
+					if my_store_value.length == 0
+						message = "Estas pidiendo "+quantity+" unidades y no hay unidades en tu almacen"
+					else
+						message = "Estas pidiendo "+quantity+" unidades y solo hay " + parseInt(my_store_value)+ " unidades en tu almacen"
+
+					$("#afp_down h2").text(message)
 					$("#ask_for_product").show()
 					$(".my_message_to_other_store").each ->
 						$(this).val("Necesito "+ "         unidades de " + $("#qp_full_name").text())
@@ -114,6 +122,9 @@ jQuery ->
 
 jQuery ->
 	$("#product_price").keyup (event)->
+
+		#ALMACENAR ID DEL TIPO DE PRECIO
+
 		val = $(this).val()
 		if event.which == 13
 			discount = parseFloat($("#downer table tbody tr.here").attr("id"))
@@ -123,19 +134,18 @@ jQuery ->
 				$(this).val("")
 			else
 				$(this).parents(".q_box").hide()
-				$("#"+id_row).find(".quantity_goes_here input").val($("#product_quantity").val()) 
-				$("#"+id_row).find(".price_goes_here input").val($(this).val())
-				$("#"+id_row).find(".price_goes_here input[type=hidden]").val(unit_id)
-				$("#"+id_row).find(".total_goes_here input").val(parseFloat($(this).val())*parseFloat($("#product_quantity").val()))
-				$("#"+id_row).find(".product_goes_here .tmp").val($("#qp_full_name").text())
-				$("#"+id_row).find(".product_goes_here input[type=hidden]").val($("#this_is_the_product_id_you_shouldnt_be_seeing").val())
-				$("#"+id_row).find(".money_type_goes_here").text($(".guess_who_is_selected").find("td:last-child").text())
+				$("#"+id_row).find(".quantity_goes_here input").val(				$("#product_quantity").val()											)		 
+				$("#"+id_row).find(".price_goes_here input").val(					$(this).val()															)
+				$("#"+id_row).find(".price_goes_here input[type=hidden]").val(		unit_id																	)
+				$("#"+id_row).find(".total_goes_here input").val(					parseFloat($(this).val())*parseFloat($("#product_quantity").val())		)
+				$("#"+id_row).find(".product_goes_here .tmp").val(					$("#qp_full_name").text()												)
+				$("#"+id_row).find(".product_goes_here input[type=hidden]").val(	$("#this_is_the_product_id_you_shouldnt_be_seeing").val()				)
+				$("#"+id_row).find(".money_type_goes_here input[type=hidden]").val(	$(".guess_who_is_selected").find("td:last-child").attr("id")			)
+				$("#"+id_row).find(".money_type_goes_here span").text(				$(".guess_who_is_selected").find("td:last-child").text()				)
+				$("#"+id_row).find(".price_goes_here .my_money_value").val(		$(".guess_who_is_selected").find("td:last-child").attr("data-value")	)
 				$(this).val("")
 				$("#product_quantity").val("")
-				tmp_total = 0
-				$(".total_goes_here").each ->
-					tmp_total = tmp_total + parseFloat($(this).find('input').val())
-				$("#quotation_total").html(tmp_total)
+				add_prices_to_form()
 		if event.which == 27
 			$(this).parents(".q_box").hide()
 			
@@ -183,3 +193,29 @@ jQuery ->
 	$(".small_part input[type=checkbox]").live "click", ->
 		$(this).val(1)
 		$(this).parents("tr").hide()
+		add_prices_to_form()
+
+jQuery ->
+	$("#money_part").click ->
+		add_prices()		
+
+dollar_regexp = /d[a-z]*s/i
+soles_regexp = /n[a-z]*s/i
+
+soles_value = 0
+dollars_value = 0
+coin_agnostic_value = 0
+total = 0
+
+add_prices_to_form = () ->
+	my_form_body = ""
+	count = 0
+	$(".qd:visible").each ->
+		count = count + 1
+		money_type = $(this).find(".money_type_goes_here input[type=hidden]").val()
+		value = $(this).find(".total_goes_here input[type=text]").val()
+		my_form_body = my_form_body + "<input id=\"money_type_"+count+"\" name=\"money_type_"+count+"\" type=\"hidden\" value=\""+money_type+"\"></input><input type=\"hidden\" id=\"value_"+count+"\" name=\"value_"+count+"\" value=\""+value+"\"></input>"
+	first_part = "<input id=\"number_to_iterate\" type=\"hidden\" value=\""+count+"\" name=\"number_to_iterate\"></input>"
+	submit_part = "<input type=\"submit\" value=\"consultar precio\"></input>"
+	$("#check_prices").html(first_part+my_form_body+submit_part)
+	$("#check_prices").submit()

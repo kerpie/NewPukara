@@ -16,7 +16,7 @@
     <div class="et_supplier">
       <%= f.text_field :supplier_id, :class => "forever_hidden" %>
       <%= f.label :sup_id, "Proveedor: " %>
-      <span id="sup_id"><%= @entry_folder.supplier.nil? ? " Elja un proveedor " : @entry_folder.supplier.name %></span>
+      <span id="sup_id"><%= @entry_folder.supplier.nil? ? " Elija un proveedor " : @entry_folder.supplier.name %></span>
       <%= link_to_function "Cambiar proveedor", "showSupplierSearch()", :id => "change_supplier_link" %>
     </div>
     <div class="et_supplier closed_eye">

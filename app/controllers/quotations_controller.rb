@@ -15,6 +15,16 @@ class QuotationsController < ApplicationController
   def show
     @quotation = Quotation.find(params[:id])
 
+    total = 0
+    @quotation.quotation_details.each do |qd|
+      total = total + qd.sell_price * qd.quantity * qd.money_value 
+    end
+
+    @quotation_value = {}
+    MoneyType.all.each do |mt|
+      @quotation_value[mt.name] = (total/mt.value).round(2)
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @quotation }
@@ -43,13 +53,20 @@ class QuotationsController < ApplicationController
   def create
     @quotation = Quotation.new(params[:quotation])
 
-    o =  [('a'..'z'),('A'..'Z')].map{|i| i.to_a}.flatten
-    string  =  (0...6).map{ o[rand(o.length)] }.join
-    @quotation.code = string 
+    #Code for quotation
+    @quotation.code = Time.now.to_i.to_s[5,10] 
+    @quotation.payment_status = false
+
+    total = 0
+    @quotation.quotation_details.each do |qd|
+      total = total + (qd.sell_price * qd.money_value)
+    end
+
+    @quotation.money_expected = total
 
     respond_to do |format|
       if @quotation.save
-        format.html { redirect_to @quotation, notice: 'Quotation was successfully created.' }
+        format.html { redirect_to quotation_temporal_codes_path(@quotation.id), notice: 'Quotation was successfully created.' }
         format.json { render json: @quotation, status: :created, location: @quotation }
       else
         format.html { render action: "new" }
@@ -115,48 +132,6 @@ class QuotationsController < ApplicationController
         @response << product
       end
     end
-=begin
-    if temp.length == 3
-      pt = temp[0].upcase
-      b = temp[1].upcase
-      pm = temp[2].upcase
-
-      b = Brand.where("name like ?", "%"+b+"%").first
-      pt = ProductType.where("name like ?", "%"+pt+"%").first
-      pm = ParentModel.where("name like ?", "%"+pm+"%").first
-
-      pm.model_types.each do |mt|
-        tmp = Model.where(:model_type_id => mt, :brand_id => b)
-        tmp.each do |m|
-          unless m.product.nil?
-            @response << m.product
-          end
-        end
-      end
-    elsif temp.length == 2
-      pt = temp[0].upcase
-      b = temp[1].upcase
-
-      b = Brand.where("name like ?", "%"+b+"%").first
-      pt = ProductType.where("name like ?", "%"+pt+"%").first
-
-      tmp = Model.where(brand_id: b).all
-
-      tmp.each do |m|
-        unless m.product.nil?
-          @response << m.product 
-        end
-      end
-
-    else
-      m = Model.where("name like ?", "%"+ temp[0].upcase + "%").all
-      m.each do |model|
-        unless model.product.nil?
-          @response << model.product
-        end
-      end
-    end
-=end
 
     respond_to do |format|
       format.js
@@ -182,13 +157,11 @@ class QuotationsController < ApplicationController
   def pay_quotation
 
     q = Quotation.find(params[:q_id])
-
-    q.money_expected = params[:money_expected].to_f
-    q.money_received = params[:money_received].to_f
-    q.money_returned = params[:money_returned].to_f
+ 
     q.payment_status = true
 
     documents = []
+    
     DocumentType.all.each do |dt|
       unless params[dt.id.to_s].nil?
         documents << dt
@@ -205,9 +178,16 @@ class QuotationsController < ApplicationController
     @of.save 
 
     #Create OutputDocument
+
+    user = q.user 
+
     documents.each do |d|
       od = OutputDocument.new
-      od.numeration = "1000"
+
+      numeration = Numeration.where(:document_type_id => d, :store_id => user.store).first
+      od.numeration = numeration.current_number
+      numeration.current_number = numeration.current_number + 1
+      numeration.save
       od.document_type = d
       od.output_folder = @of
       od.save
@@ -281,7 +261,134 @@ class QuotationsController < ApplicationController
         end
       end
     end
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  #New Quotation create - full ajax
+  def new_create
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def new_client_search
+
+    text = params[:text_to_search].upcase
+    @clients = []
+
+    Client.all.each do |client|
+      unless client.search_text.match(text).nil?
+        @clients << client
+      end
+    end
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def new_product_search
+
+    text = params[:text_to_search].upcase
+    @products = []
+
+    Product.all.each do |product|
+      unless product.full_name.match(text).nil?
+        @products << product
+      end
+    end
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def new_register_client
+
+    @client = Client.new
     
+    @client.name = params[:client_name].upcase
+    @client.phone = params[:client_phone].upcase
+    @client.mobile = params[:client_mobile].upcase
+    @client.mail = params[:client_mail].upcase
+    @client.identification_number = params[:client_identification_number]
+    @client.client_type_id = params[:client_type]
+
+    respond_to do |format|
+      if @client.save
+        format.js
+      else
+        format.js { render "error.js" }
+      end
+    end
+  end
+
+  def stupid_calculation
+
+    @total = params[:number_to_iterate]
+    total_value = 0.0
+
+    @total.to_i.times do |i|
+      money_type = "money_type_" + (i+1).to_s
+      value = "value_" + (i+1).to_s
+      money = MoneyType.find(params[money_type])
+      total_value = total_value + (money.value * params[value].to_f)
+    end
+
+    @response = {}
+    MoneyType.all.each do |money|
+      @response[money.name] = (total_value/money.value)
+    end
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def temporal_codes
+  
+    @q = Quotation.find(params[:id])
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def save_temporal_codes
+
+    quotation = Quotation.find(params[:quotation_id])
+
+    quotation.quotation_details.each do |qd|
+      temporals = TemporalNumeration.where(:quotation_detail_id => qd.id).all
+      if temporals.count > 0
+        i = 0
+        temporals.each do |t|
+          t.temporal_code = params["#{qd.id}_#{i}"].strip
+          t.save 
+          i = i + 1
+        end
+        (qd.quantity - i).times do |k|
+          t = TemporalNumeration.new
+          t.quotation_detail_id = qd.id 
+          unless params["#{qd.id}_#{i}"].strip.empty?
+            t.temporal_code = params["#{qd.id}_#{i+k}"].strip
+            t.save
+          end
+        end
+      else
+        qd.quantity.times do |i|
+          t = TemporalNumeration.new
+          t.quotation_detail_id = qd.id 
+          unless params["#{qd.id}_#{i}"].strip.empty?
+            t.temporal_code = params["#{qd.id}_#{i}"].strip
+            t.save
+          end
+        end
+      end
+    end
 
     respond_to do |format|
       format.js

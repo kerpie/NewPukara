@@ -7,15 +7,17 @@ class EntryCode < ActiveRecord::Base
 
   def self.generateEntryCodes(folder)
   	folder.entry_document_details.each do |edd|
-  		edd.quantity.times do |i|
-  			entry_code = EntryCode.new
-  			entry_code.entry_document_detail_id = edd.id
+      if edd.entry_codes.empty?
+    		edd.quantity.times do |i|
+    			entry_code = EntryCode.new
+    			entry_code.entry_document_detail_id = edd.id
 
-        #Generated Code
-        entry_code.generated_code = initials(edd.product.model.brand.name) + date_number(edd.entry_folder.date) + four_numbers(i+1)
-        #entry_code.generated_code = edd.id.to_s + "-" + i.to_s + "-" + edd.product.model.brand.name.to_s
-  			entry_code.save
-  		end
+          #Generated Code
+          entry_code.generated_code = initials(edd.product.model.brand.name) + date_number(edd.entry_folder.date) + four_numbers(i+1)
+          #entry_code.generated_code = edd.id.to_s + "-" + i.to_s + "-" + edd.product.model.brand.name.to_s
+    			entry_code.save
+    		end
+      end
   	end
   end
 end

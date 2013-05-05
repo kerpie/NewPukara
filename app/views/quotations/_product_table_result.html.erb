@@ -1,0 +1,14 @@
+<table> 
+	<thead>
+		<tr>
+			<th>Producto</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% products.each do |product| %>
+			<tr>
+				<td><%= product.full_name %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

@@ -42,6 +42,7 @@ class Stock < ActiveRecord::Base
     user = folder.user
     folder.output_document_details.each do |odd|
       stock = (Stock.check_stock(odd.product.id, user.store_id)).first
+      #Aqui genera error a menos que el traslado sea exitoso
       q = stock.quantity
       stock.quantity = q - odd.quantity
       stock.save

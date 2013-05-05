@@ -15,6 +15,8 @@
 	<%= render 'form' %>
 </section>
 
+
+
 <section id="authenticate_user" class="q_box">
 	<div id="au_title">
 		<h1>Autenticar usuario</h1>
@@ -154,6 +156,7 @@
 					<tr>
 						<th>Local</th>
 						<th>Mensaje</th>
+						<th>Opciones</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -162,14 +165,21 @@
 							<tr>
 								<td><%= store.name %></td>
 								<td><%= text_field_tag "message_to_store_"+store.name.gsub(" ", "_") , " ", :class => "my_message_to_other_store" %></td>
+								<td><%= link_to_function "Ignorar", "ignoreMessage(this)" %></td>
 							</tr>
 						<% end -%>
 					<% end -%>
 					<tr>
-						<td colspan="2"><%= submit_tag "ENVIAR MENSAJE" %></td>
+						<td colspan="3"><%= submit_tag "ENVIAR MENSAJE" %></td>
 					</tr>
 				</tbody>
 			</table>
 		<% end %>
 	</div>
+</section>
+
+<section id="different_prices">
+	<%= form_tag quotation_stupid_calculation_path, :id => "check_prices", :remote => true do %>
+		
+	<% end -%>
 </section>

@@ -1,5 +1,5 @@
 <tr id="<%= sell_price.price_type.discount %>">
 	<td><%= sell_price.price_type.name %></td>
 	<td class="this_is_the_price"><%= sell_price.sell_price %></td>
-	<td><%= sell_price.money_type.name %></td>
+	<td id="<%= sell_price.money_type.id %>" data-value="<%= sell_price.money_type.value %>"><%= sell_price.money_type.name %></td>
 </tr>
