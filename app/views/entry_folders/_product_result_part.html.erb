@@ -1,5 +1,14 @@
-<div class="product_search_item">
-	<%= image_tag image_url(data, :medium), :width => 200, :height => 170 %>
-	<p><%= data.full_name %></p>
-	<%= hidden_field_tag "", data.id, :class => "hidden_data" %>
-</div>
+<table class="blah_blah_blah">
+	<tbody>
+		<tr>
+			<td class="product_search_item">
+				<!-- <%= image_tag image_url(data, :medium), :width => 200, :height => 170 %> -->
+				<p><%= data.full_name %></p>
+				<%= hidden_field_tag "", data.id, :class => "hidden_data" %>
+			</td>
+			<td class="product_search_item_link">
+				<%= link_to "Mas datos", data, :target => "_blank" %>
+			</td>
+		</tr>
+	</tbody>
+</table>

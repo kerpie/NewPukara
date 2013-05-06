@@ -37,5 +37,6 @@ jQuery ->
 
 jQuery ->
 	$(".nested_doc_detail_field input[type=checkbox]").live "click", ->
+		$(this).prev("input[type=hidden]").val("1")
 		$(this).val("1")
 		$(this).parents(".et_doc_detail_item").hide()

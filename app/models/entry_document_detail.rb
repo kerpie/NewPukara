@@ -6,6 +6,8 @@ class EntryDocumentDetail < ActiveRecord::Base
           					:unit_id,
           					:quantity
 
+  validates :product_id, :presence => {:message => " no puede estar vacio"}
+
   belongs_to :entry_folder
   belongs_to :product
   belongs_to :unit
