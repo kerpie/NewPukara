@@ -22,6 +22,6 @@ class QuotationDetail < ActiveRecord::Base
           value = value + tn.temporal_code + " - "
         end
       end
-      product.full_name + " Series: " + value
+      (product.full_name + " Series: " + value).upcase
     end
 end

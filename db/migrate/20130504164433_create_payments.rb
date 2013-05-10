@@ -4,7 +4,7 @@ class CreatePayments < ActiveRecord::Migration
       t.integer :money_type_id
       t.integer :quotation_id
       t.float :money_received
-      t.float :money_returned
+      t.float :money_value
       t.timestamps
     end
   end

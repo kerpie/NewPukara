@@ -8,6 +8,11 @@ module ApplicationHelper
 		link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")")
 	end
 
+	def link_to_add_payment(name, link)
+		html_part = render("payment_part")
+		link_to_function(name, "add_payment_field(\"#{escape_javascript(html_part)}\")", :id => link)
+	end
+
 	def link_to_add_q_field(name, f, association)
 		new_object = f.object.class.reflect_on_association(association).klass.new
 		fields = f.fields_for(association, new_object, :child_index => "new_#{association}") do |builder|

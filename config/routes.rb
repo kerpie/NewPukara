@@ -14,7 +14,7 @@ Final::Application.routes.draw do
   match "quotations/stupid_calculation" => "quotations#stupid_calculation", :as => :quotation_stupid_calculation
   match "quotations/:id/temporal_codes" => "quotations#temporal_codes", :as => :quotation_temporal_codes
   match "quotations/save_temporal_codes" => "quotations#save_temporal_codes", :as => :quotation_save_temporal_codes
-
+  match "quotations/another_stupid_calculation" => "quotations#another_stupid_calculation", :as => :quotation_another_stupid_calculation
   #New full-ajax-request quotation
   match "quotations/new_create" => "quotations#new_create", :as => :quotation_new_create
   match "quotations/new_client_search" => "quotations#new_client_search", :as => :quotation_new_client_search

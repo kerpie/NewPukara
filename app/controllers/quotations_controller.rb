@@ -22,7 +22,7 @@ class QuotationsController < ApplicationController
 
     @quotation_value = {}
     MoneyType.all.each do |mt|
-      @quotation_value[mt.name] = (total/mt.value).round(2)
+      @quotation_value[mt.name] = [(total/mt.value).round(2), mt.value]
     end
 
     respond_to do |format|
@@ -156,63 +156,40 @@ class QuotationsController < ApplicationController
 
   def pay_quotation
 
-    q = Quotation.find(params[:q_id])
- 
-    q.payment_status = true
+    @quotation = Quotation.find(params[:q_id])
 
-    documents = []
+    #Todo el verdadero trabajo va aqui GO GO GO!
+
+    docs = []
+    @quotation.docs_to_generate.each do |doc|
+      docs << DocumentType.find(params[doc.name.gsub(" ","_")])
+    end
+
+    @temporal_numerations_complete = false
+
+    @quotation.quotation_details.each do |qd|
+      counts = true
+      qd.temporal_numerations.each do |tn|
+        if tn.temporal_code.empty?
+          counts = false
+          break
+        end
+      end
+      if counts
+        if qd.quantity == qd.temporal_numerations.count
+          @temporal_numerations_complete = true
+        end
+      end
+    end
+
+    @of = @quotation.approve_payment(params[:soles], params[:dollars], docs, @temporal_numerations_complete)
+    unless @of.nil?
+      @quotation.payment_status = true
+      @quotation.save
+    end
     
-    DocumentType.all.each do |dt|
-      unless params[dt.id.to_s].nil?
-        documents << dt
-      end
-    end
-
-    #Create OutputFolder
-    @of = OutputFolder.new
-    @of.client = q.client
-    @of.date = Time.now
-    @of.folder_state = FolderState.last
-    @of.user = q.user
-    @of.quotation = q
-    @of.save 
-
-    #Create OutputDocument
-
-    user = q.user 
-
-    documents.each do |d|
-      od = OutputDocument.new
-
-      numeration = Numeration.where(:document_type_id => d, :store_id => user.store).first
-      od.numeration = numeration.current_number
-      numeration.current_number = numeration.current_number + 1
-      numeration.save
-      od.document_type = d
-      od.output_folder = @of
-      od.save
-    end
-
-    #Create OuputDocumentDetail
-    q.quotation_details.each do |qd|
-      odd = OutputDocumentDetail.new
-      odd.output_folder = @of
-      odd.product = qd.product
-      odd.sell_price = qd.sell_price
-      odd.quantity = qd.quantity
-      odd.unit = qd.unit
-      odd.save
-    end
-
-    Stock.reduce_stock(@of)
-
     respond_to do |format|
-      if q.save
-        OutputCode.createOutputCodes(@of)
-        format.js
-      else
-        format.js
-      end
+      format.js
     end
   end
 
@@ -367,12 +344,12 @@ class QuotationsController < ApplicationController
         i = 0
         temporals.each do |t|
           t.temporal_code = params["#{qd.id}_#{i}"].strip
-          t.save 
+          t.save
           i = i + 1
         end
         (qd.quantity - i).times do |k|
           t = TemporalNumeration.new
-          t.quotation_detail_id = qd.id 
+          t.quotation_detail_id = qd.id
           unless params["#{qd.id}_#{i}"].strip.empty?
             t.temporal_code = params["#{qd.id}_#{i+k}"].strip
             t.save
@@ -381,14 +358,26 @@ class QuotationsController < ApplicationController
       else
         qd.quantity.times do |i|
           t = TemporalNumeration.new
-          t.quotation_detail_id = qd.id 
-          unless params["#{qd.id}_#{i}"].strip.empty?
+          t.quotation_detail_id = qd.id
+          #unless params["#{qd.id}_#{i}"].strip.empty?
             t.temporal_code = params["#{qd.id}_#{i}"].strip
             t.save
-          end
+          #end
         end
       end
     end
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def another_stupid_calculation
+
+    q = Quotation.find(params[:q_id])
+
+    @response_hash = q.change(params[:money_received_in_soles].to_f, params[:money_received_in_dollars].to_f)
+    @docs_to_generate = q.docs_to_generate
 
     respond_to do |format|
       format.js

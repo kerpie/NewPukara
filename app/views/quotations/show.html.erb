@@ -58,7 +58,7 @@
     <tbody>
       <tr>
         <% @quotation_value.each do |key, value| %>
-          <td class="prices"><%= value %></td>
+          <td class="prices"><%= value[0] %></td>
         <% end %>  
       </tr>
     </tbody>
@@ -101,34 +101,49 @@
         <h2><%= link_to_function "X", "closeFloatingBox(this)"%></h2>
       </div>
       <div id="pq_form">
-        <%= form_tag quotation_pay_quotation_path, remote: true do %>
+        <table>
+          <thead>
+            <tr>
+              <% @quotation_value.each do |key, value| %>
+                <th><%= key %></th>
+              <% end %>  
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <% @quotation_value.each do |key, value| %>
+                <td class="prices" data-money_value="<%= value[1] %>"><%= value[0] %></td>
+              <% end %>  
+            </tr>
+          </tbody>
+        </table>
+        <div id="change_calculation">
+          
+        </div>
+        <%= form_tag quotation_another_stupid_calculation_path, :id => "payment_values", :remote => true do %>
           <%= hidden_field_tag "q_id", @quotation.id %>
-          <div class="pq_form_div">
-            <%= label_tag "money_expected", "Total a pagar: " %><br>
-            <%= text_field_tag "money_expected", "" %>
-          </div>
-          <div class="pq_form_div">
-            <%= label_tag "money_received", "Cantidad recibida: " %><br>
-            <%= text_field_tag "money_received", "" %>
-          </div>
-          <div class="pq_form_div">
-            <%= label_tag "money_returned", "Vuelto: " %><br>
-            <%= text_field_tag "money_returned", "" %>
-          </div>
-          <div class="pq_form_div">
-            <%= label_tag "money_type", "Tipo de Dinero: " %>
-            <%= select_tag "money_type", options_from_collection_for_select(MoneyType.all, :id, :name) %>
-          </div>
-          <div class="pq_form_div pq_form_check">
-            <h1>Documentos a generar</h1>
-            <div>
-              <% DocumentType.all.each do |dt| %>
-                <%= check_box_tag dt.id, dt.id %>
-                <%= label_tag dt.id, dt.name %><br>
-              <% end %>
+          <div class="pay_type_part">
+            <div class="pq_form_div">
+              <%= label_tag "money_received_in_dollars", "Total a pagar en dolares: " %><br>
+              <%= text_field_tag "money_received_in_dollars", "" %>
             </div>
           </div>
+          <div class="pay_type_part">
+            <div class="pq_form_div">
+              <%= label_tag "money_received_in_soles", "Total a pagar en soles: " %><br>
+              <%= text_field_tag "money_received_in_soles", "" %>
+            </div>
+          </div>
+          <%= submit_tag "Calcular" %>
+        <% end -%>
 
+        <%= form_tag quotation_pay_quotation_path, :id => "real_payment", remote: true do %>
+          <%= hidden_field_tag "q_id", @quotation.id %>
+          <%= hidden_field_tag "soles" %>
+          <%= hidden_field_tag "dollars" %>
+          <div class="pq_form_div">
+            
+          </div>
           <div class="pq_form_submit">
             <%= submit_tag "Registrar pago" %>
           </div>

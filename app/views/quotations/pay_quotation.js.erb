@@ -1,2 +1,8 @@
-$("#pay_quotation_form").hide();
-$("#pay_quotation_part").html("<h1 class=\"payed\">Cotizacion pagada</h1>");
+//$("#pay_quotation_form").hide();
+//$("#pay_quotation_part").html("<h1 class=\"payed\">Cotizacion pagada</h1>");
+
+<% if @temporal_numerations_complete %>
+	window.location.href = "/output_folders/<%= @of.id.to_s %>";
+<% else %>
+	alert("No se pudo generar el documento porque no estan registrados todas las series");
+<% end %>

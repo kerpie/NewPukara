@@ -80,7 +80,7 @@ jQuery ->
 		if event.which == 27
 			$(this).parents(".q_box").hide()
 		if event.which == 13
-			if(unit_changed && unit_id.length>0)
+			if(unit_changed && unit_id.length > 0)
 				quantity = $(this).val()
 				total_stock = totalStock()
 				if quantity > total_stock
@@ -102,6 +102,7 @@ jQuery ->
 						$(this).val("Necesito "+ "         unidades de " + $("#qp_full_name").text())
 					$(this).parents(".q_box").hide()
 				$("#downer").show()
+				$("#product_quantity").attr("readonly", true)
 				$("#product_price").attr("readonly", true)
 				$("#product_price").focus()
 			else
@@ -142,7 +143,7 @@ jQuery ->
 				$("#"+id_row).find(".product_goes_here input[type=hidden]").val(	$("#this_is_the_product_id_you_shouldnt_be_seeing").val()				)
 				$("#"+id_row).find(".money_type_goes_here input[type=hidden]").val(	$(".guess_who_is_selected").find("td:last-child").attr("id")			)
 				$("#"+id_row).find(".money_type_goes_here span").text(				$(".guess_who_is_selected").find("td:last-child").text()				)
-				$("#"+id_row).find(".price_goes_here .my_money_value").val(		$(".guess_who_is_selected").find("td:last-child").attr("data-value")	)
+				$("#"+id_row).find(".price_goes_here .my_money_value").val(			$(".guess_who_is_selected").find("td:last-child").attr("data-value")	)
 				$(this).val("")
 				$("#product_quantity").val("")
 				add_prices_to_form()

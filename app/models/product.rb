@@ -25,6 +25,33 @@ class Product < ActiveRecord::Base
   :url => "/system/:class/:attachment/:id/:style/:filename", :dependent => :destroy
   
   def full_name
-  	product_type.name.upcase + " " + model.brand.name.upcase + " " + model.model_type.parent_model.name.upcase + " " + model.model_type.name.upcase + " " + model.name 
+    regexp  = "CLASIFIC"
+    pt_name = ""
+    brand_name = ""
+    pm_name = ""
+    mt_name = ""
+    model_name   = ""
+
+    unless product_type.name.upcase.match(regexp)
+      pt_name = product_type.name.upcase
+    end
+
+    unless model.brand.name.upcase.match(regexp)
+      brand_name = model.brand.name.upcase
+    end
+
+    unless model.model_type.parent_model.name.upcase.match(regexp)
+      pm_name = model.model_type.parent_model.name.upcase
+    end
+
+    unless model.model_type.name.upcase.match(regexp)
+      mt_name = model.model_type.name.upcase
+    end
+
+    unless model.name.match(regexp)
+      model_name = model.name.upcase
+    end
+
+    pt_name + " " + brand_name + " " + pm_name + " " + mt_name + " " + model_name
   end
 end

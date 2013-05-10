@@ -1,0 +1,31 @@
+<% 
+	ths = "" 
+	tds = ""
+	show = false
+
+	@response_hash.each do |key, value|
+        ths = ths + "<th>#{key}</th>"
+        tds = tds + "<td class=\"prices\">#{value}</td>"
+        if value.to_f <= 0
+        	show = true
+        end
+	end  
+
+	answer = "<table><thead><tr>#{ths}</tr></thead><tbody><tr>#{tds}</tr></tbody></table>"
+	
+	checks = ""
+	@docs_to_generate.each do |doc|
+		checks = checks + check_box_tag("#{doc.name.gsub(" ","_")}", doc.id) + label_tag(doc.name, doc.name) + "<br/>"
+	end
+%>
+
+$("#change_calculation").html("<%= escape_javascript answer.html_safe %>");
+
+<% if show %>
+	$("#real_payment").show();
+	$("#real_payment .pq_form_div").html("<%= escape_javascript checks.html_safe %>");
+	$("#soles").val($("#money_received_in_soles").val());
+	$("#dollars").val($("#money_received_in_dollars").val());
+<% else %>
+	$("#real_payment").hide();
+<% end %>

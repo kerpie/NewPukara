@@ -173,7 +173,7 @@ ActiveRecord::Schema.define(:version => 20130504164433) do
     t.integer  "money_type_id"
     t.integer  "quotation_id"
     t.float    "money_received"
-    t.float    "money_returned"
+    t.float    "money_value"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end

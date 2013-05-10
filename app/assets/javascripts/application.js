@@ -39,6 +39,10 @@ function add_q_fields(link, association, content){
 	$("#q_detail_part table tbody").append(content.replace(regexp, new_id))
 }
 
+function add_payment_field(html){
+	$("#add_pay").before(html);
+}
+
 function submitForm(link){
 	$(link).parents("form").submit();
 }
